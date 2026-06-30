@@ -2,6 +2,10 @@
 
 ## Unreleased
 
+No unreleased changes.
+
+## 0.11.0
+
 - Added `verityfoundry check release-integrity` for deterministic package,
   README, changelog, roadmap, release checklist, and release-note version
   checks.
