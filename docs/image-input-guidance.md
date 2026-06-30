@@ -29,6 +29,10 @@ describe image roles, paths or placeholders, source notes, and interpretation
 limits. It should not claim that a missing or described image has been
 inspected as a binary asset.
 
+`verityfoundry validate examples` validates image manifests against
+`schemas/image-input-manifest.schema.json` when an example input references
+`image-manifest.json`.
+
 For example:
 
 ```json
@@ -49,6 +53,15 @@ For example:
   ]
 }
 ```
+
+Every image entry must declare:
+
+- `id`
+- `path`
+- `role`
+- `provided`
+- `notesSource`
+- `interpretationLimits`
 
 When image notes feed candidate workspace fixtures, preserve low confidence
 and require human approval for visual identity, art direction, gameplay

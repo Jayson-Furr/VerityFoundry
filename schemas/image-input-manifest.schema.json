@@ -1,0 +1,77 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/Jayson-Furr/VerityFoundry/schemas/image-input-manifest.schema.json",
+  "title": "VerityFoundry image input manifest",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "id",
+    "name",
+    "images"
+  ],
+  "properties": {
+    "id": {
+      "type": "string",
+      "pattern": "^[a-z0-9][a-z0-9._-]*$"
+    },
+    "name": {
+      "type": "string",
+      "minLength": 1
+    },
+    "images": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "id",
+          "path",
+          "role",
+          "provided",
+          "notesSource",
+          "interpretationLimits"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^[a-z0-9][a-z0-9._-]*$"
+          },
+          "path": {
+            "type": "string",
+            "minLength": 1
+          },
+          "role": {
+            "type": "string",
+            "enum": [
+              "concept-art",
+              "identity",
+              "logo",
+              "style-board",
+              "reference",
+              "ui",
+              "other"
+            ]
+          },
+          "provided": {
+            "type": "boolean"
+          },
+          "notesSource": {
+            "type": "string",
+            "minLength": 1
+          },
+          "interpretationLimits": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+              "type": "string",
+              "minLength": 1
+            },
+            "uniqueItems": true
+          }
+        }
+      },
+      "uniqueItems": true
+    }
+  }
+}

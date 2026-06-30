@@ -54,6 +54,8 @@ jobs:
           /tmp/verityfoundry-wheel/bin/verityfoundry report matrix-coverage
           /tmp/verityfoundry-wheel/bin/verityfoundry report golden-inventory
           /tmp/verityfoundry-wheel/bin/verityfoundry report example-inventory
+          /tmp/verityfoundry-wheel/bin/verityfoundry report fixture-inventory
+          /tmp/verityfoundry-wheel/bin/verityfoundry report provenance-coverage
           /tmp/verityfoundry-wheel/bin/verityfoundry check verityspec
           /tmp/verityfoundry-wheel/bin/verityfoundry check quality-thresholds
 

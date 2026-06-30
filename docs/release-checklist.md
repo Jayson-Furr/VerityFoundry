@@ -30,6 +30,8 @@ verityfoundry report prompt-quality-trend
 verityfoundry report matrix-coverage
 verityfoundry report golden-inventory
 verityfoundry report example-inventory
+verityfoundry report fixture-inventory
+verityfoundry report provenance-coverage
 verityfoundry check verityspec
 verityfoundry check release-integrity
 verityfoundry check quality-thresholds
@@ -57,6 +59,8 @@ python3 -m venv /tmp/verityfoundry-wheel
   /tmp/verityfoundry-wheel/bin/verityfoundry report matrix-coverage
   /tmp/verityfoundry-wheel/bin/verityfoundry report golden-inventory
   /tmp/verityfoundry-wheel/bin/verityfoundry report example-inventory
+  /tmp/verityfoundry-wheel/bin/verityfoundry report fixture-inventory
+  /tmp/verityfoundry-wheel/bin/verityfoundry report provenance-coverage
   /tmp/verityfoundry-wheel/bin/verityfoundry check verityspec
   /tmp/verityfoundry-wheel/bin/verityfoundry check quality-thresholds
 )

@@ -11,9 +11,13 @@ from . import __version__
 from .integration import check_verityspec, format_verityspec_check_result
 from .inventory import (
     format_example_inventory_report,
+    format_fixture_inventory_report,
     format_golden_inventory_report,
+    format_provenance_coverage_report,
     generate_example_inventory_report,
+    generate_fixture_inventory_report,
     generate_golden_inventory_report,
+    generate_provenance_coverage_report,
 )
 from .manifests import find_project_root, load_matrix_manifests, load_prompt_manifests
 from .matrix import render_matrix
@@ -94,6 +98,8 @@ def build_parser() -> argparse.ArgumentParser:
             "matrix-coverage",
             "golden-inventory",
             "example-inventory",
+            "fixture-inventory",
+            "provenance-coverage",
         ],
     )
     report_parser.add_argument("--format", choices=["text", "json"], default="text")
@@ -256,9 +262,15 @@ def _cmd_report(args: argparse.Namespace) -> int:
     elif args.target == "golden-inventory":
         report = generate_golden_inventory_report(root)
         formatted = format_golden_inventory_report(report)
-    else:
+    elif args.target == "example-inventory":
         report = generate_example_inventory_report(root)
         formatted = format_example_inventory_report(report)
+    elif args.target == "fixture-inventory":
+        report = generate_fixture_inventory_report(root)
+        formatted = format_fixture_inventory_report(report)
+    else:
+        report = generate_provenance_coverage_report(root)
+        formatted = format_provenance_coverage_report(report)
 
     if args.format == "json":
         print(json.dumps(report, indent=2, sort_keys=True))

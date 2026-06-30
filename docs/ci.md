@@ -21,6 +21,8 @@ verityfoundry report prompt-quality-trend
 verityfoundry report matrix-coverage
 verityfoundry report golden-inventory
 verityfoundry report example-inventory
+verityfoundry report fixture-inventory
+verityfoundry report provenance-coverage
 verityfoundry check verityspec
 verityfoundry check release-integrity
 verityfoundry check quality-thresholds

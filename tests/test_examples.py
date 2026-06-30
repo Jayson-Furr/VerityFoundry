@@ -1,4 +1,7 @@
 from pathlib import Path
+import json
+import shutil
+import tempfile
 from typing import Any
 import unittest
 
@@ -48,6 +51,34 @@ class ExampleTests(unittest.TestCase):
                 self.assertTrue(
                     set(manifest["expectedRecordCategories"]).issubset(categories)
                 )
+
+    def test_image_input_manifest_schema_is_enforced(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            temp_root = Path(tmp)
+            shutil.copytree(ROOT / "schemas", temp_root / "schemas")
+            shutil.copytree(ROOT / "prompts", temp_root / "prompts")
+            shutil.copytree(ROOT / "examples", temp_root / "examples")
+
+            image_manifest_path = (
+                temp_root
+                / "examples"
+                / "unity-game"
+                / "dream-extraction"
+                / "inputs"
+                / "image-manifest.json"
+            )
+            image_manifest = read_json(image_manifest_path)
+            del image_manifest["images"][0]["interpretationLimits"]
+            image_manifest_path.write_text(
+                json.dumps(image_manifest, indent=2) + "\n",
+                encoding="utf-8",
+            )
+
+            issues = validate_examples(temp_root)
+            self.assertTrue(
+                any(issue.code == "example.image-manifest.schema" for issue in issues),
+                [issue.format() for issue in issues],
+            )
 
 
 if __name__ == "__main__":

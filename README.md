@@ -62,7 +62,8 @@ The repository currently provides:
   domain prompt workflows.
 - Deterministic quality threshold checks for release-review baselines.
 - Deterministic release-review inventory reports for golden outputs and
-  examples.
+  examples, candidate workspace fixtures, and provenance coverage.
+- Image input manifest schema validation for example workflows.
 - A deterministic release-integrity check for package and documentation
   version bookkeeping.
 - A deterministic workflow hygiene check for GitHub Actions versions.
@@ -133,6 +134,8 @@ verityfoundry report prompt-quality-trend
 verityfoundry report matrix-coverage
 verityfoundry report golden-inventory
 verityfoundry report example-inventory
+verityfoundry report fixture-inventory
+verityfoundry report provenance-coverage
 verityfoundry check verityspec
 verityfoundry check release-integrity
 verityfoundry check quality-thresholds
@@ -297,16 +300,20 @@ explicit sprint decision backed by the current reports.
 
 ## Release Reviewer Reports
 
-Release reviewer reports summarize examples and golden outputs without calling
-external AI APIs.
+Release reviewer reports summarize examples, golden outputs, candidate
+workspace fixtures, and provenance coverage without calling external AI APIs.
 
 ```bash
 verityfoundry report golden-inventory
 verityfoundry report example-inventory
+verityfoundry report fixture-inventory
+verityfoundry report provenance-coverage
 ```
 
-Use these reports to confirm which examples and golden outputs are in scope for
-a release review. They do not replace manifest validation or human review.
+Use these reports to confirm which examples, golden outputs, fixture record
+kinds, recommended VeritySpec pack mappings, and provenance examples are in
+scope for a release review. They do not replace manifest validation or human
+review.
 
 ## Release Integrity Check
 
@@ -463,6 +470,8 @@ require human approval.
 - [Workflow hygiene](docs/workflow-hygiene.md)
 - [Release integrity](docs/release-integrity.md)
 - [Release reviewer inventory reports](docs/reviewer-inventory-reports.md)
+- [Fixture kind pack mapping](docs/fixture-kind-pack-mapping.md)
+- [Provenance coverage](docs/provenance-coverage.md)
 - [Golden output drift review](docs/golden-output-drift-review.md)
 - [Workspace fixtures](docs/workspace-fixtures.md)
 - [Portfolio workflows](docs/portfolio-workflows.md)
