@@ -2,6 +2,10 @@
 
 ## Unreleased
 
+No unreleased changes.
+
+## 0.13.0
+
 - Added a dedicated `github-copilot` render profile for GitHub Copilot
   handoff.
 - Added policy-lint severity counts with non-blocking warning advisories.
