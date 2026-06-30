@@ -18,6 +18,7 @@ verityfoundry validate goldens
 verityfoundry lint decision-policy
 verityfoundry report prompt-quality
 verityfoundry report prompt-quality-trend
+verityfoundry report policy-lint-trend
 verityfoundry report matrix-coverage
 verityfoundry report golden-inventory
 verityfoundry report example-inventory
@@ -51,6 +52,7 @@ smoke test.
 
 `verityfoundry check workflow-hygiene` also runs from the source checkout
 because it checks `.github/workflows/`. Installed-wheel smoke tests do run
-`verityfoundry report prompt-quality-trend` and
+`verityfoundry report prompt-quality-trend`,
+`verityfoundry report policy-lint-trend`, and
 `verityfoundry check quality-thresholds` to verify packaged snapshots and
 threshold configuration.

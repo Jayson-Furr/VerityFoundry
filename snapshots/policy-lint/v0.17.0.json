@@ -1,0 +1,10 @@
+{
+  "schemaVersion": "1.0",
+  "label": "v0.17.0",
+  "issueCount": 14,
+  "errorCount": 0,
+  "warningCount": 14,
+  "issueCodeCounts": {
+    "policy.advisory-missing-output-contract": 14
+  }
+}

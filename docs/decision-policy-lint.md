@@ -29,3 +29,12 @@ modes, and prompts targeting production, operations, liveops, maintenance,
 decommissioning, or archival readiness.
 
 The linter is deterministic and does not call external AI APIs.
+
+Policy-lint snapshots can be reviewed with:
+
+```bash
+verityfoundry report policy-lint-trend
+verityfoundry report policy-lint-trend --format json
+```
+
+Snapshots track advisory drift without making advisory warnings blocking.

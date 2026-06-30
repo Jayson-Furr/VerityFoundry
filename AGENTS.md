@@ -157,6 +157,7 @@ verityfoundry validate goldens
 verityfoundry lint decision-policy
 verityfoundry report prompt-quality
 verityfoundry report prompt-quality-trend
+verityfoundry report policy-lint-trend
 verityfoundry report matrix-coverage
 verityfoundry report release-summary
 verityfoundry report golden-inventory
@@ -185,6 +186,7 @@ verityfoundry validate goldens
 verityfoundry lint decision-policy
 verityfoundry report prompt-quality
 verityfoundry report prompt-quality-trend
+verityfoundry report policy-lint-trend
 verityfoundry report matrix-coverage
 verityfoundry report release-summary
 verityfoundry report golden-inventory
@@ -213,6 +215,7 @@ verityfoundry matrix unity-game
 - `src/verityfoundry/matrix_coverage.py`: deterministic matrix coverage reporting.
 - `src/verityfoundry/inventory.py`: deterministic release-review inventory reports.
 - `src/verityfoundry/policy_lint.py`: deterministic decision-policy linting.
+- `src/verityfoundry/policy_lint_trend.py`: policy-lint trend reporting.
 - `src/verityfoundry/integration.py`: optional local companion-tool checks.
 - `src/verityfoundry/release_integrity.py`: release/version bookkeeping checks.
 - `src/verityfoundry/thresholds.py`: release quality threshold checks.

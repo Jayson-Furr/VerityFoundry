@@ -2,6 +2,14 @@
 
 ## Unreleased
 
+- Added `verityfoundry report policy-lint-trend` with a checked v0.17.0
+  policy-lint warning baseline snapshot.
+- Added non-blocking policy-lint warning thresholds to
+  `verityfoundry check quality-thresholds`.
+- Added render-to-file CLI smoke coverage for every supported agent profile.
+- Added fixture inventory report schema, example fixture diff snapshot, and
+  policy-lint trend documentation.
+
 ## 0.17.0
 
 - Added `verityfoundry report release-summary` to aggregate deterministic

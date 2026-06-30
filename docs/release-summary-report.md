@@ -24,6 +24,7 @@ The summary includes:
 - decision-policy lint error and warning counts
 - prompt quality
 - prompt quality trend
+- policy-lint trend
 - matrix coverage
 - golden output inventory
 - example inventory

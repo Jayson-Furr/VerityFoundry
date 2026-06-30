@@ -611,6 +611,42 @@ Sprint 40 should release the completed `v0.17.0` scope:
 - Tag and publish the v0.17.0 GitHub release when checks pass.
 - Close the v0.17.0 milestone after release verification.
 
+## v0.18.0
+
+The `v0.18.0` milestone is in progress.
+
+| Sprint | Status | Focus |
+|---:|---|---|
+| 41 | In Progress | Release-review baselines and policy threshold hardening |
+| 42 | Pending | v0.18.0 release preparation |
+
+## Sprint 41 Priorities
+
+Sprint 41 should bundle about a week of release-review baseline hardening work:
+
+- Add policy-lint warning baseline snapshots for release reviewers.
+- Add non-blocking warning thresholds for policy-lint advisory counts.
+- Add CLI smoke tests for rendering prompts with every supported profile to
+  files.
+- Add fixture inventory JSON schema documentation for downstream release
+  tooling.
+- Add example fixture diff snapshot guidance for release reviewers.
+- Update README, changelog, roadmap, tests, CI, release workflow smoke checks,
+  release checklist, and release-review documentation together.
+- Keep the Next 20 roadmap points populated after converting completed items.
+
+## Sprint 42 Priorities
+
+Sprint 42 should release the completed `v0.18.0` scope:
+
+- Add v0.18.0 release notes.
+- Update package metadata, README release badge, latest-release text, install
+  guidance, changelog, roadmap, and release checklist to `v0.18.0`.
+- Run local release verification, package build checks, `twine check`,
+  installed-wheel smoke tests, and GitHub Actions.
+- Tag and publish the v0.18.0 GitHub release when checks pass.
+- Close the v0.18.0 milestone after release verification.
+
 ## Later Candidates
 
 These are intentionally not committed to a release until the initial scaffold
@@ -631,33 +667,31 @@ the active roadmap is caught up. The points should balance fixes,
 improvements, continuation work, and expansion. Convert related points into
 week-sized sprint bundles rather than one release per small point.
 
-1. Add policy-lint warning baseline snapshots for release reviewers.
-2. Add non-blocking warning thresholds for policy-lint advisory counts.
-3. Add CLI smoke tests for rendering prompts with every supported profile to
-    files.
-4. Add fixture inventory JSON schema documentation for downstream release
-    tooling.
-5. Add example fixture diff snapshots for release reviewers.
-6. Add provenance decision-source distribution reporting.
-7. Add generated fixture-to-VeritySpec conversion checklist.
-8. Add image-input manifest examples for product and software-library
+1. Add provenance decision-source distribution reporting.
+2. Add generated fixture-to-VeritySpec conversion checklist.
+3. Add image-input manifest examples for product and software-library
     domains.
-9. Add portfolio fixture coverage reporting grouped by game concept and
+4. Add portfolio fixture coverage reporting grouped by game concept and
     dependency assumption.
-10. Add cross-workspace dependency reference syntax guidance for generated
+5. Add cross-workspace dependency reference syntax guidance for generated
     VeritySpec workspace drafts.
-11. Add lifecycle golden output drift snapshots for release reviewers.
-12. Add lifecycle prompt matrix examples for archival-ready outputs.
-13. Add release-review report examples in JSON form under checked fixtures.
-14. Add local documentation tests for every README documentation link.
-15. Add package-data coverage tests for prompt, matrix, golden, config, and
+6. Add lifecycle golden output drift snapshots for release reviewers.
+7. Add lifecycle prompt matrix examples for archival-ready outputs.
+8. Add release-review report examples in JSON form under checked fixtures.
+9. Add local documentation tests for every README documentation link.
+10. Add package-data coverage tests for prompt, matrix, golden, config, and
     snapshot artifacts.
-16. Add release-summary JSON schema documentation for downstream tooling.
-17. Add release-summary fixture snapshots for release reviewers.
-18. Add release-summary comparison notes for tracking release-to-release
+11. Add release-summary JSON schema documentation for downstream tooling.
+12. Add release-summary fixture snapshots for release reviewers.
+13. Add release-summary comparison notes for tracking release-to-release
     movement.
-19. Add docs for using release-summary output in PR descriptions.
-20. Add optional machine-readable release-review bundle export guidance.
+14. Add docs for using release-summary output in PR descriptions.
+15. Add optional machine-readable release-review bundle export guidance.
+16. Add policy-lint trend JSON schema documentation for downstream tooling.
+17. Add policy-lint advisory remediation planning guidance.
+18. Add render-profile output fixture snapshots for release reviewers.
+19. Add quality-threshold warning trend notes for release reviewers.
+20. Add release-review bundle export CLI design notes.
 
 ## Working Rule
 

@@ -8,6 +8,12 @@ from typing import Any
 
 from .manifests import read_json
 from .matrix_coverage import generate_matrix_coverage_report
+from .policy_lint import (
+    SEVERITY_ERROR,
+    SEVERITY_WARNING,
+    count_policy_lint_severities,
+    lint_decision_policy,
+)
 from .quality import generate_prompt_quality_report
 
 
@@ -33,7 +39,9 @@ def check_quality_thresholds(root: str | Path, config_path: str | Path | None = 
     config = read_json(config_file)
     prompt_report = generate_prompt_quality_report(root_path)
     matrix_report = generate_matrix_coverage_report(root_path)
+    policy_counts = count_policy_lint_severities(lint_decision_policy(root_path))
     issues: list[ThresholdIssue] = []
+    warnings: list[ThresholdIssue] = []
 
     prompt_thresholds = config.get("promptQuality", {})
     _check_min(
@@ -81,11 +89,29 @@ def check_quality_thresholds(root: str | Path, config_path: str | Path | None = 
         int(matrix_thresholds.get("maxUnknownPromptRefs", 999999)),
     )
 
+    policy_thresholds = config.get("policyLint", {})
+    _check_max(
+        issues,
+        "threshold.policy-lint-errors",
+        "policy-lint errors",
+        int(policy_counts[SEVERITY_ERROR]),
+        int(policy_thresholds.get("maxErrors", 0)),
+    )
+    _check_max(
+        warnings,
+        "threshold.policy-lint-warnings",
+        "policy-lint warnings",
+        int(policy_counts[SEVERITY_WARNING]),
+        int(policy_thresholds.get("maxWarnings", 999999)),
+    )
+
     return {
         "status": "failed" if issues else "passed",
         "configPath": str(config_file),
         "issueCount": len(issues),
         "issues": [issue.to_dict() for issue in issues],
+        "warningCount": len(warnings),
+        "warnings": [warning.to_dict() for warning in warnings],
         "promptQuality": {
             "percent": prompt_report["percent"],
             "uncertaintyPercent": prompt_report["uncertaintyPreservation"]["percent"],
@@ -95,6 +121,10 @@ def check_quality_thresholds(root: str | Path, config_path: str | Path | None = 
             "coveragePercent": matrix_report["coveragePercent"],
             "missingDomainPromptCount": matrix_report["missingDomainPromptCount"],
             "unknownPromptRefCount": len(matrix_report["unknownPromptRefs"]),
+        },
+        "policyLint": {
+            "errorCount": policy_counts[SEVERITY_ERROR],
+            "warningCount": policy_counts[SEVERITY_WARNING],
         },
         "thresholds": config,
     }
@@ -119,12 +149,24 @@ def format_quality_threshold_report(report: dict[str, Any]) -> str:
             f"{report['matrixCoverage']['missingDomainPromptCount']} missing, "
             f"{report['matrixCoverage']['unknownPromptRefCount']} unknown refs"
         ),
+        (
+            "Policy lint: "
+            f"{report['policyLint']['errorCount']} errors, "
+            f"{report['policyLint']['warningCount']} warnings"
+        ),
     ]
+
+    if report["warningCount"]:
+        lines.extend(["", "Warnings:"])
+        for warning in report["warnings"]:
+            lines.append(f"- {warning['code']}: {warning['message']}")
 
     if report["issueCount"]:
         lines.extend(["", "Issues:"])
         for issue in report["issues"]:
             lines.append(f"- {issue['code']}: {issue['message']}")
+    elif report["warningCount"]:
+        lines.extend(["", "Quality threshold check passed with warnings."])
     else:
         lines.extend(["", "Quality threshold check passed."])
 

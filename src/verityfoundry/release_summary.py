@@ -19,6 +19,7 @@ from .policy_lint import (
     count_policy_lint_severities,
     lint_decision_policy,
 )
+from .policy_lint_trend import generate_policy_lint_trend_report
 from .quality import generate_prompt_quality_report
 from .quality_trend import generate_prompt_quality_trend_report
 from .release_integrity import check_release_integrity
@@ -32,6 +33,7 @@ def generate_release_summary_report(root: str | Path) -> dict[str, Any]:
     root_path = Path(root)
     prompt_quality = generate_prompt_quality_report(root_path)
     prompt_quality_trend = generate_prompt_quality_trend_report(root_path)
+    policy_lint_trend = generate_policy_lint_trend_report(root_path)
     matrix_coverage = generate_matrix_coverage_report(root_path)
     golden_inventory = generate_golden_inventory_report(root_path)
     example_inventory = generate_example_inventory_report(root_path)
@@ -49,7 +51,9 @@ def generate_release_summary_report(root: str | Path) -> dict[str, Any]:
         + int(workflow_hygiene["issueCount"])
         + int(policy_counts[SEVERITY_ERROR])
     )
-    warning_count = int(policy_counts[SEVERITY_WARNING])
+    warning_count = int(policy_counts[SEVERITY_WARNING]) + int(
+        quality_thresholds.get("warningCount", 0)
+    )
 
     return {
         "status": "failed" if blocking_issue_count else "passed",
@@ -65,6 +69,7 @@ def generate_release_summary_report(root: str | Path) -> dict[str, Any]:
             "qualityThresholds": {
                 "status": quality_thresholds["status"],
                 "issueCount": quality_thresholds["issueCount"],
+                "warningCount": quality_thresholds.get("warningCount", 0),
             },
             "workflowHygiene": {
                 "status": workflow_hygiene["status"],
@@ -90,6 +95,12 @@ def generate_release_summary_report(root: str | Path) -> dict[str, Any]:
                 "currentPercent": prompt_quality_trend["current"]["percent"],
                 "latestSnapshotLabel": prompt_quality_trend["latestSnapshot"]["label"],
                 "deltaPercent": prompt_quality_trend["deltaFromLatest"]["percent"],
+            },
+            "policyLintTrend": {
+                "snapshotCount": policy_lint_trend["snapshotCount"],
+                "currentWarningCount": policy_lint_trend["current"]["warningCount"],
+                "latestSnapshotLabel": policy_lint_trend["latestSnapshot"]["label"],
+                "deltaWarningCount": policy_lint_trend["deltaFromLatest"]["warningCount"],
             },
             "matrixCoverage": {
                 "matrixCount": matrix_coverage["matrixCount"],
@@ -147,7 +158,8 @@ def format_release_summary_report(report: dict[str, Any]) -> str:
     lines.append(
         "- Quality thresholds: "
         f"{checks['qualityThresholds']['status']} "
-        f"({checks['qualityThresholds']['issueCount']} issues)"
+        f"({checks['qualityThresholds']['issueCount']} issues, "
+        f"{checks['qualityThresholds']['warningCount']} warnings)"
     )
     lines.append(
         "- Workflow hygiene: "
@@ -177,6 +189,11 @@ def format_release_summary_report(report: dict[str, Any]) -> str:
                 "- Prompt quality trend: "
                 f"{reports['promptQualityTrend']['deltaPercent']:+.1f} points from "
                 f"{reports['promptQualityTrend']['latestSnapshotLabel']}"
+            ),
+            (
+                "- Policy lint trend: "
+                f"{reports['policyLintTrend']['deltaWarningCount']:+d} warnings from "
+                f"{reports['policyLintTrend']['latestSnapshotLabel']}"
             ),
             (
                 "- Matrix coverage: "

@@ -59,9 +59,11 @@ The repository currently provides:
 - A deterministic prompt quality report for uncertainty preservation and
   provenance completeness.
 - A deterministic prompt quality trend report backed by checked-in snapshots.
+- A deterministic policy-lint trend report backed by checked-in snapshots.
 - A deterministic matrix coverage report for prompt matrix coverage across
   domain prompt workflows.
-- Deterministic quality threshold checks for release-review baselines.
+- Deterministic quality threshold checks for release-review baselines,
+  including non-blocking policy-lint advisory thresholds.
 - Deterministic release-review inventory reports for golden outputs and
   examples, candidate workspace fixtures, and provenance coverage.
 - A deterministic aggregate release-summary report for release reviewers.
@@ -133,6 +135,7 @@ verityfoundry validate goldens
 verityfoundry lint decision-policy
 verityfoundry report prompt-quality
 verityfoundry report prompt-quality-trend
+verityfoundry report policy-lint-trend
 verityfoundry report matrix-coverage
 verityfoundry report release-summary
 verityfoundry report golden-inventory
@@ -271,12 +274,17 @@ does not call external AI APIs.
 verityfoundry report prompt-quality
 verityfoundry report prompt-quality --format json
 verityfoundry report prompt-quality-trend
+verityfoundry report policy-lint-trend
 ```
 
 The report is an inspection aid, not a readiness certification.
 
 Trend snapshots live under `snapshots/prompt-quality/` so release reviewers can
 see whether prompt quality moved relative to a checked-in baseline.
+
+Policy-lint snapshots live under `snapshots/policy-lint/` so release reviewers
+can see whether decision-policy advisory counts changed relative to a checked
+baseline.
 
 ## Matrix Coverage Report
 
@@ -293,7 +301,8 @@ The report is deterministic and does not call external AI APIs.
 
 ## Quality Thresholds
 
-Quality threshold checks compare prompt quality and matrix coverage against
+Quality threshold checks compare prompt quality, matrix coverage, and
+policy-lint counts against
 `config/release-quality-thresholds.json`.
 
 ```bash
@@ -303,6 +312,8 @@ verityfoundry check quality-thresholds --format json
 
 Thresholds are intentionally conservative baselines. Raising them should be an
 explicit sprint decision backed by the current reports.
+Policy-lint warning thresholds are non-blocking advisories; policy-lint error
+thresholds remain blocking.
 
 ## Release Reviewer Reports
 
@@ -311,6 +322,7 @@ workspace fixtures, and provenance coverage without calling external AI APIs.
 
 ```bash
 verityfoundry report release-summary
+verityfoundry report policy-lint-trend
 verityfoundry report golden-inventory
 verityfoundry report example-inventory
 verityfoundry report fixture-inventory
@@ -474,6 +486,7 @@ require human approval.
 - [v0.x stabilization checklist](docs/v0x-stabilization-checklist.md)
 - [Matrix coverage](docs/matrix-coverage.md)
 - [Prompt quality trends](docs/prompt-quality-trends.md)
+- [Policy lint trends](docs/policy-lint-trends.md)
 - [Quality thresholds](docs/quality-thresholds.md)
 - [Workflow hygiene](docs/workflow-hygiene.md)
 - [Workflow hygiene history](docs/workflow-hygiene-history.md)
@@ -485,6 +498,8 @@ require human approval.
 - [Release reviewer checklist](docs/release-reviewer-checklist.md)
 - [Quality threshold ratcheting](docs/quality-threshold-ratcheting.md)
 - [Release reviewer inventory reports](docs/reviewer-inventory-reports.md)
+- [Fixture inventory report schema](docs/fixture-inventory-report-schema.md)
+- [Example fixture diff snapshots](docs/example-fixture-diff-snapshots.md)
 - [Fixture kind pack mapping](docs/fixture-kind-pack-mapping.md)
 - [Provenance coverage](docs/provenance-coverage.md)
 - [Golden output drift review](docs/golden-output-drift-review.md)
