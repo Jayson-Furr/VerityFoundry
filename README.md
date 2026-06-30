@@ -59,6 +59,10 @@ The repository currently provides:
   provenance completeness.
 - A deterministic matrix coverage report for prompt matrix coverage across
   domain prompt workflows.
+- Deterministic release-review inventory reports for golden outputs and
+  examples.
+- A deterministic release-integrity check for package and documentation
+  version bookkeeping.
 - A deterministic decision-policy linter for high-stakes invention risks.
 - An optional local VeritySpec smoke check that runs when `verity` is
   available and skips cleanly when it is not installed.
@@ -122,7 +126,10 @@ verityfoundry validate goldens
 verityfoundry lint decision-policy
 verityfoundry report prompt-quality
 verityfoundry report matrix-coverage
+verityfoundry report golden-inventory
+verityfoundry report example-inventory
 verityfoundry check verityspec
+verityfoundry check release-integrity
 verityfoundry render --prompt unity-game.gdd-art.interview-medium.implementation-ready.v1 --profile codex
 verityfoundry matrix unity-game
 ```
@@ -262,6 +269,34 @@ verityfoundry report matrix-coverage --format json
 
 The report is deterministic and does not call external AI APIs.
 
+## Release Reviewer Reports
+
+Release reviewer reports summarize examples and golden outputs without calling
+external AI APIs.
+
+```bash
+verityfoundry report golden-inventory
+verityfoundry report example-inventory
+```
+
+Use these reports to confirm which examples and golden outputs are in scope for
+a release review. They do not replace manifest validation or human review.
+
+## Release Integrity Check
+
+Release integrity checks compare release-facing version references across
+package metadata and public docs.
+
+```bash
+verityfoundry check release-integrity
+verityfoundry check release-integrity --expected-version 0.10.0
+verityfoundry check release-integrity --format json
+```
+
+The check is intended to run from a source checkout because it inspects
+`README.md`, `CHANGELOG.md`, `ROADMAP.md`, `pyproject.toml`, release notes, and
+the release checklist.
+
 ## Decision Policy Lint
 
 Decision-policy linting checks domain prompts for controls that reduce
@@ -378,6 +413,9 @@ require human approval.
 - [Render profiles](docs/render-profiles.md)
 - [Decision policy lint](docs/decision-policy-lint.md)
 - [Matrix coverage](docs/matrix-coverage.md)
+- [Release integrity](docs/release-integrity.md)
+- [Release reviewer inventory reports](docs/reviewer-inventory-reports.md)
+- [Golden output drift review](docs/golden-output-drift-review.md)
 - [Workspace fixtures](docs/workspace-fixtures.md)
 - [Portfolio workflows](docs/portfolio-workflows.md)
 - [Lifecycle readiness workflows](docs/lifecycle-readiness-workflows.md)

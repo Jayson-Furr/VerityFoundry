@@ -51,6 +51,8 @@ jobs:
           /tmp/verityfoundry-wheel/bin/verityfoundry lint decision-policy
           /tmp/verityfoundry-wheel/bin/verityfoundry report prompt-quality
           /tmp/verityfoundry-wheel/bin/verityfoundry report matrix-coverage
+          /tmp/verityfoundry-wheel/bin/verityfoundry report golden-inventory
+          /tmp/verityfoundry-wheel/bin/verityfoundry report example-inventory
           /tmp/verityfoundry-wheel/bin/verityfoundry check verityspec
 
       - name: Upload distribution artifact

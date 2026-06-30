@@ -38,6 +38,9 @@ Core concepts:
 - Linter: deterministic decision-policy checks for high-stakes invention
   risks.
 - Reports: deterministic prompt quality and matrix coverage inspection.
+- Release checks: deterministic release/version bookkeeping checks.
+- Release-review reports: deterministic golden output and example inventory
+  reports.
 
 Keep the utility package small. The repository is primarily a prompt workflow
 library, not an AI application and not a VeritySpec replacement.
@@ -150,7 +153,10 @@ verityfoundry validate goldens
 verityfoundry lint decision-policy
 verityfoundry report prompt-quality
 verityfoundry report matrix-coverage
+verityfoundry report golden-inventory
+verityfoundry report example-inventory
 verityfoundry check verityspec
+verityfoundry check release-integrity
 git diff --check
 ```
 
@@ -169,7 +175,10 @@ verityfoundry validate goldens
 verityfoundry lint decision-policy
 verityfoundry report prompt-quality
 verityfoundry report matrix-coverage
+verityfoundry report golden-inventory
+verityfoundry report example-inventory
 verityfoundry check verityspec
+verityfoundry check release-integrity
 verityfoundry render --prompt unity-game.gdd-art.interview-medium.implementation-ready.v1 --profile codex
 verityfoundry matrix unity-game
 ```
@@ -185,8 +194,10 @@ verityfoundry matrix unity-game
 - `src/verityfoundry/rendering.py`: deterministic prompt rendering.
 - `src/verityfoundry/quality.py`: deterministic prompt quality reporting.
 - `src/verityfoundry/matrix_coverage.py`: deterministic matrix coverage reporting.
+- `src/verityfoundry/inventory.py`: deterministic release-review inventory reports.
 - `src/verityfoundry/policy_lint.py`: deterministic decision-policy linting.
 - `src/verityfoundry/integration.py`: optional local companion-tool checks.
+- `src/verityfoundry/release_integrity.py`: release/version bookkeeping checks.
 - `schemas/`: JSON schemas for manifests.
 - `prompts/`: prompt workflow library.
 - `matrices/`: prompt matrices.
