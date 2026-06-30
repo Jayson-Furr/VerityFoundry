@@ -145,11 +145,12 @@ Sprint 14 should release the completed `v0.4.0` scope:
 
 ## v0.5.0
 
-The `v0.5.0` milestone is in progress.
+The `v0.5.0` milestone is released.
 
 | Sprint | Status | Focus |
 |---:|---|---|
-| 15 | In progress | Optional VeritySpec integration smoke check |
+| 15 | Complete | Optional VeritySpec integration smoke check |
+| 16 | Complete | v0.5.0 release preparation |
 
 ## Sprint 15 Priorities
 
@@ -164,6 +165,18 @@ Sprint 15 should add an optional local VeritySpec integration smoke check:
 - Update README, docs, CI, release workflow smoke checks, agent guidance,
   changelog, and roadmap.
 - Keep the Next 20 roadmap points populated after converting this item.
+
+## Sprint 16 Priorities
+
+Sprint 16 should release the completed `v0.5.0` scope:
+
+- Add v0.5.0 release notes.
+- Update package metadata, README release badge, latest-release text, install
+  guidance, changelog, roadmap, and release checklist to `v0.5.0`.
+- Run local release verification, package build checks, `twine check`, wheel
+  smoke tests, and GitHub Actions.
+- Tag and publish the v0.5.0 GitHub release when checks pass.
+- Close the v0.5.0 milestone after release verification.
 
 ## Later Candidates
 
