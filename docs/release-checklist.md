@@ -58,6 +58,7 @@ python3 -m venv /tmp/verityfoundry-wheel
   /tmp/verityfoundry-wheel/bin/verityfoundry report prompt-quality
   /tmp/verityfoundry-wheel/bin/verityfoundry report prompt-quality-trend
   /tmp/verityfoundry-wheel/bin/verityfoundry report matrix-coverage
+  /tmp/verityfoundry-wheel/bin/verityfoundry report release-summary
   /tmp/verityfoundry-wheel/bin/verityfoundry report golden-inventory
   /tmp/verityfoundry-wheel/bin/verityfoundry report example-inventory
   /tmp/verityfoundry-wheel/bin/verityfoundry report fixture-inventory
@@ -70,7 +71,7 @@ python3 -m venv /tmp/verityfoundry-wheel
 ## Tag
 
 ```bash
-VERSION=v0.16.0
+VERSION=v0.17.0
 git tag -a "$VERSION" -m "VerityFoundry $VERSION"
 git push origin "$VERSION"
 ```
