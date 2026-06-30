@@ -32,12 +32,30 @@ git diff --check
 rm -rf dist build
 python -m build
 python -m twine check dist/*
+
+rm -rf /tmp/verityfoundry-wheel
+python3 -m venv /tmp/verityfoundry-wheel
+/tmp/verityfoundry-wheel/bin/python -m pip install --upgrade pip
+/tmp/verityfoundry-wheel/bin/pip install dist/*.whl
+(
+  cd /tmp
+  /tmp/verityfoundry-wheel/bin/verityfoundry --version
+  /tmp/verityfoundry-wheel/bin/verityfoundry list prompts
+  /tmp/verityfoundry-wheel/bin/verityfoundry list matrices
+  /tmp/verityfoundry-wheel/bin/verityfoundry list profiles
+  /tmp/verityfoundry-wheel/bin/verityfoundry validate
+  /tmp/verityfoundry-wheel/bin/verityfoundry validate goldens
+  /tmp/verityfoundry-wheel/bin/verityfoundry lint decision-policy
+  /tmp/verityfoundry-wheel/bin/verityfoundry report prompt-quality
+  /tmp/verityfoundry-wheel/bin/verityfoundry report matrix-coverage
+  /tmp/verityfoundry-wheel/bin/verityfoundry check verityspec
+)
 ```
 
 ## Tag
 
 ```bash
-VERSION=v0.6.0
+VERSION=v0.7.0
 git tag -a "$VERSION" -m "VerityFoundry $VERSION"
 git push origin "$VERSION"
 ```

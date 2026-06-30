@@ -30,3 +30,8 @@ the command runs `verity validate`.
 If GitHub Actions is unavailable because of billing, credits, quota, runner
 availability, or another platform issue, run equivalent local checks and record
 that fallback evidence in the PR.
+
+Release workflow wheel smoke tests install the built wheel into a clean virtual
+environment and run CLI inspection from `/tmp`, outside the source checkout.
+That check verifies the packaged prompt-library artifacts are available to an
+installed CLI.
