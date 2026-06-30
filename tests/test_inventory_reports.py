@@ -20,13 +20,14 @@ class InventoryReportTests(unittest.TestCase):
     def test_golden_inventory_counts_and_formats(self) -> None:
         report = generate_golden_inventory_report(ROOT)
 
-        self.assertEqual(report["goldenCount"], 2)
-        self.assertGreaterEqual(report["domainCount"], 1)
+        self.assertEqual(report["goldenCount"], 5)
+        self.assertGreaterEqual(report["domainCount"], 2)
         self.assertTrue(all(item["outputExists"] for item in report["goldens"]))
 
         text = format_golden_inventory_report(report)
         self.assertIn("Golden Output Inventory Report", text)
         self.assertIn("golden.unity-game.dream-extraction.implementation-ready", text)
+        self.assertIn("golden.lifecycle.customer-portal.release-readiness-gap-review", text)
 
     def test_example_inventory_counts_and_formats(self) -> None:
         report = generate_example_inventory_report(ROOT)

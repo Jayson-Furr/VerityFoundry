@@ -54,8 +54,8 @@ The repository currently provides:
   mapping workflows.
 - Candidate workspace fixtures, expected record-category checks, provenance
   examples, and image-input metadata for example workflows.
-- Golden output fixtures for Unity game and Unity shared-library
-  implementation-ready workflows.
+- Golden output fixtures for Unity game, Unity shared-library, and lifecycle
+  release/maintenance/decommissioning review workflows.
 - A deterministic prompt quality report for uncertainty preservation and
   provenance completeness.
 - A deterministic prompt quality trend report backed by checked-in snapshots.
@@ -242,12 +242,15 @@ verityfoundry matrix lifecycle
 Golden outputs are deterministic examples of expected prompt behavior. They
 are not truth claims and do not replace VeritySpec validation or human review.
 
-The current golden fixtures cover Unity game and Unity shared-library
-implementation-ready workflows:
+The current golden fixtures cover Unity game, Unity shared-library, and
+lifecycle review workflows:
 
 ```text
 goldens/unity-game/dream-extraction-implementation-ready/
 goldens/unity-shared-library/shared-unity-runtime-implementation-ready/
+goldens/lifecycle/customer-portal-release-readiness/
+goldens/lifecycle/shared-auth-maintenance-readiness/
+goldens/lifecycle/shared-unity-runtime-decommission-readiness/
 ```
 
 Validate golden output manifests and required sections with:
@@ -470,6 +473,9 @@ require human approval.
 - [Quality thresholds](docs/quality-thresholds.md)
 - [Workflow hygiene](docs/workflow-hygiene.md)
 - [Release integrity](docs/release-integrity.md)
+- [Release integrity report schema](docs/release-integrity-report-schema.md)
+- [Report schema stability](docs/report-schema-stability.md)
+- [Release reviewer checklist](docs/release-reviewer-checklist.md)
 - [Release reviewer inventory reports](docs/reviewer-inventory-reports.md)
 - [Fixture kind pack mapping](docs/fixture-kind-pack-mapping.md)
 - [Provenance coverage](docs/provenance-coverage.md)
@@ -477,6 +483,7 @@ require human approval.
 - [Workspace fixtures](docs/workspace-fixtures.md)
 - [Portfolio workflows](docs/portfolio-workflows.md)
 - [Lifecycle readiness workflows](docs/lifecycle-readiness-workflows.md)
+- [Lifecycle gap reports to VeritySpec records](docs/lifecycle-gap-to-verityspec.md)
 - [Prompt workflow contributions](docs/prompt-workflow-contributions.md)
 - [Interview modes](docs/interview-modes.md)
 - [Readiness targets](docs/readiness-targets.md)

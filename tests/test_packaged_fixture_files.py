@@ -3,7 +3,7 @@ from fnmatch import fnmatch
 from pathlib import Path
 import unittest
 
-from verityfoundry.manifests import load_example_manifests
+from verityfoundry.manifests import load_example_manifests, load_golden_manifests
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -66,6 +66,20 @@ class PackagedFixtureFileTests(unittest.TestCase):
             if not is_packaged(path.relative_to(ROOT), patterns)
         ]
 
+        self.assertEqual(unpackaged, [])
+
+    def test_golden_output_files_are_included_in_data_files(self) -> None:
+        patterns = data_file_patterns()
+        referenced: list[Path] = []
+        for manifest_path, manifest in load_golden_manifests(ROOT):
+            referenced.append(manifest_path.relative_to(ROOT))
+            referenced.append((manifest_path.parent / manifest["outputPath"]).relative_to(ROOT))
+
+        unpackaged = [
+            path.as_posix()
+            for path in sorted(set(referenced))
+            if not is_packaged(path, patterns)
+        ]
         self.assertEqual(unpackaged, [])
 
 

@@ -43,6 +43,37 @@ class GoldenOutputTests(unittest.TestCase):
         self.assertIn("Public/exported records versus internal/private records", output)
         self.assertIn("not implementation-ready", output)
 
+    def test_lifecycle_golden_outputs_exist(self) -> None:
+        manifests = {manifest["id"]: (path, manifest) for path, manifest in load_golden_manifests(ROOT)}
+        expected = {
+            "golden.lifecycle.customer-portal.release-readiness-gap-review": (
+                "lifecycle.workspace.interview-medium.production-ready.release-gap-review.v1",
+                "not release-ready",
+                "## Blocking Gaps",
+            ),
+            "golden.lifecycle.shared-auth-library.maintenance-readiness": (
+                "lifecycle.shipped-product.interview-high.maintenance-ready.v1",
+                "not maintenance-ready",
+                "## Support Handoff Gaps",
+            ),
+            "golden.lifecycle.shared-unity-runtime.decommission-readiness": (
+                "lifecycle.retiring-product.interview-all.decommission-ready.v1",
+                "not decommission-ready",
+                "## Archive Follow-Up Items",
+            ),
+        }
+
+        for golden_id, (prompt_ref, readiness_phrase, required_heading) in expected.items():
+            with self.subTest(golden_id=golden_id):
+                path, manifest = manifests[golden_id]
+                self.assertEqual(manifest["domain"], "lifecycle")
+                self.assertEqual(manifest["promptRef"], prompt_ref)
+                output = (path.parent / manifest["outputPath"]).read_text(encoding="utf-8")
+                self.assertIn(readiness_phrase, output)
+                self.assertIn(required_heading, output)
+                self.assertIn("## Human Approval Requirements", output)
+                self.assertIn("## Suggested VeritySpec Validation Loop", output)
+
 
 if __name__ == "__main__":
     unittest.main()
