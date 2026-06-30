@@ -2,6 +2,10 @@
 
 ## Unreleased
 
+No unreleased changes.
+
+## 0.14.0
+
 - Added `verityfoundry report fixture-inventory` and
   `verityfoundry report provenance-coverage` for release reviewers.
 - Added image input manifest schema validation for example workflows.
