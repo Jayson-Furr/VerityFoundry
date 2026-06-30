@@ -45,8 +45,10 @@ The repository currently provides:
 - Agent-specific render profiles for Codex, Claude Code, ChatGPT, Gemini, and
   Unity AI handoff.
 - Prompt library folders for common rules, interview modes, readiness targets,
-  Unity games, Unity shared libraries, software libraries, and products.
-- Unity game and Unity shared-library prompt matrices.
+  Unity games, Unity shared libraries, software libraries, products, and
+  portfolios.
+- Unity game, Unity shared-library, product, software-library, and portfolio
+  prompt matrices.
 - Example inputs and expected outputs for a Unity game and a shared Unity
   runtime library, plus software-library and product examples.
 - Candidate workspace fixtures, expected record-category checks, provenance
@@ -363,6 +365,7 @@ require human approval.
 - [Decision policy lint](docs/decision-policy-lint.md)
 - [Matrix coverage](docs/matrix-coverage.md)
 - [Workspace fixtures](docs/workspace-fixtures.md)
+- [Portfolio workflows](docs/portfolio-workflows.md)
 - [Prompt workflow contributions](docs/prompt-workflow-contributions.md)
 - [Interview modes](docs/interview-modes.md)
 - [Readiness targets](docs/readiness-targets.md)

@@ -2,7 +2,11 @@
 
 ## Unreleased
 
-No unreleased changes.
+- Added portfolio prompt workflows for game portfolio triage and
+  cross-workspace dependency mapping.
+- Added a portfolio prompt matrix and matrix coverage for the new domain.
+- Added portfolio workflow documentation covering authority boundaries,
+  dependency assumptions, lockfile questions, and triage outputs.
 
 ## 0.8.0
 

@@ -289,6 +289,27 @@ Sprint 22 should release the completed `v0.8.0` scope:
 - Tag and publish the v0.8.0 GitHub release when checks pass.
 - Close the v0.8.0 milestone after release verification.
 
+## v0.9.0
+
+The `v0.9.0` milestone is in progress.
+
+| Sprint | Status | Focus |
+|---:|---|---|
+| 23 | In progress | Cross-workspace and portfolio workflows |
+
+## Sprint 23 Priorities
+
+Sprint 23 should bundle related multi-workspace and portfolio work:
+
+- Add cross-workspace dependency prompt guidance for shared Unity libraries
+  and game portfolios.
+- Add portfolio triage prompts for batches of many game concepts.
+- Add matrix coverage for the new portfolio workflow domain.
+- Document dependency assumptions, lockfile questions, exported-record
+  assumptions, triage outputs, and VeritySpec authority boundaries.
+- Update tests, README, changelog, roadmap, and packaged artifact coverage.
+- Keep the Next 20 roadmap points populated after converting completed items.
+
 ## Later Candidates
 
 These are intentionally not committed to a release until the initial scaffold
@@ -308,34 +329,35 @@ AI agents must keep this section populated with up to 20 concrete points when
 the active roadmap is caught up. The points should balance fixes,
 improvements, continuation work, and expansion.
 
-1. Add cross-workspace dependency prompt guidance for shared Unity libraries
-   and game portfolios.
-2. Add portfolio triage prompts for batches of many game concepts.
-3. Add release-readiness gap review prompts for generated VeritySpec
+1. Add release-readiness gap review prompts for generated VeritySpec
    workspaces.
-4. Add maintenance and decommissioning interview flows for shipped products.
-5. Add release-integrity checks for README, changelog, roadmap, package
+2. Add maintenance and decommissioning interview flows for shipped products.
+3. Add release-integrity checks for README, changelog, roadmap, package
     metadata, and release notes.
-6. Add golden output drift review documentation for maintainers.
-7. Add a golden output inventory report for maintainers and release reviewers.
-8. Add prompt quality trend snapshots for release reviewers.
-9. Add generated example inventory reports for release reviewers.
-10. Add matrix coverage thresholds once baseline coverage is intentionally
+4. Add golden output drift review documentation for maintainers.
+5. Add a golden output inventory report for maintainers and release reviewers.
+6. Add prompt quality trend snapshots for release reviewers.
+7. Add generated example inventory reports for release reviewers.
+8. Add matrix coverage thresholds once baseline coverage is intentionally
     improved.
-11. Add release workflow checks for stale action versions and non-blocking
+9. Add release workflow checks for stale action versions and non-blocking
     workflow annotations.
-12. Add a v0.x stabilization checklist for CLI output compatibility,
+10. Add a v0.x stabilization checklist for CLI output compatibility,
     manifest compatibility, and report schema compatibility.
-13. Add a dedicated GitHub Copilot render profile.
-14. Add policy lint severity levels and warning-only advisory checks.
-15. Add tests that verify high-risk prompts render safety and provenance
+11. Add a dedicated GitHub Copilot render profile.
+12. Add policy lint severity levels and warning-only advisory checks.
+13. Add tests that verify high-risk prompts render safety and provenance
     sections under every non-default agent profile.
-16. Add candidate workspace fixture inventory reports for release reviewers.
-17. Add fixture provenance coverage reporting across examples.
-18. Add docs for mapping candidate fixture `kind` values to VeritySpec packs.
-19. Add schema support for image-input manifests once the fixture shape
+14. Add candidate workspace fixture inventory reports for release reviewers.
+15. Add fixture provenance coverage reporting across examples.
+16. Add docs for mapping candidate fixture `kind` values to VeritySpec packs.
+17. Add schema support for image-input manifests once the fixture shape
     stabilizes.
-20. Add tests that packaged wheels include all declared example fixture files.
+18. Add tests that packaged wheels include all declared example fixture files.
+19. Add portfolio example manifests for multi-game triage inputs and expected
+    outputs.
+20. Add cross-workspace dependency fixture examples for shared Unity runtime
+    consumers.
 
 ## Working Rule
 
