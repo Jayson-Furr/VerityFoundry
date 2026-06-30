@@ -180,11 +180,12 @@ Sprint 16 should release the completed `v0.5.0` scope:
 
 ## v0.6.0
 
-The `v0.6.0` milestone is in progress.
+The `v0.6.0` milestone is released.
 
 | Sprint | Status | Focus |
 |---:|---|---|
-| 17 | In progress | Example expansion and matrix coverage reporting bundle |
+| 17 | Complete | Example expansion and matrix coverage reporting bundle |
+| 18 | Complete | v0.6.0 release preparation |
 
 ## Sprint 17 Priorities
 
@@ -201,6 +202,18 @@ release increment:
 - Update changelog and roadmap.
 - Keep the Next 20 roadmap points populated after converting completed or
   stale items.
+
+## Sprint 18 Priorities
+
+Sprint 18 should release the completed `v0.6.0` scope:
+
+- Add v0.6.0 release notes.
+- Update package metadata, README release badge, latest-release text, install
+  guidance, changelog, roadmap, and release checklist to `v0.6.0`.
+- Run local release verification, package build checks, `twine check`, wheel
+  smoke tests, and GitHub Actions.
+- Tag and publish the v0.6.0 GitHub release when checks pass.
+- Close the v0.6.0 milestone after release verification.
 
 ## Later Candidates
 
