@@ -80,6 +80,20 @@ class CliTests(unittest.TestCase):
         self.assertEqual(result.returncode, 0, result.stderr)
         self.assertIn("Unity Game Prompt Matrix", result.stdout)
 
+    def test_prompt_quality_report_text(self) -> None:
+        result = run_cli("report", "prompt-quality")
+        self.assertEqual(result.returncode, 0, result.stderr)
+        self.assertIn("Prompt Quality Report", result.stdout)
+        self.assertIn("Uncertainty preservation:", result.stdout)
+        self.assertIn("Provenance completeness:", result.stdout)
+
+    def test_prompt_quality_report_json(self) -> None:
+        result = run_cli("report", "prompt-quality", "--format", "json")
+        self.assertEqual(result.returncode, 0, result.stderr)
+        self.assertIn('"promptCount"', result.stdout)
+        self.assertIn('"uncertaintyPreservation"', result.stdout)
+        self.assertIn('"provenanceCompleteness"', result.stdout)
+
     def test_unknown_prompt_fails_usage(self) -> None:
         result = run_cli("render", "--prompt", "missing.prompt.v1")
         self.assertEqual(result.returncode, 2)

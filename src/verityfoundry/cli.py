@@ -10,6 +10,7 @@ import sys
 from . import __version__
 from .manifests import find_project_root, load_matrix_manifests, load_prompt_manifests
 from .matrix import render_matrix
+from .quality import format_prompt_quality_report, generate_prompt_quality_report
 from .rendering import render_prompt
 from .validation import (
     validate_all,
@@ -52,6 +53,10 @@ def build_parser() -> argparse.ArgumentParser:
     matrix_parser = subparsers.add_parser("matrix", help="Render a prompt matrix by ID.")
     matrix_parser.add_argument("name", help="Matrix ID or filename stem.")
     matrix_parser.add_argument("--out", help="Optional output path.")
+
+    report_parser = subparsers.add_parser("report", help="Generate deterministic local reports.")
+    report_parser.add_argument("target", choices=["prompt-quality"])
+    report_parser.add_argument("--format", choices=["text", "json"], default="text")
 
     return parser
 
@@ -146,6 +151,16 @@ def _cmd_matrix(args: argparse.Namespace) -> int:
     return EXIT_OK
 
 
+def _cmd_report(args: argparse.Namespace) -> int:
+    root = _root(args.root)
+    report = generate_prompt_quality_report(root)
+    if args.format == "json":
+        print(json.dumps(report, indent=2, sort_keys=True))
+    else:
+        print(format_prompt_quality_report(report), end="")
+    return EXIT_OK
+
+
 def run(argv: list[str] | None = None) -> int:
     parser = build_parser()
     args = parser.parse_args(argv)
@@ -163,6 +178,8 @@ def run(argv: list[str] | None = None) -> int:
             return _cmd_render(args)
         if args.command == "matrix":
             return _cmd_matrix(args)
+        if args.command == "report":
+            return _cmd_report(args)
     except KeyError as exc:
         print(f"ERROR: {exc}", file=sys.stderr)
         return EXIT_USAGE_ERROR

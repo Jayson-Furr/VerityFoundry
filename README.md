@@ -47,6 +47,8 @@ The repository currently provides:
   runtime library.
 - Golden output fixtures for Unity game and Unity shared-library
   implementation-ready workflows.
+- A deterministic prompt quality report for uncertainty preservation and
+  provenance completeness.
 - Prompt quality and uncertainty-preservation evaluation guidance.
 - Canonical AI-agent operating instructions in `AGENTS.md`.
 - GitHub Actions CI that validates the library without calling external AI
@@ -102,6 +104,7 @@ verityfoundry validate
 verityfoundry validate prompts
 verityfoundry validate examples
 verityfoundry validate goldens
+verityfoundry report prompt-quality
 verityfoundry render --prompt unity-game.gdd-art.interview-medium.implementation-ready.v1
 verityfoundry matrix unity-game
 ```
@@ -199,6 +202,19 @@ Validate golden output manifests and required sections with:
 ```bash
 verityfoundry validate goldens
 ```
+
+## Prompt Quality Report
+
+The prompt quality report scores visible evidence in rendered prompt text for
+uncertainty preservation and provenance completeness. It is deterministic and
+does not call external AI APIs.
+
+```bash
+verityfoundry report prompt-quality
+verityfoundry report prompt-quality --format json
+```
+
+The report is an inspection aid, not a readiness certification.
 
 ## Unity Game Workflow
 
