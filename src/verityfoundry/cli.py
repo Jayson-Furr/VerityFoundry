@@ -18,7 +18,13 @@ from .inventory import (
 from .manifests import find_project_root, load_matrix_manifests, load_prompt_manifests
 from .matrix import render_matrix
 from .matrix_coverage import format_matrix_coverage_report, generate_matrix_coverage_report
-from .policy_lint import format_policy_lint_issues, lint_decision_policy
+from .policy_lint import (
+    SEVERITY_ERROR,
+    SEVERITY_WARNING,
+    count_policy_lint_severities,
+    format_policy_lint_issues,
+    lint_decision_policy,
+)
 from .quality import format_prompt_quality_report, generate_prompt_quality_report
 from .quality_trend import (
     format_prompt_quality_trend_report,
@@ -298,16 +304,19 @@ def _cmd_lint(args: argparse.Namespace) -> int:
     root = _root(args.root)
     if args.target == "decision-policy":
         issues = lint_decision_policy(root)
+        counts = count_policy_lint_severities(issues)
         if args.format == "json":
             payload = {
-                "status": "failed" if issues else "passed",
+                "status": "failed" if counts[SEVERITY_ERROR] else "passed",
                 "issueCount": len(issues),
+                "errorCount": counts[SEVERITY_ERROR],
+                "warningCount": counts[SEVERITY_WARNING],
                 "issues": [issue.to_dict() for issue in issues],
             }
             print(json.dumps(payload, indent=2, sort_keys=True))
         else:
             print(format_policy_lint_issues(issues), end="")
-        return EXIT_VALIDATION_FAILED if issues else EXIT_OK
+        return EXIT_VALIDATION_FAILED if counts[SEVERITY_ERROR] else EXIT_OK
     return EXIT_USAGE_ERROR
 
 

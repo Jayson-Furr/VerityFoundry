@@ -39,6 +39,7 @@ class CliTests(unittest.TestCase):
         result = run_cli("list", "profiles")
         self.assertEqual(result.returncode, 0, result.stderr)
         self.assertIn("codex", result.stdout)
+        self.assertIn("github-copilot", result.stdout)
         self.assertIn("unity-ai", result.stdout)
 
     def test_validate_all(self) -> None:
@@ -163,13 +164,15 @@ class CliTests(unittest.TestCase):
     def test_decision_policy_lint(self) -> None:
         result = run_cli("lint", "decision-policy")
         self.assertEqual(result.returncode, 0, result.stdout + result.stderr)
-        self.assertIn("Decision policy lint passed.", result.stdout)
+        self.assertIn("Decision policy lint passed with warnings.", result.stdout)
+        self.assertIn("policy.advisory-missing-output-contract", result.stdout)
 
     def test_decision_policy_lint_json(self) -> None:
         result = run_cli("lint", "decision-policy", "--format", "json")
         self.assertEqual(result.returncode, 0, result.stdout + result.stderr)
-        self.assertIn('"issueCount": 0', result.stdout)
+        self.assertIn('"errorCount": 0', result.stdout)
         self.assertIn('"status": "passed"', result.stdout)
+        self.assertIn('"warningCount"', result.stdout)
 
     def test_verityspec_check_skips_when_verity_is_missing(self) -> None:
         result = run_cli(

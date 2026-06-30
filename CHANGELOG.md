@@ -2,7 +2,13 @@
 
 ## Unreleased
 
-No unreleased changes.
+- Added a dedicated `github-copilot` render profile for GitHub Copilot
+  handoff.
+- Added policy-lint severity counts with non-blocking warning advisories.
+- Added tests proving high-risk prompts render safety and provenance sections
+  under every non-default agent profile.
+- Added a v0.x stabilization checklist covering CLI output, manifest
+  compatibility, report schema compatibility, and release discipline.
 
 ## 0.12.0
 
