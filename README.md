@@ -45,7 +45,8 @@ The repository currently provides:
 - Unity game and Unity shared-library prompt matrices.
 - Example inputs and expected outputs for a Unity game and a shared Unity
   runtime library.
-- A golden output fixture for the Unity game implementation-ready workflow.
+- Golden output fixtures for Unity game and Unity shared-library
+  implementation-ready workflows.
 - Prompt quality and uncertainty-preservation evaluation guidance.
 - Canonical AI-agent operating instructions in `AGENTS.md`.
 - GitHub Actions CI that validates the library without calling external AI
@@ -185,10 +186,12 @@ verityfoundry matrix unity-shared-library
 Golden outputs are deterministic examples of expected prompt behavior. They
 are not truth claims and do not replace VeritySpec validation or human review.
 
-The first golden fixture covers the Unity game implementation-ready workflow:
+The current golden fixtures cover Unity game and Unity shared-library
+implementation-ready workflows:
 
 ```text
 goldens/unity-game/dream-extraction-implementation-ready/
+goldens/unity-shared-library/shared-unity-runtime-implementation-ready/
 ```
 
 Validate golden output manifests and required sections with:

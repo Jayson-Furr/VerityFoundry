@@ -2,7 +2,8 @@
 
 ## Unreleased
 
-No unreleased changes.
+- Added the Unity shared-library implementation-ready golden output fixture for
+  Shared Unity Runtime.
 
 ## 0.2.0
 

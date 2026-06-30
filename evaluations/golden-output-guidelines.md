@@ -17,6 +17,11 @@ Good golden outputs include:
 
 Do not create golden outputs that imply AI-generated records are final truth.
 
+Current checked fixtures include:
+
+- Unity game implementation-ready output for Dream Extraction.
+- Unity shared-library implementation-ready output for Shared Unity Runtime.
+
 ## Manifest Contract
 
 Each golden output should include a `manifest.json` with:
