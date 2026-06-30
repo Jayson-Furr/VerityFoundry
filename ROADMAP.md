@@ -78,11 +78,12 @@ Sprint 10 should release the completed `v0.2.0` scope:
 
 ## v0.3.0
 
-The `v0.3.0` milestone is in progress.
+The `v0.3.0` milestone is released.
 
 | Sprint | Status | Focus |
 |---:|---|---|
 | 11 | Complete | Unity shared-library implementation-ready golden output fixture |
+| 12 | Complete | v0.3.0 release preparation |
 
 ## Sprint 11 Priorities
 
@@ -96,6 +97,18 @@ Sprint 11 should add the next deterministic golden output fixture:
 - Add tests proving the fixture exists and validates.
 - Update README, changelog, roadmap, and golden output guidance.
 - Keep the Next 20 roadmap points populated after converting this item.
+
+## Sprint 12 Priorities
+
+Sprint 12 should release the completed `v0.3.0` scope:
+
+- Add v0.3.0 release notes.
+- Update package metadata, README release badge, latest-release text, install
+  guidance, changelog, roadmap, and release checklist to `v0.3.0`.
+- Run local release verification, package build checks, `twine check`, wheel
+  smoke tests, and GitHub Actions.
+- Tag and publish the v0.3.0 GitHub release when checks pass.
+- Close the v0.3.0 milestone after release verification.
 
 ## Later Candidates
 
