@@ -323,6 +323,28 @@ Sprint 24 should release the completed `v0.9.0` scope:
 - Tag and publish the v0.9.0 GitHub release when checks pass.
 - Close the v0.9.0 milestone after release verification.
 
+## v0.10.0
+
+The `v0.10.0` milestone is in progress.
+
+| Sprint | Status | Focus |
+|---:|---|---|
+| 25 | In progress | Lifecycle readiness prompt workflows |
+
+## Sprint 25 Priorities
+
+Sprint 25 should bundle related lifecycle-readiness work:
+
+- Add release-readiness gap review prompts for generated VeritySpec
+  workspaces.
+- Add maintenance and decommissioning interview flows for shipped products.
+- Add lifecycle matrix coverage for release, maintenance, and
+  decommissioning workflows.
+- Document lifecycle authority boundaries: VerityFoundry interviews and
+  gap-reviews, while VeritySpec and humans remain readiness authorities.
+- Update tests, README, changelog, roadmap, and packaged artifact coverage.
+- Keep the Next 20 roadmap points populated after converting completed items.
+
 ## Later Candidates
 
 These are intentionally not committed to a release until the initial scaffold
@@ -342,35 +364,36 @@ AI agents must keep this section populated with up to 20 concrete points when
 the active roadmap is caught up. The points should balance fixes,
 improvements, continuation work, and expansion.
 
-1. Add release-readiness gap review prompts for generated VeritySpec
-   workspaces.
-2. Add maintenance and decommissioning interview flows for shipped products.
-3. Add release-integrity checks for README, changelog, roadmap, package
-    metadata, and release notes.
-4. Add golden output drift review documentation for maintainers.
-5. Add a golden output inventory report for maintainers and release reviewers.
-6. Add prompt quality trend snapshots for release reviewers.
-7. Add generated example inventory reports for release reviewers.
-8. Add matrix coverage thresholds once baseline coverage is intentionally
-    improved.
-9. Add release workflow checks for stale action versions and non-blocking
-    workflow annotations.
-10. Add a v0.x stabilization checklist for CLI output compatibility,
-    manifest compatibility, and report schema compatibility.
-11. Add a dedicated GitHub Copilot render profile.
-12. Add policy lint severity levels and warning-only advisory checks.
-13. Add tests that verify high-risk prompts render safety and provenance
+1. Add release-integrity checks for README, changelog, roadmap, package
+   metadata, and release notes.
+2. Add golden output drift review documentation for maintainers.
+3. Add a golden output inventory report for maintainers and release reviewers.
+4. Add prompt quality trend snapshots for release reviewers.
+5. Add generated example inventory reports for release reviewers.
+6. Add matrix coverage thresholds once baseline coverage is intentionally
+   improved.
+7. Add release workflow checks for stale action versions and non-blocking
+   workflow annotations.
+8. Add a v0.x stabilization checklist for CLI output compatibility,
+   manifest compatibility, and report schema compatibility.
+9. Add a dedicated GitHub Copilot render profile.
+10. Add policy lint severity levels and warning-only advisory checks.
+11. Add tests that verify high-risk prompts render safety and provenance
     sections under every non-default agent profile.
-14. Add candidate workspace fixture inventory reports for release reviewers.
-15. Add fixture provenance coverage reporting across examples.
-16. Add docs for mapping candidate fixture `kind` values to VeritySpec packs.
-17. Add schema support for image-input manifests once the fixture shape
+12. Add candidate workspace fixture inventory reports for release reviewers.
+13. Add fixture provenance coverage reporting across examples.
+14. Add docs for mapping candidate fixture `kind` values to VeritySpec packs.
+15. Add schema support for image-input manifests once the fixture shape
     stabilizes.
-18. Add tests that packaged wheels include all declared example fixture files.
-19. Add portfolio example manifests for multi-game triage inputs and expected
+16. Add tests that packaged wheels include all declared example fixture files.
+17. Add portfolio example manifests for multi-game triage inputs and expected
     outputs.
-20. Add cross-workspace dependency fixture examples for shared Unity runtime
+18. Add cross-workspace dependency fixture examples for shared Unity runtime
     consumers.
+19. Add lifecycle golden output fixtures for release, maintenance, and
+    decommissioning reviews.
+20. Add docs for translating lifecycle gap reports into VeritySpec evidence
+    and readiness records.
 
 ## Working Rule
 

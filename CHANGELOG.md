@@ -2,7 +2,12 @@
 
 ## Unreleased
 
-No unreleased changes.
+- Added lifecycle prompt workflows for release-readiness gap review,
+  shipped-product maintenance interviews, and decommissioning interviews.
+- Added a lifecycle prompt matrix and matrix coverage for the new lifecycle
+  domain.
+- Added lifecycle readiness workflow documentation and packaged prompt-library
+  coverage for installed CLI inspection.
 
 ## 0.9.0
 

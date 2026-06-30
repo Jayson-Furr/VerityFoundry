@@ -25,6 +25,7 @@ class MatrixCoverageReportTests(unittest.TestCase):
         report = generate_matrix_coverage_report(ROOT)
         domains = {domain["domain"] for domain in report["domains"]}
 
+        self.assertIn("lifecycle", domains)
         self.assertIn("product", domains)
         self.assertIn("portfolio", domains)
         self.assertIn("software-library", domains)

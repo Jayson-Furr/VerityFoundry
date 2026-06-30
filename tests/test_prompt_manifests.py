@@ -14,6 +14,9 @@ class PromptManifestTests(unittest.TestCase):
 
     def test_expected_prompt_ids_exist(self) -> None:
         ids = {item.manifest["id"] for item in load_prompt_manifests(ROOT)}
+        self.assertIn("lifecycle.workspace.interview-medium.production-ready.release-gap-review.v1", ids)
+        self.assertIn("lifecycle.shipped-product.interview-high.maintenance-ready.v1", ids)
+        self.assertIn("lifecycle.retiring-product.interview-all.decommission-ready.v1", ids)
         self.assertIn("portfolio.games.interview-low.concept-complete.v1", ids)
         self.assertIn("portfolio.dependencies.interview-medium.implementation-ready.v1", ids)
         self.assertIn("unity-game.gdd-art.interview-medium.implementation-ready.v1", ids)
