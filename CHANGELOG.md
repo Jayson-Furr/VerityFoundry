@@ -9,3 +9,4 @@
 - Added deterministic local CLI validation and rendering helpers.
 - Added Unity game and Unity shared-library prompt matrices and examples.
 - Added AI-agent guidance, project-management docs, tests, and CI.
+- Added v0.1.0 release notes and GitHub release workflow.

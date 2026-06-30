@@ -1,6 +1,7 @@
 # VerityFoundry
 
 [![CI](https://github.com/Jayson-Furr/VerityFoundry/actions/workflows/ci.yml/badge.svg)](https://github.com/Jayson-Furr/VerityFoundry/actions/workflows/ci.yml)
+[![Release](https://img.shields.io/badge/release-v0.1.0-blue)](https://github.com/Jayson-Furr/VerityFoundry/releases/tag/v0.1.0)
 [![Python](https://img.shields.io/badge/python-3.9%2B-blue)](pyproject.toml)
 [![License](https://img.shields.io/github/license/Jayson-Furr/VerityFoundry)](LICENSE)
 
@@ -30,6 +31,9 @@ that AI-generated records are automatically true, complete, or approved.
 
 ## Current Scope
 
+Latest release: `v0.1.0`. Release history is tracked in
+[CHANGELOG.md](CHANGELOG.md) and [ROADMAP.md](ROADMAP.md).
+
 This first scaffold provides:
 
 - A small installable Python package named `verityfoundry`.
@@ -45,6 +49,18 @@ This first scaffold provides:
 - Canonical AI-agent operating instructions in `AGENTS.md`.
 - GitHub Actions CI that validates the library without calling external AI
   APIs.
+
+## Installation
+
+Install the latest GitHub release:
+
+```bash
+pip install "verityfoundry @ git+https://github.com/Jayson-Furr/VerityFoundry.git@v0.1.0"
+verityfoundry --version
+```
+
+PyPI publishing is not enabled yet. Use the GitHub release install path until
+package publishing is explicitly configured.
 
 ## Local Development
 
@@ -248,3 +264,4 @@ require human approval.
 - [Branching](docs/branching.md)
 - [CI](docs/ci.md)
 - [Release checklist](docs/release-checklist.md)
+- [v0.1.0 release notes](docs/release-notes-v0.1.0.md)
