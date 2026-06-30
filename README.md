@@ -40,6 +40,8 @@ The repository currently provides:
 - A deterministic local CLI named `verityfoundry`.
 - Prompt manifest, matrix manifest, example manifest, and decision policy
   schemas.
+- Agent-specific render profiles for Codex, Claude Code, ChatGPT, Gemini, and
+  Unity AI handoff.
 - Prompt library folders for common rules, interview modes, readiness targets,
   Unity games, Unity shared libraries, software libraries, and products.
 - Unity game and Unity shared-library prompt matrices.
@@ -51,6 +53,7 @@ The repository currently provides:
   provenance completeness.
 - A deterministic matrix coverage report for prompt matrix coverage across
   domain prompt workflows.
+- A deterministic decision-policy linter for high-stakes invention risks.
 - An optional local VeritySpec smoke check that runs when `verity` is
   available and skips cleanly when it is not installed.
 - Prompt quality and uncertainty-preservation evaluation guidance.
@@ -104,15 +107,17 @@ git diff --check
 verityfoundry --version
 verityfoundry list prompts
 verityfoundry list matrices
+verityfoundry list profiles
 verityfoundry validate
 verityfoundry validate prompts
 verityfoundry validate matrices
 verityfoundry validate examples
 verityfoundry validate goldens
+verityfoundry lint decision-policy
 verityfoundry report prompt-quality
 verityfoundry report matrix-coverage
 verityfoundry check verityspec
-verityfoundry render --prompt unity-game.gdd-art.interview-medium.implementation-ready.v1
+verityfoundry render --prompt unity-game.gdd-art.interview-medium.implementation-ready.v1 --profile codex
 verityfoundry matrix unity-game
 ```
 
@@ -146,6 +151,20 @@ unity-game.gdd-art.interview-medium.implementation-ready.v1
 ```
 
 Prompt IDs should be stable. Breaking changes should use a new version suffix.
+
+## Render Profiles
+
+Render profiles add deterministic agent handoff guidance without calling any AI
+API or changing the underlying prompt workflow.
+
+```bash
+verityfoundry list profiles
+verityfoundry render --prompt unity-game.gdd-art.interview-medium.implementation-ready.v1 --profile codex
+verityfoundry render --prompt unity-game.gdd-art.interview-medium.implementation-ready.v1 --profile unity-ai
+```
+
+Supported profiles are `default`, `codex`, `claude-code`, `chatgpt`, `gemini`,
+and `unity-ai`.
 
 ## Interview Modes
 
@@ -236,6 +255,20 @@ verityfoundry report matrix-coverage --format json
 
 The report is deterministic and does not call external AI APIs.
 
+## Decision Policy Lint
+
+Decision-policy linting checks domain prompts for controls that reduce
+high-stakes invention risk.
+
+```bash
+verityfoundry lint decision-policy
+verityfoundry lint decision-policy --format json
+```
+
+High-risk prompts must preserve human approval, decision policy references,
+safety and uncertainty guidance, provenance guidance, and the appropriate
+high-stakes or all-questions interview mode include.
+
 ## VeritySpec Smoke Check
 
 VerityFoundry can run a local optional smoke check against the VeritySpec CLI:
@@ -322,7 +355,10 @@ require human approval.
 
 - [Architecture](docs/architecture.md)
 - [Prompt manifests](docs/prompt-manifests.md)
+- [Render profiles](docs/render-profiles.md)
+- [Decision policy lint](docs/decision-policy-lint.md)
 - [Matrix coverage](docs/matrix-coverage.md)
+- [Prompt workflow contributions](docs/prompt-workflow-contributions.md)
 - [Interview modes](docs/interview-modes.md)
 - [Readiness targets](docs/readiness-targets.md)
 - [Decision provenance](docs/decision-provenance.md)

@@ -13,3 +13,9 @@ Prompts should preserve:
 - licensing and approval unknowns
 
 Run VeritySpec validation after a candidate workspace is produced.
+
+Recommended render command:
+
+```bash
+verityfoundry render --prompt unity-game.gdd-art.interview-medium.implementation-ready.v1 --profile unity-ai
+```

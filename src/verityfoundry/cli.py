@@ -12,8 +12,9 @@ from .integration import check_verityspec, format_verityspec_check_result
 from .manifests import find_project_root, load_matrix_manifests, load_prompt_manifests
 from .matrix import render_matrix
 from .matrix_coverage import format_matrix_coverage_report, generate_matrix_coverage_report
+from .policy_lint import format_policy_lint_issues, lint_decision_policy
 from .quality import format_prompt_quality_report, generate_prompt_quality_report
-from .rendering import render_prompt
+from .rendering import render_profiles, render_prompt
 from .validation import (
     validate_all,
     validate_examples,
@@ -36,7 +37,7 @@ def build_parser() -> argparse.ArgumentParser:
     subparsers = parser.add_subparsers(dest="command")
 
     list_parser = subparsers.add_parser("list", help="List prompt workflow artifacts.")
-    list_parser.add_argument("artifact", choices=["prompts", "matrices"])
+    list_parser.add_argument("artifact", choices=["prompts", "matrices", "profiles"])
     list_parser.add_argument("--format", choices=["text", "json"], default="text")
 
     validate_parser = subparsers.add_parser("validate", help="Validate prompt workflow artifacts.")
@@ -50,6 +51,12 @@ def build_parser() -> argparse.ArgumentParser:
 
     render_parser = subparsers.add_parser("render", help="Render a prompt workflow by ID.")
     render_parser.add_argument("--prompt", required=True, help="Prompt ID to render.")
+    render_parser.add_argument(
+        "--profile",
+        choices=[profile["id"] for profile in render_profiles()],
+        default="default",
+        help="Optional agent handoff profile.",
+    )
     render_parser.add_argument("--out", help="Optional output path.")
 
     matrix_parser = subparsers.add_parser("matrix", help="Render a prompt matrix by ID.")
@@ -75,6 +82,10 @@ def build_parser() -> argparse.ArgumentParser:
         help="Path or command name for the VeritySpec CLI. Defaults to `verity` on PATH.",
     )
     verityspec_parser.add_argument("--format", choices=["text", "json"], default="text")
+
+    lint_parser = subparsers.add_parser("lint", help="Run deterministic local linters.")
+    lint_parser.add_argument("target", choices=["decision-policy"])
+    lint_parser.add_argument("--format", choices=["text", "json"], default="text")
 
     return parser
 
@@ -107,7 +118,7 @@ def _cmd_list(args: argparse.Namespace) -> int:
             }
             for item in load_prompt_manifests(root)
         ]
-    else:
+    elif args.artifact == "matrices":
         items = [
             {
                 "id": item.manifest.get("id"),
@@ -117,12 +128,17 @@ def _cmd_list(args: argparse.Namespace) -> int:
             }
             for item in load_matrix_manifests(root)
         ]
+    else:
+        items = render_profiles()
 
     if args.format == "json":
         print(json.dumps(items, indent=2, sort_keys=True))
     else:
         for item in items:
-            print(f"{item['id']}\t{item['name']}\t{item['path']}")
+            if "path" in item:
+                print(f"{item['id']}\t{item['name']}\t{item['path']}")
+            else:
+                print(f"{item['id']}\t{item['name']}")
     return EXIT_OK
 
 
@@ -158,7 +174,7 @@ def _cmd_validate(args: argparse.Namespace) -> int:
 
 
 def _cmd_render(args: argparse.Namespace) -> int:
-    content = render_prompt(_root(args.root), args.prompt)
+    content = render_prompt(_root(args.root), args.prompt, profile=args.profile)
     _write_or_print(content, args.out)
     return EXIT_OK
 
@@ -197,6 +213,23 @@ def _cmd_check(args: argparse.Namespace) -> int:
     return EXIT_USAGE_ERROR
 
 
+def _cmd_lint(args: argparse.Namespace) -> int:
+    root = _root(args.root)
+    if args.target == "decision-policy":
+        issues = lint_decision_policy(root)
+        if args.format == "json":
+            payload = {
+                "status": "failed" if issues else "passed",
+                "issueCount": len(issues),
+                "issues": [issue.to_dict() for issue in issues],
+            }
+            print(json.dumps(payload, indent=2, sort_keys=True))
+        else:
+            print(format_policy_lint_issues(issues), end="")
+        return EXIT_VALIDATION_FAILED if issues else EXIT_OK
+    return EXIT_USAGE_ERROR
+
+
 def run(argv: list[str] | None = None) -> int:
     parser = build_parser()
     args = parser.parse_args(argv)
@@ -218,6 +251,8 @@ def run(argv: list[str] | None = None) -> int:
             return _cmd_report(args)
         if args.command == "check":
             return _cmd_check(args)
+        if args.command == "lint":
+            return _cmd_lint(args)
     except KeyError as exc:
         print(f"ERROR: {exc}", file=sys.stderr)
         return EXIT_USAGE_ERROR

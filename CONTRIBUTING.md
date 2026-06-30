@@ -8,6 +8,8 @@ uncertainty.
 
 - Preserve uncertainty and provenance.
 - Do not add prompts that convert unknowns into unsupported facts.
+- Include decision-policy, safety, and provenance controls for high-stakes
+  prompts.
 - Include or update tests for manifest, matrix, example, or CLI behavior.
 - Update README, docs, changelog, and roadmap entries when behavior changes.
 - Keep examples deterministic and suitable for CI.
@@ -22,6 +24,9 @@ Prompt workflows should include:
 - Clear input assumptions.
 - Output contract.
 - Decision policy reference.
+- Safety and provenance includes when the prompt handles high-stakes readiness,
+  operations, maintenance, decommissioning, archival, legal, privacy,
+  certification, or commercial commitments.
 - Human approval requirements.
 - Unresolved-question behavior.
 
@@ -34,5 +39,6 @@ python -m pip install --upgrade pip setuptools
 pip install -e .
 python -m unittest discover -s tests -v
 verityfoundry validate
+verityfoundry lint decision-policy
 git diff --check
 ```

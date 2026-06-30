@@ -8,3 +8,9 @@
 5. Run VeritySpec validation on generated workspaces.
 
 Repository agents working inside VerityFoundry should follow `AGENTS.md`.
+
+Recommended render command:
+
+```bash
+verityfoundry render --prompt unity-game.gdd-art.interview-medium.implementation-ready.v1 --profile codex
+```
