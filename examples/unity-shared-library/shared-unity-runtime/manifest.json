@@ -13,6 +13,20 @@
     "expected/assumptions.md",
     "expected/readiness-gaps.md"
   ],
+  "workspaceFixtures": [
+    "expected/candidate-workspace.json"
+  ],
+  "expectedRecordCategories": [
+    "core.product",
+    "unity.package",
+    "unity.capability",
+    "unity.package-dependency",
+    "unity.consumer-contract",
+    "foundry.readiness-gap"
+  ],
+  "provenanceExamples": [
+    "expected/provenance.json"
+  ],
   "promptRefs": [
     "unity-library.description.interview-medium.implementation-ready.v1"
   ],

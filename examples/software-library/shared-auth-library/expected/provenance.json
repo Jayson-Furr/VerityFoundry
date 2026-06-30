@@ -1,0 +1,36 @@
+{
+  "exampleRef": "example.software-library.shared-auth-library",
+  "decisions": [
+    {
+      "recordRef": "library.shared_auth",
+      "field": "summary",
+      "decisionSource": "user-provided",
+      "sourceRefs": [
+        "inputs/brief.md",
+        "inputs/readme.md"
+      ],
+      "confidence": "medium",
+      "humanApprovalRequired": true
+    },
+    {
+      "recordRef": "interface.token_refresh",
+      "field": "summary",
+      "decisionSource": "ai-inferred",
+      "sourceRefs": [
+        "inputs/readme.md"
+      ],
+      "confidence": "medium",
+      "humanApprovalRequired": true
+    },
+    {
+      "recordRef": "decision.token_storage",
+      "field": "status",
+      "decisionSource": "unresolved",
+      "sourceRefs": [
+        "expected/questions.md"
+      ],
+      "confidence": "low",
+      "humanApprovalRequired": true
+    }
+  ]
+}

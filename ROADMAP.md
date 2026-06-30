@@ -254,6 +254,28 @@ Sprint 20 should release the completed `v0.7.0` scope:
 - Tag and publish the v0.7.0 GitHub release when checks pass.
 - Close the v0.7.0 milestone after release verification.
 
+## v0.8.0
+
+The `v0.8.0` milestone is in progress.
+
+| Sprint | Status | Focus |
+|---:|---|---|
+| 21 | In progress | Workspace fixture readiness |
+
+## Sprint 21 Priorities
+
+Sprint 21 should bundle related workspace-fixture readiness work:
+
+- Add example manifests that reference candidate VeritySpec workspace files.
+- Add generated workspace outline validation for expected record categories.
+- Add image-input manifest fixtures for concept art and identity images.
+- Add provenance examples aligned with future VeritySpec evidence records.
+- Add docs explaining how to convert VerityFoundry expected outputs into
+  concrete VeritySpec workspace fixtures.
+- Keep packaged artifact coverage aligned so installed wheels include the new
+  fixture files.
+- Keep the Next 20 roadmap points populated after converting completed items.
+
 ## Later Candidates
 
 These are intentionally not committed to a release until the initial scaffold
@@ -273,35 +295,34 @@ AI agents must keep this section populated with up to 20 concrete points when
 the active roadmap is caught up. The points should balance fixes,
 improvements, continuation work, and expansion.
 
-1. Add example manifests that reference candidate VeritySpec workspace files
-   once workspace fixtures exist.
-2. Add generated workspace outline validators for expected record categories.
-3. Add image-input manifest fixtures for concept art and identity images.
-4. Add provenance examples aligned with future VeritySpec evidence records.
-5. Add cross-workspace dependency prompt guidance for shared Unity libraries
+1. Add cross-workspace dependency prompt guidance for shared Unity libraries
    and game portfolios.
-6. Add portfolio triage prompts for batches of many game concepts.
-7. Add release-readiness gap review prompts for generated VeritySpec
+2. Add portfolio triage prompts for batches of many game concepts.
+3. Add release-readiness gap review prompts for generated VeritySpec
    workspaces.
-8. Add maintenance and decommissioning interview flows for shipped products.
-9. Add release-integrity checks for README, changelog, roadmap, package
+4. Add maintenance and decommissioning interview flows for shipped products.
+5. Add release-integrity checks for README, changelog, roadmap, package
     metadata, and release notes.
-10. Add golden output drift review documentation for maintainers.
-11. Add a golden output inventory report for maintainers and release reviewers.
-12. Add prompt quality trend snapshots for release reviewers.
-13. Add generated example inventory reports for release reviewers.
-14. Add matrix coverage thresholds once baseline coverage is intentionally
+6. Add golden output drift review documentation for maintainers.
+7. Add a golden output inventory report for maintainers and release reviewers.
+8. Add prompt quality trend snapshots for release reviewers.
+9. Add generated example inventory reports for release reviewers.
+10. Add matrix coverage thresholds once baseline coverage is intentionally
     improved.
-15. Add docs explaining how to convert VerityFoundry expected outputs into
-    concrete VeritySpec workspace fixtures.
-16. Add release workflow checks for stale action versions and non-blocking
+11. Add release workflow checks for stale action versions and non-blocking
     workflow annotations.
-17. Add a v0.x stabilization checklist for CLI output compatibility,
+12. Add a v0.x stabilization checklist for CLI output compatibility,
     manifest compatibility, and report schema compatibility.
-18. Add a dedicated GitHub Copilot render profile.
-19. Add policy lint severity levels and warning-only advisory checks.
-20. Add tests that verify high-risk prompts render safety and provenance
+13. Add a dedicated GitHub Copilot render profile.
+14. Add policy lint severity levels and warning-only advisory checks.
+15. Add tests that verify high-risk prompts render safety and provenance
     sections under every non-default agent profile.
+16. Add candidate workspace fixture inventory reports for release reviewers.
+17. Add fixture provenance coverage reporting across examples.
+18. Add docs for mapping candidate fixture `kind` values to VeritySpec packs.
+19. Add schema support for image-input manifests once the fixture shape
+    stabilizes.
+20. Add tests that packaged wheels include all declared example fixture files.
 
 ## Working Rule
 

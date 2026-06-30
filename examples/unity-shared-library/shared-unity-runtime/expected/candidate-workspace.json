@@ -1,0 +1,101 @@
+{
+  "workspace": {
+    "id": "foundry.example.unity_library.shared_unity_runtime",
+    "name": "Shared Unity Runtime Library",
+    "specVersion": "candidate",
+    "status": "draft",
+    "notes": "Candidate VeritySpec workspace draft for a reusable Unity runtime library. Consumer compatibility and exported contracts require human review."
+  },
+  "records": [
+    {
+      "id": "library.shared_unity_runtime",
+      "kind": "core.product",
+      "name": "Shared Unity Runtime",
+      "status": "draft",
+      "summary": "Reusable Unity runtime package family for save, telemetry, liveops config, addressables, localization, and platform services.",
+      "provenance": {
+        "sourceRefs": [
+          "inputs/brief.md"
+        ],
+        "decisionSource": "user-provided",
+        "confidence": "medium",
+        "humanApprovalRequired": true
+      }
+    },
+    {
+      "id": "unity.package.save_system",
+      "kind": "unity.package",
+      "name": "Save System",
+      "status": "draft",
+      "summary": "Candidate exported Unity package for shared save-system behavior.",
+      "provenance": {
+        "sourceRefs": [
+          "inputs/brief.md"
+        ],
+        "decisionSource": "ai-inferred",
+        "confidence": "medium",
+        "humanApprovalRequired": true
+      }
+    },
+    {
+      "id": "unity.capability.telemetry_client",
+      "kind": "unity.capability",
+      "name": "Telemetry Client Capability",
+      "status": "draft",
+      "summary": "Candidate exported capability for game telemetry event emission.",
+      "provenance": {
+        "sourceRefs": [
+          "inputs/brief.md"
+        ],
+        "decisionSource": "ai-inferred",
+        "confidence": "medium",
+        "humanApprovalRequired": true
+      }
+    },
+    {
+      "id": "unity.dependency.engine_version",
+      "kind": "unity.package-dependency",
+      "name": "Unity Engine Version Range",
+      "status": "unresolved",
+      "summary": "Supported Unity versions and package dependency ranges are unresolved.",
+      "provenance": {
+        "sourceRefs": [
+          "expected/assumptions.md"
+        ],
+        "decisionSource": "unresolved",
+        "confidence": "low",
+        "humanApprovalRequired": true
+      }
+    },
+    {
+      "id": "consumer.contract.game_workspaces",
+      "kind": "unity.consumer-contract",
+      "name": "Game Workspace Consumer Contract",
+      "status": "draft",
+      "summary": "Candidate contract for games consuming shared runtime package records.",
+      "provenance": {
+        "sourceRefs": [
+          "expected/workspace-outline.md"
+        ],
+        "decisionSource": "ai-suggested",
+        "confidence": "medium",
+        "humanApprovalRequired": true
+      }
+    },
+    {
+      "id": "gap.operations_readiness",
+      "kind": "foundry.readiness-gap",
+      "name": "Operations Readiness Gap",
+      "status": "open",
+      "summary": "Compatibility, implementation, operations, maintenance, and archive evidence remain missing.",
+      "provenance": {
+        "sourceRefs": [
+          "expected/readiness-gaps.md"
+        ],
+        "decisionSource": "ai-suggested",
+        "confidence": "medium",
+        "humanApprovalRequired": true
+      }
+    }
+  ]
+}

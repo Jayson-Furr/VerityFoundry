@@ -1,0 +1,37 @@
+{
+  "exampleRef": "example.unity-game.dream-extraction",
+  "decisions": [
+    {
+      "recordRef": "game.product.dream_extraction",
+      "field": "summary",
+      "decisionSource": "user-provided",
+      "sourceRefs": [
+        "inputs/brief.md",
+        "inputs/rough-gdd.md"
+      ],
+      "confidence": "medium",
+      "humanApprovalRequired": true
+    },
+    {
+      "recordRef": "asset.identity.key_art",
+      "field": "assetRole",
+      "decisionSource": "ai-inferred",
+      "sourceRefs": [
+        "inputs/images.md",
+        "inputs/image-manifest.json"
+      ],
+      "confidence": "low",
+      "humanApprovalRequired": true
+    },
+    {
+      "recordRef": "unity.dependency.shared_runtime",
+      "field": "status",
+      "decisionSource": "unresolved",
+      "sourceRefs": [
+        "expected/questions.md"
+      ],
+      "confidence": "low",
+      "humanApprovalRequired": true
+    }
+  ]
+}

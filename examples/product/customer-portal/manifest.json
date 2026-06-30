@@ -14,6 +14,20 @@
     "expected/questions.md",
     "expected/readiness-gaps.md"
   ],
+  "workspaceFixtures": [
+    "expected/candidate-workspace.json"
+  ],
+  "expectedRecordCategories": [
+    "core.product",
+    "product.audience",
+    "product.feature",
+    "product.integration-assumption",
+    "product.permission-decision",
+    "foundry.readiness-gap"
+  ],
+  "provenanceExamples": [
+    "expected/provenance.json"
+  ],
   "promptRefs": [
     "product.brief.interview-low.design-complete.v1"
   ],

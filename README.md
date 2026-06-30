@@ -49,6 +49,8 @@ The repository currently provides:
 - Unity game and Unity shared-library prompt matrices.
 - Example inputs and expected outputs for a Unity game and a shared Unity
   runtime library, plus software-library and product examples.
+- Candidate workspace fixtures, expected record-category checks, provenance
+  examples, and image-input metadata for example workflows.
 - Golden output fixtures for Unity game and Unity shared-library
   implementation-ready workflows.
 - A deterministic prompt quality report for uncertainty preservation and
@@ -360,6 +362,7 @@ require human approval.
 - [Render profiles](docs/render-profiles.md)
 - [Decision policy lint](docs/decision-policy-lint.md)
 - [Matrix coverage](docs/matrix-coverage.md)
+- [Workspace fixtures](docs/workspace-fixtures.md)
 - [Prompt workflow contributions](docs/prompt-workflow-contributions.md)
 - [Interview modes](docs/interview-modes.md)
 - [Readiness targets](docs/readiness-targets.md)

@@ -1,0 +1,102 @@
+{
+  "workspace": {
+    "id": "foundry.example.software_library.shared_auth_library",
+    "name": "Shared Authentication Library",
+    "specVersion": "candidate",
+    "status": "draft",
+    "notes": "Candidate VeritySpec workspace draft generated from README-style library inputs. Security and privacy decisions require review."
+  },
+  "records": [
+    {
+      "id": "library.shared_auth",
+      "kind": "core.product",
+      "name": "Shared Authentication Library",
+      "status": "draft",
+      "summary": "Reusable authentication library for web applications and backend services.",
+      "provenance": {
+        "sourceRefs": [
+          "inputs/brief.md",
+          "inputs/readme.md"
+        ],
+        "decisionSource": "user-provided",
+        "confidence": "medium",
+        "humanApprovalRequired": true
+      }
+    },
+    {
+      "id": "package.auth_client",
+      "kind": "software.package",
+      "name": "Auth Client Package",
+      "status": "draft",
+      "summary": "Client package for login, token refresh, and current-user lookup.",
+      "provenance": {
+        "sourceRefs": [
+          "inputs/readme.md"
+        ],
+        "decisionSource": "user-provided",
+        "confidence": "medium",
+        "humanApprovalRequired": true
+      }
+    },
+    {
+      "id": "interface.token_refresh",
+      "kind": "api.interface",
+      "name": "Token Refresh Interface",
+      "status": "draft",
+      "summary": "Candidate interface surface for refreshing authentication tokens.",
+      "provenance": {
+        "sourceRefs": [
+          "inputs/readme.md"
+        ],
+        "decisionSource": "ai-inferred",
+        "confidence": "medium",
+        "humanApprovalRequired": true
+      }
+    },
+    {
+      "id": "decision.token_storage",
+      "kind": "security.decision",
+      "name": "Token Storage Decision",
+      "status": "unresolved",
+      "summary": "Token storage, rotation, audit retention, and privacy requirements must be reviewed.",
+      "provenance": {
+        "sourceRefs": [
+          "expected/questions.md"
+        ],
+        "decisionSource": "unresolved",
+        "confidence": "low",
+        "humanApprovalRequired": true
+      }
+    },
+    {
+      "id": "consumer.internal_web_apps",
+      "kind": "software.consumer",
+      "name": "Internal Web Applications",
+      "status": "draft",
+      "summary": "Likely first consumers for shared authentication behavior.",
+      "provenance": {
+        "sourceRefs": [
+          "inputs/brief.md"
+        ],
+        "decisionSource": "ai-inferred",
+        "confidence": "medium",
+        "humanApprovalRequired": true
+      }
+    },
+    {
+      "id": "gap.security_review",
+      "kind": "foundry.readiness-gap",
+      "name": "Security Review Gap",
+      "status": "open",
+      "summary": "Implementation, security review, privacy review, maintenance, and archive evidence remain missing.",
+      "provenance": {
+        "sourceRefs": [
+          "expected/readiness-gaps.md"
+        ],
+        "decisionSource": "ai-suggested",
+        "confidence": "medium",
+        "humanApprovalRequired": true
+      }
+    }
+  ]
+}
