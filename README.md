@@ -45,10 +45,10 @@ The repository currently provides:
 - Agent-specific render profiles for Codex, Claude Code, ChatGPT, Gemini, and
   Unity AI handoff.
 - Prompt library folders for common rules, interview modes, readiness targets,
-  Unity games, Unity shared libraries, software libraries, products, and
-  portfolios.
-- Unity game, Unity shared-library, product, software-library, and portfolio
-  prompt matrices.
+  Unity games, Unity shared libraries, software libraries, products,
+  portfolios, and lifecycle readiness.
+- Unity game, Unity shared-library, product, software-library, portfolio, and
+  lifecycle prompt matrices.
 - Example inputs and expected outputs for a Unity game and a shared Unity
   runtime library, plus software-library and product examples.
 - Candidate workspace fixtures, expected record-category checks, provenance
@@ -214,6 +214,7 @@ and expected output.
 ```bash
 verityfoundry matrix unity-game
 verityfoundry matrix unity-shared-library
+verityfoundry matrix lifecycle
 ```
 
 ## Golden Outputs
@@ -319,6 +320,19 @@ Expected candidate outputs include library product outlines, Unity package
 records, capability records, dependency notes, consumer-facing contract notes,
 version compatibility assumptions, readiness gaps, and archive gaps.
 
+## Lifecycle Readiness Workflow
+
+Lifecycle prompts support release-readiness gap review, shipped-product
+maintenance interviews, and decommissioning interviews for candidate
+VeritySpec workspaces.
+
+Expected outputs include release gap reports, blocking questions, maintenance
+handoff questions, decommissioning questions, unresolved decisions, approval
+registers, and suggested VeritySpec validation loops.
+
+These workflows do not certify readiness. They preserve uncertainty so humans
+and VeritySpec readiness gates can decide what is actually ready.
+
 ## VeritySpec Validation Loop
 
 The intended loop is:
@@ -366,6 +380,7 @@ require human approval.
 - [Matrix coverage](docs/matrix-coverage.md)
 - [Workspace fixtures](docs/workspace-fixtures.md)
 - [Portfolio workflows](docs/portfolio-workflows.md)
+- [Lifecycle readiness workflows](docs/lifecycle-readiness-workflows.md)
 - [Prompt workflow contributions](docs/prompt-workflow-contributions.md)
 - [Interview modes](docs/interview-modes.md)
 - [Readiness targets](docs/readiness-targets.md)
