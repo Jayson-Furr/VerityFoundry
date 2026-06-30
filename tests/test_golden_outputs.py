@@ -26,6 +26,23 @@ class GoldenOutputTests(unittest.TestCase):
         self.assertIn("## Suggested VeritySpec Validation Loop", output)
         self.assertIn("not implementation-ready", output)
 
+    def test_unity_shared_library_implementation_ready_golden_exists(self) -> None:
+        manifests = {manifest["id"]: (path, manifest) for path, manifest in load_golden_manifests(ROOT)}
+        path, manifest = manifests[
+            "golden.unity-shared-library.shared-unity-runtime.implementation-ready"
+        ]
+        self.assertEqual(
+            manifest["promptRef"],
+            "unity-library.description.interview-medium.implementation-ready.v1",
+        )
+        output = (path.parent / manifest["outputPath"]).read_text(encoding="utf-8")
+        self.assertIn("## Candidate Workspace Outline", output)
+        self.assertIn("## Unresolved Decisions", output)
+        self.assertIn("## Human Approval Requirements", output)
+        self.assertIn("## Suggested VeritySpec Validation Loop", output)
+        self.assertIn("Public/exported records versus internal/private records", output)
+        self.assertIn("not implementation-ready", output)
+
 
 if __name__ == "__main__":
     unittest.main()

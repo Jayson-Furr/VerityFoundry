@@ -1,0 +1,25 @@
+{
+  "id": "golden.unity-shared-library.shared-unity-runtime.implementation-ready",
+  "name": "Shared Unity Runtime Implementation-Ready Golden Output",
+  "version": "0.1.0",
+  "domain": "unity-shared-library",
+  "promptRef": "unity-library.description.interview-medium.implementation-ready.v1",
+  "exampleRef": "example.unity-shared-library.shared-unity-runtime",
+  "interviewMode": "interview-medium-stakes",
+  "targetReadiness": "implementation-ready",
+  "outputPath": "output.md",
+  "requiredSections": [
+    "Candidate Workspace Outline",
+    "Source Material Summary",
+    "Human-Provided Decisions",
+    "AI-Inferred Decisions",
+    "AI-Defaulted Decisions",
+    "AI-Suggested Decisions",
+    "Unresolved Decisions",
+    "Human Approval Requirements",
+    "Readiness Gaps",
+    "Suggested Next Interview Questions",
+    "Suggested VeritySpec Validation Loop"
+  ],
+  "notes": "Golden output for the Unity shared-library implementation-ready prompt review."
+}
