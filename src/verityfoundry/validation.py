@@ -47,6 +47,72 @@ def _jsonschema_issues(
     return issues
 
 
+def _workspace_fixture_categories(data: dict[str, Any]) -> set[str]:
+    """Collect record category/kind values from a candidate workspace fixture."""
+
+    categories: set[str] = set()
+    if isinstance(data.get("kind"), str):
+        categories.add(data["kind"])
+
+    records = data.get("records", [])
+    if isinstance(records, list):
+        for record in records:
+            if isinstance(record, dict) and isinstance(record.get("kind"), str):
+                categories.add(record["kind"])
+
+    return categories
+
+
+def _validate_provenance_example(path: Path) -> list[ValidationIssue]:
+    """Validate the minimal shape expected for provenance examples."""
+
+    try:
+        data = read_json(path)
+    except ManifestError as exc:
+        return [ValidationIssue("example.provenance-parse", str(exc), str(path))]
+
+    decisions = data.get("decisions")
+    if not isinstance(decisions, list) or not decisions:
+        return [
+            ValidationIssue(
+                "example.provenance-decisions",
+                "provenance example must include a non-empty decisions array",
+                str(path),
+            )
+        ]
+
+    issues: list[ValidationIssue] = []
+    required = (
+        "recordRef",
+        "field",
+        "decisionSource",
+        "confidence",
+        "humanApprovalRequired",
+    )
+    for index, decision in enumerate(decisions):
+        if not isinstance(decision, dict):
+            issues.append(
+                ValidationIssue(
+                    "example.provenance-decision",
+                    f"decision at index {index} must be an object",
+                    str(path),
+                )
+            )
+            continue
+
+        for field in required:
+            if field not in decision:
+                issues.append(
+                    ValidationIssue(
+                        "example.provenance-decision",
+                        f"decision at index {index} is missing {field!r}",
+                        str(path),
+                    )
+                )
+
+    return issues
+
+
 def validate_prompts(root: str | Path) -> list[ValidationIssue]:
     """Validate prompt markdown manifests and references."""
 
@@ -212,7 +278,7 @@ def validate_examples(root: str | Path) -> list[ValidationIssue]:
                 )
 
         base = path.parent
-        for section in ("inputs", "expectedOutputs"):
+        for section in ("inputs", "expectedOutputs", "workspaceFixtures", "provenanceExamples"):
             for relative in manifest.get(section, []):
                 candidate = base / relative
                 if not candidate.exists():
@@ -223,6 +289,38 @@ def validate_examples(root: str | Path) -> list[ValidationIssue]:
                             str(path),
                         )
                     )
+
+        expected_categories = manifest.get("expectedRecordCategories", [])
+        if expected_categories:
+            actual_categories: set[str] = set()
+            for relative in manifest.get("workspaceFixtures", []):
+                candidate = base / relative
+                if not candidate.exists():
+                    continue
+                try:
+                    fixture = read_json(candidate)
+                except ManifestError as exc:
+                    issues.append(
+                        ValidationIssue("example.workspace-parse", str(exc), str(candidate))
+                    )
+                    continue
+                actual_categories.update(_workspace_fixture_categories(fixture))
+
+            for category in expected_categories:
+                if category not in actual_categories:
+                    issues.append(
+                        ValidationIssue(
+                            "example.missing-record-category",
+                            f"expectedRecordCategories includes {category!r}, "
+                            "but no workspace fixture record declares it",
+                            str(path),
+                        )
+                    )
+
+        for relative in manifest.get("provenanceExamples", []):
+            candidate = base / relative
+            if candidate.exists():
+                issues.extend(_validate_provenance_example(candidate))
 
     return issues
 

@@ -41,3 +41,24 @@ validated with:
 ```bash
 verityfoundry validate goldens
 ```
+
+Example manifests use `schemas/example-manifest.schema.json`. They may also
+declare candidate workspace fixture files, expected record categories, and
+provenance examples:
+
+```json
+{
+  "workspaceFixtures": ["expected/candidate-workspace.json"],
+  "expectedRecordCategories": ["core.product", "foundry.readiness-gap"],
+  "provenanceExamples": ["expected/provenance.json"]
+}
+```
+
+Validate them with:
+
+```bash
+verityfoundry validate examples
+```
+
+See [Workspace fixtures](workspace-fixtures.md) for the fixture contract and
+conversion guidance.

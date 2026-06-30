@@ -15,6 +15,20 @@
     "expected/questions.md",
     "expected/readiness-gaps.md"
   ],
+  "workspaceFixtures": [
+    "expected/candidate-workspace.json"
+  ],
+  "expectedRecordCategories": [
+    "core.product",
+    "software.package",
+    "api.interface",
+    "security.decision",
+    "software.consumer",
+    "foundry.readiness-gap"
+  ],
+  "provenanceExamples": [
+    "expected/provenance.json"
+  ],
   "promptRefs": [
     "software-library.readme.interview-medium.implementation-ready.v1"
   ],

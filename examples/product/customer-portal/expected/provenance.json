@@ -1,0 +1,35 @@
+{
+  "exampleRef": "example.product.customer-portal",
+  "decisions": [
+    {
+      "recordRef": "product.customer_portal",
+      "field": "summary",
+      "decisionSource": "user-provided",
+      "sourceRefs": [
+        "inputs/brief.md"
+      ],
+      "confidence": "medium",
+      "humanApprovalRequired": true
+    },
+    {
+      "recordRef": "integration.billing_system",
+      "field": "summary",
+      "decisionSource": "ai-suggested",
+      "sourceRefs": [
+        "inputs/brief.md"
+      ],
+      "confidence": "low",
+      "humanApprovalRequired": true
+    },
+    {
+      "recordRef": "decision.permission_audit",
+      "field": "status",
+      "decisionSource": "unresolved",
+      "sourceRefs": [
+        "expected/questions.md"
+      ],
+      "confidence": "low",
+      "humanApprovalRequired": true
+    }
+  ]
+}

@@ -1,0 +1,165 @@
+{
+  "workspace": {
+    "id": "foundry.example.unity_game.dream_extraction",
+    "name": "Dream Extraction Unity Game",
+    "specVersion": "candidate",
+    "status": "draft",
+    "notes": "Candidate VeritySpec workspace draft generated from rough GDD, brief, and image notes. It is not implementation-ready without VeritySpec validation and human approval."
+  },
+  "records": [
+    {
+      "id": "game.product.dream_extraction",
+      "kind": "core.product",
+      "name": "Dream Extraction",
+      "status": "draft",
+      "summary": "Co-op extraction roguelite about entering unstable dream zones, collecting memory shards, and escaping before collapse.",
+      "provenance": {
+        "sourceRefs": [
+          "inputs/brief.md",
+          "inputs/rough-gdd.md"
+        ],
+        "decisionSource": "user-provided",
+        "confidence": "medium",
+        "humanApprovalRequired": true
+      }
+    },
+    {
+      "id": "source.gdd.dream_extraction",
+      "kind": "game.gdd-source",
+      "name": "Dream Extraction Rough GDD",
+      "status": "draft",
+      "path": "inputs/rough-gdd.md",
+      "provenance": {
+        "sourceRefs": [
+          "inputs/rough-gdd.md"
+        ],
+        "decisionSource": "user-provided",
+        "confidence": "high",
+        "humanApprovalRequired": false
+      }
+    },
+    {
+      "id": "asset.identity.key_art",
+      "kind": "game.asset.image",
+      "name": "Key Art Notes",
+      "status": "draft",
+      "assetRole": "identity",
+      "path": "art/identity/key-art.png",
+      "provenance": {
+        "sourceRefs": [
+          "inputs/images.md",
+          "inputs/image-manifest.json"
+        ],
+        "decisionSource": "ai-inferred",
+        "confidence": "low",
+        "humanApprovalRequired": true
+      }
+    },
+    {
+      "id": "game.visual_identity.primary",
+      "kind": "game.visual-identity",
+      "name": "Primary Visual Identity",
+      "status": "draft",
+      "summary": "Surreal, liminal, cooperative, dangerous visual direction inferred from written image notes.",
+      "provenance": {
+        "sourceRefs": [
+          "inputs/images.md"
+        ],
+        "decisionSource": "ai-inferred",
+        "confidence": "low",
+        "humanApprovalRequired": true
+      }
+    },
+    {
+      "id": "game.loop.extract_escape_upgrade",
+      "kind": "game.loop",
+      "name": "Extract, Escape, Upgrade",
+      "status": "draft",
+      "summary": "Enter a dream zone, gather memory shards, escape before collapse, and upgrade between runs.",
+      "provenance": {
+        "sourceRefs": [
+          "inputs/rough-gdd.md"
+        ],
+        "decisionSource": "user-provided",
+        "confidence": "medium",
+        "humanApprovalRequired": true
+      }
+    },
+    {
+      "id": "game.mode.coop_extraction",
+      "kind": "game.mode",
+      "name": "Co-op Extraction",
+      "status": "draft",
+      "summary": "Cooperative extraction mode inferred as the primary play mode.",
+      "provenance": {
+        "sourceRefs": [
+          "inputs/brief.md"
+        ],
+        "decisionSource": "user-provided",
+        "confidence": "medium",
+        "humanApprovalRequired": true
+      }
+    },
+    {
+      "id": "game.feature.memory_shards",
+      "kind": "game.feature",
+      "name": "Memory Shards",
+      "status": "draft",
+      "summary": "Collectable resource central to extraction rewards and upgrades.",
+      "provenance": {
+        "sourceRefs": [
+          "inputs/rough-gdd.md"
+        ],
+        "decisionSource": "user-provided",
+        "confidence": "medium",
+        "humanApprovalRequired": true
+      }
+    },
+    {
+      "id": "unity.dependency.shared_runtime",
+      "kind": "unity.package-dependency",
+      "name": "Shared Unity Runtime Dependency",
+      "status": "unresolved",
+      "summary": "Shared Unity runtime is a candidate assumption; exact package name, version, and exposed capabilities are unresolved.",
+      "provenance": {
+        "sourceRefs": [
+          "expected/assumptions.md",
+          "expected/questions.md"
+        ],
+        "decisionSource": "ai-suggested",
+        "confidence": "low",
+        "humanApprovalRequired": true
+      }
+    },
+    {
+      "id": "telemetry.intent.extraction_outcome",
+      "kind": "telemetry.intent",
+      "name": "Extraction Outcome Telemetry Intent",
+      "status": "draft",
+      "summary": "Candidate telemetry intent for measuring run completion, escape, failure, and collapse outcomes.",
+      "provenance": {
+        "sourceRefs": [
+          "inputs/rough-gdd.md"
+        ],
+        "decisionSource": "ai-suggested",
+        "confidence": "medium",
+        "humanApprovalRequired": true
+      }
+    },
+    {
+      "id": "gap.unity_implementation_readiness",
+      "kind": "foundry.readiness-gap",
+      "name": "Unity Implementation Readiness Gap",
+      "status": "open",
+      "summary": "Unity version, target platforms, save model, telemetry schema, QA evidence, liveops assumptions, and archive posture remain unresolved.",
+      "provenance": {
+        "sourceRefs": [
+          "expected/readiness-gaps.md"
+        ],
+        "decisionSource": "ai-suggested",
+        "confidence": "medium",
+        "humanApprovalRequired": true
+      }
+    }
+  ]
+}

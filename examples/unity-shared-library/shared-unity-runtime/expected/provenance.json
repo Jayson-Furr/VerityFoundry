@@ -1,0 +1,35 @@
+{
+  "exampleRef": "example.unity-shared-library.shared-unity-runtime",
+  "decisions": [
+    {
+      "recordRef": "library.shared_unity_runtime",
+      "field": "summary",
+      "decisionSource": "user-provided",
+      "sourceRefs": [
+        "inputs/brief.md"
+      ],
+      "confidence": "medium",
+      "humanApprovalRequired": true
+    },
+    {
+      "recordRef": "unity.package.save_system",
+      "field": "summary",
+      "decisionSource": "ai-inferred",
+      "sourceRefs": [
+        "inputs/brief.md"
+      ],
+      "confidence": "medium",
+      "humanApprovalRequired": true
+    },
+    {
+      "recordRef": "unity.dependency.engine_version",
+      "field": "status",
+      "decisionSource": "unresolved",
+      "sourceRefs": [
+        "expected/assumptions.md"
+      ],
+      "confidence": "low",
+      "humanApprovalRequired": true
+    }
+  ]
+}

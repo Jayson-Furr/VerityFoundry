@@ -8,13 +8,32 @@
   "inputs": [
     "inputs/brief.md",
     "inputs/rough-gdd.md",
-    "inputs/images.md"
+    "inputs/images.md",
+    "inputs/image-manifest.json"
   ],
   "expectedOutputs": [
     "expected/workspace-outline.md",
     "expected/assumptions.md",
     "expected/questions.md",
     "expected/readiness-gaps.md"
+  ],
+  "workspaceFixtures": [
+    "expected/candidate-workspace.json"
+  ],
+  "expectedRecordCategories": [
+    "core.product",
+    "game.gdd-source",
+    "game.asset.image",
+    "game.visual-identity",
+    "game.loop",
+    "game.mode",
+    "game.feature",
+    "unity.package-dependency",
+    "telemetry.intent",
+    "foundry.readiness-gap"
+  ],
+  "provenanceExamples": [
+    "expected/provenance.json"
   ],
   "promptRefs": [
     "unity-game.gdd-art.interview-medium.implementation-ready.v1"

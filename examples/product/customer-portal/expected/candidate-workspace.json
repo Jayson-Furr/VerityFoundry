@@ -1,0 +1,101 @@
+{
+  "workspace": {
+    "id": "foundry.example.product.customer_portal",
+    "name": "Customer Portal Product",
+    "specVersion": "candidate",
+    "status": "draft",
+    "notes": "Candidate VeritySpec workspace draft generated from low-stakes product brief input. It requires VeritySpec validation and human approval before use."
+  },
+  "records": [
+    {
+      "id": "product.customer_portal",
+      "kind": "core.product",
+      "name": "Customer Portal",
+      "status": "draft",
+      "summary": "Customer-facing portal for account status, user management, invoices, support requests, and service-health review.",
+      "provenance": {
+        "sourceRefs": [
+          "inputs/brief.md"
+        ],
+        "decisionSource": "user-provided",
+        "confidence": "medium",
+        "humanApprovalRequired": true
+      }
+    },
+    {
+      "id": "audience.account_owners",
+      "kind": "product.audience",
+      "name": "Account Owners",
+      "status": "draft",
+      "summary": "Primary external user group inferred from account-management requirements.",
+      "provenance": {
+        "sourceRefs": [
+          "inputs/brief.md"
+        ],
+        "decisionSource": "ai-inferred",
+        "confidence": "medium",
+        "humanApprovalRequired": true
+      }
+    },
+    {
+      "id": "feature.invoice_download",
+      "kind": "product.feature",
+      "name": "Invoice Download",
+      "status": "draft",
+      "summary": "Allow eligible users to download invoices from billing-system data.",
+      "provenance": {
+        "sourceRefs": [
+          "inputs/brief.md"
+        ],
+        "decisionSource": "user-provided",
+        "confidence": "medium",
+        "humanApprovalRequired": true
+      }
+    },
+    {
+      "id": "integration.billing_system",
+      "kind": "product.integration-assumption",
+      "name": "Billing System Integration",
+      "status": "draft",
+      "summary": "Billing-system source and contract are unresolved and must be confirmed.",
+      "provenance": {
+        "sourceRefs": [
+          "inputs/brief.md"
+        ],
+        "decisionSource": "ai-suggested",
+        "confidence": "low",
+        "humanApprovalRequired": true
+      }
+    },
+    {
+      "id": "decision.permission_audit",
+      "kind": "product.permission-decision",
+      "name": "Permission and Audit Review",
+      "status": "unresolved",
+      "summary": "Permission model and audit retention are high-impact decisions requiring human approval.",
+      "provenance": {
+        "sourceRefs": [
+          "inputs/brief.md"
+        ],
+        "decisionSource": "unresolved",
+        "confidence": "low",
+        "humanApprovalRequired": true
+      }
+    },
+    {
+      "id": "gap.implementation_readiness",
+      "kind": "foundry.readiness-gap",
+      "name": "Implementation Readiness Gap",
+      "status": "open",
+      "summary": "Implementation, operations, privacy, accessibility, maintenance, and archive decisions remain unresolved.",
+      "provenance": {
+        "sourceRefs": [
+          "expected/readiness-gaps.md"
+        ],
+        "decisionSource": "ai-suggested",
+        "confidence": "medium",
+        "humanApprovalRequired": true
+      }
+    }
+  ]
+}

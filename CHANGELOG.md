@@ -2,7 +2,11 @@
 
 ## Unreleased
 
-No unreleased changes.
+- Added candidate workspace fixture references to example manifests.
+- Added expected record-category validation for example workspace fixtures.
+- Added provenance example files for all examples.
+- Added an image-input manifest fixture for the Unity game example.
+- Added workspace fixture conversion documentation for VeritySpec handoff.
 
 ## 0.7.0
 
