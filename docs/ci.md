@@ -18,7 +18,10 @@ verityfoundry validate goldens
 verityfoundry lint decision-policy
 verityfoundry report prompt-quality
 verityfoundry report matrix-coverage
+verityfoundry report golden-inventory
+verityfoundry report example-inventory
 verityfoundry check verityspec
+verityfoundry check release-integrity
 git diff --check
 ```
 
@@ -35,3 +38,8 @@ Release workflow wheel smoke tests install the built wheel into a clean virtual
 environment and run CLI inspection from `/tmp`, outside the source checkout.
 That check verifies the packaged prompt-library artifacts are available to an
 installed CLI.
+
+`verityfoundry check release-integrity` runs from the source checkout because
+it checks repository files such as `README.md`, `CHANGELOG.md`, `ROADMAP.md`,
+`pyproject.toml`, and release notes. It is not part of the installed-wheel
+smoke test.

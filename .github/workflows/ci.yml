@@ -52,7 +52,10 @@ jobs:
           verityfoundry lint decision-policy
           verityfoundry report prompt-quality
           verityfoundry report matrix-coverage
+          verityfoundry report golden-inventory
+          verityfoundry report example-inventory
           verityfoundry check verityspec
+          verityfoundry check release-integrity
 
       - name: Check whitespace
         shell: bash

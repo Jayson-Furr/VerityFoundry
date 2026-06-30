@@ -2,7 +2,15 @@
 
 ## Unreleased
 
-No unreleased changes.
+- Added `verityfoundry check release-integrity` for deterministic package,
+  README, changelog, roadmap, release checklist, and release-note version
+  checks.
+- Added `verityfoundry report golden-inventory` and
+  `verityfoundry report example-inventory` for release reviewers.
+- Added release integrity, release reviewer inventory, and golden output drift
+  review documentation.
+- Added CI, release-checklist, and AI-agent guidance coverage for the new
+  release-review commands.
 
 ## 0.10.0
 

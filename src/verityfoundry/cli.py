@@ -9,12 +9,19 @@ import sys
 
 from . import __version__
 from .integration import check_verityspec, format_verityspec_check_result
+from .inventory import (
+    format_example_inventory_report,
+    format_golden_inventory_report,
+    generate_example_inventory_report,
+    generate_golden_inventory_report,
+)
 from .manifests import find_project_root, load_matrix_manifests, load_prompt_manifests
 from .matrix import render_matrix
 from .matrix_coverage import format_matrix_coverage_report, generate_matrix_coverage_report
 from .policy_lint import format_policy_lint_issues, lint_decision_policy
 from .quality import format_prompt_quality_report, generate_prompt_quality_report
 from .rendering import render_profiles, render_prompt
+from .release_integrity import check_release_integrity, format_release_integrity_report
 from .validation import (
     validate_all,
     validate_examples,
@@ -67,7 +74,15 @@ def build_parser() -> argparse.ArgumentParser:
     matrix_parser.add_argument("--out", help="Optional output path.")
 
     report_parser = subparsers.add_parser("report", help="Generate deterministic local reports.")
-    report_parser.add_argument("target", choices=["prompt-quality", "matrix-coverage"])
+    report_parser.add_argument(
+        "target",
+        choices=[
+            "prompt-quality",
+            "matrix-coverage",
+            "golden-inventory",
+            "example-inventory",
+        ],
+    )
     report_parser.add_argument("--format", choices=["text", "json"], default="text")
 
     check_parser = subparsers.add_parser("check", help="Run optional local integration checks.")
@@ -85,6 +100,16 @@ def build_parser() -> argparse.ArgumentParser:
         help="Path or command name for the VeritySpec CLI. Defaults to `verity` on PATH.",
     )
     verityspec_parser.add_argument("--format", choices=["text", "json"], default="text")
+
+    release_integrity_parser = check_subparsers.add_parser(
+        "release-integrity",
+        help="Check release/version bookkeeping across package metadata and docs.",
+    )
+    release_integrity_parser.add_argument(
+        "--expected-version",
+        help="Expected package version. Defaults to the version in pyproject.toml.",
+    )
+    release_integrity_parser.add_argument("--format", choices=["text", "json"], default="text")
 
     lint_parser = subparsers.add_parser("lint", help="Run deterministic local linters.")
     lint_parser.add_argument("target", choices=["decision-policy"])
@@ -193,9 +218,15 @@ def _cmd_report(args: argparse.Namespace) -> int:
     if args.target == "matrix-coverage":
         report = generate_matrix_coverage_report(root)
         formatted = format_matrix_coverage_report(report)
-    else:
+    elif args.target == "prompt-quality":
         report = generate_prompt_quality_report(root)
         formatted = format_prompt_quality_report(report)
+    elif args.target == "golden-inventory":
+        report = generate_golden_inventory_report(root)
+        formatted = format_golden_inventory_report(report)
+    else:
+        report = generate_example_inventory_report(root)
+        formatted = format_example_inventory_report(report)
 
     if args.format == "json":
         print(json.dumps(report, indent=2, sort_keys=True))
@@ -213,6 +244,13 @@ def _cmd_check(args: argparse.Namespace) -> int:
         else:
             print(format_verityspec_check_result(result), end="")
         return EXIT_VALIDATION_FAILED if result.status == "failed" else EXIT_OK
+    if args.check_target == "release-integrity":
+        report = check_release_integrity(root, expected_version=args.expected_version)
+        if args.format == "json":
+            print(json.dumps(report, indent=2, sort_keys=True))
+        else:
+            print(format_release_integrity_report(report), end="")
+        return EXIT_VALIDATION_FAILED if report["status"] == "failed" else EXIT_OK
     return EXIT_USAGE_ERROR
 
 

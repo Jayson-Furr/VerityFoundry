@@ -124,6 +124,30 @@ class CliTests(unittest.TestCase):
         self.assertIn('"matrixCount"', result.stdout)
         self.assertIn('"missingDomainPrompts"', result.stdout)
 
+    def test_golden_inventory_report_text(self) -> None:
+        result = run_cli("report", "golden-inventory")
+        self.assertEqual(result.returncode, 0, result.stderr)
+        self.assertIn("Golden Output Inventory Report", result.stdout)
+        self.assertIn("golden.unity-game.dream-extraction.implementation-ready", result.stdout)
+
+    def test_golden_inventory_report_json(self) -> None:
+        result = run_cli("report", "golden-inventory", "--format", "json")
+        self.assertEqual(result.returncode, 0, result.stderr)
+        self.assertIn('"goldenCount"', result.stdout)
+        self.assertIn('"goldens"', result.stdout)
+
+    def test_example_inventory_report_text(self) -> None:
+        result = run_cli("report", "example-inventory")
+        self.assertEqual(result.returncode, 0, result.stderr)
+        self.assertIn("Example Inventory Report", result.stdout)
+        self.assertIn("example.unity-game.dream-extraction", result.stdout)
+
+    def test_example_inventory_report_json(self) -> None:
+        result = run_cli("report", "example-inventory", "--format", "json")
+        self.assertEqual(result.returncode, 0, result.stderr)
+        self.assertIn('"exampleCount"', result.stdout)
+        self.assertIn('"examples"', result.stdout)
+
     def test_decision_policy_lint(self) -> None:
         result = run_cli("lint", "decision-policy")
         self.assertEqual(result.returncode, 0, result.stdout + result.stderr)
@@ -147,6 +171,24 @@ class CliTests(unittest.TestCase):
         self.assertEqual(result.returncode, 0, result.stderr)
         self.assertIn('"status": "skipped"', result.stdout)
         self.assertIn("not found", result.stdout)
+
+    def test_release_integrity_check_passes(self) -> None:
+        result = run_cli("check", "release-integrity")
+        self.assertEqual(result.returncode, 0, result.stdout + result.stderr)
+        self.assertIn("Release integrity check passed.", result.stdout)
+
+    def test_release_integrity_check_json_failure(self) -> None:
+        result = run_cli(
+            "check",
+            "release-integrity",
+            "--expected-version",
+            "0.0.0",
+            "--format",
+            "json",
+        )
+        self.assertEqual(result.returncode, 1)
+        self.assertIn('"status": "failed"', result.stdout)
+        self.assertIn('"issueCount"', result.stdout)
 
     def test_unknown_prompt_fails_usage(self) -> None:
         result = run_cli("render", "--prompt", "missing.prompt.v1")
