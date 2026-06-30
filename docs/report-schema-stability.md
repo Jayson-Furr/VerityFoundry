@@ -11,6 +11,7 @@ readiness certifications.
 | `verityfoundry report prompt-quality --format json` | Prompt quality scoring for uncertainty and provenance evidence |
 | `verityfoundry report prompt-quality-trend --format json` | Comparison against checked-in prompt quality snapshots |
 | `verityfoundry report matrix-coverage --format json` | Domain prompt coverage across matrices |
+| `verityfoundry report release-summary --format json` | Aggregate release-review summary across checks and inventories |
 | `verityfoundry report golden-inventory --format json` | Golden output inventory |
 | `verityfoundry report example-inventory --format json` | Example manifest inventory |
 | `verityfoundry report fixture-inventory --format json` | Candidate workspace fixture inventory and kind mapping |

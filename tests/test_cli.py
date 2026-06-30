@@ -137,6 +137,20 @@ class CliTests(unittest.TestCase):
         self.assertIn('"matrixCount"', result.stdout)
         self.assertIn('"missingDomainPrompts"', result.stdout)
 
+    def test_release_summary_report_text(self) -> None:
+        result = run_cli("report", "release-summary")
+        self.assertEqual(result.returncode, 0, result.stderr)
+        self.assertIn("Release Summary Report", result.stdout)
+        self.assertIn("Release integrity: passed", result.stdout)
+        self.assertIn("Workflow hygiene: passed", result.stdout)
+
+    def test_release_summary_report_json(self) -> None:
+        result = run_cli("report", "release-summary", "--format", "json")
+        self.assertEqual(result.returncode, 0, result.stderr)
+        self.assertIn('"blockingIssueCount": 0', result.stdout)
+        self.assertIn('"releaseIntegrity"', result.stdout)
+        self.assertIn('"goldenInventory"', result.stdout)
+
     def test_golden_inventory_report_text(self) -> None:
         result = run_cli("report", "golden-inventory")
         self.assertEqual(result.returncode, 0, result.stderr)

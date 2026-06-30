@@ -571,6 +571,46 @@ Sprint 38 should release the completed `v0.16.0` scope:
 - Tag and publish the v0.16.0 GitHub release when checks pass.
 - Close the v0.16.0 milestone after release verification.
 
+## v0.17.0
+
+The `v0.17.0` milestone is in progress.
+
+| Sprint | Status | Focus |
+|---:|---|---|
+| 39 | In Progress | Release-summary report and release-review automation docs |
+| 40 | Pending | v0.17.0 release preparation |
+
+## Sprint 39 Priorities
+
+Sprint 39 should bundle about a week of release-review automation work:
+
+- Add a local `release-summary` report that aggregates release-review command
+  results without invoking external AI APIs.
+- Add historical workflow hygiene snapshot documentation for release
+  reviewers.
+- Add configurable action-version policy documentation for workflow hygiene
+  checks.
+- Add quality threshold ratcheting guidance for raising baselines
+  intentionally.
+- Add render-profile compatibility matrix documentation for supported AI-agent
+  surfaces.
+- Add release-summary coverage to CI, release workflow smoke checks, README,
+  release checklist, release reviewer checklist, tests, changelog, roadmap,
+  and agent guidance.
+- Keep the Next 20 roadmap points populated after converting completed items.
+
+## Sprint 40 Priorities
+
+Sprint 40 should release the completed `v0.17.0` scope:
+
+- Add v0.17.0 release notes.
+- Update package metadata, README release badge, latest-release text, install
+  guidance, changelog, roadmap, and release checklist to `v0.17.0`.
+- Run local release verification, package build checks, `twine check`,
+  installed-wheel smoke tests, and GitHub Actions.
+- Tag and publish the v0.17.0 GitHub release when checks pass.
+- Close the v0.17.0 milestone after release verification.
+
 ## Later Candidates
 
 These are intentionally not committed to a release until the initial scaffold
@@ -590,37 +630,33 @@ AI agents must keep this section populated with up to 20 concrete points when
 the active roadmap is caught up. The points should balance fixes,
 improvements, continuation work, and expansion.
 
-1. Add a local command summary report that aggregates release-review command
-    results without invoking external AI APIs.
-2. Add historical workflow hygiene snapshot documentation for release
-    reviewers.
-3. Add configurable action-version policy documentation for workflow hygiene
-    checks.
-4. Add quality threshold ratcheting guidance for raising baselines
-    intentionally.
-5. Add render-profile compatibility matrix documentation for supported AI
-    agent surfaces.
-6. Add policy-lint warning baseline snapshots for release reviewers.
-7. Add non-blocking warning thresholds for policy-lint advisory counts.
-8. Add CLI smoke tests for rendering prompts with every supported profile to
+1. Add policy-lint warning baseline snapshots for release reviewers.
+2. Add non-blocking warning thresholds for policy-lint advisory counts.
+3. Add CLI smoke tests for rendering prompts with every supported profile to
     files.
-9. Add fixture inventory JSON schema documentation for downstream release
+4. Add fixture inventory JSON schema documentation for downstream release
     tooling.
-10. Add example fixture diff snapshots for release reviewers.
-11. Add provenance decision-source distribution reporting.
-12. Add generated fixture-to-VeritySpec conversion checklist.
-13. Add image-input manifest examples for product and software-library
+5. Add example fixture diff snapshots for release reviewers.
+6. Add provenance decision-source distribution reporting.
+7. Add generated fixture-to-VeritySpec conversion checklist.
+8. Add image-input manifest examples for product and software-library
     domains.
-14. Add portfolio fixture coverage reporting grouped by game concept and
+9. Add portfolio fixture coverage reporting grouped by game concept and
     dependency assumption.
-15. Add cross-workspace dependency reference syntax guidance for generated
+10. Add cross-workspace dependency reference syntax guidance for generated
     VeritySpec workspace drafts.
-16. Add lifecycle golden output drift snapshots for release reviewers.
-17. Add lifecycle prompt matrix examples for archival-ready outputs.
-18. Add release-review report examples in JSON form under checked fixtures.
-19. Add local documentation tests for every README documentation link.
-20. Add package-data coverage tests for prompt, matrix, golden, config, and
+11. Add lifecycle golden output drift snapshots for release reviewers.
+12. Add lifecycle prompt matrix examples for archival-ready outputs.
+13. Add release-review report examples in JSON form under checked fixtures.
+14. Add local documentation tests for every README documentation link.
+15. Add package-data coverage tests for prompt, matrix, golden, config, and
     snapshot artifacts.
+16. Add release-summary JSON schema documentation for downstream tooling.
+17. Add release-summary fixture snapshots for release reviewers.
+18. Add release-summary comparison notes for tracking release-to-release
+    movement.
+19. Add docs for using release-summary output in PR descriptions.
+20. Add optional machine-readable release-review bundle export guidance.
 
 ## Working Rule
 
