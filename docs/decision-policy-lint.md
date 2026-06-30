@@ -10,6 +10,10 @@ verityfoundry lint decision-policy
 verityfoundry lint decision-policy --format json
 ```
 
+The linter reports blocking `error` findings and non-blocking `warning`
+advisories. Warning-only output exits successfully so release reviewers can
+track advisory gaps without blocking unrelated work.
+
 The linter currently checks domain prompts for:
 
 - decision policy references
@@ -18,6 +22,7 @@ The linter currently checks domain prompts for:
 - provenance guidance for high-risk prompts
 - matching interview-mode includes for `interview-high-stakes` and
   `interview-all` prompts
+- advisory output-contract includes for consistent generated sections
 
 High-risk prompts include prompts using high-stakes or all-question interview
 modes, and prompts targeting production, operations, liveops, maintenance,

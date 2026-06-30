@@ -36,7 +36,9 @@ Core concepts:
 - Validator: local checks for manifests, examples, matrices, and prompt
   references.
 - Linter: deterministic decision-policy checks for high-stakes invention
-  risks.
+  risks, with blocking errors and non-blocking advisory warnings.
+- Agent handoff: deterministic render profiles for Codex, Claude Code,
+  ChatGPT, Gemini, GitHub Copilot, and Unity AI.
 - Reports: deterministic prompt quality and matrix coverage inspection.
 - Release checks: deterministic release/version bookkeeping checks.
 - Release-review reports: deterministic golden output and example inventory

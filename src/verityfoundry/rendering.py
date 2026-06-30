@@ -48,6 +48,15 @@ RENDER_PROFILES: dict[str, dict[str, object]] = {
             "Preserve provenance and recommend VeritySpec validation after drafting.",
         ],
     },
+    "github-copilot": {
+        "name": "GitHub Copilot",
+        "guidance": [
+            "Use this prompt as bounded repository context for Copilot-assisted edits.",
+            "Preserve source references, assumptions, unresolved decisions, and approval gates in generated output.",
+            "Keep changes aligned with repository tests, docs, examples, changelog, and roadmap expectations.",
+            "Do not treat Copilot-generated VeritySpec workspace drafts as validated product truth.",
+        ],
+    },
     "unity-ai": {
         "name": "Unity AI",
         "guidance": [

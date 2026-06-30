@@ -17,6 +17,7 @@ verityfoundry render --prompt unity-game.gdd-art.interview-medium.implementation
 verityfoundry render --prompt unity-game.gdd-art.interview-medium.implementation-ready.v1 --profile claude-code
 verityfoundry render --prompt unity-game.gdd-art.interview-medium.implementation-ready.v1 --profile chatgpt
 verityfoundry render --prompt unity-game.gdd-art.interview-medium.implementation-ready.v1 --profile gemini
+verityfoundry render --prompt unity-game.gdd-art.interview-medium.implementation-ready.v1 --profile github-copilot
 verityfoundry render --prompt unity-game.gdd-art.interview-medium.implementation-ready.v1 --profile unity-ai
 ```
 
@@ -27,6 +28,7 @@ Supported profiles:
 - `claude-code`
 - `chatgpt`
 - `gemini`
+- `github-copilot`
 - `unity-ai`
 
 Use render profiles when handing a VerityFoundry prompt to a specific AI agent

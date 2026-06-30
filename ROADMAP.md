@@ -427,6 +427,40 @@ Sprint 30 should release the completed `v0.12.0` scope:
 - Tag and publish the v0.12.0 GitHub release when checks pass.
 - Close the v0.12.0 milestone after release verification.
 
+## v0.13.0
+
+The `v0.13.0` milestone is in progress.
+
+| Sprint | Status | Focus |
+|---:|---|---|
+| 31 | In Progress | Stabilization and agent handoff hardening |
+| 32 | Planned | v0.13.0 release preparation |
+
+## Sprint 31 Priorities
+
+Sprint 31 should bundle about a week of stabilization and agent-handoff work:
+
+- Add a v0.x stabilization checklist for CLI output compatibility, manifest
+  compatibility, report schema compatibility, and release discipline.
+- Add a dedicated GitHub Copilot render profile.
+- Add policy lint severity levels and warning-only advisory checks.
+- Add tests that verify high-risk prompts render safety and provenance
+  sections under every non-default agent profile.
+- Update README, docs, changelog, roadmap, tests, and agent guidance.
+- Keep the Next 20 roadmap points populated after converting completed items.
+
+## Sprint 32 Priorities
+
+Sprint 32 should release the completed `v0.13.0` scope:
+
+- Add v0.13.0 release notes.
+- Update package metadata, README release badge, latest-release text, install
+  guidance, changelog, roadmap, and release checklist to `v0.13.0`.
+- Run local release verification, package build checks, `twine check`,
+  installed-wheel smoke tests, and GitHub Actions.
+- Tag and publish the v0.13.0 GitHub release when checks pass.
+- Close the v0.13.0 milestone after release verification.
+
 ## Later Candidates
 
 These are intentionally not committed to a release until the initial scaffold
@@ -446,39 +480,39 @@ AI agents must keep this section populated with up to 20 concrete points when
 the active roadmap is caught up. The points should balance fixes,
 improvements, continuation work, and expansion.
 
-1. Add a v0.x stabilization checklist for CLI output compatibility,
-   manifest compatibility, and report schema compatibility.
-2. Add a dedicated GitHub Copilot render profile.
-3. Add policy lint severity levels and warning-only advisory checks.
-4. Add tests that verify high-risk prompts render safety and provenance
-    sections under every non-default agent profile.
-5. Add candidate workspace fixture inventory reports for release reviewers.
-6. Add fixture provenance coverage reporting across examples.
-7. Add docs for mapping candidate fixture `kind` values to VeritySpec packs.
-8. Add schema support for image-input manifests once the fixture shape
+1. Add candidate workspace fixture inventory reports for release reviewers.
+2. Add fixture provenance coverage reporting across examples.
+3. Add docs for mapping candidate fixture `kind` values to VeritySpec packs.
+4. Add schema support for image-input manifests once the fixture shape
     stabilizes.
-9. Add tests that packaged wheels include all declared example fixture files.
-10. Add portfolio example manifests for multi-game triage inputs and expected
+5. Add tests that packaged wheels include all declared example fixture files.
+6. Add portfolio example manifests for multi-game triage inputs and expected
     outputs.
-11. Add cross-workspace dependency fixture examples for shared Unity runtime
+7. Add cross-workspace dependency fixture examples for shared Unity runtime
     consumers.
-12. Add lifecycle golden output fixtures for release, maintenance, and
+8. Add lifecycle golden output fixtures for release, maintenance, and
     decommissioning reviews.
-13. Add docs for translating lifecycle gap reports into VeritySpec evidence
+9. Add docs for translating lifecycle gap reports into VeritySpec evidence
     and readiness records.
-14. Add release-integrity JSON schema documentation for downstream tooling.
-15. Add report schema stability notes for prompt-quality, matrix-coverage, and
+10. Add release-integrity JSON schema documentation for downstream tooling.
+11. Add report schema stability notes for prompt-quality, matrix-coverage, and
     inventory reports.
-16. Add a release reviewer checklist that combines integrity, inventory,
+12. Add a release reviewer checklist that combines integrity, inventory,
     prompt-quality, matrix-coverage, and VeritySpec smoke checks.
-17. Add a local command summary report that aggregates release-review command
+13. Add a local command summary report that aggregates release-review command
     results without invoking external AI APIs.
-18. Add historical workflow hygiene snapshot documentation for release
+14. Add historical workflow hygiene snapshot documentation for release
     reviewers.
-19. Add configurable action-version policy documentation for workflow hygiene
+15. Add configurable action-version policy documentation for workflow hygiene
     checks.
-20. Add quality threshold ratcheting guidance for raising baselines
+16. Add quality threshold ratcheting guidance for raising baselines
     intentionally.
+17. Add render-profile compatibility matrix documentation for supported AI
+    agent surfaces.
+18. Add policy-lint warning baseline snapshots for release reviewers.
+19. Add non-blocking warning thresholds for policy-lint advisory counts.
+20. Add CLI smoke tests for rendering prompts with every supported profile to
+    files.
 
 ## Working Rule
 

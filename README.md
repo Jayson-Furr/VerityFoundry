@@ -42,8 +42,8 @@ The repository currently provides:
   installed CLI inspection outside a source checkout.
 - Prompt manifest, matrix manifest, example manifest, and decision policy
   schemas.
-- Agent-specific render profiles for Codex, Claude Code, ChatGPT, Gemini, and
-  Unity AI handoff.
+- Agent-specific render profiles for Codex, Claude Code, ChatGPT, Gemini,
+  GitHub Copilot, and Unity AI handoff.
 - Prompt library folders for common rules, interview modes, readiness targets,
   Unity games, Unity shared libraries, software libraries, products,
   portfolios, and lifecycle readiness.
@@ -66,7 +66,8 @@ The repository currently provides:
 - A deterministic release-integrity check for package and documentation
   version bookkeeping.
 - A deterministic workflow hygiene check for GitHub Actions versions.
-- A deterministic decision-policy linter for high-stakes invention risks.
+- A deterministic decision-policy linter with error and warning severities for
+  high-stakes invention risks and advisory prompt-workflow consistency.
 - An optional local VeritySpec smoke check that runs when `verity` is
   available and skips cleanly when it is not installed.
 - Prompt quality and uncertainty-preservation evaluation guidance.
@@ -137,6 +138,7 @@ verityfoundry check release-integrity
 verityfoundry check quality-thresholds
 verityfoundry check workflow-hygiene
 verityfoundry render --prompt unity-game.gdd-art.interview-medium.implementation-ready.v1 --profile codex
+verityfoundry render --prompt unity-game.gdd-art.interview-medium.implementation-ready.v1 --profile github-copilot
 verityfoundry matrix unity-game
 ```
 
@@ -179,11 +181,12 @@ API or changing the underlying prompt workflow.
 ```bash
 verityfoundry list profiles
 verityfoundry render --prompt unity-game.gdd-art.interview-medium.implementation-ready.v1 --profile codex
+verityfoundry render --prompt unity-game.gdd-art.interview-medium.implementation-ready.v1 --profile github-copilot
 verityfoundry render --prompt unity-game.gdd-art.interview-medium.implementation-ready.v1 --profile unity-ai
 ```
 
 Supported profiles are `default`, `codex`, `claude-code`, `chatgpt`, `gemini`,
-and `unity-ai`.
+`github-copilot`, and `unity-ai`.
 
 ## Interview Modes
 
@@ -336,7 +339,8 @@ they reintroduce known runner annotations.
 ## Decision Policy Lint
 
 Decision-policy linting checks domain prompts for controls that reduce
-high-stakes invention risk.
+high-stakes invention risk. It reports blocking `error` findings and
+non-blocking `warning` advisories.
 
 ```bash
 verityfoundry lint decision-policy
@@ -346,6 +350,9 @@ verityfoundry lint decision-policy --format json
 High-risk prompts must preserve human approval, decision policy references,
 safety and uncertainty guidance, provenance guidance, and the appropriate
 high-stakes or all-questions interview mode include.
+
+Warning-only advisory output exits successfully and is intended for release
+review visibility.
 
 ## VeritySpec Smoke Check
 
@@ -434,8 +441,9 @@ verity graph <generated-workspace>
 ## AI-Agent Usage
 
 AI agents should start with `AGENTS.md`. Agent-specific files such as
-`CODEX.md`, `CHATGPT.md`, `CLAUDE.md`, `GEMINI.md`, and `UNITY_AI.md` are
-adapters that point back to the canonical instructions.
+`CODEX.md`, `CHATGPT.md`, `CLAUDE.md`, `GEMINI.md`, `UNITY_AI.md`, and
+`.github/copilot-instructions.md` are adapters that point back to the
+canonical instructions.
 
 Agents must preserve uncertainty. Generated records and reports should
 distinguish human-provided decisions, AI-inferred decisions, AI-defaulted
@@ -448,6 +456,7 @@ require human approval.
 - [Prompt manifests](docs/prompt-manifests.md)
 - [Render profiles](docs/render-profiles.md)
 - [Decision policy lint](docs/decision-policy-lint.md)
+- [v0.x stabilization checklist](docs/v0x-stabilization-checklist.md)
 - [Matrix coverage](docs/matrix-coverage.md)
 - [Prompt quality trends](docs/prompt-quality-trends.md)
 - [Quality thresholds](docs/quality-thresholds.md)
