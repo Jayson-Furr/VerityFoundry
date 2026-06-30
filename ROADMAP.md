@@ -360,11 +360,12 @@ Sprint 26 should release the completed `v0.10.0` scope:
 
 ## v0.11.0
 
-The `v0.11.0` milestone is in progress.
+The `v0.11.0` milestone is released.
 
 | Sprint | Status | Focus |
 |---:|---|---|
-| 27 | In progress | Release integrity and reviewer reports |
+| 27 | Complete | Release integrity and reviewer reports |
+| 28 | Complete | v0.11.0 release preparation |
 
 ## Sprint 27 Priorities
 
@@ -378,6 +379,18 @@ Sprint 27 should bundle related release-review tooling:
 - Update CI, release checklist, README, changelog, roadmap, tests, and
   agent guidance for the new commands.
 - Keep the Next 20 roadmap points populated after converting completed items.
+
+## Sprint 28 Priorities
+
+Sprint 28 should release the completed `v0.11.0` scope:
+
+- Add v0.11.0 release notes.
+- Update package metadata, README release badge, latest-release text, install
+  guidance, changelog, roadmap, and release checklist to `v0.11.0`.
+- Run local release verification, package build checks, `twine check`,
+  installed-wheel smoke tests, and GitHub Actions.
+- Tag and publish the v0.11.0 GitHub release when checks pass.
+- Close the v0.11.0 milestone after release verification.
 
 ## Later Candidates
 
