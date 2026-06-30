@@ -1,0 +1,151 @@
+{
+  "workspace": {
+    "id": "foundry.example.portfolio.game_triage",
+    "name": "Game Portfolio Triage",
+    "specVersion": "candidate",
+    "status": "draft",
+    "notes": "Candidate VeritySpec portfolio workspace draft generated from rough portfolio inputs. It is not a production or implementation readiness claim."
+  },
+  "records": [
+    {
+      "id": "portfolio.product.game_concepts",
+      "kind": "core.product",
+      "name": "Game Concepts Portfolio",
+      "status": "draft",
+      "summary": "A candidate portfolio contract for comparing rough Unity game concepts.",
+      "provenance": {
+        "sourceRefs": [
+          "inputs/portfolio-index.md"
+        ],
+        "decisionSource": "user-provided",
+        "confidence": "medium",
+        "humanApprovalRequired": true
+      }
+    },
+    {
+      "id": "portfolio.collection.initial_games",
+      "kind": "portfolio.collection",
+      "name": "Initial Game Concepts",
+      "status": "draft",
+      "summary": "Sample concept set containing Dream Extraction, Space Runners, and Farm Forge.",
+      "provenance": {
+        "sourceRefs": [
+          "inputs/portfolio-index.md"
+        ],
+        "decisionSource": "user-provided",
+        "confidence": "medium",
+        "humanApprovalRequired": true
+      }
+    },
+    {
+      "id": "portfolio.game.dream_extraction",
+      "kind": "portfolio.game-concept",
+      "name": "Dream Extraction",
+      "status": "draft",
+      "summary": "Best-covered candidate in this example because it has a brief, rough GDD, and image notes.",
+      "provenance": {
+        "sourceRefs": [
+          "inputs/portfolio-index.md",
+          "inputs/source-materials.md"
+        ],
+        "decisionSource": "ai-inferred",
+        "confidence": "medium",
+        "humanApprovalRequired": true
+      }
+    },
+    {
+      "id": "portfolio.game.space_runners",
+      "kind": "portfolio.game-concept",
+      "name": "Space Runners",
+      "status": "draft",
+      "summary": "Arcade runner concept with only one-page pitch coverage.",
+      "provenance": {
+        "sourceRefs": [
+          "inputs/portfolio-index.md",
+          "inputs/source-materials.md"
+        ],
+        "decisionSource": "user-provided",
+        "confidence": "low",
+        "humanApprovalRequired": true
+      }
+    },
+    {
+      "id": "portfolio.game.farm_forge",
+      "kind": "portfolio.game-concept",
+      "name": "Farm Forge",
+      "status": "draft",
+      "summary": "Cozy crafting and farming concept with an economy sketch but missing visual identity.",
+      "provenance": {
+        "sourceRefs": [
+          "inputs/portfolio-index.md",
+          "inputs/source-materials.md"
+        ],
+        "decisionSource": "user-provided",
+        "confidence": "low",
+        "humanApprovalRequired": true
+      }
+    },
+    {
+      "id": "portfolio.triage.immediate_workspace_draft",
+      "kind": "portfolio.triage-group",
+      "name": "Immediate Workspace Draft Candidates",
+      "status": "draft",
+      "summary": "Dream Extraction is the only concept in this sample with enough source coverage to draft a candidate workspace without more interview first.",
+      "provenance": {
+        "sourceRefs": [
+          "expected/workspace-outline.md"
+        ],
+        "decisionSource": "ai-suggested",
+        "confidence": "medium",
+        "humanApprovalRequired": true
+      }
+    },
+    {
+      "id": "portfolio.coverage_gap.art_and_licensing",
+      "kind": "portfolio.coverage-gap",
+      "name": "Art and Licensing Coverage Gap",
+      "status": "open",
+      "summary": "Binary image assets, licensing rights, commercial clearance, and accessibility review are unknown.",
+      "provenance": {
+        "sourceRefs": [
+          "inputs/source-materials.md",
+          "expected/readiness-gaps.md"
+        ],
+        "decisionSource": "ai-suggested",
+        "confidence": "medium",
+        "humanApprovalRequired": true
+      }
+    },
+    {
+      "id": "portfolio.dependency.shared_unity_runtime",
+      "kind": "unity.package-dependency",
+      "name": "Portfolio Shared Unity Runtime Assumption",
+      "status": "unresolved",
+      "summary": "The portfolio may use a shared Unity runtime, but package name, version, exported capabilities, and compatibility are unresolved.",
+      "provenance": {
+        "sourceRefs": [
+          "inputs/source-materials.md",
+          "expected/questions.md"
+        ],
+        "decisionSource": "ai-suggested",
+        "confidence": "low",
+        "humanApprovalRequired": true
+      }
+    },
+    {
+      "id": "gap.portfolio_concept_completeness",
+      "kind": "foundry.readiness-gap",
+      "name": "Portfolio Concept Completeness Gap",
+      "status": "open",
+      "summary": "Several concepts require interviews and source-material cleanup before comparable VeritySpec workspaces can be drafted.",
+      "provenance": {
+        "sourceRefs": [
+          "expected/readiness-gaps.md"
+        ],
+        "decisionSource": "ai-suggested",
+        "confidence": "medium",
+        "humanApprovalRequired": true
+      }
+    }
+  ]
+}

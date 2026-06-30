@@ -31,19 +31,20 @@ class InventoryReportTests(unittest.TestCase):
     def test_example_inventory_counts_and_formats(self) -> None:
         report = generate_example_inventory_report(ROOT)
 
-        self.assertEqual(report["exampleCount"], 4)
+        self.assertEqual(report["exampleCount"], 6)
         self.assertGreaterEqual(report["domainCount"], 4)
         self.assertTrue(all(item["workspaceFixtureCount"] >= 1 for item in report["examples"]))
         self.assertTrue(all(item["provenanceExampleCount"] >= 1 for item in report["examples"]))
 
         text = format_example_inventory_report(report)
         self.assertIn("Example Inventory Report", text)
+        self.assertIn("example.portfolio.game-portfolio-triage", text)
         self.assertIn("example.unity-game.dream-extraction", text)
 
     def test_fixture_inventory_counts_and_formats(self) -> None:
         report = generate_fixture_inventory_report(ROOT)
 
-        self.assertEqual(report["fixtureCount"], 4)
+        self.assertEqual(report["fixtureCount"], 6)
         self.assertGreaterEqual(report["recordCount"], 1)
         self.assertGreaterEqual(report["kindCount"], 1)
         self.assertTrue(all(item["exists"] for item in report["fixtures"]))
@@ -52,12 +53,14 @@ class InventoryReportTests(unittest.TestCase):
         text = format_fixture_inventory_report(report)
         self.assertIn("Fixture Inventory Report", text)
         self.assertIn("game.asset.image", text)
+        self.assertIn("portfolio.game-concept", text)
+        self.assertIn("workspace.dependency", text)
         self.assertIn("future verity.pack.game-assets", text)
 
     def test_provenance_coverage_counts_and_formats(self) -> None:
         report = generate_provenance_coverage_report(ROOT)
 
-        self.assertEqual(report["exampleCount"], 4)
+        self.assertEqual(report["exampleCount"], 6)
         self.assertEqual(report["recordProvenancePercent"], 100.0)
         self.assertGreater(report["decisionExamplePercent"], 0)
         self.assertLess(report["decisionExamplePercent"], 100.0)

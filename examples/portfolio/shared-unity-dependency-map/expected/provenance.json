@@ -1,0 +1,36 @@
+{
+  "exampleRef": "example.portfolio.shared-unity-dependency-map",
+  "decisions": [
+    {
+      "recordRef": "dependency.dream_extraction.shared_unity_runtime",
+      "field": "alias",
+      "decisionSource": "ai-suggested",
+      "sourceRefs": [
+        "inputs/dependency-brief.md"
+      ],
+      "confidence": "medium",
+      "humanApprovalRequired": true
+    },
+    {
+      "recordRef": "xref.dream_extraction.save_system",
+      "field": "target",
+      "decisionSource": "ai-suggested",
+      "sourceRefs": [
+        "expected/workspace-outline.md"
+      ],
+      "confidence": "low",
+      "humanApprovalRequired": true
+    },
+    {
+      "recordRef": "gap.shared_unity_dependency_lockfile",
+      "field": "status",
+      "decisionSource": "unresolved",
+      "sourceRefs": [
+        "expected/readiness-gaps.md",
+        "expected/questions.md"
+      ],
+      "confidence": "medium",
+      "humanApprovalRequired": true
+    }
+  ]
+}

@@ -1,0 +1,37 @@
+{
+  "id": "example.portfolio.game-portfolio-triage",
+  "name": "Game Portfolio Triage",
+  "version": "0.1.0",
+  "domain": "portfolio",
+  "interviewMode": "interview-low-stakes",
+  "targetReadiness": "concept-complete",
+  "inputs": [
+    "inputs/portfolio-index.md",
+    "inputs/source-materials.md"
+  ],
+  "expectedOutputs": [
+    "expected/workspace-outline.md",
+    "expected/assumptions.md",
+    "expected/questions.md",
+    "expected/readiness-gaps.md"
+  ],
+  "workspaceFixtures": [
+    "expected/candidate-workspace.json"
+  ],
+  "expectedRecordCategories": [
+    "core.product",
+    "portfolio.collection",
+    "portfolio.game-concept",
+    "portfolio.triage-group",
+    "portfolio.coverage-gap",
+    "unity.package-dependency",
+    "foundry.readiness-gap"
+  ],
+  "provenanceExamples": [
+    "expected/provenance.json"
+  ],
+  "promptRefs": [
+    "portfolio.games.interview-low.concept-complete.v1"
+  ],
+  "notes": "Example only. It demonstrates uncertainty-preserving triage across multiple rough Unity game concepts."
+}

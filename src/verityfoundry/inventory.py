@@ -19,6 +19,10 @@ FIXTURE_KIND_PACKS = {
     "game.loop": "future verity.pack.game-core",
     "game.mode": "future verity.pack.game-core",
     "game.visual-identity": "future verity.pack.game-assets",
+    "portfolio.collection": "future verity.pack.portfolio",
+    "portfolio.coverage-gap": "future verity.pack.portfolio",
+    "portfolio.game-concept": "future verity.pack.portfolio",
+    "portfolio.triage-group": "future verity.pack.portfolio",
     "product.audience": "future verity.pack.product",
     "product.feature": "future verity.pack.product",
     "product.integration-assumption": "future verity.pack.product",
@@ -29,8 +33,12 @@ FIXTURE_KIND_PACKS = {
     "telemetry.intent": "verity.pack.observability",
     "unity.capability": "future verity.pack.unity",
     "unity.consumer-contract": "future verity.pack.unity",
+    "unity.exported-record-assumption": "future verity.pack.unity",
     "unity.package": "future verity.pack.unity",
     "unity.package-dependency": "future verity.pack.unity",
+    "workspace.cross-reference": "future VeritySpec workspace dependency support",
+    "workspace.dependency": "future VeritySpec workspace dependency support",
+    "workspace.dependency-risk": "future VeritySpec workspace dependency support",
 }
 
 

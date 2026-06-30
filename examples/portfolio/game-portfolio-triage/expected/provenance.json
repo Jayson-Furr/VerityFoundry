@@ -1,0 +1,35 @@
+{
+  "exampleRef": "example.portfolio.game-portfolio-triage",
+  "decisions": [
+    {
+      "recordRef": "portfolio.product.game_concepts",
+      "field": "summary",
+      "decisionSource": "user-provided",
+      "sourceRefs": [
+        "inputs/portfolio-index.md"
+      ],
+      "confidence": "medium",
+      "humanApprovalRequired": true
+    },
+    {
+      "recordRef": "portfolio.triage.immediate_workspace_draft",
+      "field": "summary",
+      "decisionSource": "ai-suggested",
+      "sourceRefs": [
+        "expected/workspace-outline.md"
+      ],
+      "confidence": "medium",
+      "humanApprovalRequired": true
+    },
+    {
+      "recordRef": "portfolio.dependency.shared_unity_runtime",
+      "field": "status",
+      "decisionSource": "unresolved",
+      "sourceRefs": [
+        "expected/questions.md"
+      ],
+      "confidence": "low",
+      "humanApprovalRequired": true
+    }
+  ]
+}

@@ -497,6 +497,43 @@ Sprint 34 should release the completed `v0.14.0` scope:
 - Tag and publish the v0.14.0 GitHub release when checks pass.
 - Close the v0.14.0 milestone after release verification.
 
+## v0.15.0
+
+The `v0.15.0` milestone is in progress.
+
+| Sprint | Status | Focus |
+|---:|---|---|
+| 35 | In progress | Portfolio and cross-workspace dependency examples |
+| 36 | Planned | v0.15.0 release preparation |
+
+## Sprint 35 Priorities
+
+Sprint 35 should bundle about a week of portfolio example work:
+
+- Add portfolio example manifests for multi-game triage inputs and expected
+  outputs.
+- Add cross-workspace dependency fixture examples for shared Unity runtime
+  consumers.
+- Add candidate workspace fixtures and provenance examples for both workflows.
+- Keep dependency aliases, exported-record status, version constraints,
+  lockfiles, and canonical URI forms unresolved unless source inputs prove
+  them.
+- Update packaged artifact coverage, fixture kind pack mapping, inventory
+  expectations, README, docs, changelog, roadmap, and tests.
+- Keep the Next 20 roadmap points populated after converting completed items.
+
+## Sprint 36 Priorities
+
+Sprint 36 should release the completed `v0.15.0` scope:
+
+- Add v0.15.0 release notes.
+- Update package metadata, README release badge, latest-release text, install
+  guidance, changelog, roadmap, and release checklist to `v0.15.0`.
+- Run local release verification, package build checks, `twine check`,
+  installed-wheel smoke tests, and GitHub Actions.
+- Tag and publish the v0.15.0 GitHub release when checks pass.
+- Close the v0.15.0 milestone after release verification.
+
 ## Later Candidates
 
 These are intentionally not committed to a release until the initial scaffold
@@ -516,40 +553,40 @@ AI agents must keep this section populated with up to 20 concrete points when
 the active roadmap is caught up. The points should balance fixes,
 improvements, continuation work, and expansion.
 
-1. Add portfolio example manifests for multi-game triage inputs and expected
-    outputs.
-2. Add cross-workspace dependency fixture examples for shared Unity runtime
-    consumers.
-3. Add lifecycle golden output fixtures for release, maintenance, and
+1. Add lifecycle golden output fixtures for release, maintenance, and
     decommissioning reviews.
-4. Add docs for translating lifecycle gap reports into VeritySpec evidence
+2. Add docs for translating lifecycle gap reports into VeritySpec evidence
     and readiness records.
-5. Add release-integrity JSON schema documentation for downstream tooling.
-6. Add report schema stability notes for prompt-quality, matrix-coverage, and
+3. Add release-integrity JSON schema documentation for downstream tooling.
+4. Add report schema stability notes for prompt-quality, matrix-coverage, and
     inventory reports.
-7. Add a release reviewer checklist that combines integrity, inventory,
+5. Add a release reviewer checklist that combines integrity, inventory,
     prompt-quality, matrix-coverage, and VeritySpec smoke checks.
-8. Add a local command summary report that aggregates release-review command
+6. Add a local command summary report that aggregates release-review command
     results without invoking external AI APIs.
-9. Add historical workflow hygiene snapshot documentation for release
+7. Add historical workflow hygiene snapshot documentation for release
     reviewers.
-10. Add configurable action-version policy documentation for workflow hygiene
+8. Add configurable action-version policy documentation for workflow hygiene
     checks.
-11. Add quality threshold ratcheting guidance for raising baselines
+9. Add quality threshold ratcheting guidance for raising baselines
     intentionally.
-12. Add render-profile compatibility matrix documentation for supported AI
+10. Add render-profile compatibility matrix documentation for supported AI
     agent surfaces.
-13. Add policy-lint warning baseline snapshots for release reviewers.
-14. Add non-blocking warning thresholds for policy-lint advisory counts.
-15. Add CLI smoke tests for rendering prompts with every supported profile to
+11. Add policy-lint warning baseline snapshots for release reviewers.
+12. Add non-blocking warning thresholds for policy-lint advisory counts.
+13. Add CLI smoke tests for rendering prompts with every supported profile to
     files.
-16. Add fixture inventory JSON schema documentation for downstream release
+14. Add fixture inventory JSON schema documentation for downstream release
     tooling.
-17. Add example fixture diff snapshots for release reviewers.
-18. Add provenance decision-source distribution reporting.
-19. Add generated fixture-to-VeritySpec conversion checklist.
-20. Add image-input manifest examples for product and software-library
+15. Add example fixture diff snapshots for release reviewers.
+16. Add provenance decision-source distribution reporting.
+17. Add generated fixture-to-VeritySpec conversion checklist.
+18. Add image-input manifest examples for product and software-library
     domains.
+19. Add portfolio fixture coverage reporting grouped by game concept and
+    dependency assumption.
+20. Add cross-workspace dependency reference syntax guidance for generated
+    VeritySpec workspace drafts.
 
 ## Working Rule
 

@@ -4,9 +4,9 @@
 kinds to recommended VeritySpec packs.
 
 The mapping is intentionally advisory. VerityFoundry examples may include
-future-facing record kinds for game, Unity, product, software-library, and
-authoring-output workflows before VeritySpec has built-in packs for every
-domain.
+future-facing record kinds for game, Unity, product, software-library,
+portfolio, cross-workspace dependency, and authoring-output workflows before
+VeritySpec has built-in packs for every domain.
 
 Current mapping categories include:
 
@@ -16,8 +16,12 @@ Current mapping categories include:
 - `telemetry.intent` -> `verity.pack.observability`
 - `game.*` -> future game and game-assets packs
 - `unity.*` -> future Unity pack
+- `portfolio.*` -> future portfolio pack
 - `product.*` -> future product pack
 - `software.*` -> future software pack
+- `workspace.dependency`, `workspace.cross-reference`, and
+  `workspace.dependency-risk` -> future VeritySpec workspace dependency
+  support
 - `foundry.readiness-gap` -> VerityFoundry authoring output
 
 Use the report to answer:

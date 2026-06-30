@@ -35,6 +35,11 @@ The workflow should group concepts without claiming that any game is
 implementation-ready, commercially cleared, licensed, platform approved,
 funded, or liveops-ready unless the input evidence proves it.
 
+The checked example at
+`examples/portfolio/game-portfolio-triage/` demonstrates this workflow with a
+small game portfolio sample. It includes inputs, expected outputs, a candidate
+workspace fixture, and provenance examples.
+
 ## Cross-Workspace Dependency Mapping
 
 Use dependency mapping when a portfolio contains multiple workspaces, such as
@@ -59,6 +64,12 @@ treated as illustrative authoring syntax. Canonical URI forms, lockfiles,
 export visibility, transitive dependency policy, and compatibility reports
 remain future VeritySpec responsibilities unless the input proves they already
 exist.
+
+The checked example at
+`examples/portfolio/shared-unity-dependency-map/` demonstrates this workflow
+with game workspaces that may consume a shared Unity runtime workspace. It
+keeps dependency aliases, version constraints, exported-record status,
+lockfiles, and canonical URI forms unresolved unless source inputs prove them.
 
 ## Authority Boundary
 

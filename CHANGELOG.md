@@ -2,7 +2,12 @@
 
 ## Unreleased
 
-No unreleased changes.
+- Added portfolio example manifests and workspace fixtures for multi-game
+  triage inputs and expected outputs.
+- Added cross-workspace dependency fixture examples for shared Unity runtime
+  consumers.
+- Updated fixture kind pack mapping, packaged artifact coverage, inventory
+  report expectations, README, and roadmap for the new portfolio examples.
 
 ## 0.14.0
 
