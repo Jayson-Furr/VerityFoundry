@@ -394,12 +394,12 @@ Sprint 28 should release the completed `v0.11.0` scope:
 
 ## v0.12.0
 
-The `v0.12.0` milestone is in progress.
+The `v0.12.0` milestone is released.
 
 | Sprint | Status | Focus |
 |---:|---|---|
-| 29 | In Progress | Release-review hardening checks |
-| 30 | Planned | v0.12.0 release preparation |
+| 29 | Complete | Release-review hardening checks |
+| 30 | Complete | v0.12.0 release preparation |
 
 ## Sprint 29 Priorities
 

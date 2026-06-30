@@ -2,6 +2,10 @@
 
 ## Unreleased
 
+No unreleased changes.
+
+## 0.12.0
+
 - Added `verityfoundry report prompt-quality-trend` for deterministic
   comparison against checked-in prompt-quality snapshots.
 - Added `verityfoundry check quality-thresholds` for release-review prompt
