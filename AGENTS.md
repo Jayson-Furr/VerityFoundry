@@ -35,6 +35,7 @@ Core concepts:
 - Renderer: deterministic prompt assembly for local inspection.
 - Validator: local checks for manifests, examples, matrices, and prompt
   references.
+- Reports: deterministic prompt quality and matrix coverage inspection.
 
 Keep the utility package small. The repository is primarily a prompt workflow
 library, not an AI application and not a VeritySpec replacement.
@@ -53,7 +54,9 @@ library, not an AI application and not a VeritySpec replacement.
   `git status --short --branch` and the latest commit.
 - At the entry point, determine whether commands should run under `zsh`,
   `bash`, or PowerShell, then keep command syntax consistent with that shell.
-- Prefer small executable increments over broad speculative rewrites.
+- Prefer sprints that bundle about a week of related work into a coherent
+  releasable increment. Avoid turning every small roadmap point into a
+  separate release when related work can be reviewed and verified together.
 - Do not commit secrets, tokens, API keys, private product data, or local
   environment files.
 - Do not call external AI APIs in tests or CI.
@@ -142,6 +145,7 @@ verityfoundry validate matrices
 verityfoundry validate examples
 verityfoundry validate goldens
 verityfoundry report prompt-quality
+verityfoundry report matrix-coverage
 verityfoundry check verityspec
 git diff --check
 ```
@@ -158,6 +162,7 @@ verityfoundry validate matrices
 verityfoundry validate examples
 verityfoundry validate goldens
 verityfoundry report prompt-quality
+verityfoundry report matrix-coverage
 verityfoundry check verityspec
 verityfoundry render --prompt unity-game.gdd-art.interview-medium.implementation-ready.v1
 verityfoundry matrix unity-game
@@ -173,6 +178,7 @@ verityfoundry matrix unity-game
 - `src/verityfoundry/validation.py`: local validation checks.
 - `src/verityfoundry/rendering.py`: deterministic prompt rendering.
 - `src/verityfoundry/quality.py`: deterministic prompt quality reporting.
+- `src/verityfoundry/matrix_coverage.py`: deterministic matrix coverage reporting.
 - `src/verityfoundry/integration.py`: optional local companion-tool checks.
 - `schemas/`: JSON schemas for manifests.
 - `prompts/`: prompt workflow library.

@@ -11,6 +11,7 @@ from . import __version__
 from .integration import check_verityspec, format_verityspec_check_result
 from .manifests import find_project_root, load_matrix_manifests, load_prompt_manifests
 from .matrix import render_matrix
+from .matrix_coverage import format_matrix_coverage_report, generate_matrix_coverage_report
 from .quality import format_prompt_quality_report, generate_prompt_quality_report
 from .rendering import render_prompt
 from .validation import (
@@ -56,7 +57,7 @@ def build_parser() -> argparse.ArgumentParser:
     matrix_parser.add_argument("--out", help="Optional output path.")
 
     report_parser = subparsers.add_parser("report", help="Generate deterministic local reports.")
-    report_parser.add_argument("target", choices=["prompt-quality"])
+    report_parser.add_argument("target", choices=["prompt-quality", "matrix-coverage"])
     report_parser.add_argument("--format", choices=["text", "json"], default="text")
 
     check_parser = subparsers.add_parser("check", help="Run optional local integration checks.")
@@ -170,11 +171,17 @@ def _cmd_matrix(args: argparse.Namespace) -> int:
 
 def _cmd_report(args: argparse.Namespace) -> int:
     root = _root(args.root)
-    report = generate_prompt_quality_report(root)
+    if args.target == "matrix-coverage":
+        report = generate_matrix_coverage_report(root)
+        formatted = format_matrix_coverage_report(report)
+    else:
+        report = generate_prompt_quality_report(root)
+        formatted = format_prompt_quality_report(report)
+
     if args.format == "json":
         print(json.dumps(report, indent=2, sort_keys=True))
     else:
-        print(format_prompt_quality_report(report), end="")
+        print(formatted, end="")
     return EXIT_OK
 
 

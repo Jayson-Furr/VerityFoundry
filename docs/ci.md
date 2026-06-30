@@ -15,6 +15,7 @@ verityfoundry validate matrices
 verityfoundry validate examples
 verityfoundry validate goldens
 verityfoundry report prompt-quality
+verityfoundry report matrix-coverage
 verityfoundry check verityspec
 git diff --check
 ```

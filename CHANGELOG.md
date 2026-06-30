@@ -2,7 +2,11 @@
 
 ## Unreleased
 
-No unreleased changes.
+- Added software-library and product examples for a shared authentication
+  library and customer portal.
+- Added `verityfoundry report matrix-coverage` with text and JSON output.
+- Updated standard CI, release, README, roadmap, and agent guidance for
+  week-sized grouped sprints and matrix coverage checks.
 
 ## 0.5.0
 

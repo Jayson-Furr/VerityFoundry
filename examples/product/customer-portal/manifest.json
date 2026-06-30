@@ -1,0 +1,21 @@
+{
+  "id": "example.product.customer-portal",
+  "name": "Customer Portal Product",
+  "version": "0.1.0",
+  "domain": "product",
+  "interviewMode": "interview-low-stakes",
+  "targetReadiness": "design-complete",
+  "inputs": [
+    "inputs/brief.md"
+  ],
+  "expectedOutputs": [
+    "expected/workspace-outline.md",
+    "expected/assumptions.md",
+    "expected/questions.md",
+    "expected/readiness-gaps.md"
+  ],
+  "promptRefs": [
+    "product.brief.interview-low.design-complete.v1"
+  ],
+  "notes": "Example only. It demonstrates a low-stakes product workspace draft from a product brief."
+}
