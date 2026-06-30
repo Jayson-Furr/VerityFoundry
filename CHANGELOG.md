@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## 0.17.0
+
 - Added `verityfoundry report release-summary` to aggregate deterministic
   release-review checks and inventory counts.
 - Added release-summary, workflow-hygiene history, action-version policy,

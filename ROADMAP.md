@@ -573,12 +573,12 @@ Sprint 38 should release the completed `v0.16.0` scope:
 
 ## v0.17.0
 
-The `v0.17.0` milestone is in progress.
+The `v0.17.0` milestone is released.
 
 | Sprint | Status | Focus |
 |---:|---|---|
-| 39 | In Progress | Release-summary report and release-review automation docs |
-| 40 | Pending | v0.17.0 release preparation |
+| 39 | Complete | Release-summary report and release-review automation docs |
+| 40 | Complete | v0.17.0 release preparation |
 
 ## Sprint 39 Priorities
 
@@ -628,7 +628,8 @@ issue and milestone before implementation begins.
 
 AI agents must keep this section populated with up to 20 concrete points when
 the active roadmap is caught up. The points should balance fixes,
-improvements, continuation work, and expansion.
+improvements, continuation work, and expansion. Convert related points into
+week-sized sprint bundles rather than one release per small point.
 
 1. Add policy-lint warning baseline snapshots for release reviewers.
 2. Add non-blocking warning thresholds for policy-lint advisory counts.
