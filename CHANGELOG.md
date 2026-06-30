@@ -2,7 +2,12 @@
 
 ## Unreleased
 
-No unreleased changes.
+- Added `verityfoundry report fixture-inventory` and
+  `verityfoundry report provenance-coverage` for release reviewers.
+- Added image input manifest schema validation for example workflows.
+- Added packaged fixture-file tests to prove declared example files are
+  included in built distributions.
+- Added fixture kind pack mapping and provenance coverage documentation.
 
 ## 0.13.0
 

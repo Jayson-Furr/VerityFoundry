@@ -240,6 +240,7 @@ def validate_examples(root: str | Path) -> list[ValidationIssue]:
         return [ValidationIssue("example.missing", "no example manifest files found", str(root_path / "examples"))]
 
     validator = _schema(root_path, "example-manifest.schema.json")
+    image_input_validator = _schema(root_path, "image-input-manifest.schema.json")
     try:
         examples = load_example_manifests(root_path)
         prompts = load_prompt_manifests(root_path)
@@ -287,6 +288,23 @@ def validate_examples(root: str | Path) -> list[ValidationIssue]:
                             "example.missing-file",
                             f"{section} references missing file {relative!r}",
                             str(path),
+                        )
+                    )
+                    continue
+                if section == "inputs" and str(relative).endswith("image-manifest.json"):
+                    try:
+                        image_manifest = read_json(candidate)
+                    except ManifestError as exc:
+                        issues.append(
+                            ValidationIssue("example.image-manifest-parse", str(exc), str(candidate))
+                        )
+                        continue
+                    issues.extend(
+                        _jsonschema_issues(
+                            image_input_validator,
+                            image_manifest,
+                            candidate,
+                            "example.image-manifest.schema",
                         )
                     )
 

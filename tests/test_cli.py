@@ -161,6 +161,30 @@ class CliTests(unittest.TestCase):
         self.assertIn('"exampleCount"', result.stdout)
         self.assertIn('"examples"', result.stdout)
 
+    def test_fixture_inventory_report_text(self) -> None:
+        result = run_cli("report", "fixture-inventory")
+        self.assertEqual(result.returncode, 0, result.stderr)
+        self.assertIn("Fixture Inventory Report", result.stdout)
+        self.assertIn("Recommended packs:", result.stdout)
+
+    def test_fixture_inventory_report_json(self) -> None:
+        result = run_cli("report", "fixture-inventory", "--format", "json")
+        self.assertEqual(result.returncode, 0, result.stderr)
+        self.assertIn('"fixtureCount"', result.stdout)
+        self.assertIn('"packs"', result.stdout)
+
+    def test_provenance_coverage_report_text(self) -> None:
+        result = run_cli("report", "provenance-coverage")
+        self.assertEqual(result.returncode, 0, result.stderr)
+        self.assertIn("Provenance Coverage Report", result.stdout)
+        self.assertIn("Record provenance:", result.stdout)
+
+    def test_provenance_coverage_report_json(self) -> None:
+        result = run_cli("report", "provenance-coverage", "--format", "json")
+        self.assertEqual(result.returncode, 0, result.stderr)
+        self.assertIn('"recordProvenancePercent"', result.stdout)
+        self.assertIn('"decisionExamplePercent"', result.stdout)
+
     def test_decision_policy_lint(self) -> None:
         result = run_cli("lint", "decision-policy")
         self.assertEqual(result.returncode, 0, result.stdout + result.stderr)
