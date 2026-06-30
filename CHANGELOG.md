@@ -2,7 +2,13 @@
 
 ## Unreleased
 
-No unreleased changes.
+- Added lifecycle golden output fixtures for release-readiness,
+  maintenance-readiness, and decommission-readiness review workflows.
+- Added documentation for translating lifecycle gap reports into VeritySpec
+  evidence/readiness records.
+- Added release-integrity JSON report schema notes, report schema stability
+  guidance, and a combined release reviewer checklist.
+- Updated packaged artifact coverage and tests for lifecycle golden outputs.
 
 ## 0.15.0
 

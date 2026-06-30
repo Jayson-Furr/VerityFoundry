@@ -1,0 +1,25 @@
+{
+  "id": "golden.lifecycle.customer-portal.release-readiness-gap-review",
+  "name": "Customer Portal Release-Readiness Gap Review Golden Output",
+  "version": "0.1.0",
+  "domain": "lifecycle",
+  "promptRef": "lifecycle.workspace.interview-medium.production-ready.release-gap-review.v1",
+  "exampleRef": "example.product.customer-portal",
+  "interviewMode": "interview-medium-stakes",
+  "targetReadiness": "production-ready",
+  "outputPath": "output.md",
+  "requiredSections": [
+    "Release-Readiness Summary",
+    "Blocking Gaps",
+    "Non-Blocking Gaps",
+    "Missing Or Unresolved VeritySpec Records",
+    "Human-Provided Decisions",
+    "AI-Inferred Decisions",
+    "AI-Defaulted Decisions",
+    "AI-Suggested Decisions",
+    "Unresolved Decisions",
+    "Human Approval Requirements",
+    "Suggested VeritySpec Validation Loop"
+  ],
+  "notes": "Golden output for lifecycle release-readiness gap review without certifying release readiness."
+}

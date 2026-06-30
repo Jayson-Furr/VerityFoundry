@@ -1,0 +1,24 @@
+{
+  "id": "golden.lifecycle.shared-auth-library.maintenance-readiness",
+  "name": "Shared Auth Library Maintenance-Readiness Golden Output",
+  "version": "0.1.0",
+  "domain": "lifecycle",
+  "promptRef": "lifecycle.shipped-product.interview-high.maintenance-ready.v1",
+  "exampleRef": "example.software-library.shared-auth-library",
+  "interviewMode": "interview-high-stakes",
+  "targetReadiness": "maintenance-ready",
+  "outputPath": "output.md",
+  "requiredSections": [
+    "Maintenance-Readiness Summary",
+    "Maintenance Interview Questions",
+    "Support Handoff Gaps",
+    "Operational Evidence Gaps",
+    "Human-Provided Decisions",
+    "AI-Inferred Decisions",
+    "AI-Defaulted Decisions",
+    "Unresolved Decisions",
+    "Human Approval Requirements",
+    "Suggested VeritySpec Validation Loop"
+  ],
+  "notes": "Golden output for shipped software-library maintenance interview without inventing operational commitments."
+}

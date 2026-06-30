@@ -1,0 +1,24 @@
+{
+  "id": "golden.lifecycle.shared-unity-runtime.decommission-readiness",
+  "name": "Shared Unity Runtime Decommission-Readiness Golden Output",
+  "version": "0.1.0",
+  "domain": "lifecycle",
+  "promptRef": "lifecycle.retiring-product.interview-all.decommission-ready.v1",
+  "exampleRef": "example.unity-shared-library.shared-unity-runtime",
+  "interviewMode": "interview-all",
+  "targetReadiness": "decommission-ready",
+  "outputPath": "output.md",
+  "requiredSections": [
+    "Decommission-Readiness Summary",
+    "Decommissioning Interview Questions",
+    "Archive Follow-Up Items",
+    "Data And Platform Gaps",
+    "Human-Provided Decisions",
+    "AI-Inferred Decisions",
+    "AI-Suggested Decisions",
+    "Unresolved Decisions",
+    "Human Approval Requirements",
+    "Suggested VeritySpec Validation Loop"
+  ],
+  "notes": "Golden output for decommissioning a shared Unity runtime without inventing legal, privacy, or archival completion claims."
+}
