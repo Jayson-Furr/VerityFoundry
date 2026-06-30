@@ -64,6 +64,7 @@ The repository currently provides:
 - Deterministic quality threshold checks for release-review baselines.
 - Deterministic release-review inventory reports for golden outputs and
   examples, candidate workspace fixtures, and provenance coverage.
+- A deterministic aggregate release-summary report for release reviewers.
 - Image input manifest schema validation for example workflows.
 - A deterministic release-integrity check for package and documentation
   version bookkeeping.
@@ -133,6 +134,7 @@ verityfoundry lint decision-policy
 verityfoundry report prompt-quality
 verityfoundry report prompt-quality-trend
 verityfoundry report matrix-coverage
+verityfoundry report release-summary
 verityfoundry report golden-inventory
 verityfoundry report example-inventory
 verityfoundry report fixture-inventory
@@ -308,16 +310,18 @@ Release reviewer reports summarize examples, golden outputs, candidate
 workspace fixtures, and provenance coverage without calling external AI APIs.
 
 ```bash
+verityfoundry report release-summary
 verityfoundry report golden-inventory
 verityfoundry report example-inventory
 verityfoundry report fixture-inventory
 verityfoundry report provenance-coverage
 ```
 
-Use these reports to confirm which examples, golden outputs, fixture record
-kinds, recommended VeritySpec pack mappings, and provenance examples are in
-scope for a release review. They do not replace manifest validation or human
-review.
+Use these reports to confirm release integrity, quality thresholds, workflow
+hygiene, matrix coverage, examples, golden outputs, fixture record kinds,
+recommended VeritySpec pack mappings, and provenance examples in scope for a
+release review. They do not replace manifest validation, VeritySpec validation,
+or human review.
 
 ## Release Integrity Check
 
@@ -472,10 +476,14 @@ require human approval.
 - [Prompt quality trends](docs/prompt-quality-trends.md)
 - [Quality thresholds](docs/quality-thresholds.md)
 - [Workflow hygiene](docs/workflow-hygiene.md)
+- [Workflow hygiene history](docs/workflow-hygiene-history.md)
+- [Action version policy](docs/action-version-policy.md)
 - [Release integrity](docs/release-integrity.md)
 - [Release integrity report schema](docs/release-integrity-report-schema.md)
 - [Report schema stability](docs/report-schema-stability.md)
+- [Release summary report](docs/release-summary-report.md)
 - [Release reviewer checklist](docs/release-reviewer-checklist.md)
+- [Quality threshold ratcheting](docs/quality-threshold-ratcheting.md)
 - [Release reviewer inventory reports](docs/reviewer-inventory-reports.md)
 - [Fixture kind pack mapping](docs/fixture-kind-pack-mapping.md)
 - [Provenance coverage](docs/provenance-coverage.md)
@@ -492,6 +500,7 @@ require human approval.
 - [Unity game workflows](docs/unity-game-workflows.md)
 - [Unity shared-library workflows](docs/unity-shared-library-workflows.md)
 - [Golden output guidelines](evaluations/golden-output-guidelines.md)
+- [Render profile compatibility](docs/render-profile-compatibility.md)
 - [Using with VeritySpec](docs/using-with-verityspec.md)
 - [Using with Codex](docs/using-with-codex.md)
 - [Using with Copilot](docs/using-with-copilot.md)

@@ -2,7 +2,14 @@
 
 ## Unreleased
 
-No unreleased changes.
+- Added `verityfoundry report release-summary` to aggregate deterministic
+  release-review checks and inventory counts.
+- Added release-summary, workflow-hygiene history, action-version policy,
+  quality-threshold ratcheting, and render-profile compatibility
+  documentation.
+- Added release-summary coverage to CI, release workflow smoke checks,
+  README, release checklist, release reviewer checklist, and AI-agent
+  guidance.
 
 ## 0.16.0
 

@@ -36,6 +36,7 @@ from .quality_trend import (
 )
 from .rendering import render_profiles, render_prompt
 from .release_integrity import check_release_integrity, format_release_integrity_report
+from .release_summary import format_release_summary_report, generate_release_summary_report
 from .thresholds import check_quality_thresholds, format_quality_threshold_report
 from .validation import (
     validate_all,
@@ -96,6 +97,7 @@ def build_parser() -> argparse.ArgumentParser:
             "prompt-quality",
             "prompt-quality-trend",
             "matrix-coverage",
+            "release-summary",
             "golden-inventory",
             "example-inventory",
             "fixture-inventory",
@@ -253,6 +255,9 @@ def _cmd_report(args: argparse.Namespace) -> int:
     if args.target == "matrix-coverage":
         report = generate_matrix_coverage_report(root)
         formatted = format_matrix_coverage_report(report)
+    elif args.target == "release-summary":
+        report = generate_release_summary_report(root)
+        formatted = format_release_summary_report(report)
     elif args.target == "prompt-quality":
         report = generate_prompt_quality_report(root)
         formatted = format_prompt_quality_report(report)

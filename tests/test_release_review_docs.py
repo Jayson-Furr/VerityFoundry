@@ -11,8 +11,13 @@ class ReleaseReviewDocsTests(unittest.TestCase):
         expected = [
             "docs/lifecycle-gap-to-verityspec.md",
             "docs/release-integrity-report-schema.md",
+            "docs/release-summary-report.md",
             "docs/report-schema-stability.md",
             "docs/release-reviewer-checklist.md",
+            "docs/workflow-hygiene-history.md",
+            "docs/action-version-policy.md",
+            "docs/quality-threshold-ratcheting.md",
+            "docs/render-profile-compatibility.md",
         ]
 
         for target in expected:
@@ -24,6 +29,7 @@ class ReleaseReviewDocsTests(unittest.TestCase):
             "docs/lifecycle-gap-to-verityspec.md",
             "docs/report-schema-stability.md",
             "docs/release-reviewer-checklist.md",
+            "docs/release-summary-report.md",
         ):
             with self.subTest(relative=relative):
                 text = (ROOT / relative).read_text(encoding="utf-8")
