@@ -2,6 +2,10 @@
 
 ## Unreleased
 
+No unreleased changes.
+
+## 0.6.0
+
 - Added software-library and product examples for a shared authentication
   library and customer portal.
 - Added `verityfoundry report matrix-coverage` with text and JSON output.
