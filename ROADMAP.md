@@ -291,11 +291,12 @@ Sprint 22 should release the completed `v0.8.0` scope:
 
 ## v0.9.0
 
-The `v0.9.0` milestone is in progress.
+The `v0.9.0` milestone is released.
 
 | Sprint | Status | Focus |
 |---:|---|---|
-| 23 | In progress | Cross-workspace and portfolio workflows |
+| 23 | Complete | Cross-workspace and portfolio workflows |
+| 24 | Complete | v0.9.0 release preparation |
 
 ## Sprint 23 Priorities
 
@@ -309,6 +310,18 @@ Sprint 23 should bundle related multi-workspace and portfolio work:
   assumptions, triage outputs, and VeritySpec authority boundaries.
 - Update tests, README, changelog, roadmap, and packaged artifact coverage.
 - Keep the Next 20 roadmap points populated after converting completed items.
+
+## Sprint 24 Priorities
+
+Sprint 24 should release the completed `v0.9.0` scope:
+
+- Add v0.9.0 release notes.
+- Update package metadata, README release badge, latest-release text, install
+  guidance, changelog, roadmap, and release checklist to `v0.9.0`.
+- Run local release verification, package build checks, `twine check`,
+  installed-wheel smoke tests, and GitHub Actions.
+- Tag and publish the v0.9.0 GitHub release when checks pass.
+- Close the v0.9.0 milestone after release verification.
 
 ## Later Candidates
 
