@@ -49,8 +49,9 @@ The repository currently provides:
   portfolios, and lifecycle readiness.
 - Unity game, Unity shared-library, product, software-library, portfolio, and
   lifecycle prompt matrices.
-- Example inputs and expected outputs for a Unity game and a shared Unity
-  runtime library, plus software-library and product examples.
+- Example inputs and expected outputs for Unity game, Unity shared-library,
+  software-library, product, portfolio triage, and cross-workspace dependency
+  mapping workflows.
 - Candidate workspace fixtures, expected record-category checks, provenance
   examples, and image-input metadata for example workflows.
 - Golden output fixtures for Unity game and Unity shared-library

@@ -30,6 +30,8 @@ class ExampleTests(unittest.TestCase):
             ids,
             {
                 "example.product.customer-portal",
+                "example.portfolio.game-portfolio-triage",
+                "example.portfolio.shared-unity-dependency-map",
                 "example.software-library.shared-auth-library",
                 "example.unity-game.dream-extraction",
                 "example.unity-shared-library.shared-unity-runtime",

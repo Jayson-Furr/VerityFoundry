@@ -1,0 +1,36 @@
+{
+  "id": "example.portfolio.shared-unity-dependency-map",
+  "name": "Shared Unity Runtime Dependency Map",
+  "version": "0.1.0",
+  "domain": "portfolio",
+  "interviewMode": "interview-medium-stakes",
+  "targetReadiness": "implementation-ready",
+  "inputs": [
+    "inputs/dependency-brief.md",
+    "inputs/workspace-summaries.md"
+  ],
+  "expectedOutputs": [
+    "expected/workspace-outline.md",
+    "expected/assumptions.md",
+    "expected/questions.md",
+    "expected/readiness-gaps.md"
+  ],
+  "workspaceFixtures": [
+    "expected/candidate-workspace.json"
+  ],
+  "expectedRecordCategories": [
+    "core.product",
+    "workspace.dependency",
+    "workspace.cross-reference",
+    "workspace.dependency-risk",
+    "unity.exported-record-assumption",
+    "foundry.readiness-gap"
+  ],
+  "provenanceExamples": [
+    "expected/provenance.json"
+  ],
+  "promptRefs": [
+    "portfolio.dependencies.interview-medium.implementation-ready.v1"
+  ],
+  "notes": "Example only. It demonstrates uncertainty-preserving cross-workspace dependency mapping for shared Unity runtime consumers."
+}

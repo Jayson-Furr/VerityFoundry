@@ -1,0 +1,147 @@
+{
+  "workspace": {
+    "id": "foundry.example.portfolio.shared_unity_dependency_map",
+    "name": "Shared Unity Runtime Dependency Map",
+    "specVersion": "candidate",
+    "status": "draft",
+    "notes": "Candidate dependency map generated from portfolio dependency notes. It preserves unresolved dependency, export, version, and lockfile decisions."
+  },
+  "records": [
+    {
+      "id": "portfolio.product.shared_unity_dependency_map",
+      "kind": "core.product",
+      "name": "Shared Unity Dependency Map",
+      "status": "draft",
+      "summary": "Candidate map of game workspaces that may depend on a shared Unity runtime workspace.",
+      "provenance": {
+        "sourceRefs": [
+          "inputs/dependency-brief.md"
+        ],
+        "decisionSource": "user-provided",
+        "confidence": "medium",
+        "humanApprovalRequired": true
+      }
+    },
+    {
+      "id": "dependency.dream_extraction.shared_unity_runtime",
+      "kind": "workspace.dependency",
+      "name": "Dream Extraction to Shared Unity Runtime",
+      "status": "unresolved",
+      "consumerWorkspace": "studio.game.dream_extraction",
+      "providerWorkspace": "studio.library.shared_unity_runtime",
+      "alias": "sharedUnity",
+      "versionConstraint": "unresolved",
+      "provenance": {
+        "sourceRefs": [
+          "inputs/dependency-brief.md",
+          "inputs/workspace-summaries.md"
+        ],
+        "decisionSource": "ai-suggested",
+        "confidence": "medium",
+        "humanApprovalRequired": true
+      }
+    },
+    {
+      "id": "dependency.space_runners.shared_unity_runtime",
+      "kind": "workspace.dependency",
+      "name": "Space Runners to Shared Unity Runtime",
+      "status": "unresolved",
+      "consumerWorkspace": "studio.game.space_runners",
+      "providerWorkspace": "studio.library.shared_unity_runtime",
+      "alias": "sharedUnity",
+      "versionConstraint": "unresolved",
+      "provenance": {
+        "sourceRefs": [
+          "inputs/dependency-brief.md",
+          "inputs/workspace-summaries.md"
+        ],
+        "decisionSource": "ai-suggested",
+        "confidence": "medium",
+        "humanApprovalRequired": true
+      }
+    },
+    {
+      "id": "xref.dream_extraction.save_system",
+      "kind": "workspace.cross-reference",
+      "name": "Dream Extraction Save System Reference",
+      "status": "illustrative",
+      "sourceRecord": "game.feature.cloud_save",
+      "target": "sharedUnity::unity.package.save_system",
+      "summary": "Illustrative friendly reference only; canonical URI resolution is a future VeritySpec responsibility.",
+      "provenance": {
+        "sourceRefs": [
+          "inputs/workspace-summaries.md",
+          "expected/workspace-outline.md"
+        ],
+        "decisionSource": "ai-suggested",
+        "confidence": "low",
+        "humanApprovalRequired": true
+      }
+    },
+    {
+      "id": "xref.space_runners.telemetry_client",
+      "kind": "workspace.cross-reference",
+      "name": "Space Runners Telemetry Client Reference",
+      "status": "illustrative",
+      "sourceRecord": "telemetry.intent.session_started",
+      "target": "sharedUnity::unity.package.telemetry_client",
+      "summary": "Illustrative friendly reference only; exported-record status is unresolved.",
+      "provenance": {
+        "sourceRefs": [
+          "inputs/workspace-summaries.md",
+          "expected/workspace-outline.md"
+        ],
+        "decisionSource": "ai-suggested",
+        "confidence": "low",
+        "humanApprovalRequired": true
+      }
+    },
+    {
+      "id": "unity.export_assumption.save_system",
+      "kind": "unity.exported-record-assumption",
+      "name": "Save System Export Assumption",
+      "status": "unresolved",
+      "summary": "The save system may need to be exported by the shared runtime, but inputs do not prove visibility.",
+      "provenance": {
+        "sourceRefs": [
+          "inputs/dependency-brief.md",
+          "expected/questions.md"
+        ],
+        "decisionSource": "ai-suggested",
+        "confidence": "low",
+        "humanApprovalRequired": true
+      }
+    },
+    {
+      "id": "risk.shared_runtime_visibility",
+      "kind": "workspace.dependency-risk",
+      "name": "Shared Runtime Visibility Risk",
+      "status": "open",
+      "summary": "Consumers may accidentally depend on internal shared runtime records unless export visibility is defined.",
+      "provenance": {
+        "sourceRefs": [
+          "expected/readiness-gaps.md"
+        ],
+        "decisionSource": "ai-suggested",
+        "confidence": "medium",
+        "humanApprovalRequired": true
+      }
+    },
+    {
+      "id": "gap.shared_unity_dependency_lockfile",
+      "kind": "foundry.readiness-gap",
+      "name": "Shared Unity Dependency Lockfile Gap",
+      "status": "open",
+      "summary": "Dependency version constraints, lockfile format, record-set hash, and compatibility policy remain unresolved.",
+      "provenance": {
+        "sourceRefs": [
+          "expected/readiness-gaps.md",
+          "expected/questions.md"
+        ],
+        "decisionSource": "ai-suggested",
+        "confidence": "medium",
+        "humanApprovalRequired": true
+      }
+    }
+  ]
+}
