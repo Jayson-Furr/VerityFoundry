@@ -2,7 +2,9 @@
 
 ## Unreleased
 
-No unreleased changes.
+- Added a deterministic prompt quality report for uncertainty preservation and
+  provenance completeness.
+- Added `verityfoundry report prompt-quality` with text and JSON output.
 
 ## 0.3.0
 

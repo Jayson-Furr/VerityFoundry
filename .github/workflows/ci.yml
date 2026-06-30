@@ -45,8 +45,10 @@ jobs:
           verityfoundry list matrices
           verityfoundry validate
           verityfoundry validate prompts
+          verityfoundry validate matrices
           verityfoundry validate examples
           verityfoundry validate goldens
+          verityfoundry report prompt-quality
 
       - name: Check whitespace
         shell: bash

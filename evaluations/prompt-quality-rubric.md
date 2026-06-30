@@ -14,3 +14,13 @@ Use this rubric when reviewing prompt workflows.
 
 Prompt changes should improve at least one rubric area without weakening
 uncertainty preservation.
+
+Run the deterministic local report with:
+
+```bash
+verityfoundry report prompt-quality
+verityfoundry report prompt-quality --format json
+```
+
+The report scores visible evidence in rendered prompt text. It is an inspection
+aid, not a certification gate.

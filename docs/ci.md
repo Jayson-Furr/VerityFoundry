@@ -11,8 +11,10 @@ verityfoundry list prompts
 verityfoundry list matrices
 verityfoundry validate
 verityfoundry validate prompts
+verityfoundry validate matrices
 verityfoundry validate examples
 verityfoundry validate goldens
+verityfoundry report prompt-quality
 git diff --check
 ```
 

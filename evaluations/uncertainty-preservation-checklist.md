@@ -11,3 +11,6 @@ Before accepting a prompt workflow, check:
   safety, launch, support, or archival claims?
 - Does it preserve source references?
 - Does it recommend VeritySpec validation for generated workspaces?
+
+Use `verityfoundry report prompt-quality` to inspect deterministic uncertainty
+and provenance evidence across the prompt library.

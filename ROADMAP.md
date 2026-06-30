@@ -110,6 +110,26 @@ Sprint 12 should release the completed `v0.3.0` scope:
 - Tag and publish the v0.3.0 GitHub release when checks pass.
 - Close the v0.3.0 milestone after release verification.
 
+## v0.4.0
+
+The `v0.4.0` milestone is in progress.
+
+| Sprint | Status | Focus |
+|---:|---|---|
+| 13 | Complete | Prompt quality report for uncertainty and provenance evidence |
+
+## Sprint 13 Priorities
+
+Sprint 13 should add the first deterministic quality report:
+
+- Add local prompt quality scoring for uncertainty preservation and provenance
+  completeness.
+- Add `verityfoundry report prompt-quality` with text and JSON output.
+- Keep the report deterministic and free of external AI API calls.
+- Add tests for scoring and CLI output.
+- Update README, docs, CI, agent guidance, changelog, and roadmap.
+- Keep the Next 20 roadmap points populated after converting this item.
+
 ## Later Candidates
 
 These are intentionally not committed to a release until the initial scaffold
@@ -130,35 +150,34 @@ AI agents must keep this section populated with up to 20 concrete points when
 the active roadmap is caught up. The points should balance fixes,
 improvements, continuation work, and expansion.
 
-1. Add a prompt quality report that scores uncertainty preservation and
-   provenance completeness.
-2. Add a local VeritySpec integration smoke check that runs only when `verity`
+1. Add a local VeritySpec integration smoke check that runs only when `verity`
    is available.
-3. Add a software-library example for a shared authentication package.
-4. Add a product example for a customer portal.
-5. Add prompt manifests for operations-ready and archival-ready Unity game
+2. Add a software-library example for a shared authentication package.
+3. Add a product example for a customer portal.
+4. Add prompt manifests for operations-ready and archival-ready Unity game
    workflows.
-6. Add a decision-policy linter for high-stakes invention risks.
-7. Add Markdown rendering profiles for Codex, Claude Code, ChatGPT, Gemini,
+5. Add a decision-policy linter for high-stakes invention risks.
+6. Add Markdown rendering profiles for Codex, Claude Code, ChatGPT, Gemini,
    and Unity AI prompt handoff.
-8. Add matrix coverage reports showing domains, interview modes, targets, and
+7. Add matrix coverage reports showing domains, interview modes, targets, and
     missing prompt combinations.
-9. Add example manifests that reference candidate VeritySpec workspace files
+8. Add example manifests that reference candidate VeritySpec workspace files
     once workspace fixtures exist.
-10. Add generated workspace outline validators for expected record categories.
-11. Add image-input manifest fixtures for concept art and identity images.
-12. Add provenance examples aligned with future VeritySpec evidence records.
-13. Add cross-workspace dependency prompt guidance for shared Unity libraries
+9. Add generated workspace outline validators for expected record categories.
+10. Add image-input manifest fixtures for concept art and identity images.
+11. Add provenance examples aligned with future VeritySpec evidence records.
+12. Add cross-workspace dependency prompt guidance for shared Unity libraries
     and game portfolios.
-14. Add portfolio triage prompts for batches of many game concepts.
-15. Add release-readiness gap review prompts for generated VeritySpec
+13. Add portfolio triage prompts for batches of many game concepts.
+14. Add release-readiness gap review prompts for generated VeritySpec
     workspaces.
-16. Add maintenance and decommissioning interview flows for shipped products.
-17. Add contributor docs for proposing new prompt workflows.
-18. Add release-integrity checks for README, changelog, roadmap, package
+15. Add maintenance and decommissioning interview flows for shipped products.
+16. Add contributor docs for proposing new prompt workflows.
+17. Add release-integrity checks for README, changelog, roadmap, package
     metadata, and release notes.
-19. Add golden output drift review documentation for maintainers.
-20. Add a golden output inventory report for maintainers and release reviewers.
+18. Add golden output drift review documentation for maintainers.
+19. Add a golden output inventory report for maintainers and release reviewers.
+20. Add prompt quality trend snapshots for release reviewers.
 
 ## Working Rule
 
