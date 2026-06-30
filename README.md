@@ -49,6 +49,8 @@ The repository currently provides:
   implementation-ready workflows.
 - A deterministic prompt quality report for uncertainty preservation and
   provenance completeness.
+- An optional local VeritySpec smoke check that runs when `verity` is
+  available and skips cleanly when it is not installed.
 - Prompt quality and uncertainty-preservation evaluation guidance.
 - Canonical AI-agent operating instructions in `AGENTS.md`.
 - GitHub Actions CI that validates the library without calling external AI
@@ -106,6 +108,7 @@ verityfoundry validate matrices
 verityfoundry validate examples
 verityfoundry validate goldens
 verityfoundry report prompt-quality
+verityfoundry check verityspec
 verityfoundry render --prompt unity-game.gdd-art.interview-medium.implementation-ready.v1
 verityfoundry matrix unity-game
 ```
@@ -217,6 +220,21 @@ verityfoundry report prompt-quality --format json
 
 The report is an inspection aid, not a readiness certification.
 
+## VeritySpec Smoke Check
+
+VerityFoundry can run a local optional smoke check against the VeritySpec CLI:
+
+```bash
+verityfoundry check verityspec
+verityfoundry check verityspec --workspace <generated-workspace>
+verityfoundry check verityspec --format json
+```
+
+If `verity` is not installed, the command reports `skipped` and exits
+successfully. If `verity` is available and a workspace is provided or detected,
+the command runs `verity validate` against that workspace. This check does not
+make VeritySpec a required dependency of VerityFoundry.
+
 ## Unity Game Workflow
 
 The Unity game prompts support rough inputs such as:
@@ -266,6 +284,7 @@ When VeritySpec is available locally, generated workspaces should be checked
 with:
 
 ```bash
+verityfoundry check verityspec --workspace <generated-workspace>
 verity validate <generated-workspace>
 verity lint <generated-workspace> --strict
 verity readiness <generated-workspace> --strict

@@ -49,6 +49,7 @@ jobs:
           verityfoundry validate examples
           verityfoundry validate goldens
           verityfoundry report prompt-quality
+          verityfoundry check verityspec
 
       - name: Check whitespace
         shell: bash

@@ -94,6 +94,19 @@ class CliTests(unittest.TestCase):
         self.assertIn('"uncertaintyPreservation"', result.stdout)
         self.assertIn('"provenanceCompleteness"', result.stdout)
 
+    def test_verityspec_check_skips_when_verity_is_missing(self) -> None:
+        result = run_cli(
+            "check",
+            "verityspec",
+            "--verity",
+            "/definitely/missing/verity",
+            "--format",
+            "json",
+        )
+        self.assertEqual(result.returncode, 0, result.stderr)
+        self.assertIn('"status": "skipped"', result.stdout)
+        self.assertIn("not found", result.stdout)
+
     def test_unknown_prompt_fails_usage(self) -> None:
         result = run_cli("render", "--prompt", "missing.prompt.v1")
         self.assertEqual(result.returncode, 2)

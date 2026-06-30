@@ -24,6 +24,7 @@ verityfoundry validate matrices
 verityfoundry validate examples
 verityfoundry validate goldens
 verityfoundry report prompt-quality
+verityfoundry check verityspec
 git diff --check
 rm -rf dist build
 python -m build
