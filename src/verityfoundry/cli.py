@@ -11,7 +11,13 @@ from . import __version__
 from .manifests import find_project_root, load_matrix_manifests, load_prompt_manifests
 from .matrix import render_matrix
 from .rendering import render_prompt
-from .validation import validate_all, validate_examples, validate_matrices, validate_prompts
+from .validation import (
+    validate_all,
+    validate_examples,
+    validate_goldens,
+    validate_matrices,
+    validate_prompts,
+)
 
 EXIT_OK = 0
 EXIT_VALIDATION_FAILED = 1
@@ -31,7 +37,12 @@ def build_parser() -> argparse.ArgumentParser:
     list_parser.add_argument("--format", choices=["text", "json"], default="text")
 
     validate_parser = subparsers.add_parser("validate", help="Validate prompt workflow artifacts.")
-    validate_parser.add_argument("target", nargs="?", choices=["all", "prompts", "matrices", "examples"], default="all")
+    validate_parser.add_argument(
+        "target",
+        nargs="?",
+        choices=["all", "prompts", "matrices", "examples", "goldens"],
+        default="all",
+    )
     validate_parser.add_argument("--format", choices=["text", "json"], default="text")
 
     render_parser = subparsers.add_parser("render", help="Render a prompt workflow by ID.")
@@ -100,6 +111,8 @@ def _cmd_validate(args: argparse.Namespace) -> int:
         issues = validate_matrices(root)
     elif args.target == "examples":
         issues = validate_examples(root)
+    elif args.target == "goldens":
+        issues = validate_goldens(root)
     else:
         issues = validate_all(root)
 

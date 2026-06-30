@@ -11,7 +11,9 @@ from jsonschema import Draft202012Validator
 from .manifests import (
     ManifestError,
     example_manifest_paths,
+    golden_manifest_paths,
     load_example_manifests,
+    load_golden_manifests,
     load_matrix_manifests,
     load_prompt_manifests,
     read_json,
@@ -225,6 +227,93 @@ def validate_examples(root: str | Path) -> list[ValidationIssue]:
     return issues
 
 
+def validate_goldens(root: str | Path) -> list[ValidationIssue]:
+    """Validate golden output manifests and referenced files."""
+
+    root_path = Path(root)
+    issues: list[ValidationIssue] = []
+    paths = golden_manifest_paths(root_path)
+    if not paths:
+        return [ValidationIssue("golden.missing", "no golden manifest files found", str(root_path / "goldens"))]
+
+    validator = _schema(root_path, "golden-output.schema.json")
+    try:
+        goldens = load_golden_manifests(root_path)
+        prompts = load_prompt_manifests(root_path)
+        examples = load_example_manifests(root_path)
+    except ManifestError as exc:
+        return [ValidationIssue("golden.parse", str(exc), str(root_path / "goldens"))]
+
+    prompt_ids = {
+        prompt.manifest["id"]
+        for prompt in prompts
+        if isinstance(prompt.manifest.get("id"), str)
+    }
+    example_ids = {
+        manifest["id"]
+        for _, manifest in examples
+        if isinstance(manifest.get("id"), str)
+    }
+    ids: dict[str, Path] = {}
+    for path, manifest in goldens:
+        golden_id = manifest.get("id")
+        issues.extend(_jsonschema_issues(validator, manifest, path, "golden.schema"))
+
+        if isinstance(golden_id, str):
+            if golden_id in ids:
+                issues.append(
+                    ValidationIssue(
+                        "golden.duplicate-id",
+                        f"duplicate golden id {golden_id!r}; first declared in {ids[golden_id]}",
+                        str(path),
+                    )
+                )
+            ids[golden_id] = path
+
+        prompt_ref = manifest.get("promptRef")
+        if prompt_ref and prompt_ref not in prompt_ids:
+            issues.append(
+                ValidationIssue(
+                    "golden.unknown-prompt",
+                    f"promptRef references unknown prompt {prompt_ref!r}",
+                    str(path),
+                )
+            )
+
+        example_ref = manifest.get("exampleRef")
+        if example_ref and example_ref not in example_ids:
+            issues.append(
+                ValidationIssue(
+                    "golden.unknown-example",
+                    f"exampleRef references unknown example {example_ref!r}",
+                    str(path),
+                )
+            )
+
+        output_path = manifest.get("outputPath")
+        if isinstance(output_path, str) and not (path.parent / output_path).exists():
+            issues.append(
+                ValidationIssue(
+                    "golden.missing-output",
+                    f"outputPath references missing file {output_path!r}",
+                    str(path),
+                )
+            )
+
+        for required in manifest.get("requiredSections", []):
+            candidate = path.parent / str(manifest.get("outputPath", ""))
+            if candidate.exists() and f"## {required}" not in candidate.read_text(encoding="utf-8"):
+                issues.append(
+                    ValidationIssue(
+                        "golden.missing-section",
+                        f"output is missing required section heading {required!r}",
+                        str(candidate),
+                    )
+                )
+
+    return issues
+
+
 def validate_all(root: str | Path) -> list[ValidationIssue]:
     """Validate all VerityFoundry managed artifacts."""
 
@@ -232,4 +321,5 @@ def validate_all(root: str | Path) -> list[ValidationIssue]:
     issues.extend(validate_prompts(root))
     issues.extend(validate_matrices(root))
     issues.extend(validate_examples(root))
+    issues.extend(validate_goldens(root))
     return issues

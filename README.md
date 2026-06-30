@@ -45,6 +45,7 @@ This first scaffold provides:
 - Unity game and Unity shared-library prompt matrices.
 - Example inputs and expected outputs for a Unity game and a shared Unity
   runtime library.
+- A golden output fixture for the Unity game implementation-ready workflow.
 - Prompt quality and uncertainty-preservation evaluation guidance.
 - Canonical AI-agent operating instructions in `AGENTS.md`.
 - GitHub Actions CI that validates the library without calling external AI
@@ -99,6 +100,7 @@ verityfoundry list matrices
 verityfoundry validate
 verityfoundry validate prompts
 verityfoundry validate examples
+verityfoundry validate goldens
 verityfoundry render --prompt unity-game.gdd-art.interview-medium.implementation-ready.v1
 verityfoundry matrix unity-game
 ```
@@ -178,6 +180,23 @@ verityfoundry matrix unity-game
 verityfoundry matrix unity-shared-library
 ```
 
+## Golden Outputs
+
+Golden outputs are deterministic examples of expected prompt behavior. They
+are not truth claims and do not replace VeritySpec validation or human review.
+
+The first golden fixture covers the Unity game implementation-ready workflow:
+
+```text
+goldens/unity-game/dream-extraction-implementation-ready/
+```
+
+Validate golden output manifests and required sections with:
+
+```bash
+verityfoundry validate goldens
+```
+
 ## Unity Game Workflow
 
 The Unity game prompts support rough inputs such as:
@@ -254,6 +273,7 @@ require human approval.
 - [Image input guidance](docs/image-input-guidance.md)
 - [Unity game workflows](docs/unity-game-workflows.md)
 - [Unity shared-library workflows](docs/unity-shared-library-workflows.md)
+- [Golden output guidelines](evaluations/golden-output-guidelines.md)
 - [Using with VeritySpec](docs/using-with-verityspec.md)
 - [Using with Codex](docs/using-with-codex.md)
 - [Using with Copilot](docs/using-with-copilot.md)

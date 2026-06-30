@@ -41,6 +41,28 @@ Sprint 8 should release the completed `v0.1.0` scope:
 - Tag and publish the v0.1.0 GitHub release when checks pass.
 - Close the v0.1.0 milestone after release verification.
 
+## v0.2.0
+
+The `v0.2.0` milestone is in progress.
+
+| Sprint | Status | Focus |
+|---:|---|---|
+| 9 | Complete | Unity game implementation-ready golden output fixture |
+
+## Sprint 9 Priorities
+
+Sprint 9 should add the first deterministic golden output fixture:
+
+- Add a golden output manifest schema and validator.
+- Add `verityfoundry validate goldens`.
+- Add a Unity game implementation-ready golden output fixture for Dream
+  Extraction.
+- Require golden outputs to preserve assumptions, unresolved decisions, human
+  approval requirements, readiness gaps, and the VeritySpec validation loop.
+- Add tests for golden manifest validation and CLI coverage.
+- Update README, changelog, roadmap, and golden output guidance.
+- Keep the Next 20 roadmap points populated after converting this item.
+
 ## Later Candidates
 
 These are intentionally not committed to a release until the initial scaffold
@@ -61,35 +83,35 @@ AI agents must keep this section populated with up to 20 concrete points when
 the active roadmap is caught up. The points should balance fixes,
 improvements, continuation work, and expansion.
 
-1. Add golden output fixtures for the Unity game implementation-ready prompt.
-2. Add golden output fixtures for the Unity shared-library implementation prompt.
-3. Add a prompt quality report that scores uncertainty preservation and
+1. Add golden output fixtures for the Unity shared-library implementation prompt.
+2. Add a prompt quality report that scores uncertainty preservation and
    provenance completeness.
-4. Add a local VeritySpec integration smoke check that runs only when `verity`
+3. Add a local VeritySpec integration smoke check that runs only when `verity`
    is available.
-5. Add a software-library example for a shared authentication package.
-6. Add a product example for a customer portal.
-7. Add prompt manifests for operations-ready and archival-ready Unity game
+4. Add a software-library example for a shared authentication package.
+5. Add a product example for a customer portal.
+6. Add prompt manifests for operations-ready and archival-ready Unity game
    workflows.
-8. Add a decision-policy linter for high-stakes invention risks.
-9. Add Markdown rendering profiles for Codex, Claude Code, ChatGPT, Gemini,
+7. Add a decision-policy linter for high-stakes invention risks.
+8. Add Markdown rendering profiles for Codex, Claude Code, ChatGPT, Gemini,
    and Unity AI prompt handoff.
-10. Add matrix coverage reports showing domains, interview modes, targets, and
+9. Add matrix coverage reports showing domains, interview modes, targets, and
     missing prompt combinations.
-11. Add example manifests that reference candidate VeritySpec workspace files
+10. Add example manifests that reference candidate VeritySpec workspace files
     once workspace fixtures exist.
-12. Add generated workspace outline validators for expected record categories.
-13. Add image-input manifest fixtures for concept art and identity images.
-14. Add provenance examples aligned with future VeritySpec evidence records.
-15. Add cross-workspace dependency prompt guidance for shared Unity libraries
+11. Add generated workspace outline validators for expected record categories.
+12. Add image-input manifest fixtures for concept art and identity images.
+13. Add provenance examples aligned with future VeritySpec evidence records.
+14. Add cross-workspace dependency prompt guidance for shared Unity libraries
     and game portfolios.
-16. Add portfolio triage prompts for batches of many game concepts.
-17. Add release-readiness gap review prompts for generated VeritySpec
+15. Add portfolio triage prompts for batches of many game concepts.
+16. Add release-readiness gap review prompts for generated VeritySpec
     workspaces.
-18. Add maintenance and decommissioning interview flows for shipped products.
-19. Add contributor docs for proposing new prompt workflows.
-20. Add release-integrity checks for README, changelog, roadmap, package
+17. Add maintenance and decommissioning interview flows for shipped products.
+18. Add contributor docs for proposing new prompt workflows.
+19. Add release-integrity checks for README, changelog, roadmap, package
     metadata, and release notes.
+20. Add golden output drift review documentation for maintainers.
 
 ## Working Rule
 

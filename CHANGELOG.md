@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+- Added the first Unity game implementation-ready golden output fixture and
+  golden output manifest validation.
+
 ## 0.1.0
 
 - Added the initial VerityFoundry repository scaffold.
