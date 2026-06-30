@@ -613,12 +613,12 @@ Sprint 40 should release the completed `v0.17.0` scope:
 
 ## v0.18.0
 
-The `v0.18.0` milestone is in progress.
+The `v0.18.0` milestone is released.
 
 | Sprint | Status | Focus |
 |---:|---|---|
-| 41 | In Progress | Release-review baselines and policy threshold hardening |
-| 42 | Pending | v0.18.0 release preparation |
+| 41 | Complete | Release-review baselines and policy threshold hardening |
+| 42 | Complete | v0.18.0 release preparation |
 
 ## Sprint 41 Priorities
 
