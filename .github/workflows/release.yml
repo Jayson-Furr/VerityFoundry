@@ -47,6 +47,7 @@ jobs:
           /tmp/verityfoundry-wheel/bin/verityfoundry validate
           /tmp/verityfoundry-wheel/bin/verityfoundry validate goldens
           /tmp/verityfoundry-wheel/bin/verityfoundry report prompt-quality
+          /tmp/verityfoundry-wheel/bin/verityfoundry report matrix-coverage
           /tmp/verityfoundry-wheel/bin/verityfoundry check verityspec
 
       - name: Upload distribution artifact

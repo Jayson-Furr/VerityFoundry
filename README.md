@@ -44,11 +44,13 @@ The repository currently provides:
   Unity games, Unity shared libraries, software libraries, and products.
 - Unity game and Unity shared-library prompt matrices.
 - Example inputs and expected outputs for a Unity game and a shared Unity
-  runtime library.
+  runtime library, plus software-library and product examples.
 - Golden output fixtures for Unity game and Unity shared-library
   implementation-ready workflows.
 - A deterministic prompt quality report for uncertainty preservation and
   provenance completeness.
+- A deterministic matrix coverage report for prompt matrix coverage across
+  domain prompt workflows.
 - An optional local VeritySpec smoke check that runs when `verity` is
   available and skips cleanly when it is not installed.
 - Prompt quality and uncertainty-preservation evaluation guidance.
@@ -108,6 +110,7 @@ verityfoundry validate matrices
 verityfoundry validate examples
 verityfoundry validate goldens
 verityfoundry report prompt-quality
+verityfoundry report matrix-coverage
 verityfoundry check verityspec
 verityfoundry render --prompt unity-game.gdd-art.interview-medium.implementation-ready.v1
 verityfoundry matrix unity-game
@@ -220,6 +223,19 @@ verityfoundry report prompt-quality --format json
 
 The report is an inspection aid, not a readiness certification.
 
+## Matrix Coverage Report
+
+The matrix coverage report shows how domain prompt workflows are represented in
+the prompt matrices. It reports covered domain prompts, uncovered domain
+prompts, domain summaries, and unknown matrix references.
+
+```bash
+verityfoundry report matrix-coverage
+verityfoundry report matrix-coverage --format json
+```
+
+The report is deterministic and does not call external AI APIs.
+
 ## VeritySpec Smoke Check
 
 VerityFoundry can run a local optional smoke check against the VeritySpec CLI:
@@ -306,6 +322,7 @@ require human approval.
 
 - [Architecture](docs/architecture.md)
 - [Prompt manifests](docs/prompt-manifests.md)
+- [Matrix coverage](docs/matrix-coverage.md)
 - [Interview modes](docs/interview-modes.md)
 - [Readiness targets](docs/readiness-targets.md)
 - [Decision provenance](docs/decision-provenance.md)

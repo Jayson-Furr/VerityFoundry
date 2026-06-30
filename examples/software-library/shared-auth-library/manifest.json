@@ -1,0 +1,22 @@
+{
+  "id": "example.software-library.shared-auth-library",
+  "name": "Shared Authentication Library",
+  "version": "0.1.0",
+  "domain": "software-library",
+  "interviewMode": "interview-medium-stakes",
+  "targetReadiness": "implementation-ready",
+  "inputs": [
+    "inputs/brief.md",
+    "inputs/readme.md"
+  ],
+  "expectedOutputs": [
+    "expected/workspace-outline.md",
+    "expected/assumptions.md",
+    "expected/questions.md",
+    "expected/readiness-gaps.md"
+  ],
+  "promptRefs": [
+    "software-library.readme.interview-medium.implementation-ready.v1"
+  ],
+  "notes": "Example only. It demonstrates uncertainty-preserving library workspace fabrication from a README-style input."
+}

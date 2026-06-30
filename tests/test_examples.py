@@ -17,6 +17,8 @@ class ExampleTests(unittest.TestCase):
         self.assertEqual(
             ids,
             {
+                "example.product.customer-portal",
+                "example.software-library.shared-auth-library",
                 "example.unity-game.dream-extraction",
                 "example.unity-shared-library.shared-unity-runtime",
             },

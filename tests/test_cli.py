@@ -94,6 +94,18 @@ class CliTests(unittest.TestCase):
         self.assertIn('"uncertaintyPreservation"', result.stdout)
         self.assertIn('"provenanceCompleteness"', result.stdout)
 
+    def test_matrix_coverage_report_text(self) -> None:
+        result = run_cli("report", "matrix-coverage")
+        self.assertEqual(result.returncode, 0, result.stderr)
+        self.assertIn("Matrix Coverage Report", result.stdout)
+        self.assertIn("Domain prompt coverage:", result.stdout)
+
+    def test_matrix_coverage_report_json(self) -> None:
+        result = run_cli("report", "matrix-coverage", "--format", "json")
+        self.assertEqual(result.returncode, 0, result.stderr)
+        self.assertIn('"matrixCount"', result.stdout)
+        self.assertIn('"missingDomainPrompts"', result.stdout)
+
     def test_verityspec_check_skips_when_verity_is_missing(self) -> None:
         result = run_cli(
             "check",

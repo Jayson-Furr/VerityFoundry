@@ -178,6 +178,30 @@ Sprint 16 should release the completed `v0.5.0` scope:
 - Tag and publish the v0.5.0 GitHub release when checks pass.
 - Close the v0.5.0 milestone after release verification.
 
+## v0.6.0
+
+The `v0.6.0` milestone is in progress.
+
+| Sprint | Status | Focus |
+|---:|---|---|
+| 17 | In progress | Example expansion and matrix coverage reporting bundle |
+
+## Sprint 17 Priorities
+
+Sprint 17 should bundle about a week of related work into one coherent
+release increment:
+
+- Add a software-library example for a shared authentication package.
+- Add a product example for a customer portal.
+- Add `verityfoundry report matrix-coverage` with text and JSON output.
+- Include matrix coverage in CI, release workflow smoke tests, local checks,
+  README, and agent guidance.
+- Document the grouped sprint model so routine roadmap work can be bundled
+  into about one week of related work instead of one release per small item.
+- Update changelog and roadmap.
+- Keep the Next 20 roadmap points populated after converting completed or
+  stale items.
+
 ## Later Candidates
 
 These are intentionally not committed to a release until the initial scaffold
@@ -197,34 +221,35 @@ AI agents must keep this section populated with up to 20 concrete points when
 the active roadmap is caught up. The points should balance fixes,
 improvements, continuation work, and expansion.
 
-1. Add a software-library example for a shared authentication package.
-2. Add a product example for a customer portal.
-3. Add prompt manifests for operations-ready and archival-ready Unity game
-   workflows.
-4. Add a decision-policy linter for high-stakes invention risks.
-5. Add Markdown rendering profiles for Codex, Claude Code, ChatGPT, Gemini,
+1. Add a decision-policy linter for high-stakes invention risks.
+2. Add Markdown rendering profiles for Codex, Claude Code, ChatGPT, Gemini,
    and Unity AI prompt handoff.
-6. Add matrix coverage reports showing domains, interview modes, targets, and
-   missing prompt combinations.
-7. Add example manifests that reference candidate VeritySpec workspace files
+3. Add example manifests that reference candidate VeritySpec workspace files
    once workspace fixtures exist.
-8. Add generated workspace outline validators for expected record categories.
-9. Add image-input manifest fixtures for concept art and identity images.
-10. Add provenance examples aligned with future VeritySpec evidence records.
-11. Add cross-workspace dependency prompt guidance for shared Unity libraries
-    and game portfolios.
-12. Add portfolio triage prompts for batches of many game concepts.
-13. Add release-readiness gap review prompts for generated VeritySpec
+4. Add generated workspace outline validators for expected record categories.
+5. Add image-input manifest fixtures for concept art and identity images.
+6. Add provenance examples aligned with future VeritySpec evidence records.
+7. Add cross-workspace dependency prompt guidance for shared Unity libraries
+   and game portfolios.
+8. Add portfolio triage prompts for batches of many game concepts.
+9. Add release-readiness gap review prompts for generated VeritySpec
     workspaces.
-14. Add maintenance and decommissioning interview flows for shipped products.
-15. Add contributor docs for proposing new prompt workflows.
-16. Add release-integrity checks for README, changelog, roadmap, package
+10. Add maintenance and decommissioning interview flows for shipped products.
+11. Add contributor docs for proposing new prompt workflows.
+12. Add release-integrity checks for README, changelog, roadmap, package
     metadata, and release notes.
-17. Add golden output drift review documentation for maintainers.
-18. Add a golden output inventory report for maintainers and release reviewers.
-19. Add prompt quality trend snapshots for release reviewers.
-20. Add grouped sprint planning guidance for bundling related roadmap points
-    into larger releases when small release cycles become too slow.
+13. Add golden output drift review documentation for maintainers.
+14. Add a golden output inventory report for maintainers and release reviewers.
+15. Add prompt quality trend snapshots for release reviewers.
+16. Add generated example inventory reports for release reviewers.
+17. Add matrix coverage thresholds once baseline coverage is intentionally
+    improved.
+18. Add docs explaining how to convert VerityFoundry expected outputs into
+    concrete VeritySpec workspace fixtures.
+19. Add release workflow checks for stale action versions and non-blocking
+    workflow annotations.
+20. Add a v0.x stabilization checklist for CLI output compatibility,
+    manifest compatibility, and report schema compatibility.
 
 ## Working Rule
 
