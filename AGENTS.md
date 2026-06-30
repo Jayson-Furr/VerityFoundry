@@ -139,6 +139,7 @@ verityfoundry list matrices
 verityfoundry validate
 verityfoundry validate prompts
 verityfoundry validate examples
+verityfoundry validate goldens
 git diff --check
 ```
 
@@ -151,6 +152,7 @@ verityfoundry list matrices
 verityfoundry validate
 verityfoundry validate prompts
 verityfoundry validate examples
+verityfoundry validate goldens
 verityfoundry render --prompt unity-game.gdd-art.interview-medium.implementation-ready.v1
 verityfoundry matrix unity-game
 ```
@@ -168,6 +170,7 @@ verityfoundry matrix unity-game
 - `prompts/`: prompt workflow library.
 - `matrices/`: prompt matrices.
 - `examples/`: example inputs and expected outputs.
+- `goldens/`: deterministic prompt output fixtures.
 - `evaluations/`: prompt quality guidance.
 - `tests/`: executable coverage.
 - `.github/workflows/ci.yml`: CI contract.

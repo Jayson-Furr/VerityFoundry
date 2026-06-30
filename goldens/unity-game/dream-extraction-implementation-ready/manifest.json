@@ -1,0 +1,25 @@
+{
+  "id": "golden.unity-game.dream-extraction.implementation-ready",
+  "name": "Dream Extraction Implementation-Ready Golden Output",
+  "version": "0.1.0",
+  "domain": "unity-game",
+  "promptRef": "unity-game.gdd-art.interview-medium.implementation-ready.v1",
+  "exampleRef": "example.unity-game.dream-extraction",
+  "interviewMode": "interview-medium-stakes",
+  "targetReadiness": "implementation-ready",
+  "outputPath": "output.md",
+  "requiredSections": [
+    "Candidate Workspace Outline",
+    "Source Material Summary",
+    "Human-Provided Decisions",
+    "AI-Inferred Decisions",
+    "AI-Defaulted Decisions",
+    "AI-Suggested Decisions",
+    "Unresolved Decisions",
+    "Human Approval Requirements",
+    "Readiness Gaps",
+    "Suggested Next Interview Questions",
+    "Suggested VeritySpec Validation Loop"
+  ],
+  "notes": "Golden output for the first Unity game implementation-ready prompt review."
+}

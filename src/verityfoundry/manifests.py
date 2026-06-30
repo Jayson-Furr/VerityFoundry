@@ -104,6 +104,15 @@ def example_manifest_paths(root: str | Path) -> list[Path]:
     return sorted(base.rglob("manifest.json"))
 
 
+def golden_manifest_paths(root: str | Path) -> list[Path]:
+    """Return all golden output manifest paths."""
+
+    base = Path(root) / "goldens"
+    if not base.exists():
+        return []
+    return sorted(base.rglob("manifest.json"))
+
+
 def load_prompt_manifests(root: str | Path) -> list[MarkdownManifest]:
     """Load all prompt manifests from a project root."""
 
@@ -120,6 +129,12 @@ def load_example_manifests(root: str | Path) -> list[tuple[Path, dict[str, Any]]
     """Load all example manifests from a project root."""
 
     return [(path, read_json(path)) for path in example_manifest_paths(root)]
+
+
+def load_golden_manifests(root: str | Path) -> list[tuple[Path, dict[str, Any]]]:
+    """Load all golden output manifests from a project root."""
+
+    return [(path, read_json(path)) for path in golden_manifest_paths(root)]
 
 
 def by_id(items: Iterable[MarkdownManifest]) -> dict[str, MarkdownManifest]:

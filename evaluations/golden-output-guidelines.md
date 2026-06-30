@@ -16,3 +16,22 @@ Good golden outputs include:
 - Suggested VeritySpec validation commands.
 
 Do not create golden outputs that imply AI-generated records are final truth.
+
+## Manifest Contract
+
+Each golden output should include a `manifest.json` with:
+
+- stable golden ID
+- prompt reference
+- example reference
+- interview mode
+- target readiness
+- output path
+- required section headings
+- notes explaining the review purpose
+
+Validate golden outputs with:
+
+```bash
+verityfoundry validate goldens
+```

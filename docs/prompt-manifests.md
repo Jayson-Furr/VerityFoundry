@@ -29,3 +29,10 @@ Validate manifests with:
 ```bash
 verityfoundry validate prompts
 ```
+
+Golden output manifests use `schemas/golden-output.schema.json` and can be
+validated with:
+
+```bash
+verityfoundry validate goldens
+```

@@ -45,6 +45,11 @@ class CliTests(unittest.TestCase):
         self.assertEqual(result.returncode, 0, result.stdout + result.stderr)
         self.assertIn('"issueCount": 0', result.stdout)
 
+    def test_validate_goldens_json(self) -> None:
+        result = run_cli("validate", "goldens", "--format", "json")
+        self.assertEqual(result.returncode, 0, result.stdout + result.stderr)
+        self.assertIn('"issueCount": 0', result.stdout)
+
     def test_render_prompt(self) -> None:
         result = run_cli(
             "render",

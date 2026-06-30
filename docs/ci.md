@@ -12,6 +12,7 @@ verityfoundry list matrices
 verityfoundry validate
 verityfoundry validate prompts
 verityfoundry validate examples
+verityfoundry validate goldens
 git diff --check
 ```
 
