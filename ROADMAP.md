@@ -6,18 +6,18 @@ while preserving uncertainty and human approval requirements.
 
 ## v0.1.0
 
-The `v0.1.0` milestone establishes the public repository foundation.
+The `v0.1.0` milestone is released.
 
 | Sprint | Status | Focus |
 |---:|---|---|
-| 1 | Planned | Repository scaffold, AI-agent entry point, prompt manifest schema, and basic validation CLI |
-| 2 | Planned | Interview modes and readiness target documentation |
-| 3 | Planned | Unity game prompt matrix and examples |
-| 4 | Planned | Unity shared-library prompt matrix and examples |
-| 5 | Planned | Decision policy and provenance rules hardening |
-| 6 | Planned | Golden output examples and prompt quality rubric |
-| 7 | Planned | VeritySpec integration documentation and generated workspace validation notes |
-| 8 | Planned | v0.1.0 release preparation |
+| 1 | Complete | Repository scaffold, AI-agent entry point, prompt manifest schema, and basic validation CLI |
+| 2 | Complete | Interview modes and readiness target documentation |
+| 3 | Complete | Unity game prompt matrix and examples |
+| 4 | Complete | Unity shared-library prompt matrix and examples |
+| 5 | Complete | Decision policy and provenance rules hardening |
+| 6 | Complete | Golden output examples and prompt quality rubric |
+| 7 | Complete | VeritySpec integration documentation and generated workspace validation notes |
+| 8 | Complete | v0.1.0 release preparation |
 
 ## Sprint 1 Priorities
 
@@ -26,6 +26,20 @@ The `v0.1.0` milestone establishes the public repository foundation.
 - Add the canonical `AGENTS.md` entry point and thin agent adapters.
 - Add CI and local tests for deterministic repository validation.
 - Add public project metadata and basic documentation.
+
+## Sprint 8 Priorities
+
+Sprint 8 should release the completed `v0.1.0` scope:
+
+- Add v0.1.0 release notes.
+- Update README release badge, latest-release text, install guidance, and
+  release-notes link to `v0.1.0`.
+- Add a GitHub release workflow that builds, checks, smoke-tests, uploads
+  release assets, and creates the GitHub release on tags.
+- Run local release verification, package build checks, `twine check`, wheel
+  smoke tests, and GitHub Actions.
+- Tag and publish the v0.1.0 GitHub release when checks pass.
+- Close the v0.1.0 milestone after release verification.
 
 ## Later Candidates
 
