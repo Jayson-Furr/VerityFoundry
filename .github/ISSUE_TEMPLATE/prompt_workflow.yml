@@ -1,0 +1,33 @@
+name: Prompt workflow
+description: Propose or improve a VerityFoundry prompt workflow.
+title: "Prompt workflow: "
+labels: ["prompt-workflow"]
+body:
+  - type: textarea
+    id: workflow
+    attributes:
+      label: Workflow
+      description: What should this prompt workflow help create or review?
+    validations:
+      required: true
+  - type: input
+    id: domain
+    attributes:
+      label: Domain
+      placeholder: unity-game, unity-shared-library, software-library, product
+    validations:
+      required: true
+  - type: input
+    id: target
+    attributes:
+      label: Readiness target
+      placeholder: implementation-ready
+    validations:
+      required: true
+  - type: textarea
+    id: uncertainty
+    attributes:
+      label: Uncertainty handling
+      description: What must remain unresolved or require human approval?
+    validations:
+      required: true

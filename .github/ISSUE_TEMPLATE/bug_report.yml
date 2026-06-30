@@ -1,0 +1,26 @@
+name: Bug report
+description: Report a CLI, validation, schema, or documentation bug.
+title: "Bug: "
+labels: ["bug"]
+body:
+  - type: textarea
+    id: behavior
+    attributes:
+      label: Behavior
+      description: What happened?
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behavior
+      description: What should have happened?
+    validations:
+      required: true
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Reproduction
+      description: Include commands, files, or prompt IDs.
+    validations:
+      required: true

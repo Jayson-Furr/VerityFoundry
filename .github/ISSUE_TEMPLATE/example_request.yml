@@ -1,0 +1,26 @@
+name: Example request
+description: Request a new example input/output workflow.
+title: "Example: "
+labels: ["example"]
+body:
+  - type: input
+    id: domain
+    attributes:
+      label: Domain
+      placeholder: unity-game
+    validations:
+      required: true
+  - type: textarea
+    id: inputs
+    attributes:
+      label: Inputs
+      description: Describe the rough source materials the example should include.
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected outputs
+      description: What workspace outline, assumptions, questions, or gaps should be demonstrated?
+    validations:
+      required: true

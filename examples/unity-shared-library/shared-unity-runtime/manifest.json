@@ -1,0 +1,20 @@
+{
+  "id": "example.unity-shared-library.shared-unity-runtime",
+  "name": "Shared Unity Runtime Library",
+  "version": "0.1.0",
+  "domain": "unity-shared-library",
+  "interviewMode": "interview-medium-stakes",
+  "targetReadiness": "implementation-ready",
+  "inputs": [
+    "inputs/brief.md"
+  ],
+  "expectedOutputs": [
+    "expected/workspace-outline.md",
+    "expected/assumptions.md",
+    "expected/readiness-gaps.md"
+  ],
+  "promptRefs": [
+    "unity-library.description.interview-medium.implementation-ready.v1"
+  ],
+  "notes": "Example only. It demonstrates a shared Unity runtime candidate workspace outline."
+}

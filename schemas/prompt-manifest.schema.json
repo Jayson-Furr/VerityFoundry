@@ -1,0 +1,110 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/Jayson-Furr/VerityFoundry/schemas/prompt-manifest.schema.json",
+  "title": "VerityFoundry prompt manifest",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "id",
+    "name",
+    "version",
+    "kind",
+    "domain",
+    "interviewMode",
+    "targetReadiness",
+    "inputTypes",
+    "outputs",
+    "requiresHumanApproval",
+    "notes"
+  ],
+  "properties": {
+    "id": {
+      "type": "string",
+      "pattern": "^[a-z0-9][a-z0-9.-]*\\.v[0-9]+$"
+    },
+    "name": {
+      "type": "string",
+      "minLength": 1
+    },
+    "version": {
+      "type": "string",
+      "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$"
+    },
+    "kind": {
+      "type": "string",
+      "enum": [
+        "common",
+        "interview-mode",
+        "readiness-target",
+        "domain-prompt"
+      ]
+    },
+    "domain": {
+      "type": "string",
+      "minLength": 1
+    },
+    "interviewMode": {
+      "type": "string",
+      "enum": [
+        "not-applicable",
+        "interview-none",
+        "interview-low-stakes",
+        "interview-medium-stakes",
+        "interview-high-stakes",
+        "interview-all"
+      ]
+    },
+    "targetReadiness": {
+      "type": "string",
+      "enum": [
+        "not-applicable",
+        "concept-complete",
+        "design-complete",
+        "prototype-ready",
+        "vertical-slice-ready",
+        "implementation-ready",
+        "production-ready",
+        "operations-ready",
+        "liveops-ready",
+        "maintenance-ready",
+        "decommission-ready",
+        "archival-ready"
+      ]
+    },
+    "inputTypes": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "uniqueItems": true
+    },
+    "outputs": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "uniqueItems": true
+    },
+    "decisionPolicyRef": {
+      "type": "string",
+      "pattern": "^[a-z0-9][a-z0-9.-]*\\.v[0-9]+$"
+    },
+    "includeRefs": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "pattern": "^[a-z0-9][a-z0-9.-]*\\.v[0-9]+$"
+      },
+      "uniqueItems": true
+    },
+    "requiresHumanApproval": {
+      "type": "boolean"
+    },
+    "notes": {
+      "type": "string",
+      "minLength": 1
+    }
+  }
+}

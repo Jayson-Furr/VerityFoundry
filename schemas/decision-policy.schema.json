@@ -1,0 +1,74 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/Jayson-Furr/VerityFoundry/schemas/decision-policy.schema.json",
+  "title": "VerityFoundry decision policy",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "id",
+    "name",
+    "version",
+    "mayInfer",
+    "mayDefault",
+    "maySuggest",
+    "mustAsk",
+    "mustLeaveUnresolved",
+    "requiresHumanApproval",
+    "mustNotInvent"
+  ],
+  "properties": {
+    "id": {
+      "type": "string",
+      "pattern": "^decision-policy\\.[a-z0-9.-]+\\.v[0-9]+$"
+    },
+    "name": {
+      "type": "string"
+    },
+    "version": {
+      "type": "string",
+      "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$"
+    },
+    "mayInfer": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "mayDefault": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "maySuggest": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "mustAsk": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "mustLeaveUnresolved": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "requiresHumanApproval": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "mustNotInvent": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  }
+}

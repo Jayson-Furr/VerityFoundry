@@ -1,0 +1,19 @@
+name: Decision policy
+description: Propose or refine AI decision policy rules.
+title: "Decision policy: "
+labels: ["decision-policy"]
+body:
+  - type: textarea
+    id: policy
+    attributes:
+      label: Policy change
+      description: What should AI be allowed to infer, default, suggest, ask, or leave unresolved?
+    validations:
+      required: true
+  - type: textarea
+    id: risk
+    attributes:
+      label: Risk
+      description: What fake-certainty or high-stakes invention risk does this address?
+    validations:
+      required: true

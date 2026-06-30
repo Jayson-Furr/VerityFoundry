@@ -1,0 +1,24 @@
+{
+  "name": "VerityFoundry",
+  "description": "AI prompt workflows for fabricating, interviewing, and refining VeritySpec workspaces from rough product, software, game, Unity, and operations inputs.",
+  "visibility": "public",
+  "homepage": "https://github.com/Jayson-Furr/VerityFoundry",
+  "topics": [
+    "verityspec",
+    "ai-agents",
+    "prompt-engineering",
+    "spec-driven-development",
+    "product-contracts",
+    "workspace-generation",
+    "game-development",
+    "unity",
+    "liveops",
+    "software-architecture",
+    "decision-support",
+    "gdd",
+    "product-design",
+    "ai-coding-workflows",
+    "prompt-library",
+    "agent-workflows"
+  ]
+}
