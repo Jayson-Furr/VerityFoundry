@@ -33,7 +33,7 @@ python -m twine check dist/*
 ## Tag
 
 ```bash
-VERSION=v0.3.0
+VERSION=v0.4.0
 git tag -a "$VERSION" -m "VerityFoundry $VERSION"
 git push origin "$VERSION"
 ```

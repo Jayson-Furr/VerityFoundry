@@ -112,11 +112,12 @@ Sprint 12 should release the completed `v0.3.0` scope:
 
 ## v0.4.0
 
-The `v0.4.0` milestone is in progress.
+The `v0.4.0` milestone is released.
 
 | Sprint | Status | Focus |
 |---:|---|---|
 | 13 | Complete | Prompt quality report for uncertainty and provenance evidence |
+| 14 | Complete | v0.4.0 release preparation |
 
 ## Sprint 13 Priorities
 
@@ -129,6 +130,18 @@ Sprint 13 should add the first deterministic quality report:
 - Add tests for scoring and CLI output.
 - Update README, docs, CI, agent guidance, changelog, and roadmap.
 - Keep the Next 20 roadmap points populated after converting this item.
+
+## Sprint 14 Priorities
+
+Sprint 14 should release the completed `v0.4.0` scope:
+
+- Add v0.4.0 release notes.
+- Update package metadata, README release badge, latest-release text, install
+  guidance, changelog, roadmap, and release checklist to `v0.4.0`.
+- Run local release verification, package build checks, `twine check`, wheel
+  smoke tests, and GitHub Actions.
+- Tag and publish the v0.4.0 GitHub release when checks pass.
+- Close the v0.4.0 milestone after release verification.
 
 ## Later Candidates
 
