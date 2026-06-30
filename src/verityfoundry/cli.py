@@ -20,8 +20,13 @@ from .matrix import render_matrix
 from .matrix_coverage import format_matrix_coverage_report, generate_matrix_coverage_report
 from .policy_lint import format_policy_lint_issues, lint_decision_policy
 from .quality import format_prompt_quality_report, generate_prompt_quality_report
+from .quality_trend import (
+    format_prompt_quality_trend_report,
+    generate_prompt_quality_trend_report,
+)
 from .rendering import render_profiles, render_prompt
 from .release_integrity import check_release_integrity, format_release_integrity_report
+from .thresholds import check_quality_thresholds, format_quality_threshold_report
 from .validation import (
     validate_all,
     validate_examples,
@@ -29,6 +34,7 @@ from .validation import (
     validate_matrices,
     validate_prompts,
 )
+from .workflow_hygiene import check_workflow_hygiene, format_workflow_hygiene_report
 
 EXIT_OK = 0
 EXIT_VALIDATION_FAILED = 1
@@ -78,6 +84,7 @@ def build_parser() -> argparse.ArgumentParser:
         "target",
         choices=[
             "prompt-quality",
+            "prompt-quality-trend",
             "matrix-coverage",
             "golden-inventory",
             "example-inventory",
@@ -110,6 +117,22 @@ def build_parser() -> argparse.ArgumentParser:
         help="Expected package version. Defaults to the version in pyproject.toml.",
     )
     release_integrity_parser.add_argument("--format", choices=["text", "json"], default="text")
+
+    quality_thresholds_parser = check_subparsers.add_parser(
+        "quality-thresholds",
+        help="Check prompt quality and matrix coverage against release thresholds.",
+    )
+    quality_thresholds_parser.add_argument(
+        "--config",
+        help="Optional threshold config path. Defaults to config/release-quality-thresholds.json.",
+    )
+    quality_thresholds_parser.add_argument("--format", choices=["text", "json"], default="text")
+
+    workflow_hygiene_parser = check_subparsers.add_parser(
+        "workflow-hygiene",
+        help="Check GitHub Actions workflow action versions for known hygiene risks.",
+    )
+    workflow_hygiene_parser.add_argument("--format", choices=["text", "json"], default="text")
 
     lint_parser = subparsers.add_parser("lint", help="Run deterministic local linters.")
     lint_parser.add_argument("target", choices=["decision-policy"])
@@ -221,6 +244,9 @@ def _cmd_report(args: argparse.Namespace) -> int:
     elif args.target == "prompt-quality":
         report = generate_prompt_quality_report(root)
         formatted = format_prompt_quality_report(report)
+    elif args.target == "prompt-quality-trend":
+        report = generate_prompt_quality_trend_report(root)
+        formatted = format_prompt_quality_trend_report(report)
     elif args.target == "golden-inventory":
         report = generate_golden_inventory_report(root)
         formatted = format_golden_inventory_report(report)
@@ -250,6 +276,20 @@ def _cmd_check(args: argparse.Namespace) -> int:
             print(json.dumps(report, indent=2, sort_keys=True))
         else:
             print(format_release_integrity_report(report), end="")
+        return EXIT_VALIDATION_FAILED if report["status"] == "failed" else EXIT_OK
+    if args.check_target == "quality-thresholds":
+        report = check_quality_thresholds(root, config_path=args.config)
+        if args.format == "json":
+            print(json.dumps(report, indent=2, sort_keys=True))
+        else:
+            print(format_quality_threshold_report(report), end="")
+        return EXIT_VALIDATION_FAILED if report["status"] == "failed" else EXIT_OK
+    if args.check_target == "workflow-hygiene":
+        report = check_workflow_hygiene(root)
+        if args.format == "json":
+            print(json.dumps(report, indent=2, sort_keys=True))
+        else:
+            print(format_workflow_hygiene_report(report), end="")
         return EXIT_VALIDATION_FAILED if report["status"] == "failed" else EXIT_OK
     return EXIT_USAGE_ERROR
 

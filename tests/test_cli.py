@@ -112,6 +112,18 @@ class CliTests(unittest.TestCase):
         self.assertIn('"uncertaintyPreservation"', result.stdout)
         self.assertIn('"provenanceCompleteness"', result.stdout)
 
+    def test_prompt_quality_trend_report_text(self) -> None:
+        result = run_cli("report", "prompt-quality-trend")
+        self.assertEqual(result.returncode, 0, result.stderr)
+        self.assertIn("Prompt Quality Trend Report", result.stdout)
+        self.assertIn("Latest snapshot: v0.11.0", result.stdout)
+
+    def test_prompt_quality_trend_report_json(self) -> None:
+        result = run_cli("report", "prompt-quality-trend", "--format", "json")
+        self.assertEqual(result.returncode, 0, result.stderr)
+        self.assertIn('"snapshotCount"', result.stdout)
+        self.assertIn('"deltaFromLatest"', result.stdout)
+
     def test_matrix_coverage_report_text(self) -> None:
         result = run_cli("report", "matrix-coverage")
         self.assertEqual(result.returncode, 0, result.stderr)
@@ -189,6 +201,16 @@ class CliTests(unittest.TestCase):
         self.assertEqual(result.returncode, 1)
         self.assertIn('"status": "failed"', result.stdout)
         self.assertIn('"issueCount"', result.stdout)
+
+    def test_quality_thresholds_check_passes(self) -> None:
+        result = run_cli("check", "quality-thresholds")
+        self.assertEqual(result.returncode, 0, result.stdout + result.stderr)
+        self.assertIn("Quality threshold check passed.", result.stdout)
+
+    def test_workflow_hygiene_check_passes(self) -> None:
+        result = run_cli("check", "workflow-hygiene")
+        self.assertEqual(result.returncode, 0, result.stdout + result.stderr)
+        self.assertIn("Workflow hygiene check passed.", result.stdout)
 
     def test_unknown_prompt_fails_usage(self) -> None:
         result = run_cli("render", "--prompt", "missing.prompt.v1")

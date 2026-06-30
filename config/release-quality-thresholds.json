@@ -1,0 +1,13 @@
+{
+  "schemaVersion": "1.0",
+  "promptQuality": {
+    "minOverallPercent": 57.0,
+    "minUncertaintyPercent": 63.0,
+    "minProvenancePercent": 51.0
+  },
+  "matrixCoverage": {
+    "minCoveragePercent": 88.0,
+    "maxMissingDomainPrompts": 3,
+    "maxUnknownPromptRefs": 0
+  }
+}
