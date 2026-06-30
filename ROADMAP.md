@@ -325,11 +325,12 @@ Sprint 24 should release the completed `v0.9.0` scope:
 
 ## v0.10.0
 
-The `v0.10.0` milestone is in progress.
+The `v0.10.0` milestone is released.
 
 | Sprint | Status | Focus |
 |---:|---|---|
-| 25 | In progress | Lifecycle readiness prompt workflows |
+| 25 | Complete | Lifecycle readiness prompt workflows |
+| 26 | Complete | v0.10.0 release preparation |
 
 ## Sprint 25 Priorities
 
@@ -344,6 +345,18 @@ Sprint 25 should bundle related lifecycle-readiness work:
   gap-reviews, while VeritySpec and humans remain readiness authorities.
 - Update tests, README, changelog, roadmap, and packaged artifact coverage.
 - Keep the Next 20 roadmap points populated after converting completed items.
+
+## Sprint 26 Priorities
+
+Sprint 26 should release the completed `v0.10.0` scope:
+
+- Add v0.10.0 release notes.
+- Update package metadata, README release badge, latest-release text, install
+  guidance, changelog, roadmap, and release checklist to `v0.10.0`.
+- Run local release verification, package build checks, `twine check`,
+  installed-wheel smoke tests, and GitHub Actions.
+- Tag and publish the v0.10.0 GitHub release when checks pass.
+- Close the v0.10.0 milestone after release verification.
 
 ## Later Candidates
 
