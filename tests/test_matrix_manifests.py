@@ -17,13 +17,18 @@ class MatrixManifestTests(unittest.TestCase):
         ids = {item.manifest["id"] for item in load_matrix_manifests(ROOT)}
         self.assertEqual(
             ids,
-            {"unity-game", "unity-shared-library", "software-library", "product"},
+            {"portfolio", "unity-game", "unity-shared-library", "software-library", "product"},
         )
 
     def test_render_unity_game_matrix(self) -> None:
         rendered = render_matrix(ROOT, "unity-game")
         self.assertIn("Unity Game Prompt Matrix", rendered)
         self.assertIn("implementation-ready", rendered)
+
+    def test_render_portfolio_matrix(self) -> None:
+        rendered = render_matrix(ROOT, "portfolio")
+        self.assertIn("Portfolio Prompt Matrix", rendered)
+        self.assertIn("cross-workspace", rendered.lower())
 
 
 if __name__ == "__main__":

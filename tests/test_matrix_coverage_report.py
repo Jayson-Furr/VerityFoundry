@@ -26,6 +26,7 @@ class MatrixCoverageReportTests(unittest.TestCase):
         domains = {domain["domain"] for domain in report["domains"]}
 
         self.assertIn("product", domains)
+        self.assertIn("portfolio", domains)
         self.assertIn("software-library", domains)
         self.assertIn("unity-game", domains)
         self.assertIn("unity-shared-library", domains)
