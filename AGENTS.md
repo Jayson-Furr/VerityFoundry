@@ -142,6 +142,7 @@ verityfoundry validate matrices
 verityfoundry validate examples
 verityfoundry validate goldens
 verityfoundry report prompt-quality
+verityfoundry check verityspec
 git diff --check
 ```
 
@@ -157,6 +158,7 @@ verityfoundry validate matrices
 verityfoundry validate examples
 verityfoundry validate goldens
 verityfoundry report prompt-quality
+verityfoundry check verityspec
 verityfoundry render --prompt unity-game.gdd-art.interview-medium.implementation-ready.v1
 verityfoundry matrix unity-game
 ```
@@ -171,6 +173,7 @@ verityfoundry matrix unity-game
 - `src/verityfoundry/validation.py`: local validation checks.
 - `src/verityfoundry/rendering.py`: deterministic prompt rendering.
 - `src/verityfoundry/quality.py`: deterministic prompt quality reporting.
+- `src/verityfoundry/integration.py`: optional local companion-tool checks.
 - `schemas/`: JSON schemas for manifests.
 - `prompts/`: prompt workflow library.
 - `matrices/`: prompt matrices.

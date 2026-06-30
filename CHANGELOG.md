@@ -2,7 +2,11 @@
 
 ## Unreleased
 
-No unreleased changes.
+- Added `verityfoundry check verityspec`, an optional local VeritySpec smoke
+  check that skips when `verity` is unavailable and runs `verity validate`
+  when a workspace is provided or detected.
+- Added tests, CI coverage, release workflow coverage, README guidance, and
+  VeritySpec handoff documentation for the optional smoke check.
 
 ## 0.4.0
 

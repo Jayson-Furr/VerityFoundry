@@ -13,7 +13,11 @@ Core pieces:
 - `src/verityfoundry/`: local CLI and validation utilities.
 - `evaluations/`: human review rubrics for prompt quality and uncertainty.
 
-The CLI validates local artifacts, renders prompts and matrices, and reports
-deterministic prompt quality signals. It does not call AI APIs.
+The CLI validates local artifacts, renders prompts and matrices, reports
+deterministic prompt quality signals, and runs optional local integration smoke
+checks. It does not call AI APIs.
 
-VeritySpec remains the final authority for generated workspace validation.
+VeritySpec remains the final authority for generated workspace validation. The
+optional `verityfoundry check verityspec` command only verifies the local
+handoff path when the `verity` CLI is available, and skips cleanly when it is
+not installed.

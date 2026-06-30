@@ -8,6 +8,7 @@ from pathlib import Path
 import sys
 
 from . import __version__
+from .integration import check_verityspec, format_verityspec_check_result
 from .manifests import find_project_root, load_matrix_manifests, load_prompt_manifests
 from .matrix import render_matrix
 from .quality import format_prompt_quality_report, generate_prompt_quality_report
@@ -57,6 +58,22 @@ def build_parser() -> argparse.ArgumentParser:
     report_parser = subparsers.add_parser("report", help="Generate deterministic local reports.")
     report_parser.add_argument("target", choices=["prompt-quality"])
     report_parser.add_argument("--format", choices=["text", "json"], default="text")
+
+    check_parser = subparsers.add_parser("check", help="Run optional local integration checks.")
+    check_subparsers = check_parser.add_subparsers(dest="check_target", required=True)
+    verityspec_parser = check_subparsers.add_parser(
+        "verityspec",
+        help="Run an optional VeritySpec smoke check when `verity` is available.",
+    )
+    verityspec_parser.add_argument(
+        "--workspace",
+        help="Optional VeritySpec workspace path to validate when `verity` is available.",
+    )
+    verityspec_parser.add_argument(
+        "--verity",
+        help="Path or command name for the VeritySpec CLI. Defaults to `verity` on PATH.",
+    )
+    verityspec_parser.add_argument("--format", choices=["text", "json"], default="text")
 
     return parser
 
@@ -161,6 +178,18 @@ def _cmd_report(args: argparse.Namespace) -> int:
     return EXIT_OK
 
 
+def _cmd_check(args: argparse.Namespace) -> int:
+    root = _root(args.root)
+    if args.check_target == "verityspec":
+        result = check_verityspec(root, workspace=args.workspace, executable=args.verity)
+        if args.format == "json":
+            print(json.dumps(result.to_dict(), indent=2, sort_keys=True))
+        else:
+            print(format_verityspec_check_result(result), end="")
+        return EXIT_VALIDATION_FAILED if result.status == "failed" else EXIT_OK
+    return EXIT_USAGE_ERROR
+
+
 def run(argv: list[str] | None = None) -> int:
     parser = build_parser()
     args = parser.parse_args(argv)
@@ -180,6 +209,8 @@ def run(argv: list[str] | None = None) -> int:
             return _cmd_matrix(args)
         if args.command == "report":
             return _cmd_report(args)
+        if args.command == "check":
+            return _cmd_check(args)
     except KeyError as exc:
         print(f"ERROR: {exc}", file=sys.stderr)
         return EXIT_USAGE_ERROR

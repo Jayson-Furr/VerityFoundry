@@ -15,8 +15,14 @@ verityfoundry validate matrices
 verityfoundry validate examples
 verityfoundry validate goldens
 verityfoundry report prompt-quality
+verityfoundry check verityspec
 git diff --check
 ```
+
+`verityfoundry check verityspec` is optional by design. If the VeritySpec
+`verity` CLI is unavailable in CI, it reports `skipped` and exits
+successfully. If `verity` is available and a workspace is provided or detected,
+the command runs `verity validate`.
 
 If GitHub Actions is unavailable because of billing, credits, quota, runner
 availability, or another platform issue, run equivalent local checks and record
