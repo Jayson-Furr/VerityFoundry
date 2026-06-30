@@ -256,11 +256,12 @@ Sprint 20 should release the completed `v0.7.0` scope:
 
 ## v0.8.0
 
-The `v0.8.0` milestone is in progress.
+The `v0.8.0` milestone is released.
 
 | Sprint | Status | Focus |
 |---:|---|---|
-| 21 | In progress | Workspace fixture readiness |
+| 21 | Complete | Workspace fixture readiness |
+| 22 | Complete | v0.8.0 release preparation |
 
 ## Sprint 21 Priorities
 
@@ -275,6 +276,18 @@ Sprint 21 should bundle related workspace-fixture readiness work:
 - Keep packaged artifact coverage aligned so installed wheels include the new
   fixture files.
 - Keep the Next 20 roadmap points populated after converting completed items.
+
+## Sprint 22 Priorities
+
+Sprint 22 should release the completed `v0.8.0` scope:
+
+- Add v0.8.0 release notes.
+- Update package metadata, README release badge, latest-release text, install
+  guidance, changelog, roadmap, and release checklist to `v0.8.0`.
+- Run local release verification, package build checks, `twine check`,
+  installed-wheel smoke tests, and GitHub Actions.
+- Tag and publish the v0.8.0 GitHub release when checks pass.
+- Close the v0.8.0 milestone after release verification.
 
 ## Later Candidates
 

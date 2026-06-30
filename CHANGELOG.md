@@ -2,6 +2,10 @@
 
 ## Unreleased
 
+No unreleased changes.
+
+## 0.8.0
+
 - Added candidate workspace fixture references to example manifests.
 - Added expected record-category validation for example workspace fixtures.
 - Added provenance example files for all examples.
