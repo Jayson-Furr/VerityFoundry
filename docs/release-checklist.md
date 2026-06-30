@@ -18,11 +18,13 @@ python -m unittest discover -s tests -v
 verityfoundry --version
 verityfoundry list prompts
 verityfoundry list matrices
+verityfoundry list profiles
 verityfoundry validate
 verityfoundry validate prompts
 verityfoundry validate matrices
 verityfoundry validate examples
 verityfoundry validate goldens
+verityfoundry lint decision-policy
 verityfoundry report prompt-quality
 verityfoundry report matrix-coverage
 verityfoundry check verityspec

@@ -19,6 +19,8 @@
   ],
   "decisionPolicyRef": "decision-policy.medium-stakes.v1",
   "includeRefs": [
+    "common.safety-and-uncertainty.v1",
+    "common.provenance-rules.v1",
     "interview.all.v1",
     "target.decommission-ready.v1",
     "target.archival-ready.v1"

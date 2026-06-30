@@ -35,6 +35,12 @@ class CliTests(unittest.TestCase):
         self.assertEqual(result.returncode, 0, result.stderr)
         self.assertIn("unity-game", result.stdout)
 
+    def test_list_profiles(self) -> None:
+        result = run_cli("list", "profiles")
+        self.assertEqual(result.returncode, 0, result.stderr)
+        self.assertIn("codex", result.stdout)
+        self.assertIn("unity-ai", result.stdout)
+
     def test_validate_all(self) -> None:
         result = run_cli("validate")
         self.assertEqual(result.returncode, 0, result.stdout + result.stderr)
@@ -75,6 +81,18 @@ class CliTests(unittest.TestCase):
             self.assertTrue(out.exists())
             self.assertIn("Wrote", result.stdout)
 
+    def test_render_prompt_with_profile(self) -> None:
+        result = run_cli(
+            "render",
+            "--prompt",
+            "unity-game.gdd-art.interview-medium.implementation-ready.v1",
+            "--profile",
+            "codex",
+        )
+        self.assertEqual(result.returncode, 0, result.stderr)
+        self.assertIn("Profile: Codex", result.stdout)
+        self.assertIn("Agent Handoff Profile", result.stdout)
+
     def test_matrix_command(self) -> None:
         result = run_cli("matrix", "unity-game")
         self.assertEqual(result.returncode, 0, result.stderr)
@@ -105,6 +123,17 @@ class CliTests(unittest.TestCase):
         self.assertEqual(result.returncode, 0, result.stderr)
         self.assertIn('"matrixCount"', result.stdout)
         self.assertIn('"missingDomainPrompts"', result.stdout)
+
+    def test_decision_policy_lint(self) -> None:
+        result = run_cli("lint", "decision-policy")
+        self.assertEqual(result.returncode, 0, result.stdout + result.stderr)
+        self.assertIn("Decision policy lint passed.", result.stdout)
+
+    def test_decision_policy_lint_json(self) -> None:
+        result = run_cli("lint", "decision-policy", "--format", "json")
+        self.assertEqual(result.returncode, 0, result.stdout + result.stderr)
+        self.assertIn('"issueCount": 0', result.stdout)
+        self.assertIn('"status": "passed"', result.stdout)
 
     def test_verityspec_check_skips_when_verity_is_missing(self) -> None:
         result = run_cli(

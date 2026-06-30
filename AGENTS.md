@@ -35,6 +35,8 @@ Core concepts:
 - Renderer: deterministic prompt assembly for local inspection.
 - Validator: local checks for manifests, examples, matrices, and prompt
   references.
+- Linter: deterministic decision-policy checks for high-stakes invention
+  risks.
 - Reports: deterministic prompt quality and matrix coverage inspection.
 
 Keep the utility package small. The repository is primarily a prompt workflow
@@ -139,11 +141,13 @@ python -m unittest discover -s tests -v
 verityfoundry --version
 verityfoundry list prompts
 verityfoundry list matrices
+verityfoundry list profiles
 verityfoundry validate
 verityfoundry validate prompts
 verityfoundry validate matrices
 verityfoundry validate examples
 verityfoundry validate goldens
+verityfoundry lint decision-policy
 verityfoundry report prompt-quality
 verityfoundry report matrix-coverage
 verityfoundry check verityspec
@@ -156,15 +160,17 @@ git diff --check
 verityfoundry --version
 verityfoundry list prompts
 verityfoundry list matrices
+verityfoundry list profiles
 verityfoundry validate
 verityfoundry validate prompts
 verityfoundry validate matrices
 verityfoundry validate examples
 verityfoundry validate goldens
+verityfoundry lint decision-policy
 verityfoundry report prompt-quality
 verityfoundry report matrix-coverage
 verityfoundry check verityspec
-verityfoundry render --prompt unity-game.gdd-art.interview-medium.implementation-ready.v1
+verityfoundry render --prompt unity-game.gdd-art.interview-medium.implementation-ready.v1 --profile codex
 verityfoundry matrix unity-game
 ```
 
@@ -179,6 +185,7 @@ verityfoundry matrix unity-game
 - `src/verityfoundry/rendering.py`: deterministic prompt rendering.
 - `src/verityfoundry/quality.py`: deterministic prompt quality reporting.
 - `src/verityfoundry/matrix_coverage.py`: deterministic matrix coverage reporting.
+- `src/verityfoundry/policy_lint.py`: deterministic decision-policy linting.
 - `src/verityfoundry/integration.py`: optional local companion-tool checks.
 - `schemas/`: JSON schemas for manifests.
 - `prompts/`: prompt workflow library.

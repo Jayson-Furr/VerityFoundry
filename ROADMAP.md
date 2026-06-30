@@ -215,6 +215,30 @@ Sprint 18 should release the completed `v0.6.0` scope:
 - Tag and publish the v0.6.0 GitHub release when checks pass.
 - Close the v0.6.0 milestone after release verification.
 
+## v0.7.0
+
+The `v0.7.0` milestone is in progress.
+
+| Sprint | Status | Focus |
+|---:|---|---|
+| 19 | In progress | Policy linting and agent handoff profiles |
+
+## Sprint 19 Priorities
+
+Sprint 19 should bundle related policy and handoff work:
+
+- Add `verityfoundry lint decision-policy` with text and JSON output.
+- Enforce decision policy, safety, provenance, human approval, and interview
+  mode controls for high-risk prompt workflows.
+- Add deterministic render profiles for Codex, Claude Code, ChatGPT, Gemini,
+  and Unity AI.
+- Add `verityfoundry list profiles`.
+- Update high-risk prompt manifests to include safety and provenance rules.
+- Add contributor guidance for prompt workflow policy expectations.
+- Update README, docs, CI, release workflow smoke checks, agent guidance,
+  changelog, and roadmap.
+- Keep the Next 20 roadmap points populated after converting completed items.
+
 ## Later Candidates
 
 These are intentionally not committed to a release until the initial scaffold
@@ -234,35 +258,35 @@ AI agents must keep this section populated with up to 20 concrete points when
 the active roadmap is caught up. The points should balance fixes,
 improvements, continuation work, and expansion.
 
-1. Add a decision-policy linter for high-stakes invention risks.
-2. Add Markdown rendering profiles for Codex, Claude Code, ChatGPT, Gemini,
-   and Unity AI prompt handoff.
-3. Add example manifests that reference candidate VeritySpec workspace files
+1. Add example manifests that reference candidate VeritySpec workspace files
    once workspace fixtures exist.
-4. Add generated workspace outline validators for expected record categories.
-5. Add image-input manifest fixtures for concept art and identity images.
-6. Add provenance examples aligned with future VeritySpec evidence records.
-7. Add cross-workspace dependency prompt guidance for shared Unity libraries
+2. Add generated workspace outline validators for expected record categories.
+3. Add image-input manifest fixtures for concept art and identity images.
+4. Add provenance examples aligned with future VeritySpec evidence records.
+5. Add cross-workspace dependency prompt guidance for shared Unity libraries
    and game portfolios.
-8. Add portfolio triage prompts for batches of many game concepts.
-9. Add release-readiness gap review prompts for generated VeritySpec
-    workspaces.
-10. Add maintenance and decommissioning interview flows for shipped products.
-11. Add contributor docs for proposing new prompt workflows.
-12. Add release-integrity checks for README, changelog, roadmap, package
+6. Add portfolio triage prompts for batches of many game concepts.
+7. Add release-readiness gap review prompts for generated VeritySpec
+   workspaces.
+8. Add maintenance and decommissioning interview flows for shipped products.
+9. Add release-integrity checks for README, changelog, roadmap, package
     metadata, and release notes.
-13. Add golden output drift review documentation for maintainers.
-14. Add a golden output inventory report for maintainers and release reviewers.
-15. Add prompt quality trend snapshots for release reviewers.
-16. Add generated example inventory reports for release reviewers.
-17. Add matrix coverage thresholds once baseline coverage is intentionally
+10. Add golden output drift review documentation for maintainers.
+11. Add a golden output inventory report for maintainers and release reviewers.
+12. Add prompt quality trend snapshots for release reviewers.
+13. Add generated example inventory reports for release reviewers.
+14. Add matrix coverage thresholds once baseline coverage is intentionally
     improved.
-18. Add docs explaining how to convert VerityFoundry expected outputs into
+15. Add docs explaining how to convert VerityFoundry expected outputs into
     concrete VeritySpec workspace fixtures.
-19. Add release workflow checks for stale action versions and non-blocking
+16. Add release workflow checks for stale action versions and non-blocking
     workflow annotations.
-20. Add a v0.x stabilization checklist for CLI output compatibility,
+17. Add a v0.x stabilization checklist for CLI output compatibility,
     manifest compatibility, and report schema compatibility.
+18. Add a dedicated GitHub Copilot render profile.
+19. Add policy lint severity levels and warning-only advisory checks.
+20. Add tests that verify high-risk prompts render safety and provenance
+    sections under every non-default agent profile.
 
 ## Working Rule
 

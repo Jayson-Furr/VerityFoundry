@@ -28,7 +28,12 @@ Validate manifests with:
 
 ```bash
 verityfoundry validate prompts
+verityfoundry lint decision-policy
 ```
+
+High-risk domain prompts should include safety and uncertainty rules,
+provenance rules, a decision policy reference, human approval requirements,
+and the appropriate interview-mode prompt include.
 
 Golden output manifests use `schemas/golden-output.schema.json` and can be
 validated with:
