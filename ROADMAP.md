@@ -43,11 +43,12 @@ Sprint 8 should release the completed `v0.1.0` scope:
 
 ## v0.2.0
 
-The `v0.2.0` milestone is in progress.
+The `v0.2.0` milestone is released.
 
 | Sprint | Status | Focus |
 |---:|---|---|
 | 9 | Complete | Unity game implementation-ready golden output fixture |
+| 10 | Complete | v0.2.0 release preparation |
 
 ## Sprint 9 Priorities
 
@@ -63,12 +64,24 @@ Sprint 9 should add the first deterministic golden output fixture:
 - Update README, changelog, roadmap, and golden output guidance.
 - Keep the Next 20 roadmap points populated after converting this item.
 
+## Sprint 10 Priorities
+
+Sprint 10 should release the completed `v0.2.0` scope:
+
+- Add v0.2.0 release notes.
+- Update package metadata, README release badge, latest-release text, install
+  guidance, changelog, roadmap, and release checklist to `v0.2.0`.
+- Run local release verification, package build checks, `twine check`, wheel
+  smoke tests, and GitHub Actions.
+- Tag and publish the v0.2.0 GitHub release when checks pass.
+- Close the v0.2.0 milestone after release verification.
+
 ## Later Candidates
 
 These are intentionally not committed to a release until the initial scaffold
 is complete:
 
-- Golden prompt output fixtures for selected workflows.
+- Additional golden prompt output fixtures for selected workflows.
 - Optional VeritySpec workspace generation fixtures.
 - VeritySpec validation integration when `verity` is available locally.
 - Richer prompt rendering profiles for specific AI-agent surfaces.
