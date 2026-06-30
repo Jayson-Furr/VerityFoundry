@@ -429,12 +429,12 @@ Sprint 30 should release the completed `v0.12.0` scope:
 
 ## v0.13.0
 
-The `v0.13.0` milestone is in progress.
+The `v0.13.0` milestone is released.
 
 | Sprint | Status | Focus |
 |---:|---|---|
-| 31 | In Progress | Stabilization and agent handoff hardening |
-| 32 | Planned | v0.13.0 release preparation |
+| 31 | Complete | Stabilization and agent handoff hardening |
+| 32 | Complete | v0.13.0 release preparation |
 
 ## Sprint 31 Priorities
 
