@@ -57,12 +57,15 @@ The repository currently provides:
   implementation-ready workflows.
 - A deterministic prompt quality report for uncertainty preservation and
   provenance completeness.
+- A deterministic prompt quality trend report backed by checked-in snapshots.
 - A deterministic matrix coverage report for prompt matrix coverage across
   domain prompt workflows.
+- Deterministic quality threshold checks for release-review baselines.
 - Deterministic release-review inventory reports for golden outputs and
   examples.
 - A deterministic release-integrity check for package and documentation
   version bookkeeping.
+- A deterministic workflow hygiene check for GitHub Actions versions.
 - A deterministic decision-policy linter for high-stakes invention risks.
 - An optional local VeritySpec smoke check that runs when `verity` is
   available and skips cleanly when it is not installed.
@@ -125,11 +128,14 @@ verityfoundry validate examples
 verityfoundry validate goldens
 verityfoundry lint decision-policy
 verityfoundry report prompt-quality
+verityfoundry report prompt-quality-trend
 verityfoundry report matrix-coverage
 verityfoundry report golden-inventory
 verityfoundry report example-inventory
 verityfoundry check verityspec
 verityfoundry check release-integrity
+verityfoundry check quality-thresholds
+verityfoundry check workflow-hygiene
 verityfoundry render --prompt unity-game.gdd-art.interview-medium.implementation-ready.v1 --profile codex
 verityfoundry matrix unity-game
 ```
@@ -252,9 +258,13 @@ does not call external AI APIs.
 ```bash
 verityfoundry report prompt-quality
 verityfoundry report prompt-quality --format json
+verityfoundry report prompt-quality-trend
 ```
 
 The report is an inspection aid, not a readiness certification.
+
+Trend snapshots live under `snapshots/prompt-quality/` so release reviewers can
+see whether prompt quality moved relative to a checked-in baseline.
 
 ## Matrix Coverage Report
 
@@ -268,6 +278,19 @@ verityfoundry report matrix-coverage --format json
 ```
 
 The report is deterministic and does not call external AI APIs.
+
+## Quality Thresholds
+
+Quality threshold checks compare prompt quality and matrix coverage against
+`config/release-quality-thresholds.json`.
+
+```bash
+verityfoundry check quality-thresholds
+verityfoundry check quality-thresholds --format json
+```
+
+Thresholds are intentionally conservative baselines. Raising them should be an
+explicit sprint decision backed by the current reports.
 
 ## Release Reviewer Reports
 
@@ -296,6 +319,19 @@ verityfoundry check release-integrity --format json
 The check is intended to run from a source checkout because it inspects
 `README.md`, `CHANGELOG.md`, `ROADMAP.md`, `pyproject.toml`, release notes, and
 the release checklist.
+
+## Workflow Hygiene Check
+
+Workflow hygiene checks scan `.github/workflows/` for action versions that are
+below the repository's current minimums.
+
+```bash
+verityfoundry check workflow-hygiene
+verityfoundry check workflow-hygiene --format json
+```
+
+This is a source-checkout check. It helps catch stale action versions before
+they reintroduce known runner annotations.
 
 ## Decision Policy Lint
 
@@ -413,6 +449,9 @@ require human approval.
 - [Render profiles](docs/render-profiles.md)
 - [Decision policy lint](docs/decision-policy-lint.md)
 - [Matrix coverage](docs/matrix-coverage.md)
+- [Prompt quality trends](docs/prompt-quality-trends.md)
+- [Quality thresholds](docs/quality-thresholds.md)
+- [Workflow hygiene](docs/workflow-hygiene.md)
 - [Release integrity](docs/release-integrity.md)
 - [Release reviewer inventory reports](docs/reviewer-inventory-reports.md)
 - [Golden output drift review](docs/golden-output-drift-review.md)

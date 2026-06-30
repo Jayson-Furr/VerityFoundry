@@ -392,6 +392,41 @@ Sprint 28 should release the completed `v0.11.0` scope:
 - Tag and publish the v0.11.0 GitHub release when checks pass.
 - Close the v0.11.0 milestone after release verification.
 
+## v0.12.0
+
+The `v0.12.0` milestone is in progress.
+
+| Sprint | Status | Focus |
+|---:|---|---|
+| 29 | In Progress | Release-review hardening checks |
+| 30 | Planned | v0.12.0 release preparation |
+
+## Sprint 29 Priorities
+
+Sprint 29 should bundle about a week of release-review hardening work:
+
+- Add prompt quality trend snapshots for release reviewers.
+- Add release-quality threshold checks for prompt quality and matrix coverage.
+- Add workflow hygiene checks for stale or risky GitHub Actions versions.
+- Keep the checks deterministic and free of external AI API calls.
+- Include source-checkout CI coverage and installed-wheel smoke coverage where
+  the packaged artifact contains the required data.
+- Update README, docs, CI, release checklist, changelog, roadmap, tests, and
+  agent guidance for the new commands.
+- Keep the Next 20 roadmap points populated after converting completed items.
+
+## Sprint 30 Priorities
+
+Sprint 30 should release the completed `v0.12.0` scope:
+
+- Add v0.12.0 release notes.
+- Update package metadata, README release badge, latest-release text, install
+  guidance, changelog, roadmap, and release checklist to `v0.12.0`.
+- Run local release verification, package build checks, `twine check`,
+  installed-wheel smoke tests, and GitHub Actions.
+- Tag and publish the v0.12.0 GitHub release when checks pass.
+- Close the v0.12.0 milestone after release verification.
+
 ## Later Candidates
 
 These are intentionally not committed to a release until the initial scaffold
@@ -411,38 +446,39 @@ AI agents must keep this section populated with up to 20 concrete points when
 the active roadmap is caught up. The points should balance fixes,
 improvements, continuation work, and expansion.
 
-1. Add prompt quality trend snapshots for release reviewers.
-2. Add matrix coverage thresholds once baseline coverage is intentionally
-   improved.
-3. Add release workflow checks for stale action versions and non-blocking
-   workflow annotations.
-4. Add a v0.x stabilization checklist for CLI output compatibility,
+1. Add a v0.x stabilization checklist for CLI output compatibility,
    manifest compatibility, and report schema compatibility.
-5. Add a dedicated GitHub Copilot render profile.
-6. Add policy lint severity levels and warning-only advisory checks.
-7. Add tests that verify high-risk prompts render safety and provenance
+2. Add a dedicated GitHub Copilot render profile.
+3. Add policy lint severity levels and warning-only advisory checks.
+4. Add tests that verify high-risk prompts render safety and provenance
     sections under every non-default agent profile.
-8. Add candidate workspace fixture inventory reports for release reviewers.
-9. Add fixture provenance coverage reporting across examples.
-10. Add docs for mapping candidate fixture `kind` values to VeritySpec packs.
-11. Add schema support for image-input manifests once the fixture shape
+5. Add candidate workspace fixture inventory reports for release reviewers.
+6. Add fixture provenance coverage reporting across examples.
+7. Add docs for mapping candidate fixture `kind` values to VeritySpec packs.
+8. Add schema support for image-input manifests once the fixture shape
     stabilizes.
-12. Add tests that packaged wheels include all declared example fixture files.
-13. Add portfolio example manifests for multi-game triage inputs and expected
+9. Add tests that packaged wheels include all declared example fixture files.
+10. Add portfolio example manifests for multi-game triage inputs and expected
     outputs.
-14. Add cross-workspace dependency fixture examples for shared Unity runtime
+11. Add cross-workspace dependency fixture examples for shared Unity runtime
     consumers.
-15. Add lifecycle golden output fixtures for release, maintenance, and
+12. Add lifecycle golden output fixtures for release, maintenance, and
     decommissioning reviews.
-16. Add docs for translating lifecycle gap reports into VeritySpec evidence
+13. Add docs for translating lifecycle gap reports into VeritySpec evidence
     and readiness records.
-17. Add release-integrity JSON schema documentation for downstream tooling.
-18. Add report schema stability notes for prompt-quality, matrix-coverage, and
+14. Add release-integrity JSON schema documentation for downstream tooling.
+15. Add report schema stability notes for prompt-quality, matrix-coverage, and
     inventory reports.
-19. Add a release reviewer checklist that combines integrity, inventory,
+16. Add a release reviewer checklist that combines integrity, inventory,
     prompt-quality, matrix-coverage, and VeritySpec smoke checks.
-20. Add a local command summary report that aggregates release-review command
+17. Add a local command summary report that aggregates release-review command
     results without invoking external AI APIs.
+18. Add historical workflow hygiene snapshot documentation for release
+    reviewers.
+19. Add configurable action-version policy documentation for workflow hygiene
+    checks.
+20. Add quality threshold ratcheting guidance for raising baselines
+    intentionally.
 
 ## Working Rule
 

@@ -2,7 +2,15 @@
 
 ## Unreleased
 
-No unreleased changes.
+- Added `verityfoundry report prompt-quality-trend` for deterministic
+  comparison against checked-in prompt-quality snapshots.
+- Added `verityfoundry check quality-thresholds` for release-review prompt
+  quality and matrix coverage baselines.
+- Added `verityfoundry check workflow-hygiene` for GitHub Actions action
+  version hygiene.
+- Added checked-in release-quality threshold configuration, a v0.11.0 prompt
+  quality baseline snapshot, documentation, CI coverage, release checklist
+  coverage, and AI-agent guidance for release hardening.
 
 ## 0.11.0
 

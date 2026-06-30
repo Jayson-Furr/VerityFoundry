@@ -17,11 +17,14 @@ verityfoundry validate examples
 verityfoundry validate goldens
 verityfoundry lint decision-policy
 verityfoundry report prompt-quality
+verityfoundry report prompt-quality-trend
 verityfoundry report matrix-coverage
 verityfoundry report golden-inventory
 verityfoundry report example-inventory
 verityfoundry check verityspec
 verityfoundry check release-integrity
+verityfoundry check quality-thresholds
+verityfoundry check workflow-hygiene
 git diff --check
 ```
 
@@ -43,3 +46,9 @@ installed CLI.
 it checks repository files such as `README.md`, `CHANGELOG.md`, `ROADMAP.md`,
 `pyproject.toml`, and release notes. It is not part of the installed-wheel
 smoke test.
+
+`verityfoundry check workflow-hygiene` also runs from the source checkout
+because it checks `.github/workflows/`. Installed-wheel smoke tests do run
+`verityfoundry report prompt-quality-trend` and
+`verityfoundry check quality-thresholds` to verify packaged snapshots and
+threshold configuration.

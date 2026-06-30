@@ -1,0 +1,19 @@
+{
+  "schemaVersion": "1.0",
+  "label": "v0.11.0",
+  "promptCount": 46,
+  "score": 293,
+  "maxScore": 506,
+  "percent": 57.9,
+  "uncertaintyPreservation": {
+    "score": 175,
+    "maxScore": 276,
+    "percent": 63.4
+  },
+  "provenanceCompleteness": {
+    "score": 118,
+    "maxScore": 230,
+    "percent": 51.3
+  },
+  "notes": "Baseline snapshot captured after the v0.11.0 release."
+}

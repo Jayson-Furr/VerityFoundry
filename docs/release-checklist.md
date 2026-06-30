@@ -26,11 +26,14 @@ verityfoundry validate examples
 verityfoundry validate goldens
 verityfoundry lint decision-policy
 verityfoundry report prompt-quality
+verityfoundry report prompt-quality-trend
 verityfoundry report matrix-coverage
 verityfoundry report golden-inventory
 verityfoundry report example-inventory
 verityfoundry check verityspec
 verityfoundry check release-integrity
+verityfoundry check quality-thresholds
+verityfoundry check workflow-hygiene
 git diff --check
 rm -rf dist build
 python -m build
@@ -50,10 +53,12 @@ python3 -m venv /tmp/verityfoundry-wheel
   /tmp/verityfoundry-wheel/bin/verityfoundry validate goldens
   /tmp/verityfoundry-wheel/bin/verityfoundry lint decision-policy
   /tmp/verityfoundry-wheel/bin/verityfoundry report prompt-quality
+  /tmp/verityfoundry-wheel/bin/verityfoundry report prompt-quality-trend
   /tmp/verityfoundry-wheel/bin/verityfoundry report matrix-coverage
   /tmp/verityfoundry-wheel/bin/verityfoundry report golden-inventory
   /tmp/verityfoundry-wheel/bin/verityfoundry report example-inventory
   /tmp/verityfoundry-wheel/bin/verityfoundry check verityspec
+  /tmp/verityfoundry-wheel/bin/verityfoundry check quality-thresholds
 )
 ```
 
