@@ -536,12 +536,12 @@ Sprint 36 should release the completed `v0.15.0` scope:
 
 ## v0.16.0
 
-The `v0.16.0` milestone is in progress.
+The `v0.16.0` milestone is released.
 
 | Sprint | Status | Focus |
 |---:|---|---|
-| 37 | In Progress | Lifecycle golden outputs and release-review documentation |
-| 38 | Pending | v0.16.0 release preparation |
+| 37 | Complete | Lifecycle golden outputs and release-review documentation |
+| 38 | Complete | v0.16.0 release preparation |
 
 ## Sprint 37 Priorities
 

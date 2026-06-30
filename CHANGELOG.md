@@ -2,6 +2,10 @@
 
 ## Unreleased
 
+No unreleased changes.
+
+## 0.16.0
+
 - Added lifecycle golden output fixtures for release-readiness,
   maintenance-readiness, and decommission-readiness review workflows.
 - Added documentation for translating lifecycle gap reports into VeritySpec
