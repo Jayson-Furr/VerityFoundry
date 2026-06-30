@@ -2,12 +2,19 @@
 
 ## Unreleased
 
+No unreleased changes.
+
+## 0.7.0
+
 - Added `verityfoundry lint decision-policy` with text and JSON output.
 - Added deterministic render profiles for Codex, Claude Code, ChatGPT,
   Gemini, and Unity AI prompt handoff.
 - Updated high-risk prompt manifests to include safety and provenance rules.
 - Added prompt workflow contribution guidance for policy linting and render
   profiles.
+- Bundled prompt, matrix, schema, example, and golden-output artifacts in the
+  installable wheel so the CLI can inspect the prompt library outside a source
+  checkout.
 
 ## 0.6.0
 

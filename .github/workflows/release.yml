@@ -41,6 +41,7 @@ jobs:
           python -m venv /tmp/verityfoundry-wheel
           /tmp/verityfoundry-wheel/bin/python -m pip install --upgrade pip
           /tmp/verityfoundry-wheel/bin/pip install dist/*.whl
+          cd /tmp
           /tmp/verityfoundry-wheel/bin/verityfoundry --version
           /tmp/verityfoundry-wheel/bin/verityfoundry list prompts
           /tmp/verityfoundry-wheel/bin/verityfoundry list matrices

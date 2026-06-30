@@ -217,11 +217,12 @@ Sprint 18 should release the completed `v0.6.0` scope:
 
 ## v0.7.0
 
-The `v0.7.0` milestone is in progress.
+The `v0.7.0` milestone is released.
 
 | Sprint | Status | Focus |
 |---:|---|---|
-| 19 | In progress | Policy linting and agent handoff profiles |
+| 19 | Complete | Policy linting and agent handoff profiles |
+| 20 | Complete | v0.7.0 release preparation |
 
 ## Sprint 19 Priorities
 
@@ -238,6 +239,20 @@ Sprint 19 should bundle related policy and handoff work:
 - Update README, docs, CI, release workflow smoke checks, agent guidance,
   changelog, and roadmap.
 - Keep the Next 20 roadmap points populated after converting completed items.
+
+## Sprint 20 Priorities
+
+Sprint 20 should release the completed `v0.7.0` scope:
+
+- Add v0.7.0 release notes.
+- Update package metadata, README release badge, latest-release text, install
+  guidance, changelog, roadmap, and release checklist to `v0.7.0`.
+- Run local release verification, package build checks, `twine check`, wheel
+  smoke tests, and GitHub Actions.
+- Verify the installed wheel from outside the source checkout so packaged
+  prompt-library artifacts cannot drift.
+- Tag and publish the v0.7.0 GitHub release when checks pass.
+- Close the v0.7.0 milestone after release verification.
 
 ## Later Candidates
 

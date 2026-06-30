@@ -4,7 +4,9 @@ from __future__ import annotations
 
 from dataclasses import dataclass
 import json
+import os
 from pathlib import Path
+import sysconfig
 from typing import Any, Iterable
 
 
@@ -22,17 +24,51 @@ class MarkdownManifest:
 
 
 def find_project_root(start: str | Path | None = None) -> Path:
-    """Find the nearest VerityFoundry project root from a starting path."""
+    """Find the nearest VerityFoundry artifact root from a starting path."""
 
     current = Path(start or ".").resolve()
+    explicit_start = start is not None
     if current.is_file():
         current = current.parent
 
     for candidate in [current, *current.parents]:
-        if (candidate / "pyproject.toml").exists() and (candidate / "prompts").exists():
+        if _has_artifact_root(candidate) and (
+            (candidate / "pyproject.toml").exists() or explicit_start
+        ):
             return candidate
 
+    if not explicit_start:
+        bundled = bundled_artifact_root()
+        if bundled is not None:
+            return bundled
+
     return current
+
+
+def _has_artifact_root(path: Path) -> bool:
+    """Return whether a path contains the deterministic prompt artifacts."""
+
+    return all(
+        (path / name).exists()
+        for name in ("prompts", "matrices", "schemas", "examples", "goldens")
+    )
+
+
+def bundled_artifact_root() -> Path | None:
+    """Return the installed prompt artifact root when available."""
+
+    override = os.environ.get("VERITYFOUNDRY_ASSET_ROOT")
+    candidates = []
+    if override:
+        candidates.append(Path(override))
+
+    data_root = Path(sysconfig.get_path("data")) / "share" / "verityfoundry"
+    candidates.append(data_root)
+
+    for candidate in candidates:
+        if _has_artifact_root(candidate):
+            return candidate.resolve()
+    return None
 
 
 def read_json(path: Path) -> dict[str, Any]:

@@ -32,7 +32,10 @@ EXIT_INTERNAL_ERROR = 3
 def build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(prog="verityfoundry")
     parser.add_argument("--version", action="version", version=f"verityfoundry {__version__}")
-    parser.add_argument("--root", default=".", help="Repository root. Defaults to the current directory.")
+    parser.add_argument(
+        "--root",
+        help="Artifact root. Defaults to the current checkout or installed prompt library.",
+    )
 
     subparsers = parser.add_subparsers(dest="command")
 
@@ -90,7 +93,7 @@ def build_parser() -> argparse.ArgumentParser:
     return parser
 
 
-def _root(value: str) -> Path:
+def _root(value: str | None) -> Path:
     return find_project_root(value)
 
 

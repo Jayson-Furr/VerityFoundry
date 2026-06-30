@@ -1,0 +1,5 @@
+recursive-include schemas *.json
+recursive-include matrices *.md
+recursive-include prompts *.md
+recursive-include examples *.json *.md
+recursive-include goldens *.json *.md
