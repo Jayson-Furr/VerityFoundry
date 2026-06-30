@@ -27,6 +27,7 @@ verityfoundry validate goldens
 verityfoundry lint decision-policy
 verityfoundry report prompt-quality
 verityfoundry report prompt-quality-trend
+verityfoundry report policy-lint-trend
 verityfoundry report matrix-coverage
 verityfoundry report release-summary
 verityfoundry report golden-inventory
@@ -57,6 +58,7 @@ python3 -m venv /tmp/verityfoundry-wheel
   /tmp/verityfoundry-wheel/bin/verityfoundry lint decision-policy
   /tmp/verityfoundry-wheel/bin/verityfoundry report prompt-quality
   /tmp/verityfoundry-wheel/bin/verityfoundry report prompt-quality-trend
+  /tmp/verityfoundry-wheel/bin/verityfoundry report policy-lint-trend
   /tmp/verityfoundry-wheel/bin/verityfoundry report matrix-coverage
   /tmp/verityfoundry-wheel/bin/verityfoundry report release-summary
   /tmp/verityfoundry-wheel/bin/verityfoundry report golden-inventory

@@ -29,6 +29,10 @@ from .policy_lint import (
     format_policy_lint_issues,
     lint_decision_policy,
 )
+from .policy_lint_trend import (
+    format_policy_lint_trend_report,
+    generate_policy_lint_trend_report,
+)
 from .quality import format_prompt_quality_report, generate_prompt_quality_report
 from .quality_trend import (
     format_prompt_quality_trend_report,
@@ -97,6 +101,7 @@ def build_parser() -> argparse.ArgumentParser:
             "prompt-quality",
             "prompt-quality-trend",
             "matrix-coverage",
+            "policy-lint-trend",
             "release-summary",
             "golden-inventory",
             "example-inventory",
@@ -264,6 +269,9 @@ def _cmd_report(args: argparse.Namespace) -> int:
     elif args.target == "prompt-quality-trend":
         report = generate_prompt_quality_trend_report(root)
         formatted = format_prompt_quality_trend_report(report)
+    elif args.target == "policy-lint-trend":
+        report = generate_policy_lint_trend_report(root)
+        formatted = format_policy_lint_trend_report(report)
     elif args.target == "golden-inventory":
         report = generate_golden_inventory_report(root)
         formatted = format_golden_inventory_report(report)

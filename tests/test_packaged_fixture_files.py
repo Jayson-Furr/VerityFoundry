@@ -68,6 +68,16 @@ class PackagedFixtureFileTests(unittest.TestCase):
 
         self.assertEqual(unpackaged, [])
 
+    def test_snapshot_files_are_included_in_data_files(self) -> None:
+        patterns = data_file_patterns()
+        unpackaged = [
+            path.relative_to(ROOT).as_posix()
+            for path in sorted((ROOT / "snapshots").glob("*/*.json"))
+            if not is_packaged(path.relative_to(ROOT), patterns)
+        ]
+
+        self.assertEqual(unpackaged, [])
+
     def test_golden_output_files_are_included_in_data_files(self) -> None:
         patterns = data_file_patterns()
         referenced: list[Path] = []

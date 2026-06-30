@@ -9,5 +9,9 @@
     "minCoveragePercent": 88.0,
     "maxMissingDomainPrompts": 3,
     "maxUnknownPromptRefs": 0
+  },
+  "policyLint": {
+    "maxErrors": 0,
+    "maxWarnings": 14
   }
 }

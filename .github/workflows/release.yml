@@ -51,6 +51,7 @@ jobs:
           /tmp/verityfoundry-wheel/bin/verityfoundry lint decision-policy
           /tmp/verityfoundry-wheel/bin/verityfoundry report prompt-quality
           /tmp/verityfoundry-wheel/bin/verityfoundry report prompt-quality-trend
+          /tmp/verityfoundry-wheel/bin/verityfoundry report policy-lint-trend
           /tmp/verityfoundry-wheel/bin/verityfoundry report matrix-coverage
           /tmp/verityfoundry-wheel/bin/verityfoundry report release-summary
           /tmp/verityfoundry-wheel/bin/verityfoundry report golden-inventory

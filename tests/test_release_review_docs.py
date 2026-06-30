@@ -14,6 +14,9 @@ class ReleaseReviewDocsTests(unittest.TestCase):
             "docs/release-summary-report.md",
             "docs/report-schema-stability.md",
             "docs/release-reviewer-checklist.md",
+            "docs/policy-lint-trends.md",
+            "docs/fixture-inventory-report-schema.md",
+            "docs/example-fixture-diff-snapshots.md",
             "docs/workflow-hygiene-history.md",
             "docs/action-version-policy.md",
             "docs/quality-threshold-ratcheting.md",
@@ -30,6 +33,9 @@ class ReleaseReviewDocsTests(unittest.TestCase):
             "docs/report-schema-stability.md",
             "docs/release-reviewer-checklist.md",
             "docs/release-summary-report.md",
+            "docs/policy-lint-trends.md",
+            "docs/fixture-inventory-report-schema.md",
+            "docs/example-fixture-diff-snapshots.md",
         ):
             with self.subTest(relative=relative):
                 text = (ROOT / relative).read_text(encoding="utf-8")

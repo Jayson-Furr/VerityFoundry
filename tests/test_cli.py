@@ -94,6 +94,32 @@ class CliTests(unittest.TestCase):
         self.assertIn("Profile: Codex", result.stdout)
         self.assertIn("Agent Handoff Profile", result.stdout)
 
+    def test_render_prompt_to_file_for_every_profile(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            for profile in (
+                "default",
+                "codex",
+                "claude-code",
+                "chatgpt",
+                "gemini",
+                "github-copilot",
+                "unity-ai",
+            ):
+                with self.subTest(profile=profile):
+                    out = Path(tmp) / f"{profile}.md"
+                    result = run_cli(
+                        "render",
+                        "--prompt",
+                        "unity-game.gdd-art.interview-medium.implementation-ready.v1",
+                        "--profile",
+                        profile,
+                        "--out",
+                        str(out),
+                    )
+                    self.assertEqual(result.returncode, 0, result.stderr)
+                    self.assertTrue(out.exists())
+                    self.assertIn("VerityFoundry Rendered Prompt", out.read_text())
+
     def test_matrix_command(self) -> None:
         result = run_cli("matrix", "unity-game")
         self.assertEqual(result.returncode, 0, result.stderr)
@@ -121,6 +147,18 @@ class CliTests(unittest.TestCase):
 
     def test_prompt_quality_trend_report_json(self) -> None:
         result = run_cli("report", "prompt-quality-trend", "--format", "json")
+        self.assertEqual(result.returncode, 0, result.stderr)
+        self.assertIn('"snapshotCount"', result.stdout)
+        self.assertIn('"deltaFromLatest"', result.stdout)
+
+    def test_policy_lint_trend_report_text(self) -> None:
+        result = run_cli("report", "policy-lint-trend")
+        self.assertEqual(result.returncode, 0, result.stderr)
+        self.assertIn("Policy Lint Trend Report", result.stdout)
+        self.assertIn("Latest snapshot: v0.17.0", result.stdout)
+
+    def test_policy_lint_trend_report_json(self) -> None:
+        result = run_cli("report", "policy-lint-trend", "--format", "json")
         self.assertEqual(result.returncode, 0, result.stderr)
         self.assertIn('"snapshotCount"', result.stdout)
         self.assertIn('"deltaFromLatest"', result.stdout)
@@ -247,6 +285,7 @@ class CliTests(unittest.TestCase):
         result = run_cli("check", "quality-thresholds")
         self.assertEqual(result.returncode, 0, result.stdout + result.stderr)
         self.assertIn("Quality threshold check passed.", result.stdout)
+        self.assertIn("Policy lint: 0 errors, 14 warnings", result.stdout)
 
     def test_workflow_hygiene_check_passes(self) -> None:
         result = run_cli("check", "workflow-hygiene")

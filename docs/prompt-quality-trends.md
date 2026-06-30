@@ -22,3 +22,6 @@ library, quality checks, or quality baseline.
 
 The trend report is a release-review aid. It does not certify readiness and it
 does not replace human review of prompt behavior.
+
+Decision-policy lint trends are tracked separately in
+[Policy lint trends](policy-lint-trends.md).

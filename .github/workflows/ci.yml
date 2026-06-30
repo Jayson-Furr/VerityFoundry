@@ -52,6 +52,7 @@ jobs:
           verityfoundry lint decision-policy
           verityfoundry report prompt-quality
           verityfoundry report prompt-quality-trend
+          verityfoundry report policy-lint-trend
           verityfoundry report matrix-coverage
           verityfoundry report release-summary
           verityfoundry report golden-inventory

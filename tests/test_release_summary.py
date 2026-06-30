@@ -23,6 +23,10 @@ class ReleaseSummaryTests(unittest.TestCase):
         self.assertEqual(report["reports"]["goldenInventory"]["goldenCount"], 5)
         self.assertEqual(report["reports"]["exampleInventory"]["exampleCount"], 6)
         self.assertEqual(
+            report["reports"]["policyLintTrend"]["latestSnapshotLabel"],
+            "v0.17.0",
+        )
+        self.assertEqual(
             report["reports"]["provenanceCoverage"]["recordProvenancePercent"],
             100.0,
         )
@@ -34,6 +38,7 @@ class ReleaseSummaryTests(unittest.TestCase):
         self.assertIn("Release integrity: passed", text)
         self.assertIn("Quality thresholds: passed", text)
         self.assertIn("Workflow hygiene: passed", text)
+        self.assertIn("Policy lint trend:", text)
         self.assertIn("Run VeritySpec validation separately", text)
 
 

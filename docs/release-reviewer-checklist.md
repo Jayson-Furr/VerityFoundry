@@ -23,6 +23,7 @@ git diff --check
 verityfoundry lint decision-policy
 verityfoundry report prompt-quality
 verityfoundry report prompt-quality-trend
+verityfoundry report policy-lint-trend
 verityfoundry report matrix-coverage
 verityfoundry report release-summary
 verityfoundry report golden-inventory
@@ -37,6 +38,7 @@ verityfoundry check release-integrity
 Review the report output for:
 
 - prompt quality regressions
+- policy-lint warning drift
 - matrix coverage gaps
 - missing or unexpected golden fixtures
 - missing example fixtures
