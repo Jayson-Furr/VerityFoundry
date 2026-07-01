@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## 0.30.0
+
 - Added `verityfoundry report generated-workspace-validation` with text and
   JSON output for generated workspace validation-result snapshot coverage.
 - Added generated workspace validation report schema validation, file-hash

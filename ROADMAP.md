@@ -1046,12 +1046,12 @@ Sprint 64 should release the completed `v0.29.0` scope:
 
 ## v0.30.0
 
-The `v0.30.0` milestone is active.
+The `v0.30.0` milestone is released.
 
 | Sprint | Status | Focus |
 |---:|---|---|
-| 65 | In Progress | Generated workspace validation-result reporting, schema, freshness checks, release-summary coverage, update dry-run planning, drift examples, and CI artifact planning |
-| 66 | Planned | v0.30.0 release preparation |
+| 65 | Complete | Generated workspace validation-result reporting, schema, freshness checks, release-summary coverage, update dry-run planning, drift examples, and CI artifact planning |
+| 66 | Complete | v0.30.0 release preparation |
 
 ## Sprint 65 Priorities
 

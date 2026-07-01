@@ -1,7 +1,7 @@
 # VerityFoundry
 
 [![CI](https://github.com/Jayson-Furr/VerityFoundry/actions/workflows/ci.yml/badge.svg)](https://github.com/Jayson-Furr/VerityFoundry/actions/workflows/ci.yml)
-[![Release](https://img.shields.io/badge/release-v0.29.0-blue)](https://github.com/Jayson-Furr/VerityFoundry/releases/tag/v0.29.0)
+[![Release](https://img.shields.io/badge/release-v0.30.0-blue)](https://github.com/Jayson-Furr/VerityFoundry/releases/tag/v0.30.0)
 [![Python](https://img.shields.io/badge/python-3.9%2B-blue)](pyproject.toml)
 [![License](https://img.shields.io/github/license/Jayson-Furr/VerityFoundry)](LICENSE)
 
@@ -31,7 +31,7 @@ that AI-generated records are automatically true, complete, or approved.
 
 ## Current Scope
 
-Latest release: `v0.29.0`. Release history is tracked in
+Latest release: `v0.30.0`. Release history is tracked in
 [CHANGELOG.md](CHANGELOG.md) and [ROADMAP.md](ROADMAP.md).
 
 The repository currently provides:
@@ -109,7 +109,7 @@ The repository currently provides:
 Install the latest GitHub release:
 
 ```bash
-pip install "verityfoundry @ git+https://github.com/Jayson-Furr/VerityFoundry.git@v0.29.0"
+pip install "verityfoundry @ git+https://github.com/Jayson-Furr/VerityFoundry.git@v0.30.0"
 verityfoundry --version
 ```
 
@@ -384,7 +384,7 @@ package metadata and public docs.
 
 ```bash
 verityfoundry check release-integrity
-verityfoundry check release-integrity --expected-version 0.29.0
+verityfoundry check release-integrity --expected-version 0.30.0
 verityfoundry check release-integrity --format json
 ```
 
@@ -628,6 +628,7 @@ require human approval.
 - [Branching](docs/branching.md)
 - [CI](docs/ci.md)
 - [Release checklist](docs/release-checklist.md)
+- [v0.30.0 release notes](docs/release-notes-v0.30.0.md)
 - [v0.29.0 release notes](docs/release-notes-v0.29.0.md)
 - [v0.28.0 release notes](docs/release-notes-v0.28.0.md)
 - [v0.27.0 release notes](docs/release-notes-v0.27.0.md)
