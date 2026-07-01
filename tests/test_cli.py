@@ -188,6 +188,8 @@ class CliTests(unittest.TestCase):
         self.assertIn('"blockingIssueCount": 0', result.stdout)
         self.assertIn('"releaseIntegrity"', result.stdout)
         self.assertIn('"goldenInventory"', result.stdout)
+        self.assertIn('"provenanceDistribution"', result.stdout)
+        self.assertIn('"portfolioCoverage"', result.stdout)
 
     def test_golden_inventory_report_text(self) -> None:
         result = run_cli("report", "golden-inventory")
@@ -236,6 +238,30 @@ class CliTests(unittest.TestCase):
         self.assertEqual(result.returncode, 0, result.stderr)
         self.assertIn('"recordProvenancePercent"', result.stdout)
         self.assertIn('"decisionExamplePercent"', result.stdout)
+
+    def test_provenance_distribution_report_text(self) -> None:
+        result = run_cli("report", "provenance-distribution")
+        self.assertEqual(result.returncode, 0, result.stderr)
+        self.assertIn("Provenance Distribution Report", result.stdout)
+        self.assertIn("Decision examples by source:", result.stdout)
+
+    def test_provenance_distribution_report_json(self) -> None:
+        result = run_cli("report", "provenance-distribution", "--format", "json")
+        self.assertEqual(result.returncode, 0, result.stderr)
+        self.assertIn('"decisionSourceCounts"', result.stdout)
+        self.assertIn('"humanApprovalRequiredDecisionCount"', result.stdout)
+
+    def test_portfolio_coverage_report_text(self) -> None:
+        result = run_cli("report", "portfolio-coverage")
+        self.assertEqual(result.returncode, 0, result.stderr)
+        self.assertIn("Portfolio Fixture Coverage Report", result.stdout)
+        self.assertIn("Dependency assumptions:", result.stdout)
+
+    def test_portfolio_coverage_report_json(self) -> None:
+        result = run_cli("report", "portfolio-coverage", "--format", "json")
+        self.assertEqual(result.returncode, 0, result.stderr)
+        self.assertIn('"portfolioExampleCount"', result.stdout)
+        self.assertIn('"crossWorkspaceReferenceCount"', result.stdout)
 
     def test_decision_policy_lint(self) -> None:
         result = run_cli("lint", "decision-policy")

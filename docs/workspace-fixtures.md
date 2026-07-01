@@ -61,8 +61,10 @@ decision entry should include:
 - `confidence`
 - `humanApprovalRequired`
 
-These fixtures are not a replacement for VeritySpec validation. To convert one
-into a concrete workspace:
+These fixtures are not a replacement for VeritySpec validation. For the full
+handoff process, use
+[fixture-to-verityspec-checklist.md](fixture-to-verityspec-checklist.md). At a
+minimum, to convert one into a concrete workspace:
 
 1. Create a real VeritySpec workspace directory.
 2. Split fixture records into the record-file layout expected by that

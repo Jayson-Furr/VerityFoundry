@@ -29,6 +29,12 @@ describe image roles, paths or placeholders, source notes, and interpretation
 limits. It should not claim that a missing or described image has been
 inspected as a binary asset.
 
+The checked examples currently include image manifests for Unity game, product,
+and software-library workflows. Product and software-library manifests are
+useful for UI wireframes, style boards, architecture diagrams, and reference
+sketches, but they must still preserve licensing, accessibility, security,
+privacy, and approval uncertainty.
+
 `verityfoundry validate examples` validates image manifests against
 `schemas/image-input-manifest.schema.json` when an example input references
 `image-manifest.json`.

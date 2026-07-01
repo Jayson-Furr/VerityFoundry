@@ -30,6 +30,8 @@ The summary includes:
 - example inventory
 - candidate workspace fixture inventory
 - provenance coverage
+- provenance distribution
+- portfolio fixture coverage
 
 Release integrity and workflow hygiene are source-checkout checks. When the
 command is run against installed prompt artifacts that do not include

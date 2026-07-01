@@ -7,7 +7,9 @@
   "targetReadiness": "implementation-ready",
   "inputs": [
     "inputs/brief.md",
-    "inputs/readme.md"
+    "inputs/readme.md",
+    "inputs/images.md",
+    "inputs/image-manifest.json"
   ],
   "expectedOutputs": [
     "expected/workspace-outline.md",

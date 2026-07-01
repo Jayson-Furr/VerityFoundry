@@ -1,0 +1,30 @@
+{
+  "id": "image-inputs.customer_portal",
+  "name": "Customer Portal Image Inputs",
+  "images": [
+    {
+      "id": "image.ui.dashboard_wireframe",
+      "path": "art/ui/dashboard-wireframe.png",
+      "role": "ui",
+      "provided": false,
+      "notesSource": "inputs/images.md",
+      "interpretationLimits": [
+        "No binary image is included in this example.",
+        "Permission, audit, accessibility, and production UI decisions are not proven by the wireframe notes.",
+        "Licensing, ownership, commercial clearance, and brand approval are unknown."
+      ]
+    },
+    {
+      "id": "image.style.portal_style_board",
+      "path": "art/identity/style-board.png",
+      "role": "style-board",
+      "provided": false,
+      "notesSource": "inputs/images.md",
+      "interpretationLimits": [
+        "No binary image is included in this example.",
+        "Style descriptors are candidate interpretations from written image notes.",
+        "Color accessibility, brand approval, licensing, ownership, and commercial clearance are unknown."
+      ]
+    }
+  ]
+}

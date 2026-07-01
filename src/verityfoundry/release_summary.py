@@ -10,7 +10,9 @@ from .inventory import (
     generate_example_inventory_report,
     generate_fixture_inventory_report,
     generate_golden_inventory_report,
+    generate_portfolio_fixture_coverage_report,
     generate_provenance_coverage_report,
+    generate_provenance_distribution_report,
 )
 from .matrix_coverage import generate_matrix_coverage_report
 from .policy_lint import (
@@ -39,6 +41,8 @@ def generate_release_summary_report(root: str | Path) -> dict[str, Any]:
     example_inventory = generate_example_inventory_report(root_path)
     fixture_inventory = generate_fixture_inventory_report(root_path)
     provenance_coverage = generate_provenance_coverage_report(root_path)
+    provenance_distribution = generate_provenance_distribution_report(root_path)
+    portfolio_coverage = generate_portfolio_fixture_coverage_report(root_path)
     release_integrity = _safe_release_integrity(root_path)
     quality_thresholds = check_quality_thresholds(root_path)
     workflow_hygiene = _safe_workflow_hygiene(root_path)
@@ -126,6 +130,21 @@ def generate_release_summary_report(root: str | Path) -> dict[str, Any]:
                 "exampleCount": provenance_coverage["exampleCount"],
                 "recordProvenancePercent": provenance_coverage["recordProvenancePercent"],
                 "decisionExamplePercent": provenance_coverage["decisionExamplePercent"],
+            },
+            "provenanceDistribution": {
+                "decisionExampleCount": provenance_distribution["decisionExampleCount"],
+                "recordProvenanceCount": provenance_distribution["recordProvenanceCount"],
+                "humanApprovalRequiredDecisionCount": provenance_distribution[
+                    "humanApprovalRequiredDecisionCount"
+                ],
+            },
+            "portfolioCoverage": {
+                "portfolioExampleCount": portfolio_coverage["portfolioExampleCount"],
+                "gameConceptCount": portfolio_coverage["gameConceptCount"],
+                "dependencyAssumptionCount": portfolio_coverage["dependencyAssumptionCount"],
+                "crossWorkspaceReferenceCount": portfolio_coverage[
+                    "crossWorkspaceReferenceCount"
+                ],
             },
         },
         "notes": [
@@ -220,6 +239,17 @@ def format_release_summary_report(report: dict[str, Any]) -> str:
                 "- Provenance coverage: "
                 f"{reports['provenanceCoverage']['recordProvenancePercent']}% records, "
                 f"{reports['provenanceCoverage']['decisionExamplePercent']}% decision examples"
+            ),
+            (
+                "- Provenance distribution: "
+                f"{reports['provenanceDistribution']['decisionExampleCount']} decisions, "
+                f"{reports['provenanceDistribution']['recordProvenanceCount']} records"
+            ),
+            (
+                "- Portfolio coverage: "
+                f"{reports['portfolioCoverage']['portfolioExampleCount']} examples, "
+                f"{reports['portfolioCoverage']['gameConceptCount']} game concepts, "
+                f"{reports['portfolioCoverage']['dependencyAssumptionCount']} dependencies"
             ),
             "",
             "Notes:",

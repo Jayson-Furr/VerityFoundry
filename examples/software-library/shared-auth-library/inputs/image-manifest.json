@@ -1,0 +1,30 @@
+{
+  "id": "image-inputs.shared_auth_library",
+  "name": "Shared Auth Library Image Inputs",
+  "images": [
+    {
+      "id": "image.reference.auth_flow",
+      "path": "art/reference/auth-flow-diagram.png",
+      "role": "reference",
+      "provided": false,
+      "notesSource": "inputs/images.md",
+      "interpretationLimits": [
+        "No binary image is included in this example.",
+        "Interface behavior is suggested by written diagram notes and requires human engineering review.",
+        "Security, privacy, retention, audit, and incident-response commitments remain unknown."
+      ]
+    },
+    {
+      "id": "image.reference.consumer_integration",
+      "path": "art/reference/consumer-integration-sketch.png",
+      "role": "reference",
+      "provided": false,
+      "notesSource": "inputs/images.md",
+      "interpretationLimits": [
+        "No binary image is included in this example.",
+        "Public versus internal API boundaries and version compatibility are not proven by the sketch.",
+        "Licensing, ownership, commercial clearance, and security approval are unknown."
+      ]
+    }
+  ]
+}

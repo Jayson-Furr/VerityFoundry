@@ -17,6 +17,10 @@ class ReleaseReviewDocsTests(unittest.TestCase):
             "docs/policy-lint-trends.md",
             "docs/fixture-inventory-report-schema.md",
             "docs/example-fixture-diff-snapshots.md",
+            "docs/provenance-distribution.md",
+            "docs/portfolio-coverage-report.md",
+            "docs/fixture-to-verityspec-checklist.md",
+            "docs/cross-workspace-reference-guidance.md",
             "docs/workflow-hygiene-history.md",
             "docs/action-version-policy.md",
             "docs/quality-threshold-ratcheting.md",
@@ -36,6 +40,10 @@ class ReleaseReviewDocsTests(unittest.TestCase):
             "docs/policy-lint-trends.md",
             "docs/fixture-inventory-report-schema.md",
             "docs/example-fixture-diff-snapshots.md",
+            "docs/provenance-distribution.md",
+            "docs/portfolio-coverage-report.md",
+            "docs/fixture-to-verityspec-checklist.md",
+            "docs/cross-workspace-reference-guidance.md",
         ):
             with self.subTest(relative=relative):
                 text = (ROOT / relative).read_text(encoding="utf-8")
