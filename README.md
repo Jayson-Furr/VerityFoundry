@@ -68,8 +68,16 @@ The repository currently provides:
   examples, candidate workspace fixtures, and provenance coverage.
 - Deterministic provenance distribution and portfolio fixture coverage reports
   for release reviewers.
+- JSON schemas for release-summary, policy-lint trend, provenance
+  distribution, and portfolio coverage reports.
+- Checked portfolio coverage and cross-workspace reference snapshots for
+  release-review drift inspection.
 - Fixture-to-VeritySpec conversion checklist and cross-workspace reference
   syntax guidance for generated workspace drafts.
+- Concrete fixture-to-VeritySpec conversion checklist examples for product and
+  Unity game workspace drafts.
+- Optional VeritySpec validation design notes for future executable workspace
+  fixtures.
 - A deterministic aggregate release-summary report for release reviewers.
 - Image input manifest schema validation for example workflows.
 - A deterministic release-integrity check for package and documentation
@@ -350,6 +358,10 @@ Checked release-review JSON fixtures live under
 `fixtures/release-review/current/` for downstream tooling examples and drift
 review.
 
+Checked release-review snapshots live under `snapshots/` for prompt quality,
+policy lint, golden output, release-summary, render-profile, portfolio
+coverage, and cross-workspace reference review.
+
 ## Release Integrity Check
 
 Release integrity checks compare release-facing version references across
@@ -504,6 +516,8 @@ require human approval.
 - [Prompt quality trends](docs/prompt-quality-trends.md)
 - [Policy lint trends](docs/policy-lint-trends.md)
 - [Policy-lint trend JSON schema](docs/policy-lint-trend-json-schema.md)
+- [Provenance distribution JSON schema](docs/provenance-distribution-json-schema.md)
+- [Portfolio coverage JSON schema](docs/portfolio-coverage-json-schema.md)
 - [Policy-lint advisory remediation](docs/policy-lint-advisory-remediation.md)
 - [Render-profile snapshots](docs/render-profile-snapshots.md)
 - [Quality thresholds](docs/quality-thresholds.md)
@@ -531,9 +545,13 @@ require human approval.
 - [Provenance coverage](docs/provenance-coverage.md)
 - [Provenance distribution](docs/provenance-distribution.md)
 - [Portfolio coverage report](docs/portfolio-coverage-report.md)
+- [Portfolio coverage snapshots](docs/portfolio-coverage-snapshots.md)
+- [Cross-workspace reference snapshots](docs/cross-workspace-reference-snapshots.md)
 - [Golden output drift review](docs/golden-output-drift-review.md)
 - [Workspace fixtures](docs/workspace-fixtures.md)
 - [Fixture to VeritySpec checklist](docs/fixture-to-verityspec-checklist.md)
+- [Fixture to VeritySpec checklist examples](docs/fixture-to-verityspec-checklist-examples.md)
+- [Executable workspace fixture validation design](docs/executable-workspace-fixture-validation-design.md)
 - [Portfolio workflows](docs/portfolio-workflows.md)
 - [Cross-workspace reference guidance](docs/cross-workspace-reference-guidance.md)
 - [Lifecycle readiness workflows](docs/lifecycle-readiness-workflows.md)

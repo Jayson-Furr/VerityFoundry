@@ -78,3 +78,10 @@ Checked JSON examples of selected release-review reports live under
 `fixtures/release-review/current/`. See
 [release-review-fixtures.md](release-review-fixtures.md) for the fixture
 contract and authority boundary.
+
+Checked portfolio coverage snapshots live under
+`snapshots/portfolio-coverage/`. Checked dependency-assumption snapshots live
+under `snapshots/cross-workspace-references/`. See
+[portfolio-coverage-snapshots.md](portfolio-coverage-snapshots.md) and
+[cross-workspace-reference-snapshots.md](cross-workspace-reference-snapshots.md)
+for update guidance.

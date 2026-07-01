@@ -2,6 +2,15 @@
 
 ## Unreleased
 
+- Added provenance distribution and portfolio coverage JSON schemas for
+  downstream release-review tooling.
+- Added checked portfolio coverage and cross-workspace reference snapshots for
+  release reviewers.
+- Added concrete fixture-to-VeritySpec checklist examples for product and
+  Unity game workspace drafts.
+- Added optional VeritySpec validation design notes for future executable
+  workspace fixtures.
+
 ## 0.22.0
 
 - Added policy-lint trend JSON schema documentation and schema validation

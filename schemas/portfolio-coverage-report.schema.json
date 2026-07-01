@@ -1,0 +1,272 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/Jayson-Furr/VerityFoundry/schemas/portfolio-coverage-report.schema.json",
+  "title": "VerityFoundry portfolio-coverage report",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "portfolioExampleCount",
+    "gameConceptCount",
+    "dependencyAssumptionCount",
+    "crossWorkspaceReferenceCount",
+    "coverageGapCount",
+    "examples"
+  ],
+  "properties": {
+    "portfolioExampleCount": {
+      "$ref": "#/$defs/nonNegativeInteger"
+    },
+    "gameConceptCount": {
+      "$ref": "#/$defs/nonNegativeInteger"
+    },
+    "dependencyAssumptionCount": {
+      "$ref": "#/$defs/nonNegativeInteger"
+    },
+    "crossWorkspaceReferenceCount": {
+      "$ref": "#/$defs/nonNegativeInteger"
+    },
+    "coverageGapCount": {
+      "$ref": "#/$defs/nonNegativeInteger"
+    },
+    "examples": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/example"
+      }
+    }
+  },
+  "$defs": {
+    "nonNegativeInteger": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "nullableString": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "status": {
+      "type": "string",
+      "minLength": 1
+    },
+    "decisionSource": {
+      "type": "string",
+      "enum": [
+        "ai-defaulted",
+        "ai-inferred",
+        "ai-suggested",
+        "external-documented-source",
+        "human-interview-answer",
+        "prior-verityspec-record",
+        "rough-design-document",
+        "unresolved",
+        "user-provided",
+        "unknown"
+      ]
+    },
+    "confidence": {
+      "type": "string",
+      "enum": [
+        "high",
+        "low",
+        "medium",
+        "unknown"
+      ]
+    },
+    "recordSummary": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "kind",
+        "name",
+        "status",
+        "decisionSource",
+        "confidence"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "kind": {
+          "type": "string",
+          "minLength": 1
+        },
+        "name": {
+          "type": "string",
+          "minLength": 1
+        },
+        "status": {
+          "$ref": "#/$defs/status"
+        },
+        "decisionSource": {
+          "$ref": "#/$defs/decisionSource"
+        },
+        "confidence": {
+          "$ref": "#/$defs/confidence"
+        }
+      }
+    },
+    "dependencyAssumption": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "kind",
+        "name",
+        "status",
+        "decisionSource",
+        "confidence",
+        "relatedGameConcept",
+        "consumerWorkspace",
+        "providerWorkspace",
+        "alias",
+        "versionConstraint",
+        "sourceRecord",
+        "target"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "kind": {
+          "type": "string",
+          "minLength": 1
+        },
+        "name": {
+          "type": "string",
+          "minLength": 1
+        },
+        "status": {
+          "$ref": "#/$defs/status"
+        },
+        "decisionSource": {
+          "$ref": "#/$defs/decisionSource"
+        },
+        "confidence": {
+          "$ref": "#/$defs/confidence"
+        },
+        "relatedGameConcept": {
+          "$ref": "#/$defs/nullableString"
+        },
+        "consumerWorkspace": {
+          "$ref": "#/$defs/nullableString"
+        },
+        "providerWorkspace": {
+          "$ref": "#/$defs/nullableString"
+        },
+        "alias": {
+          "$ref": "#/$defs/nullableString"
+        },
+        "versionConstraint": {
+          "$ref": "#/$defs/nullableString"
+        },
+        "sourceRecord": {
+          "$ref": "#/$defs/nullableString"
+        },
+        "target": {
+          "$ref": "#/$defs/nullableString"
+        }
+      }
+    },
+    "gameConceptGroup": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "gameConcept",
+        "name",
+        "dependencyAssumptionCount",
+        "crossWorkspaceReferenceCount"
+      ],
+      "properties": {
+        "gameConcept": {
+          "type": "string",
+          "minLength": 1
+        },
+        "name": {
+          "type": "string",
+          "minLength": 1
+        },
+        "dependencyAssumptionCount": {
+          "$ref": "#/$defs/nonNegativeInteger"
+        },
+        "crossWorkspaceReferenceCount": {
+          "$ref": "#/$defs/nonNegativeInteger"
+        }
+      }
+    },
+    "example": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "exampleId",
+        "path",
+        "gameConceptCount",
+        "dependencyAssumptionCount",
+        "crossWorkspaceReferenceCount",
+        "coverageGapCount",
+        "portfolioLevelDependencyAssumptionCount",
+        "gameConcepts",
+        "dependencyAssumptions",
+        "coverageGaps",
+        "gameConceptGroups"
+      ],
+      "properties": {
+        "exampleId": {
+          "type": "string",
+          "minLength": 1
+        },
+        "path": {
+          "type": "string",
+          "pattern": "^examples/.+/manifest\\.json$"
+        },
+        "gameConceptCount": {
+          "$ref": "#/$defs/nonNegativeInteger"
+        },
+        "dependencyAssumptionCount": {
+          "$ref": "#/$defs/nonNegativeInteger"
+        },
+        "crossWorkspaceReferenceCount": {
+          "$ref": "#/$defs/nonNegativeInteger"
+        },
+        "coverageGapCount": {
+          "$ref": "#/$defs/nonNegativeInteger"
+        },
+        "portfolioLevelDependencyAssumptionCount": {
+          "$ref": "#/$defs/nonNegativeInteger"
+        },
+        "gameConcepts": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/recordSummary"
+          }
+        },
+        "dependencyAssumptions": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/dependencyAssumption"
+          }
+        },
+        "coverageGaps": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/recordSummary"
+          }
+        },
+        "gameConceptGroups": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/gameConceptGroup"
+          }
+        }
+      }
+    }
+  }
+}
