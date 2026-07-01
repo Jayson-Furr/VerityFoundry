@@ -936,12 +936,12 @@ Sprint 58 should release the completed `v0.26.0` scope:
 
 ## v0.27.0
 
-The `v0.27.0` milestone is active.
+The `v0.27.0` milestone is released.
 
 | Sprint | Status | Focus |
 |---:|---|---|
-| 59 | In Progress | Generated workspace fixture manifests, executable customer portal and Dream Extraction candidates, package-data coverage, and smoke-check guidance |
-| 60 | Planned | v0.27.0 release preparation |
+| 59 | Complete | Generated workspace fixture manifests, executable customer portal and Dream Extraction candidates, package-data coverage, and smoke-check guidance |
+| 60 | Complete | v0.27.0 release preparation |
 
 ## Sprint 59 Priorities
 
