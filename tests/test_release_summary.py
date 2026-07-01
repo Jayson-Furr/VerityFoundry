@@ -55,25 +55,29 @@ class ReleaseSummaryTests(unittest.TestCase):
         )
         self.assertEqual([error.message for error in errors], [])
 
-    def test_release_summary_snapshot_validates_schema(self) -> None:
+    def test_release_summary_snapshots_validate_schema(self) -> None:
         schema = read_json(ROOT / "schemas" / "release-summary-report.schema.json")
-        snapshot = read_json(ROOT / "snapshots" / "release-summary" / "v0.20.0.json")
         validator = Draft202012Validator(schema)
+        snapshot_paths = sorted((ROOT / "snapshots" / "release-summary").glob("v*.json"))
 
-        errors = sorted(
-            validator.iter_errors(snapshot),
-            key=lambda error: list(error.path),
-        )
-        self.assertEqual([error.message for error in errors], [])
-        self.assertEqual(snapshot["status"], "passed")
-        self.assertEqual(
-            snapshot["checks"]["releaseIntegrity"]["expectedVersion"],
-            "0.20.0",
-        )
-        self.assertEqual(
-            snapshot["checks"]["releaseIntegrity"]["expectedTag"],
-            "v0.20.0",
-        )
+        self.assertIn(ROOT / "snapshots" / "release-summary" / "v0.20.0.json", snapshot_paths)
+        for snapshot_path in snapshot_paths:
+            with self.subTest(snapshot=snapshot_path.name):
+                snapshot = read_json(snapshot_path)
+                errors = sorted(
+                    validator.iter_errors(snapshot),
+                    key=lambda error: list(error.path),
+                )
+                self.assertEqual([error.message for error in errors], [])
+                self.assertEqual(snapshot["status"], "passed")
+                self.assertEqual(
+                    snapshot["checks"]["releaseIntegrity"]["expectedVersion"],
+                    snapshot_path.stem.removeprefix("v"),
+                )
+                self.assertEqual(
+                    snapshot["checks"]["releaseIntegrity"]["expectedTag"],
+                    snapshot_path.stem,
+                )
 
 
 if __name__ == "__main__":

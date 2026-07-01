@@ -2,8 +2,11 @@
 
 ## Unreleased
 
+## 0.21.0
+
 - Added release-summary JSON schema documentation and schema validation tests.
-- Added a checked v0.20.0 release-summary snapshot for release reviewers.
+- Added checked v0.20.0 and v0.21.0 release-summary snapshots for release
+  reviewers.
 - Added release-summary comparison, PR usage, and release-review bundle export
   guidance.
 
