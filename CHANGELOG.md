@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## 0.28.0
+
 - Added generated workspace fixture provenance schema validation for generated
   workspace fixture manifests.
 - Added cross-workspace dependency fixture, portfolio dependency lockfile,
