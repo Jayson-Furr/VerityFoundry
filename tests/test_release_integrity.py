@@ -15,8 +15,8 @@ class ReleaseIntegrityTests(unittest.TestCase):
         report = check_release_integrity(ROOT)
 
         self.assertEqual(report["status"], "passed")
-        self.assertEqual(report["expectedVersion"], "0.21.0")
-        self.assertEqual(report["expectedTag"], "v0.21.0")
+        self.assertEqual(report["expectedVersion"], "0.22.0")
+        self.assertEqual(report["expectedTag"], "v0.22.0")
         self.assertEqual(report["issueCount"], 0)
 
         text = format_release_integrity_report(report)
