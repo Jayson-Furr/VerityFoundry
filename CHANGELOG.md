@@ -2,6 +2,12 @@
 
 ## Unreleased
 
+- Added generated workspace fixture provenance schema validation for generated
+  workspace fixture manifests.
+- Added cross-workspace dependency fixture, portfolio dependency lockfile,
+  VeritySpec dependency importer, graph review, release-summary coverage, and
+  dependency-lockfile prompt workflow guidance.
+
 ## 0.27.0
 
 - Added generated VeritySpec-shaped workspace fixture candidates for the
