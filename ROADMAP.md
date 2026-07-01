@@ -934,6 +934,39 @@ Sprint 58 should release the completed `v0.26.0` scope:
 - Tag and publish the v0.26.0 GitHub release when checks pass.
 - Close the v0.26.0 milestone after release verification.
 
+## v0.27.0
+
+The `v0.27.0` milestone is active.
+
+| Sprint | Status | Focus |
+|---:|---|---|
+| 59 | In Progress | Generated workspace fixture manifests, executable customer portal and Dream Extraction candidates, package-data coverage, and smoke-check guidance |
+| 60 | Planned | v0.27.0 release preparation |
+
+## Sprint 59 Priorities
+
+Sprint 59 should bundle about a week of generated workspace fixture work:
+
+- Add generated workspace fixture manifest design notes.
+- Add first executable workspace fixture candidate for customer portal.
+- Add first executable workspace fixture candidate for Dream Extraction.
+- Add generated workspace fixture package-data audit tests.
+- Add optional generated workspace fixture smoke-check docs for CI.
+- Update README, changelog, roadmap, tests, and documentation together.
+- Keep the Next 20 roadmap points populated after converting completed items.
+
+## Sprint 60 Priorities
+
+Sprint 60 should release the completed `v0.27.0` scope:
+
+- Add v0.27.0 release notes.
+- Update package metadata, README release badge, latest-release text, install
+  guidance, changelog, roadmap, and release checklist to `v0.27.0`.
+- Run local release verification, package build checks, `twine check`,
+  installed-wheel smoke tests, and GitHub Actions.
+- Tag and publish the v0.27.0 GitHub release when checks pass.
+- Close the v0.27.0 milestone after release verification.
+
 ## Later Candidates
 
 These are intentionally not committed to a release until the initial scaffold
@@ -954,26 +987,26 @@ the active roadmap is caught up. The points should balance fixes,
 improvements, continuation work, and expansion. Convert related points into
 week-sized sprint bundles rather than one release per small point.
 
-1. Add generated workspace fixture manifest design notes.
-2. Add first executable workspace fixture candidate for customer portal.
-3. Add first executable workspace fixture candidate for Dream Extraction.
-4. Add generated workspace fixture package-data audit tests.
-5. Add optional generated workspace fixture smoke-check docs for CI.
-6. Add cross-workspace dependency fixture compatibility notes.
-7. Add portfolio dependency lockfile assumption checklist.
-8. Add VeritySpec workspace dependency importer design notes.
-9. Add generated workspace fixture provenance schema notes.
-10. Add executable fixture release-summary coverage notes.
-11. Add generated workspace fixture README examples.
-12. Add cross-workspace fixture graph review checklist.
-13. Add VeritySpec dependency lockfile prompt-workflow notes.
-14. Add generated workspace fixture validation CLI design notes.
-15. Add generated workspace fixture checksum and manifest pairing notes.
-16. Add VeritySpec validation result snapshot schema notes.
-17. Add agent-context fixture dry-run design notes.
-18. Add cross-workspace dependency lockfile example fixture.
-19. Add portfolio impact report prompt matrix notes.
-20. Add release-review bundle export implementation planning.
+1. Add cross-workspace dependency fixture compatibility notes.
+2. Add portfolio dependency lockfile assumption checklist.
+3. Add VeritySpec workspace dependency importer design notes.
+4. Add generated workspace fixture provenance schema notes.
+5. Add executable fixture release-summary coverage notes.
+6. Add generated workspace fixture README examples.
+7. Add cross-workspace fixture graph review checklist.
+8. Add VeritySpec dependency lockfile prompt-workflow notes.
+9. Add generated workspace fixture validation CLI design notes.
+10. Add generated workspace fixture checksum and manifest pairing notes.
+11. Add VeritySpec validation result snapshot schema notes.
+12. Add agent-context fixture dry-run design notes.
+13. Add cross-workspace dependency lockfile example fixture.
+14. Add portfolio impact report prompt matrix notes.
+15. Add release-review bundle export implementation planning.
+16. Add generated workspace fixture VeritySpec smoke-result snapshot notes.
+17. Add generated workspace fixture unresolved-decision report notes.
+18. Add generated workspace fixture conversion-diff examples.
+19. Add generated workspace fixture lifecycle-gap mapping notes.
+20. Add generated workspace fixture agent-handoff README examples.
 
 ## Working Rule
 

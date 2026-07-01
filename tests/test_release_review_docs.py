@@ -47,6 +47,8 @@ class ReleaseReviewDocsTests(unittest.TestCase):
             "docs/lifecycle-archival-drift-comparison.md",
             "docs/package-data-verification.md",
             "docs/readme-link-coverage.md",
+            "docs/generated-workspace-fixture-manifest-design.md",
+            "docs/generated-workspace-fixture-smoke-checks.md",
             "docs/provenance-distribution.md",
             "docs/portfolio-coverage-report.md",
             "docs/fixture-to-verityspec-checklist.md",
@@ -93,6 +95,8 @@ class ReleaseReviewDocsTests(unittest.TestCase):
             "docs/cross-workspace-reference-guidance.md",
             "docs/quality-threshold-warning-triage.md",
             "docs/render-profile-snapshot-retention-policy.md",
+            "docs/generated-workspace-fixture-manifest-design.md",
+            "docs/generated-workspace-fixture-smoke-checks.md",
         ):
             with self.subTest(relative=relative):
                 text = (ROOT / relative).read_text(encoding="utf-8")

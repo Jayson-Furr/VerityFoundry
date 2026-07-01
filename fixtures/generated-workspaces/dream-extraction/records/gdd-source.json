@@ -1,0 +1,30 @@
+{
+  "id": "game.gdd-source.dream_extraction",
+  "kind": "game.gdd-source",
+  "name": "Dream Extraction Rough GDD",
+  "description": "Creative source document for the generated Dream Extraction workspace fixture.",
+  "status": "draft",
+  "owner": "creative-direction",
+  "path": "examples/unity-game/dream-extraction/inputs/rough-gdd.md",
+  "sourceType": "markdown",
+  "summary": "Co-op extraction roguelite built around unstable dream zones, memory shards, and timed escape.",
+  "revision": "fixture-v1",
+  "references": [
+    {
+      "type": "derivesRecord",
+      "target": "game.product.dream_extraction"
+    },
+    {
+      "type": "derivesRecord",
+      "target": "game.mode.coop_extraction"
+    },
+    {
+      "type": "derivesRecord",
+      "target": "game.loop.extract_escape_upgrade"
+    },
+    {
+      "type": "derivesRecord",
+      "target": "game.prototype-scope.vertical_slice_01"
+    }
+  ]
+}

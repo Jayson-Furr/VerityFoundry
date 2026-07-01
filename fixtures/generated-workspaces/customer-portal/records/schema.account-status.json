@@ -1,0 +1,30 @@
+{
+  "id": "schema.account_status",
+  "kind": "schema.object",
+  "name": "Account Status",
+  "description": "Candidate response schema for customer portal account-status review.",
+  "status": "draft",
+  "owner": "product",
+  "jsonSchema": {
+    "type": "object",
+    "additionalProperties": false,
+    "required": [
+      "accountId",
+      "status",
+      "openSupportRequests"
+    ],
+    "properties": {
+      "accountId": {
+        "type": "string"
+      },
+      "status": {
+        "type": "string"
+      },
+      "openSupportRequests": {
+        "type": "integer",
+        "minimum": 0
+      }
+    }
+  },
+  "references": []
+}

@@ -1,0 +1,12 @@
+{
+  "workspace": "foundry.generated.customer_portal",
+  "specVersion": "v0.2.0",
+  "packs": [
+    "verity.core",
+    "verity.pack.api"
+  ],
+  "packPaths": [],
+  "records": [
+    "records/*.json"
+  ]
+}

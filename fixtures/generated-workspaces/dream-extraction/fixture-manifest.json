@@ -1,0 +1,38 @@
+{
+  "id": "generated-workspace.dream-extraction.v1",
+  "name": "Dream Extraction Generated Workspace Fixture",
+  "sourceExample": "examples/unity-game/dream-extraction/manifest.json",
+  "candidateWorkspaceFixture": "examples/unity-game/dream-extraction/expected/candidate-workspace.json",
+  "workspacePath": "fixtures/generated-workspaces/dream-extraction",
+  "supportedVeritySpecVersion": "v0.2.0",
+  "packs": [
+    "verity.core",
+    "verity.pack.game-core",
+    "verity.pack.game-assets",
+    "verity.pack.unity"
+  ],
+  "validation": {
+    "localOnly": true,
+    "externalAiApisAllowed": false,
+    "command": "verity validate fixtures/generated-workspaces/dream-extraction",
+    "skipWhenVerityMissing": true,
+    "humanReviewRequired": true,
+    "veritySpecAuthorityBoundary": "VeritySpec validation is authoritative for this generated Unity game workspace fixture; VerityFoundry only preserves source, provenance, and conversion intent."
+  },
+  "provenance": {
+    "decisionSource": "ai-suggested",
+    "confidence": "medium",
+    "sourceRefs": [
+      "examples/unity-game/dream-extraction/inputs/brief.md",
+      "examples/unity-game/dream-extraction/inputs/rough-gdd.md",
+      "examples/unity-game/dream-extraction/expected/provenance.json",
+      "examples/unity-game/dream-extraction/expected/readiness-gaps.md"
+    ],
+    "humanApprovalRequired": true
+  },
+  "notes": [
+    "This is a deterministic generated workspace fixture candidate, not approved game-design truth.",
+    "Records intentionally use VeritySpec-supported game, asset, and Unity kinds.",
+    "Unity version, save model, production platform scope, telemetry schema, QA evidence, liveops, and archive posture remain unresolved."
+  ]
+}

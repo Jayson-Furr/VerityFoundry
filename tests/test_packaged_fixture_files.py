@@ -107,7 +107,7 @@ class PackagedFixtureFileTests(unittest.TestCase):
         patterns = data_file_patterns()
         unpackaged = [
             path.relative_to(ROOT).as_posix()
-            for path in sorted((ROOT / "fixtures").glob("*/*/*.json"))
+            for path in sorted((ROOT / "fixtures").glob("**/*.json"))
             if not is_packaged(path.relative_to(ROOT), patterns)
         ]
 

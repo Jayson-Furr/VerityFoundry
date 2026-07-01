@@ -1,0 +1,22 @@
+{
+  "id": "unity.project.dream_extraction",
+  "kind": "unity.project",
+  "name": "Dream Extraction Unity Project",
+  "description": "Candidate Unity project contract for the generated Dream Extraction workspace fixture.",
+  "status": "draft",
+  "owner": "unity-engineering",
+  "unityVersion": "unknown",
+  "projectPath": "unity/DreamExtraction",
+  "renderPipeline": "unknown",
+  "scriptingBackend": "unknown",
+  "targetPlatforms": [
+    "pc"
+  ],
+  "assemblyDefinitionPaths": [],
+  "references": [
+    {
+      "type": "usesPackage",
+      "target": "unity.package-dependency.shared_runtime"
+    }
+  ]
+}

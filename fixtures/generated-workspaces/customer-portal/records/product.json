@@ -1,0 +1,20 @@
+{
+  "id": "product.customer_portal",
+  "kind": "product",
+  "name": "Customer Portal",
+  "description": "Generated VeritySpec workspace fixture for a customer-facing account, billing, support, and service-health portal.",
+  "status": "draft",
+  "owner": "product",
+  "version": "0.1.0",
+  "tags": [
+    "foundry-generated",
+    "customer-portal",
+    "requires-human-approval"
+  ],
+  "references": [
+    {
+      "type": "exposes",
+      "target": "api.account_status.get"
+    }
+  ]
+}

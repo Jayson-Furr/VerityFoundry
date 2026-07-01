@@ -1,0 +1,36 @@
+{
+  "id": "game.prototype-scope.vertical_slice_01",
+  "kind": "game.prototype-scope",
+  "name": "Vertical Slice 01",
+  "description": "Initial prototype scope for validating the Dream Extraction core loop.",
+  "status": "draft",
+  "owner": "production",
+  "prototypeType": "vertical-slice",
+  "goal": "Validate a playable extraction loop with shard collection, zone collapse pressure, and escape.",
+  "includedFeatureRefs": [
+    "game.loop.extract_escape_upgrade",
+    "game.mode.coop_extraction",
+    "unity.project.dream_extraction"
+  ],
+  "outOfScope": [
+    "final economy balancing",
+    "platform certification",
+    "liveops events",
+    "archive posture"
+  ],
+  "successCriteria": [
+    "A human reviewer can evaluate whether the core loop is understandable.",
+    "VeritySpec validates the generated fixture structure when the matching packs are available.",
+    "Unresolved Unity implementation decisions remain explicit."
+  ],
+  "references": [
+    {
+      "type": "validatesMode",
+      "target": "game.mode.coop_extraction"
+    },
+    {
+      "type": "validatesLoop",
+      "target": "game.loop.extract_escape_upgrade"
+    }
+  ]
+}

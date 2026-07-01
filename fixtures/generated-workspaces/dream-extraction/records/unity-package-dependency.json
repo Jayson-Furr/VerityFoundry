@@ -1,0 +1,18 @@
+{
+  "id": "unity.package-dependency.shared_runtime",
+  "kind": "unity.package-dependency",
+  "name": "Shared Unity Runtime",
+  "description": "Candidate dependency on a shared Unity runtime; exact package and version require human confirmation.",
+  "status": "draft",
+  "owner": "unity-engineering",
+  "packageName": "com.studio.shared-unity-runtime",
+  "versionRequirement": "unresolved",
+  "source": "other",
+  "purpose": "Candidate shared runtime dependency for save, telemetry, and liveops configuration assumptions.",
+  "requiredCapabilities": [
+    "save-system",
+    "telemetry-client",
+    "liveops-config"
+  ],
+  "references": []
+}

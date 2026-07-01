@@ -83,3 +83,28 @@ For concrete product and Unity game conversion examples, see
 
 For a future optional executable-fixture validation path, see
 [executable-workspace-fixture-validation-design.md](executable-workspace-fixture-validation-design.md).
+
+## Generated Workspace Fixtures
+
+Generated workspace fixtures live separately from example-local candidate
+fixtures:
+
+```text
+fixtures/generated-workspaces/
+  customer-portal/
+    fixture-manifest.json
+    verityspec.json
+    records/
+  dream-extraction/
+    fixture-manifest.json
+    verityspec.json
+    records/
+```
+
+These directories use the VeritySpec workspace layout and VeritySpec-supported
+record kinds where practical. Their `fixture-manifest.json` files preserve
+VerityFoundry source links, provenance, uncertainty, human approval
+requirements, and validation boundaries.
+
+They are still generated candidates. Human review and VeritySpec validation
+remain required before treating them as product-contract evidence.

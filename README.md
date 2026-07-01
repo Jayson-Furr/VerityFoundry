@@ -572,6 +572,8 @@ require human approval.
 - [Cross-workspace reference snapshots](docs/cross-workspace-reference-snapshots.md)
 - [Golden output drift review](docs/golden-output-drift-review.md)
 - [Workspace fixtures](docs/workspace-fixtures.md)
+- [Generated workspace fixture manifest design](docs/generated-workspace-fixture-manifest-design.md)
+- [Generated workspace fixture smoke checks](docs/generated-workspace-fixture-smoke-checks.md)
 - [Fixture to VeritySpec checklist](docs/fixture-to-verityspec-checklist.md)
 - [Fixture to VeritySpec checklist examples](docs/fixture-to-verityspec-checklist-examples.md)
 - [Executable workspace fixture validation design](docs/executable-workspace-fixture-validation-design.md)
