@@ -12,6 +12,10 @@ CI should keep this optional unless VeritySpec is deliberately installed in the
 job. If `verity` is missing, VerityFoundry tests should still validate fixture
 layout, manifests, package-data coverage, and source links.
 
+When smoke-check results are captured for release review, store them in the
+fixture's `validation-result.json` snapshot and keep unresolved decisions
+visible.
+
 ## Suggested CI Shape
 
 ```bash

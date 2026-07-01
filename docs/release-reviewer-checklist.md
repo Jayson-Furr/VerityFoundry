@@ -49,6 +49,8 @@ Review the report output for:
 - decision-source distribution drift
 - portfolio dependency assumptions and cross-workspace reference counts
 - portfolio coverage and cross-workspace reference snapshot drift
+- generated workspace validation-result snapshot drift
+- generated workspace unresolved-decision drift
 - stale workflow action versions
 - release version drift
 
@@ -97,6 +99,14 @@ When candidate workspace fixtures are part of the release, also review
 and
 [executable-workspace-fixture-validation-design.md](executable-workspace-fixture-validation-design.md)
 for the VeritySpec handoff boundary.
+
+When generated workspace fixtures are part of the release, also review
+[generated-workspace-validation-result-schema.md](generated-workspace-validation-result-schema.md),
+[generated-workspace-validation-result-triage.md](generated-workspace-validation-result-triage.md),
+and
+[generated-workspace-validation-result-package-data.md](generated-workspace-validation-result-package-data.md).
+Confirm checked `validation-result.json` files still require human review and
+do not claim readiness that VeritySpec did not prove.
 
 Do not publish package artifacts or create a release unless the user has
 explicitly authorized that release action.

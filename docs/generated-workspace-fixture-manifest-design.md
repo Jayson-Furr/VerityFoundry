@@ -14,6 +14,7 @@ A generated fixture manifest should identify:
 - the intended VeritySpec workspace format version
 - the packs expected by the generated workspace
 - the optional local validation command
+- the optional validation-result snapshot path
 - whether validation should skip when `verity` is unavailable
 - human-review and VeritySpec authority boundaries
 - source references, confidence, and unresolved approval requirements
@@ -24,3 +25,8 @@ The generated workspace files are candidate VeritySpec workspaces. The manifest
 is VerityFoundry metadata for human reviewers and AI agents. VeritySpec remains
 the authority for workspace validation, graph checks, readiness, and release
 claims.
+
+If `validation.resultSnapshot` is present, it should point to a checked
+`validation-result.json` file beside the generated workspace fixture. That
+snapshot records local validation evidence and fixture hashes; it does not
+replace fresh VeritySpec validation for release or implementation decisions.

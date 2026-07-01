@@ -15,6 +15,7 @@
     "localOnly": true,
     "externalAiApisAllowed": false,
     "command": "verity validate fixtures/generated-workspaces/dream-extraction",
+    "resultSnapshot": "fixtures/generated-workspaces/dream-extraction/validation-result.json",
     "skipWhenVerityMissing": true,
     "humanReviewRequired": true,
     "veritySpecAuthorityBoundary": "VeritySpec validation is authoritative for this generated Unity game workspace fixture; VerityFoundry only preserves source, provenance, and conversion intent."
