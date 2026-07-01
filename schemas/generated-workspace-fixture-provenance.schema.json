@@ -1,0 +1,47 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/Jayson-Furr/VerityFoundry/schemas/generated-workspace-fixture-provenance.schema.json",
+  "title": "Generated workspace fixture provenance",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "decisionSource",
+    "confidence",
+    "sourceRefs",
+    "humanApprovalRequired"
+  ],
+  "properties": {
+    "decisionSource": {
+      "type": "string",
+      "enum": [
+        "user-provided",
+        "ai-inferred",
+        "ai-defaulted",
+        "ai-suggested",
+        "unresolved",
+        "human-interview-answer",
+        "prior-verityspec-record",
+        "external-documented-source"
+      ]
+    },
+    "confidence": {
+      "type": "string",
+      "enum": [
+        "low",
+        "medium",
+        "high"
+      ]
+    },
+    "sourceRefs": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "humanApprovalRequired": {
+      "type": "boolean"
+    }
+  }
+}

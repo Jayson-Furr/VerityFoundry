@@ -53,12 +53,20 @@ class ReleaseReviewDocsTests(unittest.TestCase):
             "docs/portfolio-coverage-report.md",
             "docs/fixture-to-verityspec-checklist.md",
             "docs/cross-workspace-reference-guidance.md",
+            "docs/cross-workspace-dependency-fixture-compatibility.md",
+            "docs/cross-workspace-fixture-graph-review-checklist.md",
+            "docs/portfolio-dependency-lockfile-assumption-checklist.md",
+            "docs/verityspec-workspace-dependency-importer-design.md",
+            "docs/verityspec-dependency-lockfile-prompt-workflows.md",
             "docs/workflow-hygiene-history.md",
             "docs/action-version-policy.md",
             "docs/quality-threshold-ratcheting.md",
             "docs/quality-threshold-warning-triage.md",
             "docs/render-profile-snapshot-retention-policy.md",
             "docs/render-profile-compatibility.md",
+            "docs/generated-workspace-fixture-provenance-schema.md",
+            "docs/executable-fixture-release-summary-coverage.md",
+            "docs/generated-workspace-fixture-readme-examples.md",
         ]
 
         for target in expected:
@@ -93,9 +101,17 @@ class ReleaseReviewDocsTests(unittest.TestCase):
             "docs/portfolio-coverage-report.md",
             "docs/fixture-to-verityspec-checklist.md",
             "docs/cross-workspace-reference-guidance.md",
+            "docs/cross-workspace-dependency-fixture-compatibility.md",
+            "docs/cross-workspace-fixture-graph-review-checklist.md",
+            "docs/portfolio-dependency-lockfile-assumption-checklist.md",
+            "docs/verityspec-workspace-dependency-importer-design.md",
+            "docs/verityspec-dependency-lockfile-prompt-workflows.md",
             "docs/quality-threshold-warning-triage.md",
             "docs/render-profile-snapshot-retention-policy.md",
             "docs/generated-workspace-fixture-manifest-design.md",
+            "docs/generated-workspace-fixture-provenance-schema.md",
+            "docs/executable-fixture-release-summary-coverage.md",
+            "docs/generated-workspace-fixture-readme-examples.md",
             "docs/generated-workspace-fixture-smoke-checks.md",
         ):
             with self.subTest(relative=relative):
