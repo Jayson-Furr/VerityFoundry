@@ -900,12 +900,12 @@ Sprint 56 should release the completed `v0.25.0` scope:
 
 ## v0.26.0
 
-The `v0.26.0` milestone is active.
+The `v0.26.0` milestone is released.
 
 | Sprint | Status | Focus |
 |---:|---|---|
-| 57 | In Progress | Release-review bundle manifest schema, dry-run fixture, checksums, snapshot retention, and warning triage |
-| 58 | Planned | v0.26.0 release preparation |
+| 57 | Complete | Release-review bundle manifest schema, dry-run fixture, checksums, snapshot retention, and warning triage |
+| 58 | Complete | v0.26.0 release preparation |
 
 ## Sprint 57 Priorities
 

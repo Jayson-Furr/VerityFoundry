@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## 0.26.0
+
 - Added release-review bundle manifest schema, dry-run example fixture, and
   schema validation tests.
 - Added render-profile snapshot retention, policy-lint trend snapshot update,
