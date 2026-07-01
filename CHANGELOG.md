@@ -2,6 +2,11 @@
 
 ## Unreleased
 
+- Added release-summary JSON schema documentation and schema validation tests.
+- Added a checked v0.20.0 release-summary snapshot for release reviewers.
+- Added release-summary comparison, PR usage, and release-review bundle export
+  guidance.
+
 ## 0.20.0
 
 - Added a lifecycle archival-ready prompt workflow, lifecycle matrix row, and

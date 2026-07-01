@@ -719,6 +719,41 @@ Sprint 46 should release the completed `v0.20.0` scope:
 - Tag and publish the v0.20.0 GitHub release when checks pass.
 - Close the v0.20.0 milestone after release verification.
 
+## v0.21.0
+
+The `v0.21.0` milestone is in progress.
+
+| Sprint | Status | Focus |
+|---:|---|---|
+| 47 | In Review | Release-summary schema docs, snapshots, comparison notes, PR usage, and release-review bundle guidance |
+| 48 | Planned | v0.21.0 release preparation |
+
+## Sprint 47 Priorities
+
+Sprint 47 should bundle about a week of release-summary and release-review
+bundle hardening work:
+
+- Add release-summary JSON schema documentation for downstream tooling.
+- Add release-summary fixture snapshots for release reviewers.
+- Add release-summary comparison notes for release-to-release movement.
+- Add docs for using release-summary output in PR descriptions.
+- Add optional machine-readable release-review bundle export guidance.
+- Update README, changelog, roadmap, tests, package data, and release-review
+  documentation together.
+- Keep the Next 20 roadmap points populated after converting completed items.
+
+## Sprint 48 Priorities
+
+Sprint 48 should release the completed `v0.21.0` scope:
+
+- Add v0.21.0 release notes.
+- Update package metadata, README release badge, latest-release text, install
+  guidance, changelog, roadmap, and release checklist to `v0.21.0`.
+- Run local release verification, package build checks, `twine check`,
+  installed-wheel smoke tests, and GitHub Actions.
+- Tag and publish the v0.21.0 GitHub release when checks pass.
+- Close the v0.21.0 milestone after release verification.
+
 ## Later Candidates
 
 These are intentionally not committed to a release until the initial scaffold
@@ -739,33 +774,32 @@ the active roadmap is caught up. The points should balance fixes,
 improvements, continuation work, and expansion. Convert related points into
 week-sized sprint bundles rather than one release per small point.
 
-1. Add release-summary JSON schema documentation for downstream tooling.
-2. Add release-summary fixture snapshots for release reviewers.
-3. Add release-summary comparison notes for tracking release-to-release
-    movement.
-4. Add docs for using release-summary output in PR descriptions.
-5. Add optional machine-readable release-review bundle export guidance.
-6. Add policy-lint trend JSON schema documentation for downstream tooling.
-7. Add policy-lint advisory remediation planning guidance.
-8. Add render-profile output fixture snapshots for release reviewers.
-9. Add quality-threshold warning trend notes for release reviewers.
-10. Add release-review bundle export CLI design notes.
-11. Add provenance distribution JSON schema documentation for downstream
+1. Add policy-lint trend JSON schema documentation for downstream tooling.
+2. Add policy-lint advisory remediation planning guidance.
+3. Add render-profile output fixture snapshots for release reviewers.
+4. Add quality-threshold warning trend notes for release reviewers.
+5. Add release-review bundle export CLI design notes.
+6. Add provenance distribution JSON schema documentation for downstream
     tooling.
-12. Add portfolio coverage fixture snapshots for release reviewers.
-13. Add cross-workspace reference output fixture snapshots for dependency-map
+7. Add portfolio coverage fixture snapshots for release reviewers.
+8. Add cross-workspace reference output fixture snapshots for dependency-map
     examples.
-14. Add fixture-to-VeritySpec checklist examples for one product and one Unity
+9. Add fixture-to-VeritySpec checklist examples for one product and one Unity
     workspace draft.
-15. Add optional local VeritySpec validation design notes for executable
+10. Add optional local VeritySpec validation design notes for executable
     workspace fixtures.
-16. Add release-review fixture JSON schema documentation for downstream
+11. Add release-review fixture JSON schema documentation for downstream
     tooling.
-17. Add lifecycle archival-readiness fixture drift comparison notes.
-18. Add package-data verification documentation for installed-wheel artifact
+12. Add lifecycle archival-readiness fixture drift comparison notes.
+13. Add package-data verification documentation for installed-wheel artifact
     audits.
-19. Add docs for maintaining README link coverage tests.
-20. Add release-review fixture update instructions for future report changes.
+14. Add docs for maintaining README link coverage tests.
+15. Add release-review fixture update instructions for future report changes.
+16. Add release-summary schema compatibility notes for additive fields.
+17. Add release-review bundle retention policy notes.
+18. Add release-summary warning triage examples.
+19. Add CI artifact naming guidance for release-review bundles.
+20. Add release-summary snapshot update checklist for future releases.
 
 ## Working Rule
 
