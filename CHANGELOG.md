@@ -2,6 +2,13 @@
 
 ## Unreleased
 
+- Added a lifecycle archival-ready prompt workflow, lifecycle matrix row, and
+  customer portal archival-readiness golden output fixture.
+- Added a checked lifecycle golden-output drift snapshot and checked
+  release-review JSON report fixtures.
+- Added README documentation-link tests and broader package-data coverage tests
+  for prompts, matrices, config, snapshots, and release-review fixtures.
+
 ## 0.19.0
 
 - Added `verityfoundry report provenance-distribution` and

@@ -1,7 +1,7 @@
 from pathlib import Path
 import unittest
 
-from verityfoundry.manifests import load_golden_manifests
+from verityfoundry.manifests import load_golden_manifests, read_json
 from verityfoundry.validation import validate_goldens
 
 
@@ -61,6 +61,11 @@ class GoldenOutputTests(unittest.TestCase):
                 "not decommission-ready",
                 "## Archive Follow-Up Items",
             ),
+            "golden.lifecycle.customer-portal.archival-readiness": (
+                "lifecycle.archived-product.interview-all.archival-ready.v1",
+                "not archival-ready",
+                "## Archive Manifest Gaps",
+            ),
         }
 
         for golden_id, (prompt_ref, readiness_phrase, required_heading) in expected.items():
@@ -73,6 +78,20 @@ class GoldenOutputTests(unittest.TestCase):
                 self.assertIn(required_heading, output)
                 self.assertIn("## Human Approval Requirements", output)
                 self.assertIn("## Suggested VeritySpec Validation Loop", output)
+
+    def test_lifecycle_golden_drift_snapshot_exists(self) -> None:
+        snapshot = read_json(ROOT / "snapshots" / "golden-output" / "lifecycle-v0.19.0.json")
+
+        self.assertEqual(snapshot["label"], "v0.19.0-lifecycle")
+        self.assertEqual(snapshot["goldenCount"], 3)
+        self.assertEqual(
+            {item["id"] for item in snapshot["goldens"]},
+            {
+                "golden.lifecycle.customer-portal.release-readiness-gap-review",
+                "golden.lifecycle.shared-auth-library.maintenance-readiness",
+                "golden.lifecycle.shared-unity-runtime.decommission-readiness",
+            },
+        )
 
 
 if __name__ == "__main__":

@@ -16,7 +16,7 @@ class PromptQualityTrendTests(unittest.TestCase):
 
         self.assertGreaterEqual(report["snapshotCount"], 1)
         self.assertEqual(report["latestSnapshot"]["label"], "v0.11.0")
-        self.assertEqual(report["current"]["promptCount"], 46)
+        self.assertEqual(report["current"]["promptCount"], 47)
         self.assertIsNotNone(report["deltaFromLatest"])
 
         text = format_prompt_quality_trend_report(report)

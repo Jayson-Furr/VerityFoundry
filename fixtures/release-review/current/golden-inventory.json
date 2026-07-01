@@ -1,0 +1,98 @@
+{
+  "domainCount": 3,
+  "domains": [
+    {
+      "count": 4,
+      "domain": "lifecycle"
+    },
+    {
+      "count": 1,
+      "domain": "unity-game"
+    },
+    {
+      "count": 1,
+      "domain": "unity-shared-library"
+    }
+  ],
+  "goldenCount": 6,
+  "goldens": [
+    {
+      "domain": "lifecycle",
+      "exampleRef": "example.product.customer-portal",
+      "id": "golden.lifecycle.customer-portal.archival-readiness",
+      "interviewMode": "interview-all",
+      "name": "Customer Portal Archival-Readiness Golden Output",
+      "outputExists": true,
+      "outputPath": "goldens/lifecycle/customer-portal-archival-readiness/output.md",
+      "path": "goldens/lifecycle/customer-portal-archival-readiness/manifest.json",
+      "promptRef": "lifecycle.archived-product.interview-all.archival-ready.v1",
+      "requiredSectionCount": 10,
+      "targetReadiness": "archival-ready"
+    },
+    {
+      "domain": "lifecycle",
+      "exampleRef": "example.product.customer-portal",
+      "id": "golden.lifecycle.customer-portal.release-readiness-gap-review",
+      "interviewMode": "interview-medium-stakes",
+      "name": "Customer Portal Release-Readiness Gap Review Golden Output",
+      "outputExists": true,
+      "outputPath": "goldens/lifecycle/customer-portal-release-readiness/output.md",
+      "path": "goldens/lifecycle/customer-portal-release-readiness/manifest.json",
+      "promptRef": "lifecycle.workspace.interview-medium.production-ready.release-gap-review.v1",
+      "requiredSectionCount": 11,
+      "targetReadiness": "production-ready"
+    },
+    {
+      "domain": "lifecycle",
+      "exampleRef": "example.software-library.shared-auth-library",
+      "id": "golden.lifecycle.shared-auth-library.maintenance-readiness",
+      "interviewMode": "interview-high-stakes",
+      "name": "Shared Auth Library Maintenance-Readiness Golden Output",
+      "outputExists": true,
+      "outputPath": "goldens/lifecycle/shared-auth-maintenance-readiness/output.md",
+      "path": "goldens/lifecycle/shared-auth-maintenance-readiness/manifest.json",
+      "promptRef": "lifecycle.shipped-product.interview-high.maintenance-ready.v1",
+      "requiredSectionCount": 10,
+      "targetReadiness": "maintenance-ready"
+    },
+    {
+      "domain": "lifecycle",
+      "exampleRef": "example.unity-shared-library.shared-unity-runtime",
+      "id": "golden.lifecycle.shared-unity-runtime.decommission-readiness",
+      "interviewMode": "interview-all",
+      "name": "Shared Unity Runtime Decommission-Readiness Golden Output",
+      "outputExists": true,
+      "outputPath": "goldens/lifecycle/shared-unity-runtime-decommission-readiness/output.md",
+      "path": "goldens/lifecycle/shared-unity-runtime-decommission-readiness/manifest.json",
+      "promptRef": "lifecycle.retiring-product.interview-all.decommission-ready.v1",
+      "requiredSectionCount": 10,
+      "targetReadiness": "decommission-ready"
+    },
+    {
+      "domain": "unity-game",
+      "exampleRef": "example.unity-game.dream-extraction",
+      "id": "golden.unity-game.dream-extraction.implementation-ready",
+      "interviewMode": "interview-medium-stakes",
+      "name": "Dream Extraction Implementation-Ready Golden Output",
+      "outputExists": true,
+      "outputPath": "goldens/unity-game/dream-extraction-implementation-ready/output.md",
+      "path": "goldens/unity-game/dream-extraction-implementation-ready/manifest.json",
+      "promptRef": "unity-game.gdd-art.interview-medium.implementation-ready.v1",
+      "requiredSectionCount": 11,
+      "targetReadiness": "implementation-ready"
+    },
+    {
+      "domain": "unity-shared-library",
+      "exampleRef": "example.unity-shared-library.shared-unity-runtime",
+      "id": "golden.unity-shared-library.shared-unity-runtime.implementation-ready",
+      "interviewMode": "interview-medium-stakes",
+      "name": "Shared Unity Runtime Implementation-Ready Golden Output",
+      "outputExists": true,
+      "outputPath": "goldens/unity-shared-library/shared-unity-runtime-implementation-ready/output.md",
+      "path": "goldens/unity-shared-library/shared-unity-runtime-implementation-ready/manifest.json",
+      "promptRef": "unity-library.description.interview-medium.implementation-ready.v1",
+      "requiredSectionCount": 11,
+      "targetReadiness": "implementation-ready"
+    }
+  ]
+}

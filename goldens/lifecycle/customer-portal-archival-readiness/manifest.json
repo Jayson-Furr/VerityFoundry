@@ -1,0 +1,24 @@
+{
+  "id": "golden.lifecycle.customer-portal.archival-readiness",
+  "name": "Customer Portal Archival-Readiness Golden Output",
+  "version": "0.1.0",
+  "domain": "lifecycle",
+  "promptRef": "lifecycle.archived-product.interview-all.archival-ready.v1",
+  "exampleRef": "example.product.customer-portal",
+  "interviewMode": "interview-all",
+  "targetReadiness": "archival-ready",
+  "outputPath": "output.md",
+  "requiredSections": [
+    "Archival-Readiness Summary",
+    "Archival Interview Questions",
+    "Archive Manifest Gaps",
+    "Evidence Gap Register",
+    "Human-Provided Decisions",
+    "AI-Inferred Decisions",
+    "AI-Suggested Decisions",
+    "Unresolved Decisions",
+    "Human Approval Requirements",
+    "Suggested VeritySpec Validation Loop"
+  ],
+  "notes": "Golden output for archival readiness of a retired customer portal without inventing final archive, legal, privacy, support, or evidence completion claims."
+}

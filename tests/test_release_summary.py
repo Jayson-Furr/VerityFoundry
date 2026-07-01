@@ -20,7 +20,7 @@ class ReleaseSummaryTests(unittest.TestCase):
         self.assertEqual(report["checks"]["releaseIntegrity"]["status"], "passed")
         self.assertEqual(report["checks"]["qualityThresholds"]["status"], "passed")
         self.assertEqual(report["checks"]["workflowHygiene"]["status"], "passed")
-        self.assertEqual(report["reports"]["goldenInventory"]["goldenCount"], 5)
+        self.assertEqual(report["reports"]["goldenInventory"]["goldenCount"], 6)
         self.assertEqual(report["reports"]["exampleInventory"]["exampleCount"], 6)
         self.assertEqual(
             report["reports"]["policyLintTrend"]["latestSnapshotLabel"],

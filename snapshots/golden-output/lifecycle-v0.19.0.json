@@ -1,0 +1,25 @@
+{
+  "label": "v0.19.0-lifecycle",
+  "notes": "Baseline lifecycle golden output inventory before adding the archival-ready lifecycle golden in v0.20.0.",
+  "goldenCount": 3,
+  "goldens": [
+    {
+      "id": "golden.lifecycle.customer-portal.release-readiness-gap-review",
+      "promptRef": "lifecycle.workspace.interview-medium.production-ready.release-gap-review.v1",
+      "targetReadiness": "production-ready",
+      "requiredSectionCount": 11
+    },
+    {
+      "id": "golden.lifecycle.shared-auth-library.maintenance-readiness",
+      "promptRef": "lifecycle.shipped-product.interview-high.maintenance-ready.v1",
+      "targetReadiness": "maintenance-ready",
+      "requiredSectionCount": 10
+    },
+    {
+      "id": "golden.lifecycle.shared-unity-runtime.decommission-readiness",
+      "promptRef": "lifecycle.retiring-product.interview-all.decommission-ready.v1",
+      "targetReadiness": "decommission-ready",
+      "requiredSectionCount": 10
+    }
+  ]
+}

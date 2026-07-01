@@ -1,0 +1,413 @@
+{
+  "decisionConfidenceCounts": [
+    {
+      "confidence": "low",
+      "count": 8
+    },
+    {
+      "confidence": "medium",
+      "count": 10
+    }
+  ],
+  "decisionExampleCount": 18,
+  "decisionSourceCounts": [
+    {
+      "count": 3,
+      "decisionSource": "ai-inferred"
+    },
+    {
+      "count": 4,
+      "decisionSource": "ai-suggested"
+    },
+    {
+      "count": 6,
+      "decisionSource": "unresolved"
+    },
+    {
+      "count": 5,
+      "decisionSource": "user-provided"
+    }
+  ],
+  "exampleCount": 6,
+  "examples": [
+    {
+      "decisionConfidenceCounts": [
+        {
+          "confidence": "low",
+          "count": 1
+        },
+        {
+          "confidence": "medium",
+          "count": 2
+        }
+      ],
+      "decisionExampleCount": 3,
+      "decisionSourceCounts": [
+        {
+          "count": 1,
+          "decisionSource": "ai-suggested"
+        },
+        {
+          "count": 1,
+          "decisionSource": "unresolved"
+        },
+        {
+          "count": 1,
+          "decisionSource": "user-provided"
+        }
+      ],
+      "domain": "portfolio",
+      "exampleId": "example.portfolio.game-portfolio-triage",
+      "humanApprovalRequiredDecisions": 3,
+      "humanApprovalRequiredRecords": 9,
+      "recordConfidenceCounts": [
+        {
+          "confidence": "low",
+          "count": 3
+        },
+        {
+          "confidence": "medium",
+          "count": 6
+        }
+      ],
+      "recordProvenanceCount": 9,
+      "recordProvenanceSourceCounts": [
+        {
+          "count": 1,
+          "decisionSource": "ai-inferred"
+        },
+        {
+          "count": 4,
+          "decisionSource": "ai-suggested"
+        },
+        {
+          "count": 4,
+          "decisionSource": "user-provided"
+        }
+      ]
+    },
+    {
+      "decisionConfidenceCounts": [
+        {
+          "confidence": "low",
+          "count": 1
+        },
+        {
+          "confidence": "medium",
+          "count": 2
+        }
+      ],
+      "decisionExampleCount": 3,
+      "decisionSourceCounts": [
+        {
+          "count": 2,
+          "decisionSource": "ai-suggested"
+        },
+        {
+          "count": 1,
+          "decisionSource": "unresolved"
+        }
+      ],
+      "domain": "portfolio",
+      "exampleId": "example.portfolio.shared-unity-dependency-map",
+      "humanApprovalRequiredDecisions": 3,
+      "humanApprovalRequiredRecords": 8,
+      "recordConfidenceCounts": [
+        {
+          "confidence": "low",
+          "count": 3
+        },
+        {
+          "confidence": "medium",
+          "count": 5
+        }
+      ],
+      "recordProvenanceCount": 8,
+      "recordProvenanceSourceCounts": [
+        {
+          "count": 7,
+          "decisionSource": "ai-suggested"
+        },
+        {
+          "count": 1,
+          "decisionSource": "user-provided"
+        }
+      ]
+    },
+    {
+      "decisionConfidenceCounts": [
+        {
+          "confidence": "low",
+          "count": 2
+        },
+        {
+          "confidence": "medium",
+          "count": 1
+        }
+      ],
+      "decisionExampleCount": 3,
+      "decisionSourceCounts": [
+        {
+          "count": 1,
+          "decisionSource": "ai-suggested"
+        },
+        {
+          "count": 1,
+          "decisionSource": "unresolved"
+        },
+        {
+          "count": 1,
+          "decisionSource": "user-provided"
+        }
+      ],
+      "domain": "product",
+      "exampleId": "example.product.customer-portal",
+      "humanApprovalRequiredDecisions": 3,
+      "humanApprovalRequiredRecords": 6,
+      "recordConfidenceCounts": [
+        {
+          "confidence": "low",
+          "count": 2
+        },
+        {
+          "confidence": "medium",
+          "count": 4
+        }
+      ],
+      "recordProvenanceCount": 6,
+      "recordProvenanceSourceCounts": [
+        {
+          "count": 1,
+          "decisionSource": "ai-inferred"
+        },
+        {
+          "count": 2,
+          "decisionSource": "ai-suggested"
+        },
+        {
+          "count": 1,
+          "decisionSource": "unresolved"
+        },
+        {
+          "count": 2,
+          "decisionSource": "user-provided"
+        }
+      ]
+    },
+    {
+      "decisionConfidenceCounts": [
+        {
+          "confidence": "low",
+          "count": 1
+        },
+        {
+          "confidence": "medium",
+          "count": 2
+        }
+      ],
+      "decisionExampleCount": 3,
+      "decisionSourceCounts": [
+        {
+          "count": 1,
+          "decisionSource": "ai-inferred"
+        },
+        {
+          "count": 1,
+          "decisionSource": "unresolved"
+        },
+        {
+          "count": 1,
+          "decisionSource": "user-provided"
+        }
+      ],
+      "domain": "software-library",
+      "exampleId": "example.software-library.shared-auth-library",
+      "humanApprovalRequiredDecisions": 3,
+      "humanApprovalRequiredRecords": 6,
+      "recordConfidenceCounts": [
+        {
+          "confidence": "low",
+          "count": 1
+        },
+        {
+          "confidence": "medium",
+          "count": 5
+        }
+      ],
+      "recordProvenanceCount": 6,
+      "recordProvenanceSourceCounts": [
+        {
+          "count": 2,
+          "decisionSource": "ai-inferred"
+        },
+        {
+          "count": 1,
+          "decisionSource": "ai-suggested"
+        },
+        {
+          "count": 1,
+          "decisionSource": "unresolved"
+        },
+        {
+          "count": 2,
+          "decisionSource": "user-provided"
+        }
+      ]
+    },
+    {
+      "decisionConfidenceCounts": [
+        {
+          "confidence": "low",
+          "count": 2
+        },
+        {
+          "confidence": "medium",
+          "count": 1
+        }
+      ],
+      "decisionExampleCount": 3,
+      "decisionSourceCounts": [
+        {
+          "count": 1,
+          "decisionSource": "ai-inferred"
+        },
+        {
+          "count": 1,
+          "decisionSource": "unresolved"
+        },
+        {
+          "count": 1,
+          "decisionSource": "user-provided"
+        }
+      ],
+      "domain": "unity-game",
+      "exampleId": "example.unity-game.dream-extraction",
+      "humanApprovalRequiredDecisions": 3,
+      "humanApprovalRequiredRecords": 9,
+      "recordConfidenceCounts": [
+        {
+          "confidence": "high",
+          "count": 1
+        },
+        {
+          "confidence": "low",
+          "count": 3
+        },
+        {
+          "confidence": "medium",
+          "count": 6
+        }
+      ],
+      "recordProvenanceCount": 10,
+      "recordProvenanceSourceCounts": [
+        {
+          "count": 2,
+          "decisionSource": "ai-inferred"
+        },
+        {
+          "count": 3,
+          "decisionSource": "ai-suggested"
+        },
+        {
+          "count": 5,
+          "decisionSource": "user-provided"
+        }
+      ]
+    },
+    {
+      "decisionConfidenceCounts": [
+        {
+          "confidence": "low",
+          "count": 1
+        },
+        {
+          "confidence": "medium",
+          "count": 2
+        }
+      ],
+      "decisionExampleCount": 3,
+      "decisionSourceCounts": [
+        {
+          "count": 1,
+          "decisionSource": "ai-inferred"
+        },
+        {
+          "count": 1,
+          "decisionSource": "unresolved"
+        },
+        {
+          "count": 1,
+          "decisionSource": "user-provided"
+        }
+      ],
+      "domain": "unity-shared-library",
+      "exampleId": "example.unity-shared-library.shared-unity-runtime",
+      "humanApprovalRequiredDecisions": 3,
+      "humanApprovalRequiredRecords": 6,
+      "recordConfidenceCounts": [
+        {
+          "confidence": "low",
+          "count": 1
+        },
+        {
+          "confidence": "medium",
+          "count": 5
+        }
+      ],
+      "recordProvenanceCount": 6,
+      "recordProvenanceSourceCounts": [
+        {
+          "count": 2,
+          "decisionSource": "ai-inferred"
+        },
+        {
+          "count": 2,
+          "decisionSource": "ai-suggested"
+        },
+        {
+          "count": 1,
+          "decisionSource": "unresolved"
+        },
+        {
+          "count": 1,
+          "decisionSource": "user-provided"
+        }
+      ]
+    }
+  ],
+  "humanApprovalRequiredDecisionCount": 18,
+  "humanApprovalRequiredRecordCount": 44,
+  "recordConfidenceCounts": [
+    {
+      "confidence": "high",
+      "count": 1
+    },
+    {
+      "confidence": "low",
+      "count": 13
+    },
+    {
+      "confidence": "medium",
+      "count": 31
+    }
+  ],
+  "recordProvenanceCount": 45,
+  "recordProvenanceSourceCounts": [
+    {
+      "count": 8,
+      "decisionSource": "ai-inferred"
+    },
+    {
+      "count": 19,
+      "decisionSource": "ai-suggested"
+    },
+    {
+      "count": 3,
+      "decisionSource": "unresolved"
+    },
+    {
+      "count": 15,
+      "decisionSource": "user-provided"
+    }
+  ]
+}
