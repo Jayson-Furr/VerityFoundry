@@ -1006,12 +1006,12 @@ Sprint 62 should release the completed `v0.28.0` scope:
 
 ## v0.29.0
 
-The `v0.29.0` milestone is active.
+The `v0.29.0` milestone is released.
 
 | Sprint | Status | Focus |
 |---:|---|---|
-| 63 | In Progress | Generated workspace validation-result snapshots, schema, package-data coverage, optional VeritySpec CI planning, unresolved-decision reporting, and release-review triage |
-| 64 | Planned | v0.29.0 release preparation |
+| 63 | Complete | Generated workspace validation-result snapshots, schema, package-data coverage, optional VeritySpec CI planning, unresolved-decision reporting, and release-review triage |
+| 64 | Complete | v0.29.0 release preparation |
 
 ## Sprint 63 Priorities
 

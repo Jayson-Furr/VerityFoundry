@@ -78,7 +78,7 @@ python3 -m venv /tmp/verityfoundry-wheel
 ## Tag
 
 ```bash
-VERSION=v0.28.0
+VERSION=v0.29.0
 git tag -a "$VERSION" -m "VerityFoundry $VERSION"
 git push origin "$VERSION"
 ```

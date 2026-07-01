@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## 0.29.0
+
 - Added generated workspace validation-result snapshots with schema validation,
   file-hash drift checks, and package-data coverage for generated workspace
   fixtures.
