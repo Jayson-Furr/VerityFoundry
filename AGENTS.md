@@ -112,6 +112,21 @@ commands. Use one of:
 
 Maintain that shell discipline until there is a concrete reason to switch.
 
+## Organization Research And Reuse
+
+Before inventing or changing a reusable pattern, practice, term, workflow, schema convention, prompt convention, CI convention, evidence pattern, content model, legal/support workflow, release rule, or agent procedure, agents must consult the canonical organization repositories:
+
+- `../organization-patterns` locally, or `Jason-Furr/organization-patterns` remotely
+- `../organization-glossary` locally, or `Jason-Furr/organization-glossary` remotely
+
+If the work produces a reusable pattern or practice, propose a follow-up update to `organization-patterns`. If the work introduces or changes terminology, propose a follow-up update to `organization-glossary`. Do not silently fork organization terms or practices inside this repository.
+
+## Work Ledger And Content Opportunities
+
+Agents must keep track of the active issue, branch, roadmap item, affected records, decisions, and verification while they work. When the work yields material suitable for public explanation, agents must propose an article or devlog candidate instead of directly publishing it.
+
+Article candidates belong in `Jason-Furr/jasonfurr-articles`; devlog candidates belong in `Jason-Furr/jasonfurr-devlog`. The operator may approve, decline, or postpone the content, writing, and submission. Legal or policy content belongs in `Jason-Furr/jasonfurr-legal` and requires explicit approval.
+
 ## Required Operating Loop
 
 1. Start by reading this file, checking `git status --short --branch`, checking
