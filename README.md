@@ -72,6 +72,9 @@ The repository currently provides:
   distribution, and portfolio coverage reports.
 - Checked portfolio coverage and cross-workspace reference snapshots for
   release-review drift inspection.
+- Release-review fixture maintenance guidance for JSON schema docs,
+  lifecycle archival drift review, package-data audits, README link coverage,
+  and fixture update workflows.
 - Fixture-to-VeritySpec conversion checklist and cross-workspace reference
   syntax guidance for generated workspace drafts.
 - Concrete fixture-to-VeritySpec conversion checklist examples for product and
@@ -539,8 +542,13 @@ require human approval.
 - [Quality threshold ratcheting](docs/quality-threshold-ratcheting.md)
 - [Release reviewer inventory reports](docs/reviewer-inventory-reports.md)
 - [Release-review fixtures](docs/release-review-fixtures.md)
+- [Release-review fixture JSON schema](docs/release-review-fixture-json-schema.md)
+- [Release-review fixture updates](docs/release-review-fixture-updates.md)
 - [Fixture inventory report schema](docs/fixture-inventory-report-schema.md)
 - [Example fixture diff snapshots](docs/example-fixture-diff-snapshots.md)
+- [Lifecycle archival drift comparison](docs/lifecycle-archival-drift-comparison.md)
+- [Package-data verification](docs/package-data-verification.md)
+- [README link coverage](docs/readme-link-coverage.md)
 - [Fixture kind pack mapping](docs/fixture-kind-pack-mapping.md)
 - [Provenance coverage](docs/provenance-coverage.md)
 - [Provenance distribution](docs/provenance-distribution.md)

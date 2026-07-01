@@ -2,6 +2,11 @@
 
 ## Unreleased
 
+- Added release-review fixture JSON schema documentation and fixture update
+  instructions.
+- Added lifecycle archival-readiness drift comparison guidance.
+- Added package-data verification and README link coverage maintenance docs.
+
 ## 0.23.0
 
 - Added provenance distribution and portfolio coverage JSON schemas for

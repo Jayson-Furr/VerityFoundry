@@ -828,6 +828,41 @@ Sprint 52 should release the completed `v0.23.0` scope:
 - Tag and publish the v0.23.0 GitHub release when checks pass.
 - Close the v0.23.0 milestone after release verification.
 
+## v0.24.0
+
+The `v0.24.0` milestone is active.
+
+| Sprint | Status | Focus |
+|---:|---|---|
+| 53 | In Progress | Release-review fixture schema docs, lifecycle archival drift notes, package-data audit docs, README link coverage, and fixture update instructions |
+| 54 | Planned | v0.24.0 release preparation |
+
+## Sprint 53 Priorities
+
+Sprint 53 should bundle about a week of release-review maintenance work:
+
+- Add release-review fixture JSON schema documentation for downstream tooling.
+- Add lifecycle archival-readiness fixture drift comparison notes.
+- Add package-data verification documentation for installed-wheel artifact
+  audits.
+- Add docs for maintaining README link coverage tests.
+- Add release-review fixture update instructions for future report changes.
+- Update README, changelog, roadmap, tests, and release-review documentation
+  together.
+- Keep the Next 20 roadmap points populated after converting completed items.
+
+## Sprint 54 Priorities
+
+Sprint 54 should release the completed `v0.24.0` scope:
+
+- Add v0.24.0 release notes.
+- Update package metadata, README release badge, latest-release text, install
+  guidance, changelog, roadmap, and release checklist to `v0.24.0`.
+- Run local release verification, package build checks, `twine check`,
+  installed-wheel smoke tests, and GitHub Actions.
+- Tag and publish the v0.24.0 GitHub release when checks pass.
+- Close the v0.24.0 milestone after release verification.
+
 ## Later Candidates
 
 These are intentionally not committed to a release until the initial scaffold
@@ -848,28 +883,26 @@ the active roadmap is caught up. The points should balance fixes,
 improvements, continuation work, and expansion. Convert related points into
 week-sized sprint bundles rather than one release per small point.
 
-1. Add release-review fixture JSON schema documentation for downstream
-    tooling.
-2. Add lifecycle archival-readiness fixture drift comparison notes.
-3. Add package-data verification documentation for installed-wheel artifact
-    audits.
-4. Add docs for maintaining README link coverage tests.
-5. Add release-review fixture update instructions for future report changes.
-6. Add release-summary schema compatibility notes for additive fields.
-7. Add release-review bundle retention policy notes.
-8. Add release-summary warning triage examples.
-9. Add CI artifact naming guidance for release-review bundles.
-10. Add release-summary snapshot update checklist for future releases.
-11. Add render-profile snapshot retention policy notes.
-12. Add policy-lint trend snapshot update checklist.
-13. Add quality-threshold warning triage checklist.
-14. Add release-review bundle manifest design notes.
-15. Add release-review bundle checksum design notes.
-16. Add release-review bundle manifest JSON schema.
-17. Add release-review bundle dry-run CLI design validation tests.
-18. Add generated workspace fixture manifest design notes.
-19. Add first executable workspace fixture candidate for customer portal.
-20. Add first executable workspace fixture candidate for Dream Extraction.
+1. Add release-summary schema compatibility notes for additive fields.
+2. Add release-review bundle retention policy notes.
+3. Add release-summary warning triage examples.
+4. Add CI artifact naming guidance for release-review bundles.
+5. Add release-summary snapshot update checklist for future releases.
+6. Add render-profile snapshot retention policy notes.
+7. Add policy-lint trend snapshot update checklist.
+8. Add quality-threshold warning triage checklist.
+9. Add release-review bundle manifest design notes.
+10. Add release-review bundle checksum design notes.
+11. Add release-review bundle manifest JSON schema.
+12. Add release-review bundle dry-run CLI design validation tests.
+13. Add generated workspace fixture manifest design notes.
+14. Add first executable workspace fixture candidate for customer portal.
+15. Add first executable workspace fixture candidate for Dream Extraction.
+16. Add generated workspace fixture package-data audit tests.
+17. Add optional generated workspace fixture smoke-check docs for CI.
+18. Add cross-workspace dependency fixture compatibility notes.
+19. Add portfolio dependency lockfile assumption checklist.
+20. Add VeritySpec workspace dependency importer design notes.
 
 ## Working Rule
 
