@@ -1,6 +1,9 @@
 from pathlib import Path
 import unittest
 
+from jsonschema import Draft202012Validator
+
+from verityfoundry.manifests import read_json
 from verityfoundry.release_summary import (
     format_release_summary_report,
     generate_release_summary_report,
@@ -40,6 +43,37 @@ class ReleaseSummaryTests(unittest.TestCase):
         self.assertIn("Workflow hygiene: passed", text)
         self.assertIn("Policy lint trend:", text)
         self.assertIn("Run VeritySpec validation separately", text)
+
+    def test_release_summary_json_schema_validates_current_report(self) -> None:
+        schema = read_json(ROOT / "schemas" / "release-summary-report.schema.json")
+        Draft202012Validator.check_schema(schema)
+        validator = Draft202012Validator(schema)
+
+        errors = sorted(
+            validator.iter_errors(generate_release_summary_report(ROOT)),
+            key=lambda error: list(error.path),
+        )
+        self.assertEqual([error.message for error in errors], [])
+
+    def test_release_summary_snapshot_validates_schema(self) -> None:
+        schema = read_json(ROOT / "schemas" / "release-summary-report.schema.json")
+        snapshot = read_json(ROOT / "snapshots" / "release-summary" / "v0.20.0.json")
+        validator = Draft202012Validator(schema)
+
+        errors = sorted(
+            validator.iter_errors(snapshot),
+            key=lambda error: list(error.path),
+        )
+        self.assertEqual([error.message for error in errors], [])
+        self.assertEqual(snapshot["status"], "passed")
+        self.assertEqual(
+            snapshot["checks"]["releaseIntegrity"]["expectedVersion"],
+            "0.20.0",
+        )
+        self.assertEqual(
+            snapshot["checks"]["releaseIntegrity"]["expectedTag"],
+            "v0.20.0",
+        )
 
 
 if __name__ == "__main__":

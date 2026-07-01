@@ -46,6 +46,9 @@ When a report JSON shape changes, update:
 If a downstream workflow depends on a report shape, prefer reading JSON output
 and checking field presence instead of parsing human text.
 
+The release-summary JSON schema is documented in
+[Release summary JSON schema](release-summary-json-schema.md).
+
 ## Authority Boundary
 
 Reports explain repository and prompt-library state. They do not prove that a

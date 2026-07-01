@@ -14,6 +14,10 @@ verityfoundry report release-summary
 verityfoundry report release-summary --format json
 ```
 
+The JSON form is described by
+[`schemas/release-summary-report.schema.json`](../schemas/release-summary-report.schema.json)
+and summarized in [Release summary JSON schema](release-summary-json-schema.md).
+
 ## Included Checks
 
 The summary includes:

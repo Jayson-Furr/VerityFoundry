@@ -1,0 +1,401 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/Jayson-Furr/VerityFoundry/schemas/release-summary-report.schema.json",
+  "title": "VerityFoundry release-summary report",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "status",
+    "blockingIssueCount",
+    "warningCount",
+    "checks",
+    "reports",
+    "notes"
+  ],
+  "properties": {
+    "status": {
+      "$ref": "#/$defs/status"
+    },
+    "blockingIssueCount": {
+      "$ref": "#/$defs/nonNegativeInteger"
+    },
+    "warningCount": {
+      "$ref": "#/$defs/nonNegativeInteger"
+    },
+    "checks": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "releaseIntegrity",
+        "qualityThresholds",
+        "workflowHygiene",
+        "decisionPolicyLint"
+      ],
+      "properties": {
+        "releaseIntegrity": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "status",
+            "expectedVersion",
+            "expectedTag",
+            "issueCount"
+          ],
+          "properties": {
+            "status": {
+              "$ref": "#/$defs/status"
+            },
+            "expectedVersion": {
+              "type": "string",
+              "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$"
+            },
+            "expectedTag": {
+              "type": "string",
+              "pattern": "^v[0-9]+\\.[0-9]+\\.[0-9]+$"
+            },
+            "issueCount": {
+              "$ref": "#/$defs/nonNegativeInteger"
+            }
+          }
+        },
+        "qualityThresholds": {
+          "$ref": "#/$defs/statusIssueWarningCheck"
+        },
+        "workflowHygiene": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "status",
+            "workflowCount",
+            "actionCount",
+            "issueCount"
+          ],
+          "properties": {
+            "status": {
+              "$ref": "#/$defs/status"
+            },
+            "workflowCount": {
+              "$ref": "#/$defs/nonNegativeInteger"
+            },
+            "actionCount": {
+              "$ref": "#/$defs/nonNegativeInteger"
+            },
+            "issueCount": {
+              "$ref": "#/$defs/nonNegativeInteger"
+            }
+          }
+        },
+        "decisionPolicyLint": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "status",
+            "errorCount",
+            "warningCount"
+          ],
+          "properties": {
+            "status": {
+              "$ref": "#/$defs/status"
+            },
+            "errorCount": {
+              "$ref": "#/$defs/nonNegativeInteger"
+            },
+            "warningCount": {
+              "$ref": "#/$defs/nonNegativeInteger"
+            }
+          }
+        }
+      }
+    },
+    "reports": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "promptQuality",
+        "promptQualityTrend",
+        "policyLintTrend",
+        "matrixCoverage",
+        "goldenInventory",
+        "exampleInventory",
+        "fixtureInventory",
+        "provenanceCoverage",
+        "provenanceDistribution",
+        "portfolioCoverage"
+      ],
+      "properties": {
+        "promptQuality": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "percent",
+            "uncertaintyPercent",
+            "provenancePercent",
+            "promptCount"
+          ],
+          "properties": {
+            "percent": {
+              "$ref": "#/$defs/percent"
+            },
+            "uncertaintyPercent": {
+              "$ref": "#/$defs/percent"
+            },
+            "provenancePercent": {
+              "$ref": "#/$defs/percent"
+            },
+            "promptCount": {
+              "$ref": "#/$defs/nonNegativeInteger"
+            }
+          }
+        },
+        "promptQualityTrend": {
+          "$ref": "#/$defs/percentTrend"
+        },
+        "policyLintTrend": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "snapshotCount",
+            "latestSnapshotLabel",
+            "currentWarningCount",
+            "deltaWarningCount"
+          ],
+          "properties": {
+            "snapshotCount": {
+              "$ref": "#/$defs/nonNegativeInteger"
+            },
+            "latestSnapshotLabel": {
+              "type": "string",
+              "minLength": 1
+            },
+            "currentWarningCount": {
+              "$ref": "#/$defs/nonNegativeInteger"
+            },
+            "deltaWarningCount": {
+              "type": "integer"
+            }
+          }
+        },
+        "matrixCoverage": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "coveragePercent",
+            "matrixCount",
+            "rowCount",
+            "missingDomainPromptCount",
+            "unknownPromptRefCount"
+          ],
+          "properties": {
+            "coveragePercent": {
+              "$ref": "#/$defs/percent"
+            },
+            "matrixCount": {
+              "$ref": "#/$defs/nonNegativeInteger"
+            },
+            "rowCount": {
+              "$ref": "#/$defs/nonNegativeInteger"
+            },
+            "missingDomainPromptCount": {
+              "$ref": "#/$defs/nonNegativeInteger"
+            },
+            "unknownPromptRefCount": {
+              "$ref": "#/$defs/nonNegativeInteger"
+            }
+          }
+        },
+        "goldenInventory": {
+          "$ref": "#/$defs/countPair"
+        },
+        "exampleInventory": {
+          "$ref": "#/$defs/countPair"
+        },
+        "fixtureInventory": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "fixtureCount",
+            "recordCount",
+            "kindCount"
+          ],
+          "properties": {
+            "fixtureCount": {
+              "$ref": "#/$defs/nonNegativeInteger"
+            },
+            "recordCount": {
+              "$ref": "#/$defs/nonNegativeInteger"
+            },
+            "kindCount": {
+              "$ref": "#/$defs/nonNegativeInteger"
+            }
+          }
+        },
+        "provenanceCoverage": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "exampleCount",
+            "recordProvenancePercent",
+            "decisionExamplePercent"
+          ],
+          "properties": {
+            "exampleCount": {
+              "$ref": "#/$defs/nonNegativeInteger"
+            },
+            "recordProvenancePercent": {
+              "$ref": "#/$defs/percent"
+            },
+            "decisionExamplePercent": {
+              "$ref": "#/$defs/percent"
+            }
+          }
+        },
+        "provenanceDistribution": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "decisionExampleCount",
+            "humanApprovalRequiredDecisionCount",
+            "recordProvenanceCount"
+          ],
+          "properties": {
+            "decisionExampleCount": {
+              "$ref": "#/$defs/nonNegativeInteger"
+            },
+            "humanApprovalRequiredDecisionCount": {
+              "$ref": "#/$defs/nonNegativeInteger"
+            },
+            "recordProvenanceCount": {
+              "$ref": "#/$defs/nonNegativeInteger"
+            }
+          }
+        },
+        "portfolioCoverage": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "portfolioExampleCount",
+            "gameConceptCount",
+            "dependencyAssumptionCount",
+            "crossWorkspaceReferenceCount"
+          ],
+          "properties": {
+            "portfolioExampleCount": {
+              "$ref": "#/$defs/nonNegativeInteger"
+            },
+            "gameConceptCount": {
+              "$ref": "#/$defs/nonNegativeInteger"
+            },
+            "dependencyAssumptionCount": {
+              "$ref": "#/$defs/nonNegativeInteger"
+            },
+            "crossWorkspaceReferenceCount": {
+              "$ref": "#/$defs/nonNegativeInteger"
+            }
+          }
+        }
+      }
+    },
+    "notes": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "minItems": 1
+    }
+  },
+  "$defs": {
+    "status": {
+      "type": "string",
+      "enum": [
+        "passed",
+        "failed",
+        "skipped"
+      ]
+    },
+    "nonNegativeInteger": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "percent": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 100
+    },
+    "statusIssueWarningCheck": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "status",
+        "issueCount",
+        "warningCount"
+      ],
+      "properties": {
+        "status": {
+          "$ref": "#/$defs/status"
+        },
+        "issueCount": {
+          "$ref": "#/$defs/nonNegativeInteger"
+        },
+        "warningCount": {
+          "$ref": "#/$defs/nonNegativeInteger"
+        }
+      }
+    },
+    "percentTrend": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "snapshotCount",
+        "latestSnapshotLabel",
+        "currentPercent",
+        "deltaPercent"
+      ],
+      "properties": {
+        "snapshotCount": {
+          "$ref": "#/$defs/nonNegativeInteger"
+        },
+        "latestSnapshotLabel": {
+          "type": "string",
+          "minLength": 1
+        },
+        "currentPercent": {
+          "$ref": "#/$defs/percent"
+        },
+        "deltaPercent": {
+          "type": "number"
+        }
+      }
+    },
+    "countPair": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "domainCount"
+      ],
+      "properties": {
+        "domainCount": {
+          "$ref": "#/$defs/nonNegativeInteger"
+        },
+        "goldenCount": {
+          "$ref": "#/$defs/nonNegativeInteger"
+        },
+        "exampleCount": {
+          "$ref": "#/$defs/nonNegativeInteger"
+        }
+      },
+      "oneOf": [
+        {
+          "required": [
+            "goldenCount"
+          ]
+        },
+        {
+          "required": [
+            "exampleCount"
+          ]
+        }
+      ]
+    }
+  }
+}
