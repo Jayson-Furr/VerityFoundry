@@ -754,6 +754,41 @@ Sprint 48 should release the completed `v0.21.0` scope:
 - Tag and publish the v0.21.0 GitHub release when checks pass.
 - Close the v0.21.0 milestone after release verification.
 
+## v0.22.0
+
+The `v0.22.0` milestone is in progress.
+
+| Sprint | Status | Focus |
+|---:|---|---|
+| 49 | In Review | Policy-lint trend schema docs, advisory remediation, render-profile snapshots, quality-threshold warning notes, and release-review bundle CLI design |
+| 50 | Planned | v0.22.0 release preparation |
+
+## Sprint 49 Priorities
+
+Sprint 49 should bundle about a week of policy-lint and render-profile
+release-review hardening work:
+
+- Add policy-lint trend JSON schema documentation for downstream tooling.
+- Add policy-lint advisory remediation planning guidance.
+- Add render-profile output fixture snapshots for release reviewers.
+- Add quality-threshold warning trend notes for release reviewers.
+- Add release-review bundle export CLI design notes.
+- Update README, changelog, roadmap, tests, package data, and release-review
+  documentation together.
+- Keep the Next 20 roadmap points populated after converting completed items.
+
+## Sprint 50 Priorities
+
+Sprint 50 should release the completed `v0.22.0` scope:
+
+- Add v0.22.0 release notes.
+- Update package metadata, README release badge, latest-release text, install
+  guidance, changelog, roadmap, and release checklist to `v0.22.0`.
+- Run local release verification, package build checks, `twine check`,
+  installed-wheel smoke tests, and GitHub Actions.
+- Tag and publish the v0.22.0 GitHub release when checks pass.
+- Close the v0.22.0 milestone after release verification.
+
 ## Later Candidates
 
 These are intentionally not committed to a release until the initial scaffold
@@ -774,32 +809,32 @@ the active roadmap is caught up. The points should balance fixes,
 improvements, continuation work, and expansion. Convert related points into
 week-sized sprint bundles rather than one release per small point.
 
-1. Add policy-lint trend JSON schema documentation for downstream tooling.
-2. Add policy-lint advisory remediation planning guidance.
-3. Add render-profile output fixture snapshots for release reviewers.
-4. Add quality-threshold warning trend notes for release reviewers.
-5. Add release-review bundle export CLI design notes.
-6. Add provenance distribution JSON schema documentation for downstream
+1. Add provenance distribution JSON schema documentation for downstream
     tooling.
-7. Add portfolio coverage fixture snapshots for release reviewers.
-8. Add cross-workspace reference output fixture snapshots for dependency-map
+2. Add portfolio coverage fixture snapshots for release reviewers.
+3. Add cross-workspace reference output fixture snapshots for dependency-map
     examples.
-9. Add fixture-to-VeritySpec checklist examples for one product and one Unity
+4. Add fixture-to-VeritySpec checklist examples for one product and one Unity
     workspace draft.
-10. Add optional local VeritySpec validation design notes for executable
+5. Add optional local VeritySpec validation design notes for executable
     workspace fixtures.
-11. Add release-review fixture JSON schema documentation for downstream
+6. Add release-review fixture JSON schema documentation for downstream
     tooling.
-12. Add lifecycle archival-readiness fixture drift comparison notes.
-13. Add package-data verification documentation for installed-wheel artifact
+7. Add lifecycle archival-readiness fixture drift comparison notes.
+8. Add package-data verification documentation for installed-wheel artifact
     audits.
-14. Add docs for maintaining README link coverage tests.
-15. Add release-review fixture update instructions for future report changes.
-16. Add release-summary schema compatibility notes for additive fields.
-17. Add release-review bundle retention policy notes.
-18. Add release-summary warning triage examples.
-19. Add CI artifact naming guidance for release-review bundles.
-20. Add release-summary snapshot update checklist for future releases.
+9. Add docs for maintaining README link coverage tests.
+10. Add release-review fixture update instructions for future report changes.
+11. Add release-summary schema compatibility notes for additive fields.
+12. Add release-review bundle retention policy notes.
+13. Add release-summary warning triage examples.
+14. Add CI artifact naming guidance for release-review bundles.
+15. Add release-summary snapshot update checklist for future releases.
+16. Add render-profile snapshot retention policy notes.
+17. Add policy-lint trend snapshot update checklist.
+18. Add quality-threshold warning triage checklist.
+19. Add release-review bundle manifest design notes.
+20. Add release-review bundle checksum design notes.
 
 ## Working Rule
 

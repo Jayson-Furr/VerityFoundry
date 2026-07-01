@@ -1,0 +1,145 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/Jayson-Furr/VerityFoundry/schemas/policy-lint-trend-report.schema.json",
+  "title": "VerityFoundry policy-lint trend report",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "status",
+    "snapshotCount",
+    "snapshots",
+    "current",
+    "latestSnapshot",
+    "deltaFromLatest"
+  ],
+  "properties": {
+    "status": {
+      "type": "string",
+      "enum": [
+        "passed"
+      ]
+    },
+    "snapshotCount": {
+      "$ref": "#/$defs/nonNegativeInteger"
+    },
+    "snapshots": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/snapshotSummary"
+      }
+    },
+    "current": {
+      "$ref": "#/$defs/summary"
+    },
+    "latestSnapshot": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/snapshotSummary"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "deltaFromLatest": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/delta"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    }
+  },
+  "$defs": {
+    "nonNegativeInteger": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "issueCodeCounts": {
+      "type": "object",
+      "additionalProperties": {
+        "$ref": "#/$defs/nonNegativeInteger"
+      }
+    },
+    "summary": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "issueCount",
+        "errorCount",
+        "warningCount",
+        "issueCodeCounts"
+      ],
+      "properties": {
+        "issueCount": {
+          "$ref": "#/$defs/nonNegativeInteger"
+        },
+        "errorCount": {
+          "$ref": "#/$defs/nonNegativeInteger"
+        },
+        "warningCount": {
+          "$ref": "#/$defs/nonNegativeInteger"
+        },
+        "issueCodeCounts": {
+          "$ref": "#/$defs/issueCodeCounts"
+        }
+      }
+    },
+    "snapshotSummary": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "label",
+        "path",
+        "issueCount",
+        "errorCount",
+        "warningCount",
+        "issueCodeCounts"
+      ],
+      "properties": {
+        "label": {
+          "type": "string",
+          "minLength": 1
+        },
+        "path": {
+          "type": "string",
+          "pattern": "^snapshots/policy-lint/.+\\.json$"
+        },
+        "issueCount": {
+          "$ref": "#/$defs/nonNegativeInteger"
+        },
+        "errorCount": {
+          "$ref": "#/$defs/nonNegativeInteger"
+        },
+        "warningCount": {
+          "$ref": "#/$defs/nonNegativeInteger"
+        },
+        "issueCodeCounts": {
+          "$ref": "#/$defs/issueCodeCounts"
+        }
+      }
+    },
+    "delta": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "issueCount",
+        "errorCount",
+        "warningCount"
+      ],
+      "properties": {
+        "issueCount": {
+          "type": "integer"
+        },
+        "errorCount": {
+          "type": "integer"
+        },
+        "warningCount": {
+          "type": "integer"
+        }
+      }
+    }
+  }
+}

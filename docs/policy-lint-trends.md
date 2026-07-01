@@ -10,6 +10,9 @@ verityfoundry report policy-lint-trend
 verityfoundry report policy-lint-trend --format json
 ```
 
+The JSON report shape is documented in
+[Policy-lint trend JSON schema](policy-lint-trend-json-schema.md).
+
 Snapshots live in:
 
 ```text
