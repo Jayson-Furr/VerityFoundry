@@ -1,0 +1,14 @@
+{
+  "id": "game.identity-image.key_art",
+  "kind": "game.identity-image",
+  "name": "Key Art Notes",
+  "description": "Generated fixture record for Dream Extraction identity-image notes.",
+  "status": "draft",
+  "owner": "art-direction",
+  "path": "examples/unity-game/dream-extraction/inputs/images.md",
+  "imageType": "key-art",
+  "format": "other",
+  "usage": "Reference-only identity direction for generated workspace fixture review.",
+  "license": "unknown; human approval required before production use",
+  "references": []
+}

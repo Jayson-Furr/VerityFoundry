@@ -1,0 +1,27 @@
+{
+  "id": "game.visual-identity.dream_extraction",
+  "kind": "game.visual-identity",
+  "name": "Dream Extraction Visual Identity",
+  "description": "Primary visual identity inferred from the Dream Extraction rough GDD and image notes.",
+  "status": "draft",
+  "owner": "art-direction",
+  "tone": "Surreal, liminal, cooperative, and dangerous.",
+  "artDirection": "High-contrast dream spaces with readable player silhouettes and memory-shard focal points.",
+  "styleKeywords": [
+    "surreal",
+    "liminal",
+    "cooperative",
+    "dangerous"
+  ],
+  "palette": [
+    "deep-indigo",
+    "memory-gold",
+    "cold-mist"
+  ],
+  "references": [
+    {
+      "type": "usesIdentityImage",
+      "target": "game.identity-image.key_art"
+    }
+  ]
+}

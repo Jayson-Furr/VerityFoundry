@@ -2,6 +2,11 @@
 
 ## Unreleased
 
+- Added generated VeritySpec-shaped workspace fixture candidates for the
+  customer portal and Dream Extraction examples.
+- Added generated workspace fixture manifest design, optional smoke-check
+  guidance, and package-data coverage for generated workspace fixtures.
+
 ## 0.26.0
 
 - Added release-review bundle manifest schema, dry-run example fixture, and

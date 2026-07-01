@@ -1,0 +1,35 @@
+{
+  "id": "generated-workspace.customer-portal.v1",
+  "name": "Customer Portal Generated Workspace Fixture",
+  "sourceExample": "examples/product/customer-portal/manifest.json",
+  "candidateWorkspaceFixture": "examples/product/customer-portal/expected/candidate-workspace.json",
+  "workspacePath": "fixtures/generated-workspaces/customer-portal",
+  "supportedVeritySpecVersion": "v0.2.0",
+  "packs": [
+    "verity.core",
+    "verity.pack.api"
+  ],
+  "validation": {
+    "localOnly": true,
+    "externalAiApisAllowed": false,
+    "command": "verity validate fixtures/generated-workspaces/customer-portal",
+    "skipWhenVerityMissing": true,
+    "humanReviewRequired": true,
+    "veritySpecAuthorityBoundary": "VeritySpec validation is authoritative for this generated workspace fixture; VerityFoundry only preserves source, provenance, and conversion intent."
+  },
+  "provenance": {
+    "decisionSource": "ai-suggested",
+    "confidence": "medium",
+    "sourceRefs": [
+      "examples/product/customer-portal/inputs/brief.md",
+      "examples/product/customer-portal/expected/provenance.json",
+      "examples/product/customer-portal/expected/readiness-gaps.md"
+    ],
+    "humanApprovalRequired": true
+  },
+  "notes": [
+    "This is a deterministic generated workspace fixture candidate, not approved product truth.",
+    "Records intentionally use VeritySpec-supported kinds instead of Foundry-only candidate kinds.",
+    "Permission, privacy, accessibility, operations, and archive decisions remain unresolved."
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "id": "api.account_status.get",
+  "kind": "api.endpoint",
+  "name": "Get Account Status",
+  "description": "Candidate API endpoint for retrieving account status in the generated customer portal workspace fixture.",
+  "status": "draft",
+  "owner": "platform",
+  "method": "GET",
+  "path": "/account/status",
+  "summary": "Return account status summary for an authenticated portal user.",
+  "responses": [
+    {
+      "statusCode": 200,
+      "description": "Account status summary returned.",
+      "schema": "schema.account_status"
+    }
+  ],
+  "references": [
+    {
+      "type": "responseSchema",
+      "target": "schema.account_status"
+    }
+  ]
+}
