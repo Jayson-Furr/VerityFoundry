@@ -93,6 +93,16 @@ class PackagedFixtureFileTests(unittest.TestCase):
 
         self.assertEqual(unpackaged, [])
 
+    def test_render_profile_snapshot_files_are_included_in_data_files(self) -> None:
+        patterns = data_file_patterns()
+        unpackaged = [
+            path.relative_to(ROOT).as_posix()
+            for path in sorted((ROOT / "snapshots" / "render-profiles").glob("*.md"))
+            if not is_packaged(path.relative_to(ROOT), patterns)
+        ]
+
+        self.assertEqual(unpackaged, [])
+
     def test_release_review_fixture_files_are_included_in_data_files(self) -> None:
         patterns = data_file_patterns()
         unpackaged = [

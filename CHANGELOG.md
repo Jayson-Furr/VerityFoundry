@@ -2,6 +2,13 @@
 
 ## Unreleased
 
+- Added policy-lint trend JSON schema documentation and schema validation
+  tests.
+- Added policy-lint advisory remediation guidance and quality-threshold
+  warning trend notes.
+- Added render-profile output snapshots for every supported profile.
+- Added release-review bundle export CLI design notes.
+
 ## 0.21.0
 
 - Added release-summary JSON schema documentation and schema validation tests.

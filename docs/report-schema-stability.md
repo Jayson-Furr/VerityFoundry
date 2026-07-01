@@ -49,6 +49,9 @@ and checking field presence instead of parsing human text.
 The release-summary JSON schema is documented in
 [Release summary JSON schema](release-summary-json-schema.md).
 
+The policy-lint trend JSON schema is documented in
+[Policy-lint trend JSON schema](policy-lint-trend-json-schema.md).
+
 ## Authority Boundary
 
 Reports explain repository and prompt-library state. They do not prove that a

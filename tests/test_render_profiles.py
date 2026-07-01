@@ -77,6 +77,20 @@ class RenderProfileTests(unittest.TestCase):
                     self.assertIn("## Included: Safety and Uncertainty Rules", rendered)
                     self.assertIn("## Included: Provenance Rules", rendered)
 
+    def test_render_profile_snapshots_match_current_output(self) -> None:
+        prompt_id = "unity-game.gdd-art.interview-medium.implementation-ready.v1"
+        snapshot_dir = ROOT / "snapshots" / "render-profiles"
+
+        for profile in render_profiles():
+            profile_id = profile["id"]
+            snapshot_path = snapshot_dir / f"unity-game-implementation-ready-{profile_id}.md"
+            with self.subTest(profile=profile_id):
+                self.assertTrue(snapshot_path.exists(), snapshot_path)
+                self.assertEqual(
+                    snapshot_path.read_text(encoding="utf-8"),
+                    render_prompt(ROOT, prompt_id, profile=profile_id),
+                )
+
 
 if __name__ == "__main__":
     unittest.main()
