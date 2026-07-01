@@ -863,6 +863,41 @@ Sprint 54 should release the completed `v0.24.0` scope:
 - Tag and publish the v0.24.0 GitHub release when checks pass.
 - Close the v0.24.0 milestone after release verification.
 
+## v0.25.0
+
+The `v0.25.0` milestone is active.
+
+| Sprint | Status | Focus |
+|---:|---|---|
+| 55 | In Progress | Release-summary schema compatibility, warning triage, snapshot checklist, release-review bundle retention, and CI artifact naming |
+| 56 | Planned | v0.25.0 release preparation |
+
+## Sprint 55 Priorities
+
+Sprint 55 should bundle about a week of release-summary and release-review
+bundle maintenance work:
+
+- Add release-summary schema compatibility notes for additive fields.
+- Add release-review bundle retention policy notes.
+- Add release-summary warning triage examples.
+- Add CI artifact naming guidance for release-review bundles.
+- Add release-summary snapshot update checklist for future releases.
+- Update README, changelog, roadmap, tests, and release-review documentation
+  together.
+- Keep the Next 20 roadmap points populated after converting completed items.
+
+## Sprint 56 Priorities
+
+Sprint 56 should release the completed `v0.25.0` scope:
+
+- Add v0.25.0 release notes.
+- Update package metadata, README release badge, latest-release text, install
+  guidance, changelog, roadmap, and release checklist to `v0.25.0`.
+- Run local release verification, package build checks, `twine check`,
+  installed-wheel smoke tests, and GitHub Actions.
+- Tag and publish the v0.25.0 GitHub release when checks pass.
+- Close the v0.25.0 milestone after release verification.
+
 ## Later Candidates
 
 These are intentionally not committed to a release until the initial scaffold
@@ -883,26 +918,26 @@ the active roadmap is caught up. The points should balance fixes,
 improvements, continuation work, and expansion. Convert related points into
 week-sized sprint bundles rather than one release per small point.
 
-1. Add release-summary schema compatibility notes for additive fields.
-2. Add release-review bundle retention policy notes.
-3. Add release-summary warning triage examples.
-4. Add CI artifact naming guidance for release-review bundles.
-5. Add release-summary snapshot update checklist for future releases.
-6. Add render-profile snapshot retention policy notes.
-7. Add policy-lint trend snapshot update checklist.
-8. Add quality-threshold warning triage checklist.
-9. Add release-review bundle manifest design notes.
-10. Add release-review bundle checksum design notes.
-11. Add release-review bundle manifest JSON schema.
-12. Add release-review bundle dry-run CLI design validation tests.
-13. Add generated workspace fixture manifest design notes.
-14. Add first executable workspace fixture candidate for customer portal.
-15. Add first executable workspace fixture candidate for Dream Extraction.
-16. Add generated workspace fixture package-data audit tests.
-17. Add optional generated workspace fixture smoke-check docs for CI.
-18. Add cross-workspace dependency fixture compatibility notes.
-19. Add portfolio dependency lockfile assumption checklist.
-20. Add VeritySpec workspace dependency importer design notes.
+1. Add render-profile snapshot retention policy notes.
+2. Add policy-lint trend snapshot update checklist.
+3. Add quality-threshold warning triage checklist.
+4. Add release-review bundle manifest design notes.
+5. Add release-review bundle checksum design notes.
+6. Add release-review bundle manifest JSON schema.
+7. Add release-review bundle dry-run CLI design validation tests.
+8. Add generated workspace fixture manifest design notes.
+9. Add first executable workspace fixture candidate for customer portal.
+10. Add first executable workspace fixture candidate for Dream Extraction.
+11. Add generated workspace fixture package-data audit tests.
+12. Add optional generated workspace fixture smoke-check docs for CI.
+13. Add cross-workspace dependency fixture compatibility notes.
+14. Add portfolio dependency lockfile assumption checklist.
+15. Add VeritySpec workspace dependency importer design notes.
+16. Add generated workspace fixture provenance schema notes.
+17. Add executable fixture release-summary coverage notes.
+18. Add generated workspace fixture README examples.
+19. Add cross-workspace fixture graph review checklist.
+20. Add VeritySpec dependency lockfile prompt-workflow notes.
 
 ## Working Rule
 

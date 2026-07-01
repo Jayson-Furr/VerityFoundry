@@ -75,6 +75,9 @@ The repository currently provides:
 - Release-review fixture maintenance guidance for JSON schema docs,
   lifecycle archival drift review, package-data audits, README link coverage,
   and fixture update workflows.
+- Release-summary and release-review bundle maintenance guidance for additive
+  schema fields, warning triage, snapshot updates, retention, and CI artifact
+  naming.
 - Fixture-to-VeritySpec conversion checklist and cross-workspace reference
   syntax guidance for generated workspace drafts.
 - Concrete fixture-to-VeritySpec conversion checklist examples for product and
@@ -533,11 +536,16 @@ require human approval.
 - [Report schema stability](docs/report-schema-stability.md)
 - [Release summary report](docs/release-summary-report.md)
 - [Release summary JSON schema](docs/release-summary-json-schema.md)
+- [Release summary schema compatibility](docs/release-summary-schema-compatibility.md)
 - [Release summary fixtures](docs/release-summary-fixtures.md)
+- [Release summary snapshot update checklist](docs/release-summary-snapshot-update-checklist.md)
 - [Release summary comparison](docs/release-summary-comparison.md)
+- [Release summary warning triage](docs/release-summary-warning-triage.md)
 - [Release summary PR usage](docs/release-summary-pr-usage.md)
 - [Release-review bundle export](docs/release-review-bundle-export.md)
 - [Release-review bundle CLI design](docs/release-review-bundle-cli-design.md)
+- [Release-review bundle retention policy](docs/release-review-bundle-retention-policy.md)
+- [CI artifact naming](docs/ci-artifact-naming.md)
 - [Release reviewer checklist](docs/release-reviewer-checklist.md)
 - [Quality threshold ratcheting](docs/quality-threshold-ratcheting.md)
 - [Release reviewer inventory reports](docs/reviewer-inventory-reports.md)
