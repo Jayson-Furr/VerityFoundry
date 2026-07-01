@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## 0.23.0
+
 - Added provenance distribution and portfolio coverage JSON schemas for
   downstream release-review tooling.
 - Added checked portfolio coverage and cross-workspace reference snapshots for
