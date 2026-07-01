@@ -57,6 +57,7 @@ jobs:
           /tmp/verityfoundry-wheel/bin/verityfoundry report golden-inventory
           /tmp/verityfoundry-wheel/bin/verityfoundry report example-inventory
           /tmp/verityfoundry-wheel/bin/verityfoundry report fixture-inventory
+          /tmp/verityfoundry-wheel/bin/verityfoundry report generated-workspace-validation
           /tmp/verityfoundry-wheel/bin/verityfoundry report provenance-coverage
           /tmp/verityfoundry-wheel/bin/verityfoundry report provenance-distribution
           /tmp/verityfoundry-wheel/bin/verityfoundry report portfolio-coverage

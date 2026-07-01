@@ -1,8 +1,9 @@
-"""Release-review inventory reports for examples and golden outputs."""
+"""Release-review inventory reports for examples and generated artifacts."""
 
 from __future__ import annotations
 
 from collections import Counter
+import hashlib
 from pathlib import Path
 from typing import Any
 
@@ -588,6 +589,118 @@ def format_portfolio_fixture_coverage_report(report: dict[str, Any]) -> str:
     return "\n".join(lines) + "\n"
 
 
+def generate_generated_workspace_validation_report(root: str | Path) -> dict[str, Any]:
+    """Summarize generated workspace validation-result snapshots."""
+
+    root_path = Path(root)
+    fixture_root = root_path / "fixtures" / "generated-workspaces"
+    workspaces = []
+
+    if not fixture_root.exists():
+        return {
+            "status": "skipped",
+            "generatedWorkspaceCount": 0,
+            "snapshotCount": 0,
+            "passedSnapshotCount": 0,
+            "failedSnapshotCount": 0,
+            "skippedSnapshotCount": 0,
+            "missingSnapshotCount": 0,
+            "fileHashCount": 0,
+            "staleFileHashCount": 0,
+            "uncoveredFileCount": 0,
+            "humanReviewRequiredCount": 0,
+            "unresolvedDecisionCount": 0,
+            "workspaces": [],
+            "notes": [
+                "No generated workspace fixture directory was found.",
+                "Generated workspace validation reporting does not call external AI APIs.",
+            ],
+        }
+
+    for workspace_path in sorted(path for path in fixture_root.iterdir() if path.is_dir()):
+        workspaces.append(_generated_workspace_validation_summary(root_path, workspace_path))
+
+    snapshot_count = sum(1 for item in workspaces if item["snapshotExists"])
+    passed_count = sum(1 for item in workspaces if item["validationStatus"] == "passed")
+    failed_count = sum(1 for item in workspaces if item["validationStatus"] == "failed")
+    skipped_count = sum(1 for item in workspaces if item["validationStatus"] == "skipped")
+    missing_count = sum(1 for item in workspaces if not item["snapshotExists"])
+    file_hash_count = sum(int(item["fileHashCount"]) for item in workspaces)
+    stale_count = sum(int(item["staleFileHashCount"]) for item in workspaces)
+    uncovered_count = sum(int(item["uncoveredFileCount"]) for item in workspaces)
+    human_review_count = sum(1 for item in workspaces if item["humanReviewRequired"] is True)
+    unresolved_count = sum(int(item["unresolvedDecisionCount"]) for item in workspaces)
+    overall_status = "failed" if any(item["status"] == "failed" for item in workspaces) else "passed"
+
+    return {
+        "status": overall_status,
+        "generatedWorkspaceCount": len(workspaces),
+        "snapshotCount": snapshot_count,
+        "passedSnapshotCount": passed_count,
+        "failedSnapshotCount": failed_count,
+        "skippedSnapshotCount": skipped_count,
+        "missingSnapshotCount": missing_count,
+        "fileHashCount": file_hash_count,
+        "staleFileHashCount": stale_count,
+        "uncoveredFileCount": uncovered_count,
+        "humanReviewRequiredCount": human_review_count,
+        "unresolvedDecisionCount": unresolved_count,
+        "workspaces": workspaces,
+        "notes": [
+            "Generated workspace validation reporting is deterministic and local-only.",
+            "Snapshots record validation evidence; VeritySpec remains the contract authority.",
+            "Human review remains required before treating generated workspaces as product truth.",
+        ],
+    }
+
+
+def format_generated_workspace_validation_report(report: dict[str, Any]) -> str:
+    """Format generated workspace validation-result coverage for humans."""
+
+    lines = [
+        "Generated Workspace Validation Report",
+        "",
+        f"Status: {report['status']}",
+        f"Generated workspaces: {report['generatedWorkspaceCount']}",
+        f"Validation snapshots: {report['snapshotCount']}",
+        (
+            "Validation status: "
+            f"{report['passedSnapshotCount']} passed, "
+            f"{report['failedSnapshotCount']} failed, "
+            f"{report['skippedSnapshotCount']} skipped"
+        ),
+        (
+            "Freshness: "
+            f"{report['fileHashCount']} file hashes, "
+            f"{report['staleFileHashCount']} stale, "
+            f"{report['uncoveredFileCount']} uncovered files"
+        ),
+        (
+            "Human review required: "
+            f"{report['humanReviewRequiredCount']}/{report['snapshotCount']} snapshots"
+        ),
+        f"Unresolved decisions: {report['unresolvedDecisionCount']}",
+        "",
+        "Workspaces:",
+    ]
+    for workspace in report["workspaces"]:
+        snapshot_status = "present" if workspace["snapshotExists"] else "missing"
+        lines.append(
+            f"- {workspace['workspacePath']}: {workspace['status']}, "
+            f"snapshot {snapshot_status}, validation {workspace['validationStatus']}, "
+            f"{workspace['fileHashCount']} file hashes, "
+            f"{workspace['staleFileHashCount']} stale, "
+            f"{workspace['uncoveredFileCount']} uncovered, "
+            f"{workspace['unresolvedDecisionCount']} unresolved decisions"
+        )
+
+    lines.extend(["", "Notes:"])
+    for note in report["notes"]:
+        lines.append(f"- {note}")
+
+    return "\n".join(lines) + "\n"
+
+
 def generate_golden_inventory_report(root: str | Path) -> dict[str, Any]:
     """Summarize golden output manifests for release reviewers."""
 
@@ -645,6 +758,154 @@ def format_golden_inventory_report(report: dict[str, Any]) -> str:
         )
 
     return "\n".join(lines) + "\n"
+
+
+def _generated_workspace_validation_summary(
+    root_path: Path,
+    workspace_path: Path,
+) -> dict[str, Any]:
+    manifest_path = workspace_path / "fixture-manifest.json"
+    manifest: dict[str, Any] = {}
+    if manifest_path.exists():
+        manifest = read_json(manifest_path)
+
+    validation = manifest.get("validation")
+    if not isinstance(validation, dict):
+        validation = {}
+
+    snapshot_ref = validation.get("resultSnapshot")
+    if isinstance(snapshot_ref, str) and snapshot_ref:
+        snapshot_path = root_path / snapshot_ref
+    else:
+        snapshot_path = workspace_path / "validation-result.json"
+
+    snapshot_exists = snapshot_path.exists()
+    snapshot: dict[str, Any] = {}
+    if snapshot_exists:
+        snapshot = read_json(snapshot_path)
+
+    file_summaries = _validation_result_file_summaries(root_path, snapshot)
+    hashed_paths = {
+        item["path"]
+        for item in file_summaries
+        if isinstance(item.get("path"), str)
+    }
+    expected_paths = _generated_workspace_hashable_files(root_path, workspace_path)
+    uncovered_files = sorted(expected_paths - hashed_paths)
+    stale_file_count = sum(1 for item in file_summaries if not item["fresh"])
+    validation_status = _string_or_unknown(snapshot.get("status")) if snapshot_exists else "missing"
+    human_review_required = snapshot.get("humanReviewRequired") is True
+    unresolved_decisions = snapshot.get("unresolvedDecisions", [])
+    if not isinstance(unresolved_decisions, list):
+        unresolved_decisions = []
+
+    status = "passed"
+    if (
+        not snapshot_exists
+        or validation_status != "passed"
+        or stale_file_count
+        or uncovered_files
+        or not human_review_required
+    ):
+        status = "failed"
+
+    return {
+        "id": manifest.get("id") or workspace_path.name,
+        "workspacePath": _relative_to(root_path, workspace_path),
+        "manifestPath": _relative_to(root_path, manifest_path),
+        "snapshotPath": _relative_to(root_path, snapshot_path),
+        "snapshotExists": snapshot_exists,
+        "status": status,
+        "validationStatus": validation_status,
+        "validationCommand": _validation_command(snapshot, validation),
+        "toolName": _tool_field(snapshot, "name"),
+        "toolVersion": _tool_field(snapshot, "version"),
+        "checkCount": _list_count(snapshot.get("checks")),
+        "fileHashCount": len(file_summaries),
+        "staleFileHashCount": stale_file_count,
+        "uncoveredFileCount": len(uncovered_files),
+        "uncoveredFiles": uncovered_files,
+        "humanReviewRequired": human_review_required,
+        "unresolvedDecisionCount": len(unresolved_decisions),
+        "authorityBoundary": _string_or_unknown(snapshot.get("authorityBoundary")),
+        "files": file_summaries,
+    }
+
+
+def _validation_result_file_summaries(
+    root_path: Path,
+    snapshot: dict[str, Any],
+) -> list[dict[str, Any]]:
+    summaries = []
+    file_hashes = snapshot.get("fileHashes", [])
+    if not isinstance(file_hashes, list):
+        return summaries
+
+    for entry in file_hashes:
+        if not isinstance(entry, dict):
+            continue
+        path = entry.get("path")
+        expected_sha = entry.get("sha256")
+        if not isinstance(path, str) or not isinstance(expected_sha, str):
+            continue
+        file_path = root_path / path
+        exists = file_path.exists()
+        actual_sha = _sha256_file(file_path) if exists else None
+        summaries.append(
+            {
+                "path": path,
+                "exists": exists,
+                "expectedSha256": expected_sha,
+                "actualSha256": actual_sha,
+                "fresh": actual_sha == expected_sha,
+            }
+        )
+
+    summaries.sort(key=lambda item: item["path"])
+    return summaries
+
+
+def _generated_workspace_hashable_files(root_path: Path, workspace_path: Path) -> set[str]:
+    paths = {
+        _relative_to(root_path, path)
+        for path in workspace_path.glob("*.json")
+        if path.name != "validation-result.json"
+    }
+    records = workspace_path / "records"
+    if records.exists():
+        paths.update(_relative_to(root_path, path) for path in records.glob("*.json"))
+    return paths
+
+
+def _validation_command(snapshot: dict[str, Any], validation: dict[str, Any]) -> str:
+    checks = snapshot.get("checks")
+    if isinstance(checks, list) and checks:
+        first = checks[0]
+        if isinstance(first, dict) and isinstance(first.get("command"), str):
+            return first["command"]
+    command = validation.get("command")
+    if isinstance(command, str):
+        return command
+    return "unknown"
+
+
+def _tool_field(snapshot: dict[str, Any], field: str) -> str:
+    tool = snapshot.get("tool")
+    if isinstance(tool, dict):
+        return _string_or_unknown(tool.get(field))
+    return "unknown"
+
+
+def _sha256_file(path: Path) -> str:
+    return hashlib.sha256(path.read_bytes()).hexdigest()
+
+
+def _relative_to(root_path: Path, path: Path) -> str:
+    return str(path.relative_to(root_path))
+
+
+def _list_count(value: Any) -> int:
+    return len(value) if isinstance(value, list) else 0
 
 
 def _domain_summary(items: list[dict[str, Any]]) -> list[dict[str, Any]]:

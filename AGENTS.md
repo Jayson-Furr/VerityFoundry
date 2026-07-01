@@ -163,6 +163,7 @@ verityfoundry report release-summary
 verityfoundry report golden-inventory
 verityfoundry report example-inventory
 verityfoundry report fixture-inventory
+verityfoundry report generated-workspace-validation
 verityfoundry report provenance-coverage
 verityfoundry report provenance-distribution
 verityfoundry report portfolio-coverage
@@ -194,6 +195,7 @@ verityfoundry report release-summary
 verityfoundry report golden-inventory
 verityfoundry report example-inventory
 verityfoundry report fixture-inventory
+verityfoundry report generated-workspace-validation
 verityfoundry report provenance-coverage
 verityfoundry report provenance-distribution
 verityfoundry report portfolio-coverage

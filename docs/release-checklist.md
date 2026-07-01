@@ -33,6 +33,7 @@ verityfoundry report release-summary
 verityfoundry report golden-inventory
 verityfoundry report example-inventory
 verityfoundry report fixture-inventory
+verityfoundry report generated-workspace-validation
 verityfoundry report provenance-coverage
 verityfoundry report provenance-distribution
 verityfoundry report portfolio-coverage
@@ -67,6 +68,7 @@ python3 -m venv /tmp/verityfoundry-wheel
   /tmp/verityfoundry-wheel/bin/verityfoundry report golden-inventory
   /tmp/verityfoundry-wheel/bin/verityfoundry report example-inventory
   /tmp/verityfoundry-wheel/bin/verityfoundry report fixture-inventory
+  /tmp/verityfoundry-wheel/bin/verityfoundry report generated-workspace-validation
   /tmp/verityfoundry-wheel/bin/verityfoundry report provenance-coverage
   /tmp/verityfoundry-wheel/bin/verityfoundry report provenance-distribution
   /tmp/verityfoundry-wheel/bin/verityfoundry report portfolio-coverage

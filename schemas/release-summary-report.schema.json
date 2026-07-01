@@ -229,6 +229,38 @@
             }
           }
         },
+        "generatedWorkspaceValidation": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "generatedWorkspaceCount",
+            "snapshotCount",
+            "passedSnapshotCount",
+            "staleFileHashCount",
+            "uncoveredFileCount",
+            "unresolvedDecisionCount"
+          ],
+          "properties": {
+            "generatedWorkspaceCount": {
+              "$ref": "#/$defs/nonNegativeInteger"
+            },
+            "snapshotCount": {
+              "$ref": "#/$defs/nonNegativeInteger"
+            },
+            "passedSnapshotCount": {
+              "$ref": "#/$defs/nonNegativeInteger"
+            },
+            "staleFileHashCount": {
+              "$ref": "#/$defs/nonNegativeInteger"
+            },
+            "uncoveredFileCount": {
+              "$ref": "#/$defs/nonNegativeInteger"
+            },
+            "unresolvedDecisionCount": {
+              "$ref": "#/$defs/nonNegativeInteger"
+            }
+          }
+        },
         "provenanceCoverage": {
           "type": "object",
           "additionalProperties": false,

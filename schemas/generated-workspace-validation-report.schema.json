@@ -1,0 +1,217 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/Jayson-Furr/VerityFoundry/schemas/generated-workspace-validation-report.schema.json",
+  "title": "VerityFoundry generated workspace validation report",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "status",
+    "generatedWorkspaceCount",
+    "snapshotCount",
+    "passedSnapshotCount",
+    "failedSnapshotCount",
+    "skippedSnapshotCount",
+    "missingSnapshotCount",
+    "fileHashCount",
+    "staleFileHashCount",
+    "uncoveredFileCount",
+    "humanReviewRequiredCount",
+    "unresolvedDecisionCount",
+    "workspaces",
+    "notes"
+  ],
+  "properties": {
+    "status": {
+      "$ref": "#/$defs/status"
+    },
+    "generatedWorkspaceCount": {
+      "$ref": "#/$defs/nonNegativeInteger"
+    },
+    "snapshotCount": {
+      "$ref": "#/$defs/nonNegativeInteger"
+    },
+    "passedSnapshotCount": {
+      "$ref": "#/$defs/nonNegativeInteger"
+    },
+    "failedSnapshotCount": {
+      "$ref": "#/$defs/nonNegativeInteger"
+    },
+    "skippedSnapshotCount": {
+      "$ref": "#/$defs/nonNegativeInteger"
+    },
+    "missingSnapshotCount": {
+      "$ref": "#/$defs/nonNegativeInteger"
+    },
+    "fileHashCount": {
+      "$ref": "#/$defs/nonNegativeInteger"
+    },
+    "staleFileHashCount": {
+      "$ref": "#/$defs/nonNegativeInteger"
+    },
+    "uncoveredFileCount": {
+      "$ref": "#/$defs/nonNegativeInteger"
+    },
+    "humanReviewRequiredCount": {
+      "$ref": "#/$defs/nonNegativeInteger"
+    },
+    "unresolvedDecisionCount": {
+      "$ref": "#/$defs/nonNegativeInteger"
+    },
+    "workspaces": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "id",
+          "workspacePath",
+          "manifestPath",
+          "snapshotPath",
+          "snapshotExists",
+          "status",
+          "validationStatus",
+          "validationCommand",
+          "toolName",
+          "toolVersion",
+          "checkCount",
+          "fileHashCount",
+          "staleFileHashCount",
+          "uncoveredFileCount",
+          "uncoveredFiles",
+          "humanReviewRequired",
+          "unresolvedDecisionCount",
+          "authorityBoundary",
+          "files"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "workspacePath": {
+            "type": "string",
+            "minLength": 1
+          },
+          "manifestPath": {
+            "type": "string",
+            "minLength": 1
+          },
+          "snapshotPath": {
+            "type": "string",
+            "minLength": 1
+          },
+          "snapshotExists": {
+            "type": "boolean"
+          },
+          "status": {
+            "$ref": "#/$defs/status"
+          },
+          "validationStatus": {
+            "type": "string",
+            "minLength": 1
+          },
+          "validationCommand": {
+            "type": "string",
+            "minLength": 1
+          },
+          "toolName": {
+            "type": "string",
+            "minLength": 1
+          },
+          "toolVersion": {
+            "type": "string",
+            "minLength": 1
+          },
+          "checkCount": {
+            "$ref": "#/$defs/nonNegativeInteger"
+          },
+          "fileHashCount": {
+            "$ref": "#/$defs/nonNegativeInteger"
+          },
+          "staleFileHashCount": {
+            "$ref": "#/$defs/nonNegativeInteger"
+          },
+          "uncoveredFileCount": {
+            "$ref": "#/$defs/nonNegativeInteger"
+          },
+          "uncoveredFiles": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "humanReviewRequired": {
+            "type": "boolean"
+          },
+          "unresolvedDecisionCount": {
+            "$ref": "#/$defs/nonNegativeInteger"
+          },
+          "authorityBoundary": {
+            "type": "string",
+            "minLength": 1
+          },
+          "files": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "path",
+                "exists",
+                "expectedSha256",
+                "actualSha256",
+                "fresh"
+              ],
+              "properties": {
+                "path": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "exists": {
+                  "type": "boolean"
+                },
+                "expectedSha256": {
+                  "type": "string",
+                  "pattern": "^[a-f0-9]{64}$"
+                },
+                "actualSha256": {
+                  "type": [
+                    "string",
+                    "null"
+                  ],
+                  "pattern": "^[a-f0-9]{64}$"
+                },
+                "fresh": {
+                  "type": "boolean"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "notes": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "minItems": 1
+    }
+  },
+  "$defs": {
+    "status": {
+      "type": "string",
+      "enum": [
+        "passed",
+        "failed",
+        "skipped"
+      ]
+    },
+    "nonNegativeInteger": {
+      "type": "integer",
+      "minimum": 0
+    }
+  }
+}

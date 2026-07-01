@@ -9,6 +9,7 @@ from . import __version__
 from .inventory import (
     generate_example_inventory_report,
     generate_fixture_inventory_report,
+    generate_generated_workspace_validation_report,
     generate_golden_inventory_report,
     generate_portfolio_fixture_coverage_report,
     generate_provenance_coverage_report,
@@ -40,6 +41,7 @@ def generate_release_summary_report(root: str | Path) -> dict[str, Any]:
     golden_inventory = generate_golden_inventory_report(root_path)
     example_inventory = generate_example_inventory_report(root_path)
     fixture_inventory = generate_fixture_inventory_report(root_path)
+    generated_workspace_validation = generate_generated_workspace_validation_report(root_path)
     provenance_coverage = generate_provenance_coverage_report(root_path)
     provenance_distribution = generate_provenance_distribution_report(root_path)
     portfolio_coverage = generate_portfolio_fixture_coverage_report(root_path)
@@ -125,6 +127,24 @@ def generate_release_summary_report(root: str | Path) -> dict[str, Any]:
                 "fixtureCount": fixture_inventory["fixtureCount"],
                 "recordCount": fixture_inventory["recordCount"],
                 "kindCount": fixture_inventory["kindCount"],
+            },
+            "generatedWorkspaceValidation": {
+                "generatedWorkspaceCount": generated_workspace_validation[
+                    "generatedWorkspaceCount"
+                ],
+                "snapshotCount": generated_workspace_validation["snapshotCount"],
+                "passedSnapshotCount": generated_workspace_validation[
+                    "passedSnapshotCount"
+                ],
+                "staleFileHashCount": generated_workspace_validation[
+                    "staleFileHashCount"
+                ],
+                "uncoveredFileCount": generated_workspace_validation[
+                    "uncoveredFileCount"
+                ],
+                "unresolvedDecisionCount": generated_workspace_validation[
+                    "unresolvedDecisionCount"
+                ],
             },
             "provenanceCoverage": {
                 "exampleCount": provenance_coverage["exampleCount"],
@@ -234,6 +254,12 @@ def format_release_summary_report(report: dict[str, Any]) -> str:
                 f"{reports['fixtureInventory']['fixtureCount']} fixtures, "
                 f"{reports['fixtureInventory']['recordCount']} records, "
                 f"{reports['fixtureInventory']['kindCount']} kinds"
+            ),
+            (
+                "- Generated workspace validation: "
+                f"{reports['generatedWorkspaceValidation']['snapshotCount']} snapshots, "
+                f"{reports['generatedWorkspaceValidation']['passedSnapshotCount']} passed, "
+                f"{reports['generatedWorkspaceValidation']['staleFileHashCount']} stale hashes"
             ),
             (
                 "- Provenance coverage: "
