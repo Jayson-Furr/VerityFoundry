@@ -18,6 +18,7 @@ fixture-inventory.json
 provenance-coverage.json
 provenance-distribution.json
 portfolio-coverage.json
+manifest.json
 ```
 
 ## Manual Export
@@ -37,13 +38,22 @@ verityfoundry report provenance-distribution --format json > build/release-revie
 verityfoundry report portfolio-coverage --format json > build/release-review/portfolio-coverage.json
 ```
 
+The future bundle manifest shape is documented in
+[Release-review bundle manifest design](release-review-bundle-manifest-design.md)
+and validated by
+[`schemas/release-review-bundle-manifest.schema.json`](../schemas/release-review-bundle-manifest.schema.json).
+Generated bundles should eventually include SHA-256 checksums as described in
+[Release-review bundle checksums](release-review-bundle-checksums.md).
+
 ## Future CLI Shape
 
 A future command could be:
 
 ```bash
 verityfoundry export release-review-bundle --out build/release-review
+verityfoundry export release-review-bundle --out build/release-review --dry-run
 ```
 
 That command should remain deterministic, local-only, and free of external AI
-API calls. It should not claim VeritySpec readiness authority.
+API calls. It should not claim VeritySpec readiness authority, and human
+release review should remain required.

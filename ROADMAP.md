@@ -898,6 +898,42 @@ Sprint 56 should release the completed `v0.25.0` scope:
 - Tag and publish the v0.25.0 GitHub release when checks pass.
 - Close the v0.25.0 milestone after release verification.
 
+## v0.26.0
+
+The `v0.26.0` milestone is active.
+
+| Sprint | Status | Focus |
+|---:|---|---|
+| 57 | In Progress | Release-review bundle manifest schema, dry-run fixture, checksums, snapshot retention, and warning triage |
+| 58 | Planned | v0.26.0 release preparation |
+
+## Sprint 57 Priorities
+
+Sprint 57 should bundle about a week of release-review bundle manifest work:
+
+- Add render-profile snapshot retention policy notes.
+- Add policy-lint trend snapshot update checklist.
+- Add quality-threshold warning triage checklist.
+- Add release-review bundle manifest design notes.
+- Add release-review bundle checksum design notes.
+- Add release-review bundle manifest JSON schema and example fixture.
+- Add release-review bundle dry-run CLI design validation tests.
+- Update README, changelog, roadmap, tests, and release-review documentation
+  together.
+- Keep the Next 20 roadmap points populated after converting completed items.
+
+## Sprint 58 Priorities
+
+Sprint 58 should release the completed `v0.26.0` scope:
+
+- Add v0.26.0 release notes.
+- Update package metadata, README release badge, latest-release text, install
+  guidance, changelog, roadmap, and release checklist to `v0.26.0`.
+- Run local release verification, package build checks, `twine check`,
+  installed-wheel smoke tests, and GitHub Actions.
+- Tag and publish the v0.26.0 GitHub release when checks pass.
+- Close the v0.26.0 milestone after release verification.
+
 ## Later Candidates
 
 These are intentionally not committed to a release until the initial scaffold
@@ -918,26 +954,26 @@ the active roadmap is caught up. The points should balance fixes,
 improvements, continuation work, and expansion. Convert related points into
 week-sized sprint bundles rather than one release per small point.
 
-1. Add render-profile snapshot retention policy notes.
-2. Add policy-lint trend snapshot update checklist.
-3. Add quality-threshold warning triage checklist.
-4. Add release-review bundle manifest design notes.
-5. Add release-review bundle checksum design notes.
-6. Add release-review bundle manifest JSON schema.
-7. Add release-review bundle dry-run CLI design validation tests.
-8. Add generated workspace fixture manifest design notes.
-9. Add first executable workspace fixture candidate for customer portal.
-10. Add first executable workspace fixture candidate for Dream Extraction.
-11. Add generated workspace fixture package-data audit tests.
-12. Add optional generated workspace fixture smoke-check docs for CI.
-13. Add cross-workspace dependency fixture compatibility notes.
-14. Add portfolio dependency lockfile assumption checklist.
-15. Add VeritySpec workspace dependency importer design notes.
-16. Add generated workspace fixture provenance schema notes.
-17. Add executable fixture release-summary coverage notes.
-18. Add generated workspace fixture README examples.
-19. Add cross-workspace fixture graph review checklist.
-20. Add VeritySpec dependency lockfile prompt-workflow notes.
+1. Add generated workspace fixture manifest design notes.
+2. Add first executable workspace fixture candidate for customer portal.
+3. Add first executable workspace fixture candidate for Dream Extraction.
+4. Add generated workspace fixture package-data audit tests.
+5. Add optional generated workspace fixture smoke-check docs for CI.
+6. Add cross-workspace dependency fixture compatibility notes.
+7. Add portfolio dependency lockfile assumption checklist.
+8. Add VeritySpec workspace dependency importer design notes.
+9. Add generated workspace fixture provenance schema notes.
+10. Add executable fixture release-summary coverage notes.
+11. Add generated workspace fixture README examples.
+12. Add cross-workspace fixture graph review checklist.
+13. Add VeritySpec dependency lockfile prompt-workflow notes.
+14. Add generated workspace fixture validation CLI design notes.
+15. Add generated workspace fixture checksum and manifest pairing notes.
+16. Add VeritySpec validation result snapshot schema notes.
+17. Add agent-context fixture dry-run design notes.
+18. Add cross-workspace dependency lockfile example fixture.
+19. Add portfolio impact report prompt matrix notes.
+20. Add release-review bundle export implementation planning.
 
 ## Working Rule
 
