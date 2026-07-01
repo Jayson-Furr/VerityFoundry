@@ -969,12 +969,12 @@ Sprint 60 should release the completed `v0.27.0` scope:
 
 ## v0.28.0
 
-The `v0.28.0` milestone is active.
+The `v0.28.0` milestone is released.
 
 | Sprint | Status | Focus |
 |---:|---|---|
-| 61 | In Progress | Cross-workspace dependency fixture compatibility, lockfile assumptions, importer design, generated fixture provenance, release-summary coverage, README examples, graph review, and dependency-lockfile prompt workflows |
-| 62 | Planned | v0.28.0 release preparation |
+| 61 | Complete | Cross-workspace dependency fixture compatibility, lockfile assumptions, importer design, generated fixture provenance, release-summary coverage, README examples, graph review, and dependency-lockfile prompt workflows |
+| 62 | Complete | v0.28.0 release preparation |
 
 ## Sprint 61 Priorities
 
