@@ -33,8 +33,13 @@ class ReleaseReviewDocsTests(unittest.TestCase):
             "docs/report-schema-stability.md",
             "docs/release-reviewer-checklist.md",
             "docs/release-review-bundle-retention-policy.md",
+            "docs/release-review-bundle-manifest-design.md",
+            "docs/release-review-bundle-manifest-schema.md",
+            "docs/release-review-bundle-checksums.md",
+            "docs/release-review-bundle-dry-run-cli-design.md",
             "docs/ci-artifact-naming.md",
             "docs/policy-lint-trends.md",
+            "docs/policy-lint-trend-snapshot-update-checklist.md",
             "docs/fixture-inventory-report-schema.md",
             "docs/example-fixture-diff-snapshots.md",
             "docs/release-review-fixture-json-schema.md",
@@ -49,6 +54,8 @@ class ReleaseReviewDocsTests(unittest.TestCase):
             "docs/workflow-hygiene-history.md",
             "docs/action-version-policy.md",
             "docs/quality-threshold-ratcheting.md",
+            "docs/quality-threshold-warning-triage.md",
+            "docs/render-profile-snapshot-retention-policy.md",
             "docs/render-profile-compatibility.md",
         ]
 
@@ -66,7 +73,12 @@ class ReleaseReviewDocsTests(unittest.TestCase):
             "docs/release-summary-snapshot-update-checklist.md",
             "docs/release-summary-warning-triage.md",
             "docs/policy-lint-trends.md",
+            "docs/policy-lint-trend-snapshot-update-checklist.md",
             "docs/release-review-bundle-retention-policy.md",
+            "docs/release-review-bundle-manifest-design.md",
+            "docs/release-review-bundle-manifest-schema.md",
+            "docs/release-review-bundle-checksums.md",
+            "docs/release-review-bundle-dry-run-cli-design.md",
             "docs/ci-artifact-naming.md",
             "docs/fixture-inventory-report-schema.md",
             "docs/example-fixture-diff-snapshots.md",
@@ -79,6 +91,8 @@ class ReleaseReviewDocsTests(unittest.TestCase):
             "docs/portfolio-coverage-report.md",
             "docs/fixture-to-verityspec-checklist.md",
             "docs/cross-workspace-reference-guidance.md",
+            "docs/quality-threshold-warning-triage.md",
+            "docs/render-profile-snapshot-retention-policy.md",
         ):
             with self.subTest(relative=relative):
                 text = (ROOT / relative).read_text(encoding="utf-8")

@@ -26,6 +26,18 @@ Initial bundle candidates:
 - `provenance-coverage.json`
 - `provenance-distribution.json`
 - `portfolio-coverage.json`
+- `manifest.json`
+
+The manifest should follow the
+[Release-review bundle manifest schema](release-review-bundle-manifest-schema.md)
+and include planned or computed checksums for every artifact.
+
+## Dry Run
+
+The future dry-run mode is documented in
+[Release-review bundle dry-run CLI design](release-review-bundle-dry-run-cli-design.md).
+It should validate the manifest shape, list planned producer commands, and
+avoid writing report artifacts.
 
 ## Non-Goals
 
@@ -33,6 +45,7 @@ Initial bundle candidates:
 - Do not publish artifacts.
 - Do not certify VeritySpec workspace readiness.
 - Do not replace the GitHub release workflow.
+- Do not replace human release review.
 
 The command should be a convenience wrapper around existing deterministic
 reports, not a new release authority.

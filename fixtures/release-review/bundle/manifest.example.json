@@ -1,0 +1,166 @@
+{
+  "schemaVersion": "1.0",
+  "bundleId": "release-review.v0.26.0.example",
+  "mode": "planned-dry-run",
+  "createdAt": "2026-07-01T00:00:00Z",
+  "createdBy": {
+    "tool": "verityfoundry",
+    "version": "0.26.0"
+  },
+  "source": {
+    "repository": "Jayson-Furr/VerityFoundry",
+    "ref": "release/v0.26.0",
+    "commit": "dry-run",
+    "releaseTag": "v0.26.0"
+  },
+  "retention": {
+    "context": "release-tag",
+    "suggestedDays": 90
+  },
+  "artifacts": [
+    {
+      "name": "release summary",
+      "path": "release-summary.json",
+      "artifactType": "report",
+      "required": true,
+      "producerCommand": "verityfoundry report release-summary --format json",
+      "checksum": {
+        "algorithm": "sha256",
+        "state": "planned",
+        "digest": null
+      }
+    },
+    {
+      "name": "prompt quality",
+      "path": "prompt-quality.json",
+      "artifactType": "report",
+      "required": true,
+      "producerCommand": "verityfoundry report prompt-quality --format json",
+      "checksum": {
+        "algorithm": "sha256",
+        "state": "planned",
+        "digest": null
+      }
+    },
+    {
+      "name": "policy lint trend",
+      "path": "policy-lint-trend.json",
+      "artifactType": "report",
+      "required": true,
+      "producerCommand": "verityfoundry report policy-lint-trend --format json",
+      "checksum": {
+        "algorithm": "sha256",
+        "state": "planned",
+        "digest": null
+      }
+    },
+    {
+      "name": "matrix coverage",
+      "path": "matrix-coverage.json",
+      "artifactType": "report",
+      "required": true,
+      "producerCommand": "verityfoundry report matrix-coverage --format json",
+      "checksum": {
+        "algorithm": "sha256",
+        "state": "planned",
+        "digest": null
+      }
+    },
+    {
+      "name": "golden inventory",
+      "path": "golden-inventory.json",
+      "artifactType": "report",
+      "required": true,
+      "producerCommand": "verityfoundry report golden-inventory --format json",
+      "checksum": {
+        "algorithm": "sha256",
+        "state": "planned",
+        "digest": null
+      }
+    },
+    {
+      "name": "example inventory",
+      "path": "example-inventory.json",
+      "artifactType": "report",
+      "required": true,
+      "producerCommand": "verityfoundry report example-inventory --format json",
+      "checksum": {
+        "algorithm": "sha256",
+        "state": "planned",
+        "digest": null
+      }
+    },
+    {
+      "name": "fixture inventory",
+      "path": "fixture-inventory.json",
+      "artifactType": "report",
+      "required": true,
+      "producerCommand": "verityfoundry report fixture-inventory --format json",
+      "checksum": {
+        "algorithm": "sha256",
+        "state": "planned",
+        "digest": null
+      }
+    },
+    {
+      "name": "provenance coverage",
+      "path": "provenance-coverage.json",
+      "artifactType": "report",
+      "required": true,
+      "producerCommand": "verityfoundry report provenance-coverage --format json",
+      "checksum": {
+        "algorithm": "sha256",
+        "state": "planned",
+        "digest": null
+      }
+    },
+    {
+      "name": "provenance distribution",
+      "path": "provenance-distribution.json",
+      "artifactType": "report",
+      "required": true,
+      "producerCommand": "verityfoundry report provenance-distribution --format json",
+      "checksum": {
+        "algorithm": "sha256",
+        "state": "planned",
+        "digest": null
+      }
+    },
+    {
+      "name": "portfolio coverage",
+      "path": "portfolio-coverage.json",
+      "artifactType": "report",
+      "required": true,
+      "producerCommand": "verityfoundry report portfolio-coverage --format json",
+      "checksum": {
+        "algorithm": "sha256",
+        "state": "planned",
+        "digest": null
+      }
+    },
+    {
+      "name": "bundle manifest",
+      "path": "manifest.json",
+      "artifactType": "manifest",
+      "required": true,
+      "producerCommand": null,
+      "checksum": {
+        "algorithm": "sha256",
+        "state": "planned",
+        "digest": null
+      }
+    }
+  ],
+  "validation": {
+    "localOnly": true,
+    "externalAiApisAllowed": false,
+    "dryRunCommand": "verityfoundry export release-review-bundle --out build/release-review --dry-run",
+    "veritySpecAuthorityBoundary": "The bundle summarizes VerityFoundry prompt-workflow repository state; VeritySpec remains the authority for generated workspace validation and readiness.",
+    "humanReviewRequired": true
+  },
+  "notes": [
+    "This fixture documents the planned bundle shape before an export command exists.",
+    "Planned checksums use null digests until a generated bundle writes concrete files.",
+    "Human release review is still required before relying on bundle output."
+  ]
+}
