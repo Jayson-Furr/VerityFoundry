@@ -82,6 +82,9 @@ The repository currently provides:
   syntax guidance for generated workspace drafts.
 - Concrete fixture-to-VeritySpec conversion checklist examples for product and
   Unity game workspace drafts.
+- Generated workspace validation-result snapshots, schema documentation,
+  package-data coverage, unresolved-decision triage, and optional VeritySpec
+  CI guidance for executable fixture review.
 - Optional VeritySpec validation design notes for future executable workspace
   fixtures.
 - A deterministic aggregate release-summary report for release reviewers.
@@ -579,6 +582,13 @@ require human approval.
 - [Workspace fixtures](docs/workspace-fixtures.md)
 - [Generated workspace fixture manifest design](docs/generated-workspace-fixture-manifest-design.md)
 - [Generated workspace fixture provenance schema](docs/generated-workspace-fixture-provenance-schema.md)
+- [Generated workspace validation result schema](docs/generated-workspace-validation-result-schema.md)
+- [Generated workspace validation-result CLI planning](docs/generated-workspace-validation-result-cli-planning.md)
+- [Generated workspace validation-result package data](docs/generated-workspace-validation-result-package-data.md)
+- [Generated workspace validation-result triage](docs/generated-workspace-validation-result-triage.md)
+- [Generated workspace unresolved-decision report](docs/generated-workspace-unresolved-decision-report.md)
+- [Generated workspace provenance distribution snapshots](docs/generated-workspace-provenance-distribution-snapshots.md)
+- [Optional VeritySpec CI for generated workspaces](docs/generated-workspace-optional-verityspec-ci.md)
 - [Executable fixture release-summary coverage](docs/executable-fixture-release-summary-coverage.md)
 - [Generated workspace fixture README examples](docs/generated-workspace-fixture-readme-examples.md)
 - [Generated workspace fixture smoke checks](docs/generated-workspace-fixture-smoke-checks.md)

@@ -1004,6 +1004,46 @@ Sprint 62 should release the completed `v0.28.0` scope:
 - Tag and publish the v0.28.0 GitHub release when checks pass.
 - Close the v0.28.0 milestone after release verification.
 
+## v0.29.0
+
+The `v0.29.0` milestone is active.
+
+| Sprint | Status | Focus |
+|---:|---|---|
+| 63 | In Progress | Generated workspace validation-result snapshots, schema, package-data coverage, optional VeritySpec CI planning, unresolved-decision reporting, and release-review triage |
+| 64 | Planned | v0.29.0 release preparation |
+
+## Sprint 63 Priorities
+
+Sprint 63 should bundle about a week of generated workspace
+validation-result work:
+
+- Add generated workspace validation-result snapshot schema notes and tests.
+- Add generated workspace fixture validation-result snapshots for current
+  generated workspace fixtures.
+- Pair validation-result snapshots with fixture manifest links and file hashes.
+- Add generated workspace fixture validation-result package-data tests.
+- Add generated workspace validation-result CLI planning notes.
+- Add optional VeritySpec CI design notes for generated workspace fixtures.
+- Add unresolved-decision report notes for generated workspace fixtures.
+- Add generated workspace provenance-distribution snapshot review notes.
+- Add generated workspace validation-result failure triage guidance.
+- Update README, changelog, roadmap, tests, and release-review documentation
+  together.
+- Keep the Next 20 roadmap points populated after converting completed items.
+
+## Sprint 64 Priorities
+
+Sprint 64 should release the completed `v0.29.0` scope:
+
+- Add v0.29.0 release notes.
+- Update package metadata, README release badge, latest-release text, install
+  guidance, changelog, roadmap, and release checklist to `v0.29.0`.
+- Run local release verification, package build checks, `twine check`,
+  installed-wheel smoke tests, and GitHub Actions.
+- Tag and publish the v0.29.0 GitHub release when checks pass.
+- Close the v0.29.0 milestone after release verification.
+
 ## Later Candidates
 
 These are intentionally not committed to a release until the initial scaffold
@@ -1024,26 +1064,26 @@ the active roadmap is caught up. The points should balance fixes,
 improvements, continuation work, and expansion. Convert related points into
 week-sized sprint bundles rather than one release per small point.
 
-1. Add generated workspace fixture validation CLI design notes.
-2. Add generated workspace fixture checksum and manifest pairing notes.
-3. Add VeritySpec validation result snapshot schema notes.
-4. Add agent-context fixture dry-run design notes.
-5. Add cross-workspace dependency lockfile example fixture.
-6. Add portfolio impact report prompt matrix notes.
-7. Add release-review bundle export implementation planning.
-8. Add generated workspace fixture VeritySpec smoke-result snapshot notes.
-9. Add generated workspace fixture unresolved-decision report notes.
-10. Add generated workspace fixture conversion-diff examples.
-11. Add generated workspace fixture lifecycle-gap mapping notes.
-12. Add generated workspace fixture agent-handoff README examples.
-13. Add generated workspace fixture validation-result CLI planning.
-14. Add generated workspace fixture validation-result package-data tests.
-15. Add generated workspace fixture provenance distribution reporting notes.
-16. Add generated workspace fixture optional VeritySpec CI job design.
-17. Add generated workspace fixture failure triage checklist.
-18. Add generated workspace fixture dependency impact report notes.
-19. Add generated workspace fixture conversion changelog examples.
-20. Add generated workspace fixture release reviewer checklist update.
+1. Add agent-context fixture dry-run design notes.
+2. Add cross-workspace dependency lockfile example fixture.
+3. Add portfolio impact report prompt matrix notes.
+4. Add release-review bundle export implementation planning.
+5. Add generated workspace fixture conversion-diff examples.
+6. Add generated workspace fixture lifecycle-gap mapping notes.
+7. Add generated workspace fixture agent-handoff README examples.
+8. Add generated workspace fixture dependency impact report notes.
+9. Add generated workspace fixture conversion changelog examples.
+10. Add generated workspace validation-result report CLI implementation.
+11. Add generated workspace validation-result report JSON schema.
+12. Add validation-result snapshot freshness checks for fixture file hashes.
+13. Add validation-result update dry-run command planning.
+14. Add release-summary validation-result coverage counts.
+15. Add validation-result snapshot drift examples for reviewer training.
+16. Add generated workspace readiness-result snapshot design notes.
+17. Add generated workspace graph-result snapshot design notes.
+18. Add generated workspace lint-result snapshot design notes.
+19. Add portfolio-scale generated workspace validation summary planning.
+20. Add generated workspace validation-result CI artifact export planning.
 
 ## Working Rule
 

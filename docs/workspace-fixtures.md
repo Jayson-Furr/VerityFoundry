@@ -93,10 +93,12 @@ fixtures:
 fixtures/generated-workspaces/
   customer-portal/
     fixture-manifest.json
+    validation-result.json
     verityspec.json
     records/
   dream-extraction/
     fixture-manifest.json
+    validation-result.json
     verityspec.json
     records/
 ```
@@ -108,3 +110,8 @@ requirements, and validation boundaries.
 
 They are still generated candidates. Human review and VeritySpec validation
 remain required before treating them as product-contract evidence.
+
+Each generated workspace may also include a `validation-result.json` snapshot.
+That snapshot records one local VeritySpec validation result, the command that
+was run, fixture file hashes, unresolved decisions, and the authority boundary.
+It is release-review evidence only. It does not certify readiness or approval.

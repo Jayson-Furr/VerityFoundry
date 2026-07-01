@@ -36,6 +36,11 @@ Current snapshot families include:
 - `snapshots/portfolio-coverage/`
 - `snapshots/cross-workspace-references/`
 
+Generated workspace validation-result snapshots live beside generated
+workspace fixtures under `fixtures/generated-workspaces/*/validation-result.json`.
+They are not release-review report fixtures, but they are checked JSON evidence
+for generated fixture review and are included in package data.
+
 ## Boundary
 
 Release-review fixtures describe VerityFoundry repository state. They are not

@@ -13,6 +13,7 @@
     "localOnly": true,
     "externalAiApisAllowed": false,
     "command": "verity validate fixtures/generated-workspaces/customer-portal",
+    "resultSnapshot": "fixtures/generated-workspaces/customer-portal/validation-result.json",
     "skipWhenVerityMissing": true,
     "humanReviewRequired": true,
     "veritySpecAuthorityBoundary": "VeritySpec validation is authoritative for this generated workspace fixture; VerityFoundry only preserves source, provenance, and conversion intent."

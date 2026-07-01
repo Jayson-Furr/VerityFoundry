@@ -40,6 +40,7 @@ verityfoundry check verityspec
 verityfoundry check release-integrity
 verityfoundry check quality-thresholds
 verityfoundry check workflow-hygiene
+python -m unittest tests.test_generated_workspace_validation_results -v
 git diff --check
 rm -rf dist build
 python -m build

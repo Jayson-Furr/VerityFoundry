@@ -1,0 +1,55 @@
+{
+  "id": "generated-workspace.customer-portal.validation-result.v1",
+  "workspaceId": "generated-workspace.customer-portal.v1",
+  "workspacePath": "fixtures/generated-workspaces/customer-portal",
+  "sourceManifest": "fixtures/generated-workspaces/customer-portal/fixture-manifest.json",
+  "generatedAt": "2026-07-01T02:39:32Z",
+  "status": "passed",
+  "tool": {
+    "name": "VeritySpec",
+    "version": "source-checkout",
+    "invocation": "PYTHONPATH=<path-to-VeritySpec>/src python3 -m verityspec.cli"
+  },
+  "checks": [
+    {
+      "name": "verity validate",
+      "command": "PYTHONPATH=<path-to-VeritySpec>/src python3 -m verityspec.cli validate fixtures/generated-workspaces/customer-portal",
+      "status": "passed",
+      "exitCode": 0,
+      "outputSummary": "No stdout or stderr was emitted; exit code 0."
+    }
+  ],
+  "fileHashes": [
+    {
+      "path": "fixtures/generated-workspaces/customer-portal/fixture-manifest.json",
+      "sha256": "967e678fa0e1e745f08aaecb11b5932b0986d4c8e0a511c3e2a96a776be07cf6"
+    },
+    {
+      "path": "fixtures/generated-workspaces/customer-portal/records/api.account-status.json",
+      "sha256": "7601fbf6aae32e0d459ecc5ee575d4802a6dbaa9e054e588e97d98d38c73a2fa"
+    },
+    {
+      "path": "fixtures/generated-workspaces/customer-portal/records/product.json",
+      "sha256": "c884c516c2d3d7773b4190cf5b52883c975aeef3e1bcfdbd2973a0b0d59684c6"
+    },
+    {
+      "path": "fixtures/generated-workspaces/customer-portal/records/schema.account-status.json",
+      "sha256": "fccf6bc7656919a512199f62f4c2b0a4f5613d667a45e399f95928f462b9c6d4"
+    },
+    {
+      "path": "fixtures/generated-workspaces/customer-portal/verityspec.json",
+      "sha256": "362b872a281631a2f5ad536f7b69b0197e4fd2e0a39dc2f882ac5cc181c26696"
+    }
+  ],
+  "humanReviewRequired": true,
+  "authorityBoundary": "This snapshot records one local VeritySpec validation run against a candidate generated workspace fixture. It does not certify readiness, production suitability, legal compliance, privacy posture, accessibility posture, or human approval.",
+  "unresolvedDecisions": [
+    "Permission and privacy policy records remain unresolved.",
+    "Accessibility, operations, support, maintenance, and archive decisions remain unresolved.",
+    "Readiness, lint, graph, and diff checks are not captured by this validation-only snapshot."
+  ],
+  "reviewerNotes": [
+    "Re-run the command after fixture content changes and update file hashes in the same change.",
+    "Use VeritySpec as the final authority for product-contract validation."
+  ]
+}

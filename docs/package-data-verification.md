@@ -17,6 +17,7 @@ Package-data coverage should include:
 - `goldens/**/*.json`
 - `goldens/**/*.md`
 - `fixtures/release-review/current/*.json`
+- `fixtures/generated-workspaces/*/validation-result.json`
 - `snapshots/**/*.json`
 - `snapshots/render-profiles/*.md`
 

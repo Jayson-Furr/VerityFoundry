@@ -1,0 +1,83 @@
+{
+  "id": "generated-workspace.dream-extraction.validation-result.v1",
+  "workspaceId": "generated-workspace.dream-extraction.v1",
+  "workspacePath": "fixtures/generated-workspaces/dream-extraction",
+  "sourceManifest": "fixtures/generated-workspaces/dream-extraction/fixture-manifest.json",
+  "generatedAt": "2026-07-01T02:39:32Z",
+  "status": "passed",
+  "tool": {
+    "name": "VeritySpec",
+    "version": "source-checkout",
+    "invocation": "PYTHONPATH=<path-to-VeritySpec>/src python3 -m verityspec.cli"
+  },
+  "checks": [
+    {
+      "name": "verity validate",
+      "command": "PYTHONPATH=<path-to-VeritySpec>/src python3 -m verityspec.cli validate fixtures/generated-workspaces/dream-extraction",
+      "status": "passed",
+      "exitCode": 0,
+      "outputSummary": "No stdout or stderr was emitted; exit code 0."
+    }
+  ],
+  "fileHashes": [
+    {
+      "path": "fixtures/generated-workspaces/dream-extraction/fixture-manifest.json",
+      "sha256": "c691a91aa0171331c7f7c01aa24c687cfa877fbccddbbc1904850d2724d7bff4"
+    },
+    {
+      "path": "fixtures/generated-workspaces/dream-extraction/records/game-loop.json",
+      "sha256": "e170e2bea9e6156467cfc62e5181ece00cd814fbdc9a2dee9e6cad01714eeaa9"
+    },
+    {
+      "path": "fixtures/generated-workspaces/dream-extraction/records/game-mode.json",
+      "sha256": "3bbbc27b0b8a078203e89f32707a470726cfe66674213919eb943923ef963ecc"
+    },
+    {
+      "path": "fixtures/generated-workspaces/dream-extraction/records/game-product.json",
+      "sha256": "37eb26e9b988193238f42e66d8acd72fc1404df11b24c5fc148d12442c802fa6"
+    },
+    {
+      "path": "fixtures/generated-workspaces/dream-extraction/records/gdd-source.json",
+      "sha256": "6d79edb32791c3fd43e10fd2b39a69f1d12ea5e4ca28475ff0b96b7330656a6c"
+    },
+    {
+      "path": "fixtures/generated-workspaces/dream-extraction/records/identity-image.json",
+      "sha256": "a3e22096c4ad4ea3aa1b027ceef43c5d39d140a2904490b231876765e9d273c4"
+    },
+    {
+      "path": "fixtures/generated-workspaces/dream-extraction/records/product.json",
+      "sha256": "04818bf4b8ea8df162e3ba35d1d334a566a193408d7569d7087af9251a43b800"
+    },
+    {
+      "path": "fixtures/generated-workspaces/dream-extraction/records/prototype-scope.json",
+      "sha256": "9a33eddf2a0f15f1191cbdd828cbae397f15c57332ada4d0bebaa6c06b5c0d01"
+    },
+    {
+      "path": "fixtures/generated-workspaces/dream-extraction/records/unity-package-dependency.json",
+      "sha256": "24e8b69eeeb4b0fad1fc6b46ab0d1c1771fe717aa11a1ff92e8ccbdeb4e082c1"
+    },
+    {
+      "path": "fixtures/generated-workspaces/dream-extraction/records/unity-project.json",
+      "sha256": "d1537f0dff3276d55a84d759864b8d674b88e11a46f731186562e5c0d39d4568"
+    },
+    {
+      "path": "fixtures/generated-workspaces/dream-extraction/records/visual-identity.json",
+      "sha256": "14f21ac96af4f6eb5c16a02528d7c4e9a4e769f99aaed2db49ca0195263047b8"
+    },
+    {
+      "path": "fixtures/generated-workspaces/dream-extraction/verityspec.json",
+      "sha256": "8570cb188d151a38de9a3fac332a0ff87668c28817c6246bde28ffeedc4afe99"
+    }
+  ],
+  "humanReviewRequired": true,
+  "authorityBoundary": "This snapshot records one local VeritySpec validation run against a candidate generated Unity game workspace fixture. It does not certify prototype readiness, implementation readiness, production readiness, platform approval, content rights, accessibility posture, telemetry safety, liveops readiness, or human approval.",
+  "unresolvedDecisions": [
+    "Unity version, save model, build targets, and production platform scope remain unresolved.",
+    "Telemetry schema, QA evidence, liveops, maintenance, and archive posture remain unresolved.",
+    "Readiness, lint, graph, and diff checks are not captured by this validation-only snapshot."
+  ],
+  "reviewerNotes": [
+    "Re-run the command after fixture content changes and update file hashes in the same change.",
+    "Use VeritySpec as the final authority for game product-contract validation."
+  ]
+}
