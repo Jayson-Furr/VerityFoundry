@@ -52,6 +52,12 @@ The release-summary JSON schema is documented in
 The policy-lint trend JSON schema is documented in
 [Policy-lint trend JSON schema](policy-lint-trend-json-schema.md).
 
+The provenance distribution JSON schema is documented in
+[Provenance distribution JSON schema](provenance-distribution-json-schema.md).
+
+The portfolio coverage JSON schema is documented in
+[Portfolio coverage JSON schema](portfolio-coverage-json-schema.md).
+
 ## Authority Boundary
 
 Reports explain repository and prompt-library state. They do not prove that a

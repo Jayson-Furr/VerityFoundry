@@ -77,3 +77,9 @@ minimum, to convert one into a concrete workspace:
 6. Run `verity validate`, `verity lint --strict`, and `verity readiness`.
 
 If VeritySpec rejects the converted workspace, VeritySpec is authoritative.
+
+For concrete product and Unity game conversion examples, see
+[fixture-to-verityspec-checklist-examples.md](fixture-to-verityspec-checklist-examples.md).
+
+For a future optional executable-fixture validation path, see
+[executable-workspace-fixture-validation-design.md](executable-workspace-fixture-validation-design.md).

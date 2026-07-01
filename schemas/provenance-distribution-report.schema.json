@@ -1,0 +1,178 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/Jayson-Furr/VerityFoundry/schemas/provenance-distribution-report.schema.json",
+  "title": "VerityFoundry provenance-distribution report",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "exampleCount",
+    "decisionExampleCount",
+    "recordProvenanceCount",
+    "humanApprovalRequiredDecisionCount",
+    "humanApprovalRequiredRecordCount",
+    "decisionSourceCounts",
+    "recordProvenanceSourceCounts",
+    "decisionConfidenceCounts",
+    "recordConfidenceCounts",
+    "examples"
+  ],
+  "properties": {
+    "exampleCount": {
+      "$ref": "#/$defs/nonNegativeInteger"
+    },
+    "decisionExampleCount": {
+      "$ref": "#/$defs/nonNegativeInteger"
+    },
+    "recordProvenanceCount": {
+      "$ref": "#/$defs/nonNegativeInteger"
+    },
+    "humanApprovalRequiredDecisionCount": {
+      "$ref": "#/$defs/nonNegativeInteger"
+    },
+    "humanApprovalRequiredRecordCount": {
+      "$ref": "#/$defs/nonNegativeInteger"
+    },
+    "decisionSourceCounts": {
+      "$ref": "#/$defs/decisionSourceCounts"
+    },
+    "recordProvenanceSourceCounts": {
+      "$ref": "#/$defs/decisionSourceCounts"
+    },
+    "decisionConfidenceCounts": {
+      "$ref": "#/$defs/confidenceCounts"
+    },
+    "recordConfidenceCounts": {
+      "$ref": "#/$defs/confidenceCounts"
+    },
+    "examples": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/example"
+      }
+    }
+  },
+  "$defs": {
+    "nonNegativeInteger": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "decisionSource": {
+      "type": "string",
+      "enum": [
+        "ai-defaulted",
+        "ai-inferred",
+        "ai-suggested",
+        "external-documented-source",
+        "human-interview-answer",
+        "prior-verityspec-record",
+        "rough-design-document",
+        "unresolved",
+        "user-provided",
+        "unknown"
+      ]
+    },
+    "confidence": {
+      "type": "string",
+      "enum": [
+        "high",
+        "low",
+        "medium",
+        "unknown"
+      ]
+    },
+    "decisionSourceCount": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "decisionSource",
+        "count"
+      ],
+      "properties": {
+        "decisionSource": {
+          "$ref": "#/$defs/decisionSource"
+        },
+        "count": {
+          "$ref": "#/$defs/nonNegativeInteger"
+        }
+      }
+    },
+    "confidenceCount": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "confidence",
+        "count"
+      ],
+      "properties": {
+        "confidence": {
+          "$ref": "#/$defs/confidence"
+        },
+        "count": {
+          "$ref": "#/$defs/nonNegativeInteger"
+        }
+      }
+    },
+    "decisionSourceCounts": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/decisionSourceCount"
+      }
+    },
+    "confidenceCounts": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/confidenceCount"
+      }
+    },
+    "example": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "exampleId",
+        "domain",
+        "decisionExampleCount",
+        "recordProvenanceCount",
+        "decisionSourceCounts",
+        "recordProvenanceSourceCounts",
+        "decisionConfidenceCounts",
+        "recordConfidenceCounts",
+        "humanApprovalRequiredDecisions",
+        "humanApprovalRequiredRecords"
+      ],
+      "properties": {
+        "exampleId": {
+          "type": "string",
+          "minLength": 1
+        },
+        "domain": {
+          "type": "string",
+          "minLength": 1
+        },
+        "decisionExampleCount": {
+          "$ref": "#/$defs/nonNegativeInteger"
+        },
+        "recordProvenanceCount": {
+          "$ref": "#/$defs/nonNegativeInteger"
+        },
+        "decisionSourceCounts": {
+          "$ref": "#/$defs/decisionSourceCounts"
+        },
+        "recordProvenanceSourceCounts": {
+          "$ref": "#/$defs/decisionSourceCounts"
+        },
+        "decisionConfidenceCounts": {
+          "$ref": "#/$defs/confidenceCounts"
+        },
+        "recordConfidenceCounts": {
+          "$ref": "#/$defs/confidenceCounts"
+        },
+        "humanApprovalRequiredDecisions": {
+          "$ref": "#/$defs/nonNegativeInteger"
+        },
+        "humanApprovalRequiredRecords": {
+          "$ref": "#/$defs/nonNegativeInteger"
+        }
+      }
+    }
+  }
+}

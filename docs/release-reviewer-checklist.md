@@ -48,6 +48,7 @@ Review the report output for:
 - missing provenance
 - decision-source distribution drift
 - portfolio dependency assumptions and cross-workspace reference counts
+- portfolio coverage and cross-workspace reference snapshot drift
 - stale workflow action versions
 - release version drift
 
@@ -90,6 +91,12 @@ Confirm these are aligned:
 - `docs/release-checklist.md`
 - release notes for the target tag
 - GitHub issue, milestone, branch, PR, tag, and release
+
+When candidate workspace fixtures are part of the release, also review
+[fixture-to-verityspec-checklist-examples.md](fixture-to-verityspec-checklist-examples.md)
+and
+[executable-workspace-fixture-validation-design.md](executable-workspace-fixture-validation-design.md)
+for the VeritySpec handoff boundary.
 
 Do not publish package artifacts or create a release unless the user has
 explicitly authorized that release action.

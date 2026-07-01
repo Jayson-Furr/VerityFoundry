@@ -22,6 +22,20 @@ current report output. If a report shape or count changes intentionally,
 update the fixture in the same sprint as the code, tests, README, changelog,
 and roadmap.
 
+Additional release-review snapshots live under `snapshots/`. Snapshot files
+cover historical or baseline output where reviewers need drift context rather
+than the current fixture set only.
+
+Current snapshot families include:
+
+- `snapshots/prompt-quality/`
+- `snapshots/policy-lint/`
+- `snapshots/golden-output/`
+- `snapshots/release-summary/`
+- `snapshots/render-profiles/`
+- `snapshots/portfolio-coverage/`
+- `snapshots/cross-workspace-references/`
+
 ## Boundary
 
 Release-review fixtures describe VerityFoundry repository state. They are not

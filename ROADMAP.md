@@ -789,6 +789,45 @@ Sprint 50 should release the completed `v0.22.0` scope:
 - Tag and publish the v0.22.0 GitHub release when checks pass.
 - Close the v0.22.0 milestone after release verification.
 
+## v0.23.0
+
+The `v0.23.0` milestone is active.
+
+| Sprint | Status | Focus |
+|---:|---|---|
+| 51 | In Progress | Provenance schema docs, portfolio and cross-workspace snapshots, fixture handoff examples, and executable fixture validation design |
+| 52 | Planned | v0.23.0 release preparation |
+
+## Sprint 51 Priorities
+
+Sprint 51 should bundle about a week of release-review fixture handoff and
+cross-workspace snapshot hardening work:
+
+- Add provenance distribution JSON schema documentation for downstream
+  tooling.
+- Add portfolio coverage fixture snapshots for release reviewers.
+- Add cross-workspace reference output fixture snapshots for dependency-map
+  examples.
+- Add fixture-to-VeritySpec checklist examples for one product and one Unity
+  workspace draft.
+- Add optional local VeritySpec validation design notes for executable
+  workspace fixtures.
+- Update README, changelog, roadmap, tests, package data, and release-review
+  documentation together.
+- Keep the Next 20 roadmap points populated after converting completed items.
+
+## Sprint 52 Priorities
+
+Sprint 52 should release the completed `v0.23.0` scope:
+
+- Add v0.23.0 release notes.
+- Update package metadata, README release badge, latest-release text, install
+  guidance, changelog, roadmap, and release checklist to `v0.23.0`.
+- Run local release verification, package build checks, `twine check`,
+  installed-wheel smoke tests, and GitHub Actions.
+- Tag and publish the v0.23.0 GitHub release when checks pass.
+- Close the v0.23.0 milestone after release verification.
+
 ## Later Candidates
 
 These are intentionally not committed to a release until the initial scaffold
@@ -809,32 +848,28 @@ the active roadmap is caught up. The points should balance fixes,
 improvements, continuation work, and expansion. Convert related points into
 week-sized sprint bundles rather than one release per small point.
 
-1. Add provenance distribution JSON schema documentation for downstream
+1. Add release-review fixture JSON schema documentation for downstream
     tooling.
-2. Add portfolio coverage fixture snapshots for release reviewers.
-3. Add cross-workspace reference output fixture snapshots for dependency-map
-    examples.
-4. Add fixture-to-VeritySpec checklist examples for one product and one Unity
-    workspace draft.
-5. Add optional local VeritySpec validation design notes for executable
-    workspace fixtures.
-6. Add release-review fixture JSON schema documentation for downstream
-    tooling.
-7. Add lifecycle archival-readiness fixture drift comparison notes.
-8. Add package-data verification documentation for installed-wheel artifact
+2. Add lifecycle archival-readiness fixture drift comparison notes.
+3. Add package-data verification documentation for installed-wheel artifact
     audits.
-9. Add docs for maintaining README link coverage tests.
-10. Add release-review fixture update instructions for future report changes.
-11. Add release-summary schema compatibility notes for additive fields.
-12. Add release-review bundle retention policy notes.
-13. Add release-summary warning triage examples.
-14. Add CI artifact naming guidance for release-review bundles.
-15. Add release-summary snapshot update checklist for future releases.
-16. Add render-profile snapshot retention policy notes.
-17. Add policy-lint trend snapshot update checklist.
-18. Add quality-threshold warning triage checklist.
-19. Add release-review bundle manifest design notes.
-20. Add release-review bundle checksum design notes.
+4. Add docs for maintaining README link coverage tests.
+5. Add release-review fixture update instructions for future report changes.
+6. Add release-summary schema compatibility notes for additive fields.
+7. Add release-review bundle retention policy notes.
+8. Add release-summary warning triage examples.
+9. Add CI artifact naming guidance for release-review bundles.
+10. Add release-summary snapshot update checklist for future releases.
+11. Add render-profile snapshot retention policy notes.
+12. Add policy-lint trend snapshot update checklist.
+13. Add quality-threshold warning triage checklist.
+14. Add release-review bundle manifest design notes.
+15. Add release-review bundle checksum design notes.
+16. Add release-review bundle manifest JSON schema.
+17. Add release-review bundle dry-run CLI design validation tests.
+18. Add generated workspace fixture manifest design notes.
+19. Add first executable workspace fixture candidate for customer portal.
+20. Add first executable workspace fixture candidate for Dream Extraction.
 
 ## Working Rule
 
