@@ -3,7 +3,12 @@ from fnmatch import fnmatch
 from pathlib import Path
 import unittest
 
-from verityfoundry.manifests import load_example_manifests, load_golden_manifests
+from verityfoundry.manifests import (
+    load_example_manifests,
+    load_golden_manifests,
+    matrix_paths,
+    prompt_paths,
+)
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -68,11 +73,51 @@ class PackagedFixtureFileTests(unittest.TestCase):
 
         self.assertEqual(unpackaged, [])
 
+    def test_config_files_are_included_in_data_files(self) -> None:
+        patterns = data_file_patterns()
+        unpackaged = [
+            path.relative_to(ROOT).as_posix()
+            for path in sorted((ROOT / "config").glob("*.json"))
+            if not is_packaged(path.relative_to(ROOT), patterns)
+        ]
+
+        self.assertEqual(unpackaged, [])
+
     def test_snapshot_files_are_included_in_data_files(self) -> None:
         patterns = data_file_patterns()
         unpackaged = [
             path.relative_to(ROOT).as_posix()
             for path in sorted((ROOT / "snapshots").glob("*/*.json"))
+            if not is_packaged(path.relative_to(ROOT), patterns)
+        ]
+
+        self.assertEqual(unpackaged, [])
+
+    def test_release_review_fixture_files_are_included_in_data_files(self) -> None:
+        patterns = data_file_patterns()
+        unpackaged = [
+            path.relative_to(ROOT).as_posix()
+            for path in sorted((ROOT / "fixtures").glob("*/*/*.json"))
+            if not is_packaged(path.relative_to(ROOT), patterns)
+        ]
+
+        self.assertEqual(unpackaged, [])
+
+    def test_prompt_files_are_included_in_data_files(self) -> None:
+        patterns = data_file_patterns()
+        unpackaged = [
+            path.relative_to(ROOT).as_posix()
+            for path in prompt_paths(ROOT)
+            if not is_packaged(path.relative_to(ROOT), patterns)
+        ]
+
+        self.assertEqual(unpackaged, [])
+
+    def test_matrix_files_are_included_in_data_files(self) -> None:
+        patterns = data_file_patterns()
+        unpackaged = [
+            path.relative_to(ROOT).as_posix()
+            for path in matrix_paths(ROOT)
             if not is_packaged(path.relative_to(ROOT), patterns)
         ]
 

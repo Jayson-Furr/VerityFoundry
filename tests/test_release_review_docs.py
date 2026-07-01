@@ -1,4 +1,5 @@
 from pathlib import Path
+import re
 import unittest
 
 
@@ -6,6 +7,20 @@ ROOT = Path(__file__).resolve().parents[1]
 
 
 class ReleaseReviewDocsTests(unittest.TestCase):
+    def test_readme_relative_links_exist(self) -> None:
+        readme = (ROOT / "README.md").read_text(encoding="utf-8")
+        missing: list[str] = []
+        for target in re.findall(r"\[[^\]]+\]\(([^)]+)\)", readme):
+            if target.startswith(("http://", "https://", "mailto:")):
+                continue
+            path_text = target.split("#", 1)[0]
+            if not path_text:
+                continue
+            if not (ROOT / path_text).exists():
+                missing.append(target)
+
+        self.assertEqual(missing, [])
+
     def test_release_review_docs_are_linked_from_readme(self) -> None:
         readme = (ROOT / "README.md").read_text(encoding="utf-8")
         expected = [

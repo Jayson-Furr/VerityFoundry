@@ -226,6 +226,7 @@ verityfoundry matrix unity-game
 - `src/verityfoundry/workflow_hygiene.py`: GitHub Actions hygiene checks.
 - `config/`: release-review threshold configuration.
 - `snapshots/`: checked-in release-review snapshots.
+- `fixtures/`: checked release-review JSON fixtures.
 - `schemas/`: JSON schemas for manifests.
 - `prompts/`: prompt workflow library.
 - `matrices/`: prompt matrices.

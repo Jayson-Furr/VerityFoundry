@@ -20,3 +20,21 @@ example changes:
 Golden output drift is acceptable when prompt behavior intentionally improves.
 It should be documented in the changelog, roadmap sprint notes, or release PR
 when it changes release-facing expectations.
+
+## Snapshot Baselines
+
+Checked snapshots under `snapshots/golden-output/` record selected historical
+golden output inventories for release reviewers. For example,
+`snapshots/golden-output/lifecycle-v0.19.0.json` records the lifecycle golden
+set before the archival-ready lifecycle golden was added.
+
+Use snapshots to answer:
+
+- which golden outputs existed at a prior release
+- which target readiness profiles were represented
+- whether a sprint intentionally added, removed, or changed a release-facing
+  golden expectation
+
+Snapshots are review aids. They do not replace `verityfoundry validate
+goldens`, manual golden-output review, VeritySpec validation, or human
+approval.

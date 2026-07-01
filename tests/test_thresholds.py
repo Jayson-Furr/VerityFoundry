@@ -18,7 +18,7 @@ class QualityThresholdTests(unittest.TestCase):
         self.assertEqual(report["status"], "passed")
         self.assertEqual(report["issueCount"], 0)
         self.assertEqual(report["warningCount"], 0)
-        self.assertEqual(report["matrixCoverage"]["coveragePercent"], 88.0)
+        self.assertEqual(report["matrixCoverage"]["coveragePercent"], 88.5)
         self.assertEqual(report["policyLint"]["warningCount"], 14)
 
         text = format_quality_threshold_report(report)

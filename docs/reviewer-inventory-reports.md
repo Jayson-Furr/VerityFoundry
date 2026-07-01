@@ -73,3 +73,8 @@ not replace `verityfoundry validate`, golden-output review, or human review.
 
 Installed wheel smoke tests run these reports from `/tmp` to prove packaged
 example and golden artifacts are available outside a source checkout.
+
+Checked JSON examples of selected release-review reports live under
+`fixtures/release-review/current/`. See
+[release-review-fixtures.md](release-review-fixtures.md) for the fixture
+contract and authority boundary.

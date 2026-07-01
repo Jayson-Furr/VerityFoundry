@@ -260,6 +260,7 @@ lifecycle review workflows:
 goldens/unity-game/dream-extraction-implementation-ready/
 goldens/unity-shared-library/shared-unity-runtime-implementation-ready/
 goldens/lifecycle/customer-portal-release-readiness/
+goldens/lifecycle/customer-portal-archival-readiness/
 goldens/lifecycle/shared-auth-maintenance-readiness/
 goldens/lifecycle/shared-unity-runtime-decommission-readiness/
 ```
@@ -344,6 +345,10 @@ recommended VeritySpec pack mappings, provenance examples, decision-source
 distribution, and portfolio dependency assumptions in scope for a release
 review. They do not replace manifest validation, VeritySpec validation, or
 human review.
+
+Checked release-review JSON fixtures live under
+`fixtures/release-review/current/` for downstream tooling examples and drift
+review.
 
 ## Release Integrity Check
 
@@ -438,12 +443,13 @@ version compatibility assumptions, readiness gaps, and archive gaps.
 ## Lifecycle Readiness Workflow
 
 Lifecycle prompts support release-readiness gap review, shipped-product
-maintenance interviews, and decommissioning interviews for candidate
-VeritySpec workspaces.
+maintenance interviews, decommissioning interviews, and archival-readiness
+interviews for candidate VeritySpec workspaces.
 
 Expected outputs include release gap reports, blocking questions, maintenance
-handoff questions, decommissioning questions, unresolved decisions, approval
-registers, and suggested VeritySpec validation loops.
+handoff questions, decommissioning questions, archival evidence gaps,
+unresolved decisions, approval registers, and suggested VeritySpec validation
+loops.
 
 These workflows do not certify readiness. They preserve uncertainty so humans
 and VeritySpec readiness gates can decide what is actually ready.
@@ -508,6 +514,7 @@ require human approval.
 - [Release reviewer checklist](docs/release-reviewer-checklist.md)
 - [Quality threshold ratcheting](docs/quality-threshold-ratcheting.md)
 - [Release reviewer inventory reports](docs/reviewer-inventory-reports.md)
+- [Release-review fixtures](docs/release-review-fixtures.md)
 - [Fixture inventory report schema](docs/fixture-inventory-report-schema.md)
 - [Example fixture diff snapshots](docs/example-fixture-diff-snapshots.md)
 - [Fixture kind pack mapping](docs/fixture-kind-pack-mapping.md)

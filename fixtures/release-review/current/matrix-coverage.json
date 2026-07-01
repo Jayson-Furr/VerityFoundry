@@ -1,0 +1,319 @@
+{
+  "coveragePercent": 88.5,
+  "coveredDomainPromptCount": 23,
+  "domainCount": 6,
+  "domainPromptCount": 26,
+  "domainPrompts": [
+    {
+      "covered": true,
+      "domain": "lifecycle",
+      "id": "lifecycle.archived-product.interview-all.archival-ready.v1",
+      "interviewMode": "interview-all",
+      "name": "Archived Product Archival Readiness Interview",
+      "path": "prompts/domains/lifecycle/archival-interview.md",
+      "targetReadiness": "archival-ready"
+    },
+    {
+      "covered": true,
+      "domain": "lifecycle",
+      "id": "lifecycle.retiring-product.interview-all.decommission-ready.v1",
+      "interviewMode": "interview-all",
+      "name": "Retiring Product Decommissioning Interview",
+      "path": "prompts/domains/lifecycle/decommissioning-interview.md",
+      "targetReadiness": "decommission-ready"
+    },
+    {
+      "covered": true,
+      "domain": "lifecycle",
+      "id": "lifecycle.shipped-product.interview-high.maintenance-ready.v1",
+      "interviewMode": "interview-high-stakes",
+      "name": "Shipped Product Maintenance Interview",
+      "path": "prompts/domains/lifecycle/maintenance-interview.md",
+      "targetReadiness": "maintenance-ready"
+    },
+    {
+      "covered": true,
+      "domain": "lifecycle",
+      "id": "lifecycle.workspace.interview-medium.production-ready.release-gap-review.v1",
+      "interviewMode": "interview-medium-stakes",
+      "name": "Release Readiness Gap Review",
+      "path": "prompts/domains/lifecycle/release-readiness-gap-review.md",
+      "targetReadiness": "production-ready"
+    },
+    {
+      "covered": true,
+      "domain": "portfolio",
+      "id": "portfolio.dependencies.interview-medium.implementation-ready.v1",
+      "interviewMode": "interview-medium-stakes",
+      "name": "Cross-Workspace Dependency Mapping",
+      "path": "prompts/domains/portfolio/cross-workspace-dependencies.md",
+      "targetReadiness": "implementation-ready"
+    },
+    {
+      "covered": true,
+      "domain": "portfolio",
+      "id": "portfolio.games.interview-low.concept-complete.v1",
+      "interviewMode": "interview-low-stakes",
+      "name": "Game Portfolio Triage",
+      "path": "prompts/domains/portfolio/game-portfolio-triage.md",
+      "targetReadiness": "concept-complete"
+    },
+    {
+      "covered": true,
+      "domain": "product",
+      "id": "product.brief.interview-low.design-complete.v1",
+      "interviewMode": "interview-low-stakes",
+      "name": "Product Brief to Design-Complete Candidate",
+      "path": "prompts/domains/product/fabricate-product-spec.md",
+      "targetReadiness": "design-complete"
+    },
+    {
+      "covered": true,
+      "domain": "product",
+      "id": "product.workspace.interview-high.maintenance-ready.v1",
+      "interviewMode": "interview-high-stakes",
+      "name": "Product Maintenance Readiness Review",
+      "path": "prompts/domains/product/maintenance-readiness.md",
+      "targetReadiness": "maintenance-ready"
+    },
+    {
+      "covered": true,
+      "domain": "product",
+      "id": "product.workspace.interview-high.operations-ready.v1",
+      "interviewMode": "interview-high-stakes",
+      "name": "Product Operations Readiness Review",
+      "path": "prompts/domains/product/operations-readiness.md",
+      "targetReadiness": "operations-ready"
+    },
+    {
+      "covered": true,
+      "domain": "software-library",
+      "id": "software-library.readme.interview-medium.implementation-ready.v1",
+      "interviewMode": "interview-medium-stakes",
+      "name": "Software Library Spec Fabrication",
+      "path": "prompts/domains/software-library/fabricate-library-spec.md",
+      "targetReadiness": "implementation-ready"
+    },
+    {
+      "covered": true,
+      "domain": "software-library",
+      "id": "software-library.workspace.interview-all.archival-ready.v1",
+      "interviewMode": "interview-all",
+      "name": "Software Library Archival Readiness",
+      "path": "prompts/domains/software-library/archival-readiness.md",
+      "targetReadiness": "archival-ready"
+    },
+    {
+      "covered": true,
+      "domain": "software-library",
+      "id": "software-library.workspace.interview-high.maintenance-ready.v1",
+      "interviewMode": "interview-high-stakes",
+      "name": "Software Library Maintenance Readiness",
+      "path": "prompts/domains/software-library/maintenance-readiness.md",
+      "targetReadiness": "maintenance-ready"
+    },
+    {
+      "covered": true,
+      "domain": "software-library",
+      "id": "software-library.workspace.interview-medium.implementation-ready-review.v1",
+      "interviewMode": "interview-medium-stakes",
+      "name": "Software Library Implementation Readiness Review",
+      "path": "prompts/domains/software-library/implementation-readiness.md",
+      "targetReadiness": "implementation-ready"
+    },
+    {
+      "covered": true,
+      "domain": "unity-game",
+      "id": "unity-game.concept-art.interview-low.prototype-ready.v1",
+      "interviewMode": "interview-low-stakes",
+      "name": "Unity Game Concept Art Analysis",
+      "path": "prompts/domains/unity-game/analyze-concept-art.md",
+      "targetReadiness": "prototype-ready"
+    },
+    {
+      "covered": true,
+      "domain": "unity-game",
+      "id": "unity-game.full-package.interview-high.operations-ready.v1",
+      "interviewMode": "interview-high-stakes",
+      "name": "Unity Game Operations Readiness Review",
+      "path": "prompts/domains/unity-game/operations-readiness-review.md",
+      "targetReadiness": "operations-ready"
+    },
+    {
+      "covered": true,
+      "domain": "unity-game",
+      "id": "unity-game.gdd-art.interview-medium.implementation-ready.v1",
+      "interviewMode": "interview-medium-stakes",
+      "name": "Unity Game GDD and Art to Implementation-Ready Workspace",
+      "path": "prompts/domains/unity-game/fabricate-workspace.md",
+      "targetReadiness": "implementation-ready"
+    },
+    {
+      "covered": true,
+      "domain": "unity-game",
+      "id": "unity-game.gdd.interview-low.design-complete.v1",
+      "interviewMode": "interview-low-stakes",
+      "name": "Unity Game GDD Extraction",
+      "path": "prompts/domains/unity-game/extract-gdd.md",
+      "targetReadiness": "design-complete"
+    },
+    {
+      "covered": true,
+      "domain": "unity-game",
+      "id": "unity-game.identity-images.interview-low.concept-complete.v1",
+      "interviewMode": "interview-low-stakes",
+      "name": "Unity Game Identity Image Analysis",
+      "path": "prompts/domains/unity-game/analyze-identity-images.md",
+      "targetReadiness": "concept-complete"
+    },
+    {
+      "covered": true,
+      "domain": "unity-game",
+      "id": "unity-game.shipped-docs.interview-all.archival-ready.v1",
+      "interviewMode": "interview-all",
+      "name": "Unity Game Archival Readiness Review",
+      "path": "prompts/domains/unity-game/archival-readiness-review.md",
+      "targetReadiness": "archival-ready"
+    },
+    {
+      "covered": false,
+      "domain": "unity-game",
+      "id": "unity-game.workspace.interview-medium.implementation-ready.agent-context.v1",
+      "interviewMode": "interview-medium-stakes",
+      "name": "Unity Game Agent Context Generation",
+      "path": "prompts/domains/unity-game/generate-agent-context.md",
+      "targetReadiness": "implementation-ready"
+    },
+    {
+      "covered": false,
+      "domain": "unity-game",
+      "id": "unity-game.workspace.interview-medium.readiness-gap-review.v1",
+      "interviewMode": "interview-medium-stakes",
+      "name": "Unity Game Readiness Gap Review",
+      "path": "prompts/domains/unity-game/readiness-gap-review.md",
+      "targetReadiness": "implementation-ready"
+    },
+    {
+      "covered": false,
+      "domain": "unity-shared-library",
+      "id": "unity-library.context.interview-medium.implementation-ready.v1",
+      "interviewMode": "interview-medium-stakes",
+      "name": "Unity Shared Library Implementation Context",
+      "path": "prompts/domains/unity-shared-library/implementation-context.md",
+      "targetReadiness": "implementation-ready"
+    },
+    {
+      "covered": true,
+      "domain": "unity-shared-library",
+      "id": "unity-library.dependencies.interview-medium.implementation-ready.v1",
+      "interviewMode": "interview-medium-stakes",
+      "name": "Unity Shared Library Dependency Contracts",
+      "path": "prompts/domains/unity-shared-library/dependency-contracts.md",
+      "targetReadiness": "implementation-ready"
+    },
+    {
+      "covered": true,
+      "domain": "unity-shared-library",
+      "id": "unity-library.description.interview-medium.implementation-ready.v1",
+      "interviewMode": "interview-medium-stakes",
+      "name": "Unity Shared Library Workspace Fabrication",
+      "path": "prompts/domains/unity-shared-library/fabricate-library-workspace.md",
+      "targetReadiness": "implementation-ready"
+    },
+    {
+      "covered": true,
+      "domain": "unity-shared-library",
+      "id": "unity-library.full-package.interview-all.archival-ready.v1",
+      "interviewMode": "interview-all",
+      "name": "Unity Shared Library Archival Context",
+      "path": "prompts/domains/unity-shared-library/archival-context.md",
+      "targetReadiness": "archival-ready"
+    },
+    {
+      "covered": true,
+      "domain": "unity-shared-library",
+      "id": "unity-library.full-package.interview-high.operations-ready.v1",
+      "interviewMode": "interview-high-stakes",
+      "name": "Unity Shared Library Operations Context",
+      "path": "prompts/domains/unity-shared-library/operations-context.md",
+      "targetReadiness": "operations-ready"
+    }
+  ],
+  "domains": [
+    {
+      "coveredDomainPromptCount": 4,
+      "domain": "lifecycle",
+      "domainPromptCount": 4,
+      "matrixRowCount": 4,
+      "missingDomainPromptCount": 0
+    },
+    {
+      "coveredDomainPromptCount": 2,
+      "domain": "portfolio",
+      "domainPromptCount": 2,
+      "matrixRowCount": 2,
+      "missingDomainPromptCount": 0
+    },
+    {
+      "coveredDomainPromptCount": 3,
+      "domain": "product",
+      "domainPromptCount": 3,
+      "matrixRowCount": 3,
+      "missingDomainPromptCount": 0
+    },
+    {
+      "coveredDomainPromptCount": 4,
+      "domain": "software-library",
+      "domainPromptCount": 4,
+      "matrixRowCount": 4,
+      "missingDomainPromptCount": 0
+    },
+    {
+      "coveredDomainPromptCount": 6,
+      "domain": "unity-game",
+      "domainPromptCount": 8,
+      "matrixRowCount": 6,
+      "missingDomainPromptCount": 2
+    },
+    {
+      "coveredDomainPromptCount": 4,
+      "domain": "unity-shared-library",
+      "domainPromptCount": 5,
+      "matrixRowCount": 4,
+      "missingDomainPromptCount": 1
+    }
+  ],
+  "matrixCount": 6,
+  "matrixRowCount": 23,
+  "missingDomainPromptCount": 3,
+  "missingDomainPrompts": [
+    {
+      "covered": false,
+      "domain": "unity-game",
+      "id": "unity-game.workspace.interview-medium.implementation-ready.agent-context.v1",
+      "interviewMode": "interview-medium-stakes",
+      "name": "Unity Game Agent Context Generation",
+      "path": "prompts/domains/unity-game/generate-agent-context.md",
+      "targetReadiness": "implementation-ready"
+    },
+    {
+      "covered": false,
+      "domain": "unity-game",
+      "id": "unity-game.workspace.interview-medium.readiness-gap-review.v1",
+      "interviewMode": "interview-medium-stakes",
+      "name": "Unity Game Readiness Gap Review",
+      "path": "prompts/domains/unity-game/readiness-gap-review.md",
+      "targetReadiness": "implementation-ready"
+    },
+    {
+      "covered": false,
+      "domain": "unity-shared-library",
+      "id": "unity-library.context.interview-medium.implementation-ready.v1",
+      "interviewMode": "interview-medium-stakes",
+      "name": "Unity Shared Library Implementation Context",
+      "path": "prompts/domains/unity-shared-library/implementation-context.md",
+      "targetReadiness": "implementation-ready"
+    }
+  ],
+  "unknownPromptRefs": []
+}

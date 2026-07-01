@@ -1,0 +1,225 @@
+{
+  "coverageGapCount": 3,
+  "crossWorkspaceReferenceCount": 2,
+  "dependencyAssumptionCount": 7,
+  "examples": [
+    {
+      "coverageGapCount": 2,
+      "coverageGaps": [
+        {
+          "confidence": "medium",
+          "decisionSource": "ai-suggested",
+          "id": "portfolio.coverage_gap.art_and_licensing",
+          "kind": "portfolio.coverage-gap",
+          "name": "Art and Licensing Coverage Gap",
+          "status": "open"
+        },
+        {
+          "confidence": "medium",
+          "decisionSource": "ai-suggested",
+          "id": "gap.portfolio_concept_completeness",
+          "kind": "foundry.readiness-gap",
+          "name": "Portfolio Concept Completeness Gap",
+          "status": "open"
+        }
+      ],
+      "crossWorkspaceReferenceCount": 0,
+      "dependencyAssumptionCount": 1,
+      "dependencyAssumptions": [
+        {
+          "alias": null,
+          "confidence": "low",
+          "consumerWorkspace": null,
+          "decisionSource": "ai-suggested",
+          "id": "portfolio.dependency.shared_unity_runtime",
+          "kind": "unity.package-dependency",
+          "name": "Portfolio Shared Unity Runtime Assumption",
+          "providerWorkspace": null,
+          "relatedGameConcept": null,
+          "sourceRecord": null,
+          "status": "unresolved",
+          "target": null,
+          "versionConstraint": null
+        }
+      ],
+      "exampleId": "example.portfolio.game-portfolio-triage",
+      "gameConceptCount": 3,
+      "gameConceptGroups": [
+        {
+          "crossWorkspaceReferenceCount": 0,
+          "dependencyAssumptionCount": 0,
+          "gameConcept": "dream_extraction",
+          "name": "Dream Extraction"
+        },
+        {
+          "crossWorkspaceReferenceCount": 0,
+          "dependencyAssumptionCount": 0,
+          "gameConcept": "farm_forge",
+          "name": "Farm Forge"
+        },
+        {
+          "crossWorkspaceReferenceCount": 0,
+          "dependencyAssumptionCount": 0,
+          "gameConcept": "space_runners",
+          "name": "Space Runners"
+        }
+      ],
+      "gameConcepts": [
+        {
+          "confidence": "medium",
+          "decisionSource": "ai-inferred",
+          "id": "portfolio.game.dream_extraction",
+          "kind": "portfolio.game-concept",
+          "name": "Dream Extraction",
+          "status": "draft"
+        },
+        {
+          "confidence": "low",
+          "decisionSource": "user-provided",
+          "id": "portfolio.game.space_runners",
+          "kind": "portfolio.game-concept",
+          "name": "Space Runners",
+          "status": "draft"
+        },
+        {
+          "confidence": "low",
+          "decisionSource": "user-provided",
+          "id": "portfolio.game.farm_forge",
+          "kind": "portfolio.game-concept",
+          "name": "Farm Forge",
+          "status": "draft"
+        }
+      ],
+      "path": "examples/portfolio/game-portfolio-triage/manifest.json",
+      "portfolioLevelDependencyAssumptionCount": 1
+    },
+    {
+      "coverageGapCount": 1,
+      "coverageGaps": [
+        {
+          "confidence": "medium",
+          "decisionSource": "ai-suggested",
+          "id": "gap.shared_unity_dependency_lockfile",
+          "kind": "foundry.readiness-gap",
+          "name": "Shared Unity Dependency Lockfile Gap",
+          "status": "open"
+        }
+      ],
+      "crossWorkspaceReferenceCount": 2,
+      "dependencyAssumptionCount": 6,
+      "dependencyAssumptions": [
+        {
+          "alias": "sharedUnity",
+          "confidence": "medium",
+          "consumerWorkspace": "studio.game.dream_extraction",
+          "decisionSource": "ai-suggested",
+          "id": "dependency.dream_extraction.shared_unity_runtime",
+          "kind": "workspace.dependency",
+          "name": "Dream Extraction to Shared Unity Runtime",
+          "providerWorkspace": "studio.library.shared_unity_runtime",
+          "relatedGameConcept": "dream_extraction",
+          "sourceRecord": null,
+          "status": "unresolved",
+          "target": null,
+          "versionConstraint": "unresolved"
+        },
+        {
+          "alias": "sharedUnity",
+          "confidence": "medium",
+          "consumerWorkspace": "studio.game.space_runners",
+          "decisionSource": "ai-suggested",
+          "id": "dependency.space_runners.shared_unity_runtime",
+          "kind": "workspace.dependency",
+          "name": "Space Runners to Shared Unity Runtime",
+          "providerWorkspace": "studio.library.shared_unity_runtime",
+          "relatedGameConcept": "space_runners",
+          "sourceRecord": null,
+          "status": "unresolved",
+          "target": null,
+          "versionConstraint": "unresolved"
+        },
+        {
+          "alias": null,
+          "confidence": "low",
+          "consumerWorkspace": null,
+          "decisionSource": "ai-suggested",
+          "id": "xref.dream_extraction.save_system",
+          "kind": "workspace.cross-reference",
+          "name": "Dream Extraction Save System Reference",
+          "providerWorkspace": null,
+          "relatedGameConcept": "dream_extraction",
+          "sourceRecord": "game.feature.cloud_save",
+          "status": "illustrative",
+          "target": "sharedUnity::unity.package.save_system",
+          "versionConstraint": null
+        },
+        {
+          "alias": null,
+          "confidence": "low",
+          "consumerWorkspace": null,
+          "decisionSource": "ai-suggested",
+          "id": "xref.space_runners.telemetry_client",
+          "kind": "workspace.cross-reference",
+          "name": "Space Runners Telemetry Client Reference",
+          "providerWorkspace": null,
+          "relatedGameConcept": "space_runners",
+          "sourceRecord": "telemetry.intent.session_started",
+          "status": "illustrative",
+          "target": "sharedUnity::unity.package.telemetry_client",
+          "versionConstraint": null
+        },
+        {
+          "alias": null,
+          "confidence": "low",
+          "consumerWorkspace": null,
+          "decisionSource": "ai-suggested",
+          "id": "unity.export_assumption.save_system",
+          "kind": "unity.exported-record-assumption",
+          "name": "Save System Export Assumption",
+          "providerWorkspace": null,
+          "relatedGameConcept": null,
+          "sourceRecord": null,
+          "status": "unresolved",
+          "target": null,
+          "versionConstraint": null
+        },
+        {
+          "alias": null,
+          "confidence": "medium",
+          "consumerWorkspace": null,
+          "decisionSource": "ai-suggested",
+          "id": "risk.shared_runtime_visibility",
+          "kind": "workspace.dependency-risk",
+          "name": "Shared Runtime Visibility Risk",
+          "providerWorkspace": null,
+          "relatedGameConcept": null,
+          "sourceRecord": null,
+          "status": "open",
+          "target": null,
+          "versionConstraint": null
+        }
+      ],
+      "exampleId": "example.portfolio.shared-unity-dependency-map",
+      "gameConceptCount": 0,
+      "gameConceptGroups": [
+        {
+          "crossWorkspaceReferenceCount": 1,
+          "dependencyAssumptionCount": 2,
+          "gameConcept": "dream_extraction",
+          "name": "dream_extraction"
+        },
+        {
+          "crossWorkspaceReferenceCount": 1,
+          "dependencyAssumptionCount": 2,
+          "gameConcept": "space_runners",
+          "name": "space_runners"
+        }
+      ],
+      "gameConcepts": [],
+      "path": "examples/portfolio/shared-unity-dependency-map/manifest.json",
+      "portfolioLevelDependencyAssumptionCount": 2
+    }
+  ],
+  "gameConceptCount": 3,
+  "portfolioExampleCount": 2
+}
