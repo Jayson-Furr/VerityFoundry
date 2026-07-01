@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## 0.19.0
+
 - Added `verityfoundry report provenance-distribution` and
   `verityfoundry report portfolio-coverage` for release-review visibility into
   decision-source distribution and portfolio dependency assumptions.
