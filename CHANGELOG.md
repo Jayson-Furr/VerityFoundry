@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## 0.22.0
+
 - Added policy-lint trend JSON schema documentation and schema validation
   tests.
 - Added policy-lint advisory remediation guidance and quality-threshold
