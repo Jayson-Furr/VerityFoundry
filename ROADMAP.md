@@ -649,12 +649,12 @@ Sprint 42 should release the completed `v0.18.0` scope:
 
 ## v0.19.0
 
-The `v0.19.0` milestone is in progress.
+The `v0.19.0` milestone is released.
 
 | Sprint | Status | Focus |
 |---:|---|---|
-| 43 | In Review | Provenance distribution, fixture handoff, portfolio coverage, and cross-workspace reference guidance |
-| 44 | Planned | v0.19.0 release preparation |
+| 43 | Complete | Provenance distribution, fixture handoff, portfolio coverage, and cross-workspace reference guidance |
+| 44 | Complete | v0.19.0 release preparation |
 
 ## Sprint 43 Priorities
 
