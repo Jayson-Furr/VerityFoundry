@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## 0.18.0
+
 - Added `verityfoundry report policy-lint-trend` with a checked v0.17.0
   policy-lint warning baseline snapshot.
 - Added non-blocking policy-lint warning thresholds to
