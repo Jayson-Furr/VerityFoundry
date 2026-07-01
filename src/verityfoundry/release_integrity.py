@@ -65,7 +65,7 @@ def check_release_integrity(root: str | Path, expected_version: str | None = Non
     _expect_contains(
         issues,
         root_path / "README.md",
-        f"VerityFoundry.git@{tag}",
+        f"verity-foundry.git@{tag}",
         "release.readme-install",
         "README install command must pin the expected tag",
     )
@@ -117,7 +117,7 @@ def check_release_integrity(root: str | Path, expected_version: str | None = Non
     _expect_contains(
         issues,
         release_notes,
-        f"VerityFoundry.git@{tag}",
+        f"verity-foundry.git@{tag}",
         "release.notes-install",
         "release notes install command must pin the expected tag",
     )

@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://github.com/Jayson-Furr/VerityFoundry/schemas/golden-output.schema.json",
+  "$id": "https://github.com/Jason-Furr/verity-foundry/schemas/golden-output.schema.json",
   "title": "VerityFoundry golden output manifest",
   "type": "object",
   "additionalProperties": false,

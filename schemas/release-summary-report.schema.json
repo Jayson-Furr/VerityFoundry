@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://github.com/Jayson-Furr/VerityFoundry/schemas/release-summary-report.schema.json",
+  "$id": "https://github.com/Jason-Furr/verity-foundry/schemas/release-summary-report.schema.json",
   "title": "VerityFoundry release-summary report",
   "type": "object",
   "additionalProperties": false,

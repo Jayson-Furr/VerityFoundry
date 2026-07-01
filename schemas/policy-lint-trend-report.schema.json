@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://github.com/Jayson-Furr/VerityFoundry/schemas/policy-lint-trend-report.schema.json",
+  "$id": "https://github.com/Jason-Furr/verity-foundry/schemas/policy-lint-trend-report.schema.json",
   "title": "VerityFoundry policy-lint trend report",
   "type": "object",
   "additionalProperties": false,

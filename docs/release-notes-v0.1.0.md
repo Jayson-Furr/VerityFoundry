@@ -31,7 +31,7 @@ VeritySpec workspace authoring.
 ## Installation
 
 ```bash
-pip install "verityfoundry @ git+https://github.com/Jayson-Furr/VerityFoundry.git@v0.1.0"
+pip install "verityfoundry @ git+https://github.com/Jason-Furr/verity-foundry.git@v0.1.0"
 ```
 
 PyPI publishing is not enabled yet. Use the GitHub release install path until

@@ -48,7 +48,7 @@ coverage with archival-readiness prompt output.
 ## Install
 
 ```bash
-pip install "verityfoundry @ git+https://github.com/Jayson-Furr/VerityFoundry.git@v0.20.0"
+pip install "verityfoundry @ git+https://github.com/Jason-Furr/verity-foundry.git@v0.20.0"
 ```
 
 PyPI publishing remains intentionally disabled until package publishing is

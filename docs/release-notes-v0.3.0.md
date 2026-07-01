@@ -27,7 +27,7 @@ covering Unity shared-library implementation-ready prompt behavior.
 ## Installation
 
 ```bash
-pip install "verityfoundry @ git+https://github.com/Jayson-Furr/VerityFoundry.git@v0.3.0"
+pip install "verityfoundry @ git+https://github.com/Jason-Furr/verity-foundry.git@v0.3.0"
 ```
 
 ## Verification

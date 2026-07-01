@@ -8,7 +8,7 @@
     "version": "0.26.0"
   },
   "source": {
-    "repository": "Jayson-Furr/VerityFoundry",
+    "repository": "Jason-Furr/verity-foundry",
     "ref": "release/v0.26.0",
     "commit": "dry-run",
     "releaseTag": "v0.26.0"

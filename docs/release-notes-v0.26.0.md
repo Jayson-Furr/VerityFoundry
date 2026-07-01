@@ -34,7 +34,7 @@ guidance, and additional snapshot and warning-triage process documentation.
 ## Install
 
 ```bash
-pip install "verityfoundry @ git+https://github.com/Jayson-Furr/VerityFoundry.git@v0.26.0"
+pip install "verityfoundry @ git+https://github.com/Jason-Furr/verity-foundry.git@v0.26.0"
 ```
 
 PyPI publishing remains intentionally disabled until package publishing is

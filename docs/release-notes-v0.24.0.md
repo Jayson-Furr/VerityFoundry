@@ -46,7 +46,7 @@ and future fixture update workflows.
 ## Install
 
 ```bash
-pip install "verityfoundry @ git+https://github.com/Jayson-Furr/VerityFoundry.git@v0.24.0"
+pip install "verityfoundry @ git+https://github.com/Jason-Furr/verity-foundry.git@v0.24.0"
 ```
 
 PyPI publishing remains intentionally disabled until package publishing is

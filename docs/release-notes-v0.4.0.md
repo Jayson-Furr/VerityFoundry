@@ -28,7 +28,7 @@ workflow library.
 ## Installation
 
 ```bash
-pip install "verityfoundry @ git+https://github.com/Jayson-Furr/VerityFoundry.git@v0.4.0"
+pip install "verityfoundry @ git+https://github.com/Jason-Furr/verity-foundry.git@v0.4.0"
 ```
 
 ## Verification

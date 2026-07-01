@@ -2,6 +2,11 @@
 
 ## Unreleased
 
+- Updated repository owner/name references after moving the canonical public
+  repository to `Jason-Furr/verity-foundry`, including README badges, GitHub
+  install URLs, release notes, schema IDs, fixture metadata, and
+  release-integrity checks.
+
 ## 0.30.0
 
 - Added `verityfoundry report generated-workspace-validation` with text and

@@ -26,7 +26,7 @@ Unity game implementation-ready prompt behavior.
 ## Installation
 
 ```bash
-pip install "verityfoundry @ git+https://github.com/Jayson-Furr/VerityFoundry.git@v0.2.0"
+pip install "verityfoundry @ git+https://github.com/Jason-Furr/verity-foundry.git@v0.2.0"
 ```
 
 ## Verification

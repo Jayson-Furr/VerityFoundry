@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://github.com/Jayson-Furr/VerityFoundry/schemas/release-review-bundle-manifest.schema.json",
+  "$id": "https://github.com/Jason-Furr/verity-foundry/schemas/release-review-bundle-manifest.schema.json",
   "title": "VerityFoundry release-review bundle manifest",
   "type": "object",
   "additionalProperties": false,
