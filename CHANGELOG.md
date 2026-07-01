@@ -2,6 +2,11 @@
 
 ## Unreleased
 
+- Added release-summary schema compatibility, warning triage, and snapshot
+  update guidance.
+- Added release-review bundle retention policy and CI artifact naming
+  guidance.
+
 ## 0.24.0
 
 - Added release-review fixture JSON schema documentation and fixture update
