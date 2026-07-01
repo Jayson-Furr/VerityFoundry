@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## 0.25.0
+
 - Added release-summary schema compatibility, warning triage, and snapshot
   update guidance.
 - Added release-review bundle retention policy and CI artifact naming
