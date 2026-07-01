@@ -23,7 +23,7 @@ class CliTests(unittest.TestCase):
     def test_version(self) -> None:
         result = run_cli("--version")
         self.assertEqual(result.returncode, 0, result.stderr)
-        self.assertIn("verityfoundry 0.20.0", result.stdout)
+        self.assertIn("verityfoundry 0.21.0", result.stdout)
 
     def test_list_prompts(self) -> None:
         result = run_cli("list", "prompts")

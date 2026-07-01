@@ -12,9 +12,10 @@ Current snapshots live under:
 snapshots/release-summary/
 ```
 
-The first snapshot is:
+Current snapshots are:
 
 - `v0.20.0.json`
+- `v0.21.0.json`
 
 ## Why Historical Snapshots
 

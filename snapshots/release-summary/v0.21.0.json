@@ -1,0 +1,89 @@
+{
+  "blockingIssueCount": 0,
+  "checks": {
+    "decisionPolicyLint": {
+      "errorCount": 0,
+      "status": "passed",
+      "warningCount": 14
+    },
+    "qualityThresholds": {
+      "issueCount": 0,
+      "status": "passed",
+      "warningCount": 0
+    },
+    "releaseIntegrity": {
+      "expectedTag": "v0.21.0",
+      "expectedVersion": "0.21.0",
+      "issueCount": 0,
+      "status": "passed"
+    },
+    "workflowHygiene": {
+      "actionCount": 8,
+      "issueCount": 0,
+      "status": "passed",
+      "workflowCount": 2
+    }
+  },
+  "notes": [
+    "Release summary is deterministic and does not call external AI APIs.",
+    "Run VeritySpec validation separately for generated workspaces that are in scope."
+  ],
+  "reports": {
+    "exampleInventory": {
+      "domainCount": 5,
+      "exampleCount": 6
+    },
+    "fixtureInventory": {
+      "fixtureCount": 6,
+      "kindCount": 29,
+      "recordCount": 45
+    },
+    "goldenInventory": {
+      "domainCount": 3,
+      "goldenCount": 6
+    },
+    "matrixCoverage": {
+      "coveragePercent": 88.5,
+      "matrixCount": 6,
+      "missingDomainPromptCount": 3,
+      "rowCount": 23,
+      "unknownPromptRefCount": 0
+    },
+    "policyLintTrend": {
+      "currentWarningCount": 14,
+      "deltaWarningCount": 0,
+      "latestSnapshotLabel": "v0.17.0",
+      "snapshotCount": 1
+    },
+    "portfolioCoverage": {
+      "crossWorkspaceReferenceCount": 2,
+      "dependencyAssumptionCount": 7,
+      "gameConceptCount": 3,
+      "portfolioExampleCount": 2
+    },
+    "promptQuality": {
+      "percent": 58.8,
+      "promptCount": 47,
+      "provenancePercent": 52.3,
+      "uncertaintyPercent": 64.2
+    },
+    "promptQualityTrend": {
+      "currentPercent": 58.8,
+      "deltaPercent": 0.9,
+      "latestSnapshotLabel": "v0.11.0",
+      "snapshotCount": 1
+    },
+    "provenanceCoverage": {
+      "decisionExamplePercent": 40.0,
+      "exampleCount": 6,
+      "recordProvenancePercent": 100.0
+    },
+    "provenanceDistribution": {
+      "decisionExampleCount": 18,
+      "humanApprovalRequiredDecisionCount": 18,
+      "recordProvenanceCount": 45
+    }
+  },
+  "status": "passed",
+  "warningCount": 14
+}
