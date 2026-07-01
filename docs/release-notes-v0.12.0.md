@@ -40,7 +40,7 @@ trends, quality thresholds, and GitHub Actions workflow hygiene checks.
 ## Install
 
 ```bash
-pip install "verityfoundry @ git+https://github.com/Jayson-Furr/VerityFoundry.git@v0.12.0"
+pip install "verityfoundry @ git+https://github.com/Jason-Furr/verity-foundry.git@v0.12.0"
 ```
 
 PyPI publishing remains intentionally disabled until package publishing is

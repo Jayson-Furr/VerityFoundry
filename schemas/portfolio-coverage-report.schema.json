@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://github.com/Jayson-Furr/VerityFoundry/schemas/portfolio-coverage-report.schema.json",
+  "$id": "https://github.com/Jason-Furr/verity-foundry/schemas/portfolio-coverage-report.schema.json",
   "title": "VerityFoundry portfolio-coverage report",
   "type": "object",
   "additionalProperties": false,

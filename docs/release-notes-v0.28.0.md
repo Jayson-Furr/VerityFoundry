@@ -35,7 +35,7 @@ provenance, graph review, and future VeritySpec dependency-import workflows.
 ## Install
 
 ```bash
-pip install "verityfoundry @ git+https://github.com/Jayson-Furr/VerityFoundry.git@v0.28.0"
+pip install "verityfoundry @ git+https://github.com/Jason-Furr/verity-foundry.git@v0.28.0"
 ```
 
 PyPI publishing remains intentionally disabled until package publishing is

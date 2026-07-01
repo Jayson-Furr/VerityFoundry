@@ -1,9 +1,9 @@
 # VerityFoundry
 
-[![CI](https://github.com/Jayson-Furr/VerityFoundry/actions/workflows/ci.yml/badge.svg)](https://github.com/Jayson-Furr/VerityFoundry/actions/workflows/ci.yml)
-[![Release](https://img.shields.io/badge/release-v0.30.0-blue)](https://github.com/Jayson-Furr/VerityFoundry/releases/tag/v0.30.0)
+[![CI](https://github.com/Jason-Furr/verity-foundry/actions/workflows/ci.yml/badge.svg)](https://github.com/Jason-Furr/verity-foundry/actions/workflows/ci.yml)
+[![Release](https://img.shields.io/badge/release-v0.30.0-blue)](https://github.com/Jason-Furr/verity-foundry/releases/tag/v0.30.0)
 [![Python](https://img.shields.io/badge/python-3.9%2B-blue)](pyproject.toml)
-[![License](https://img.shields.io/github/license/Jayson-Furr/VerityFoundry)](LICENSE)
+[![License](https://img.shields.io/github/license/Jason-Furr/verity-foundry)](LICENSE)
 
 Turn rough intent into validated VeritySpec workspace drafts.
 
@@ -109,7 +109,7 @@ The repository currently provides:
 Install the latest GitHub release:
 
 ```bash
-pip install "verityfoundry @ git+https://github.com/Jayson-Furr/VerityFoundry.git@v0.30.0"
+pip install "verityfoundry @ git+https://github.com/Jason-Furr/verity-foundry.git@v0.30.0"
 verityfoundry --version
 ```
 
