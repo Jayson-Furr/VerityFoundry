@@ -791,12 +791,12 @@ Sprint 50 should release the completed `v0.22.0` scope:
 
 ## v0.23.0
 
-The `v0.23.0` milestone is active.
+The `v0.23.0` milestone is released.
 
 | Sprint | Status | Focus |
 |---:|---|---|
-| 51 | In Progress | Provenance schema docs, portfolio and cross-workspace snapshots, fixture handoff examples, and executable fixture validation design |
-| 52 | Planned | v0.23.0 release preparation |
+| 51 | Complete | Provenance schema docs, portfolio and cross-workspace snapshots, fixture handoff examples, and executable fixture validation design |
+| 52 | Complete | v0.23.0 release preparation |
 
 ## Sprint 51 Priorities
 
