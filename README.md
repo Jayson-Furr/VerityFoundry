@@ -85,6 +85,9 @@ The repository currently provides:
 - Generated workspace validation-result snapshots, schema documentation,
   package-data coverage, unresolved-decision triage, and optional VeritySpec
   CI guidance for executable fixture review.
+- A deterministic generated workspace validation-result report that checks
+  snapshot coverage, file-hash freshness, unresolved decisions, and human
+  review requirements.
 - Optional VeritySpec validation design notes for future executable workspace
   fixtures.
 - A deterministic aggregate release-summary report for release reviewers.
@@ -162,6 +165,7 @@ verityfoundry report release-summary
 verityfoundry report golden-inventory
 verityfoundry report example-inventory
 verityfoundry report fixture-inventory
+verityfoundry report generated-workspace-validation
 verityfoundry report provenance-coverage
 verityfoundry report provenance-distribution
 verityfoundry report portfolio-coverage
@@ -342,8 +346,9 @@ thresholds remain blocking.
 ## Release Reviewer Reports
 
 Release reviewer reports summarize examples, golden outputs, candidate
-workspace fixtures, provenance coverage, provenance distribution, and
-portfolio coverage without calling external AI APIs.
+workspace fixtures, generated workspace validation-result snapshots,
+provenance coverage, provenance distribution, and portfolio coverage without
+calling external AI APIs.
 
 ```bash
 verityfoundry report release-summary
@@ -351,6 +356,7 @@ verityfoundry report policy-lint-trend
 verityfoundry report golden-inventory
 verityfoundry report example-inventory
 verityfoundry report fixture-inventory
+verityfoundry report generated-workspace-validation
 verityfoundry report provenance-coverage
 verityfoundry report provenance-distribution
 verityfoundry report portfolio-coverage
@@ -583,9 +589,13 @@ require human approval.
 - [Generated workspace fixture manifest design](docs/generated-workspace-fixture-manifest-design.md)
 - [Generated workspace fixture provenance schema](docs/generated-workspace-fixture-provenance-schema.md)
 - [Generated workspace validation result schema](docs/generated-workspace-validation-result-schema.md)
+- [Generated workspace validation report schema](docs/generated-workspace-validation-report-schema.md)
 - [Generated workspace validation-result CLI planning](docs/generated-workspace-validation-result-cli-planning.md)
 - [Generated workspace validation-result package data](docs/generated-workspace-validation-result-package-data.md)
 - [Generated workspace validation-result triage](docs/generated-workspace-validation-result-triage.md)
+- [Generated workspace validation-result update dry run](docs/generated-workspace-validation-result-update-dry-run.md)
+- [Generated workspace validation-result drift examples](docs/generated-workspace-validation-result-drift-examples.md)
+- [Generated workspace validation-result CI artifacts](docs/generated-workspace-validation-result-ci-artifacts.md)
 - [Generated workspace unresolved-decision report](docs/generated-workspace-unresolved-decision-report.md)
 - [Generated workspace provenance distribution snapshots](docs/generated-workspace-provenance-distribution-snapshots.md)
 - [Optional VeritySpec CI for generated workspaces](docs/generated-workspace-optional-verityspec-ci.md)

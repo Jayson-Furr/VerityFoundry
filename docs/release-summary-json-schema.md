@@ -25,6 +25,17 @@ Schema updates should be made in the same sprint as:
 - roadmap entries
 - release notes during release preparation
 
+## Additive Report Fields
+
+`reports.generatedWorkspaceValidation` summarizes generated workspace
+validation-result snapshot coverage. It includes snapshot counts, passed
+snapshot counts, stale file-hash counts, uncovered fixture-file counts, and
+unresolved decision counts.
+
+This field is a release-review signal. It is not a blocking readiness
+certificate, and human reviewers should still inspect any generated VeritySpec
+workspace fixture changes directly.
+
 ## Boundary
 
 The schema validates VerityFoundry release-review report shape. It does not

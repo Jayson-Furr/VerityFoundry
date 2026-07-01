@@ -33,6 +33,14 @@ class ReleaseSummaryTests(unittest.TestCase):
             report["reports"]["provenanceCoverage"]["recordProvenancePercent"],
             100.0,
         )
+        self.assertEqual(
+            report["reports"]["generatedWorkspaceValidation"]["snapshotCount"],
+            2,
+        )
+        self.assertEqual(
+            report["reports"]["generatedWorkspaceValidation"]["staleFileHashCount"],
+            0,
+        )
 
     def test_release_summary_formats_text(self) -> None:
         text = format_release_summary_report(generate_release_summary_report(ROOT))
@@ -42,6 +50,7 @@ class ReleaseSummaryTests(unittest.TestCase):
         self.assertIn("Quality thresholds: passed", text)
         self.assertIn("Workflow hygiene: passed", text)
         self.assertIn("Policy lint trend:", text)
+        self.assertIn("Generated workspace validation:", text)
         self.assertIn("Run VeritySpec validation separately", text)
 
     def test_release_summary_json_schema_validates_current_report(self) -> None:

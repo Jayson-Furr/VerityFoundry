@@ -227,6 +227,18 @@ class CliTests(unittest.TestCase):
         self.assertIn('"fixtureCount"', result.stdout)
         self.assertIn('"packs"', result.stdout)
 
+    def test_generated_workspace_validation_report_text(self) -> None:
+        result = run_cli("report", "generated-workspace-validation")
+        self.assertEqual(result.returncode, 0, result.stderr)
+        self.assertIn("Generated Workspace Validation Report", result.stdout)
+        self.assertIn("Freshness:", result.stdout)
+
+    def test_generated_workspace_validation_report_json(self) -> None:
+        result = run_cli("report", "generated-workspace-validation", "--format", "json")
+        self.assertEqual(result.returncode, 0, result.stderr)
+        self.assertIn('"generatedWorkspaceCount": 2', result.stdout)
+        self.assertIn('"staleFileHashCount": 0', result.stdout)
+
     def test_provenance_coverage_report_text(self) -> None:
         result = run_cli("report", "provenance-coverage")
         self.assertEqual(result.returncode, 0, result.stderr)

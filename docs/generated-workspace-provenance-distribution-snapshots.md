@@ -9,6 +9,7 @@ Use both during release review:
 
 ```bash
 verityfoundry report provenance-distribution
+verityfoundry report generated-workspace-validation
 python -m unittest tests.test_generated_workspace_validation_results -v
 ```
 
@@ -20,8 +21,10 @@ python -m unittest tests.test_generated_workspace_validation_results -v
 - Did a validation result drift after provenance changed?
 - Does any report wording imply readiness that VeritySpec did not prove?
 
-## Future Report Direction
+## Validation Report
 
-A future `verityfoundry report generated-workspace-validation` command could
-join provenance distribution, validation-result status, and unresolved-decision
-counts into one release-review view.
+`verityfoundry report generated-workspace-validation` joins
+validation-result status, file-hash freshness, human review requirements, and
+unresolved-decision counts into one release-review view. Pair it with the
+provenance distribution report when checking whether generated VeritySpec
+workspace fixture evidence still preserves uncertainty.

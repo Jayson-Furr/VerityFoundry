@@ -33,6 +33,7 @@ The summary includes:
 - golden output inventory
 - example inventory
 - candidate workspace fixture inventory
+- generated workspace validation-result snapshot coverage
 - provenance coverage
 - provenance distribution
 - portfolio fixture coverage
@@ -54,6 +55,10 @@ The report status is `failed` when a blocking release-review check fails:
 
 Decision-policy warnings remain warnings. They are visible for review but do
 not fail the summary.
+
+Generated workspace validation-result coverage is currently summarized as a
+report surface, not a blocking release check. Reviewers should investigate any
+stale file hashes or uncovered fixture files before release.
 
 ## Boundary
 

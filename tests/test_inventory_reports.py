@@ -4,12 +4,14 @@ import unittest
 from verityfoundry.inventory import (
     format_example_inventory_report,
     format_fixture_inventory_report,
+    format_generated_workspace_validation_report,
     format_golden_inventory_report,
     format_portfolio_fixture_coverage_report,
     format_provenance_coverage_report,
     format_provenance_distribution_report,
     generate_example_inventory_report,
     generate_fixture_inventory_report,
+    generate_generated_workspace_validation_report,
     generate_golden_inventory_report,
     generate_portfolio_fixture_coverage_report,
     generate_provenance_coverage_report,
@@ -118,6 +120,20 @@ class InventoryReportTests(unittest.TestCase):
         self.assertIn("Portfolio Fixture Coverage Report", text)
         self.assertIn("Game concepts:", text)
         self.assertIn("Dependency assumptions:", text)
+
+    def test_generated_workspace_validation_counts_and_formats(self) -> None:
+        report = generate_generated_workspace_validation_report(ROOT)
+
+        self.assertEqual(report["status"], "passed")
+        self.assertEqual(report["generatedWorkspaceCount"], 2)
+        self.assertEqual(report["snapshotCount"], 2)
+        self.assertEqual(report["staleFileHashCount"], 0)
+        self.assertEqual(report["uncoveredFileCount"], 0)
+
+        text = format_generated_workspace_validation_report(report)
+        self.assertIn("Generated Workspace Validation Report", text)
+        self.assertIn("Validation snapshots:", text)
+        self.assertIn("VeritySpec remains the contract authority", text)
 
 
 if __name__ == "__main__":

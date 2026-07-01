@@ -29,6 +29,7 @@ verityfoundry report release-summary
 verityfoundry report golden-inventory
 verityfoundry report example-inventory
 verityfoundry report fixture-inventory
+verityfoundry report generated-workspace-validation
 verityfoundry report provenance-coverage
 verityfoundry report provenance-distribution
 verityfoundry report portfolio-coverage
@@ -102,9 +103,13 @@ for the VeritySpec handoff boundary.
 
 When generated workspace fixtures are part of the release, also review
 [generated-workspace-validation-result-schema.md](generated-workspace-validation-result-schema.md),
+[generated-workspace-validation-report-schema.md](generated-workspace-validation-report-schema.md),
 [generated-workspace-validation-result-triage.md](generated-workspace-validation-result-triage.md),
+[generated-workspace-validation-result-package-data.md](generated-workspace-validation-result-package-data.md),
+[generated-workspace-validation-result-update-dry-run.md](generated-workspace-validation-result-update-dry-run.md),
+[generated-workspace-validation-result-drift-examples.md](generated-workspace-validation-result-drift-examples.md),
 and
-[generated-workspace-validation-result-package-data.md](generated-workspace-validation-result-package-data.md).
+[generated-workspace-validation-result-ci-artifacts.md](generated-workspace-validation-result-ci-artifacts.md).
 Confirm checked `validation-result.json` files still require human review and
 do not claim readiness that VeritySpec did not prove.
 
