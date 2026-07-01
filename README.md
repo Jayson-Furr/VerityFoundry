@@ -66,6 +66,10 @@ The repository currently provides:
   including non-blocking policy-lint advisory thresholds.
 - Deterministic release-review inventory reports for golden outputs and
   examples, candidate workspace fixtures, and provenance coverage.
+- Deterministic provenance distribution and portfolio fixture coverage reports
+  for release reviewers.
+- Fixture-to-VeritySpec conversion checklist and cross-workspace reference
+  syntax guidance for generated workspace drafts.
 - A deterministic aggregate release-summary report for release reviewers.
 - Image input manifest schema validation for example workflows.
 - A deterministic release-integrity check for package and documentation
@@ -142,6 +146,8 @@ verityfoundry report golden-inventory
 verityfoundry report example-inventory
 verityfoundry report fixture-inventory
 verityfoundry report provenance-coverage
+verityfoundry report provenance-distribution
+verityfoundry report portfolio-coverage
 verityfoundry check verityspec
 verityfoundry check release-integrity
 verityfoundry check quality-thresholds
@@ -318,7 +324,8 @@ thresholds remain blocking.
 ## Release Reviewer Reports
 
 Release reviewer reports summarize examples, golden outputs, candidate
-workspace fixtures, and provenance coverage without calling external AI APIs.
+workspace fixtures, provenance coverage, provenance distribution, and
+portfolio coverage without calling external AI APIs.
 
 ```bash
 verityfoundry report release-summary
@@ -327,13 +334,16 @@ verityfoundry report golden-inventory
 verityfoundry report example-inventory
 verityfoundry report fixture-inventory
 verityfoundry report provenance-coverage
+verityfoundry report provenance-distribution
+verityfoundry report portfolio-coverage
 ```
 
 Use these reports to confirm release integrity, quality thresholds, workflow
 hygiene, matrix coverage, examples, golden outputs, fixture record kinds,
-recommended VeritySpec pack mappings, and provenance examples in scope for a
-release review. They do not replace manifest validation, VeritySpec validation,
-or human review.
+recommended VeritySpec pack mappings, provenance examples, decision-source
+distribution, and portfolio dependency assumptions in scope for a release
+review. They do not replace manifest validation, VeritySpec validation, or
+human review.
 
 ## Release Integrity Check
 
@@ -502,9 +512,13 @@ require human approval.
 - [Example fixture diff snapshots](docs/example-fixture-diff-snapshots.md)
 - [Fixture kind pack mapping](docs/fixture-kind-pack-mapping.md)
 - [Provenance coverage](docs/provenance-coverage.md)
+- [Provenance distribution](docs/provenance-distribution.md)
+- [Portfolio coverage report](docs/portfolio-coverage-report.md)
 - [Golden output drift review](docs/golden-output-drift-review.md)
 - [Workspace fixtures](docs/workspace-fixtures.md)
+- [Fixture to VeritySpec checklist](docs/fixture-to-verityspec-checklist.md)
 - [Portfolio workflows](docs/portfolio-workflows.md)
+- [Cross-workspace reference guidance](docs/cross-workspace-reference-guidance.md)
 - [Lifecycle readiness workflows](docs/lifecycle-readiness-workflows.md)
 - [Lifecycle gap reports to VeritySpec records](docs/lifecycle-gap-to-verityspec.md)
 - [Prompt workflow contributions](docs/prompt-workflow-contributions.md)

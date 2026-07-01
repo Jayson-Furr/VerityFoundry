@@ -11,6 +11,10 @@ verityfoundry report fixture-inventory
 verityfoundry report fixture-inventory --format json
 verityfoundry report provenance-coverage
 verityfoundry report provenance-coverage --format json
+verityfoundry report provenance-distribution
+verityfoundry report provenance-distribution --format json
+verityfoundry report portfolio-coverage
+verityfoundry report portfolio-coverage --format json
 ```
 
 The golden inventory report lists:
@@ -48,6 +52,21 @@ The provenance coverage report lists:
 - human-approval-required record counts
 - missing provenance record references
 - missing decision example record references
+
+The provenance distribution report lists:
+
+- decision examples by decision source
+- fixture record provenance by decision source
+- confidence distributions
+- human-approval-required decision and record counts
+
+The portfolio coverage report lists:
+
+- checked portfolio example count
+- game concept counts
+- dependency assumption counts
+- cross-workspace reference counts
+- per-game dependency groupings
 
 These reports help reviewers see what is in scope before a release. They do
 not replace `verityfoundry validate`, golden-output review, or human review.

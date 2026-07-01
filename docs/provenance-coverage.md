@@ -27,8 +27,13 @@ Use this report during release review with:
 verityfoundry validate examples
 verityfoundry report fixture-inventory
 verityfoundry report provenance-coverage
+verityfoundry report provenance-distribution
 ```
 
 The report is not a VeritySpec readiness certification. It is a VerityFoundry
 authoring-quality signal that helps reviewers spot fixture drift before a
 release.
+
+Use [provenance-distribution.md](provenance-distribution.md) when you need to
+review the mix of human-provided, AI-inferred, AI-suggested, unresolved, and
+human-approval-required decisions across examples.

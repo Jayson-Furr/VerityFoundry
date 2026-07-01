@@ -5,11 +5,15 @@ from verityfoundry.inventory import (
     format_example_inventory_report,
     format_fixture_inventory_report,
     format_golden_inventory_report,
+    format_portfolio_fixture_coverage_report,
     format_provenance_coverage_report,
+    format_provenance_distribution_report,
     generate_example_inventory_report,
     generate_fixture_inventory_report,
     generate_golden_inventory_report,
+    generate_portfolio_fixture_coverage_report,
     generate_provenance_coverage_report,
+    generate_provenance_distribution_report,
 )
 
 
@@ -72,6 +76,47 @@ class InventoryReportTests(unittest.TestCase):
         text = format_provenance_coverage_report(report)
         self.assertIn("Provenance Coverage Report", text)
         self.assertIn("Decision examples:", text)
+
+    def test_provenance_distribution_counts_and_formats(self) -> None:
+        report = generate_provenance_distribution_report(ROOT)
+
+        self.assertEqual(report["exampleCount"], 6)
+        self.assertGreaterEqual(report["decisionExampleCount"], 18)
+        self.assertEqual(
+            report["humanApprovalRequiredDecisionCount"],
+            report["decisionExampleCount"],
+        )
+        decision_sources = {
+            item["decisionSource"]: item["count"]
+            for item in report["decisionSourceCounts"]
+        }
+        self.assertIn("user-provided", decision_sources)
+        self.assertIn("ai-suggested", decision_sources)
+        self.assertIn("unresolved", decision_sources)
+
+        text = format_provenance_distribution_report(report)
+        self.assertIn("Provenance Distribution Report", text)
+        self.assertIn("Decision examples by source:", text)
+        self.assertIn("Fixture provenance by source:", text)
+
+    def test_portfolio_fixture_coverage_counts_and_formats(self) -> None:
+        report = generate_portfolio_fixture_coverage_report(ROOT)
+
+        self.assertEqual(report["portfolioExampleCount"], 2)
+        self.assertEqual(report["gameConceptCount"], 3)
+        self.assertGreaterEqual(report["dependencyAssumptionCount"], 7)
+        self.assertEqual(report["crossWorkspaceReferenceCount"], 2)
+
+        examples = {item["exampleId"]: item for item in report["examples"]}
+        dependency_map = examples["example.portfolio.shared-unity-dependency-map"]
+        group_keys = {item["gameConcept"] for item in dependency_map["gameConceptGroups"]}
+        self.assertIn("dream_extraction", group_keys)
+        self.assertIn("space_runners", group_keys)
+
+        text = format_portfolio_fixture_coverage_report(report)
+        self.assertIn("Portfolio Fixture Coverage Report", text)
+        self.assertIn("Game concepts:", text)
+        self.assertIn("Dependency assumptions:", text)
 
 
 if __name__ == "__main__":

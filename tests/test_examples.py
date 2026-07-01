@@ -54,6 +54,20 @@ class ExampleTests(unittest.TestCase):
                     set(manifest["expectedRecordCategories"]).issubset(categories)
                 )
 
+    def test_expected_image_input_manifests_exist(self) -> None:
+        manifests = {
+            manifest["id"]: manifest
+            for _, manifest in load_example_manifests(ROOT)
+        }
+
+        for example_id in (
+            "example.product.customer-portal",
+            "example.software-library.shared-auth-library",
+            "example.unity-game.dream-extraction",
+        ):
+            with self.subTest(example=example_id):
+                self.assertIn("inputs/image-manifest.json", manifests[example_id]["inputs"])
+
     def test_image_input_manifest_schema_is_enforced(self) -> None:
         with tempfile.TemporaryDirectory() as tmp:
             temp_root = Path(tmp)

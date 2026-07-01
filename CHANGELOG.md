@@ -2,6 +2,13 @@
 
 ## Unreleased
 
+- Added `verityfoundry report provenance-distribution` and
+  `verityfoundry report portfolio-coverage` for release-review visibility into
+  decision-source distribution and portfolio dependency assumptions.
+- Added product and software-library image-input manifest examples.
+- Added fixture-to-VeritySpec conversion guidance and cross-workspace
+  reference syntax guidance for generated workspace drafts.
+
 ## 0.18.0
 
 - Added `verityfoundry report policy-lint-trend` with a checked v0.17.0

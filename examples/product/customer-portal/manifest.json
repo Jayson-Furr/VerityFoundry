@@ -6,7 +6,9 @@
   "interviewMode": "interview-low-stakes",
   "targetReadiness": "design-complete",
   "inputs": [
-    "inputs/brief.md"
+    "inputs/brief.md",
+    "inputs/images.md",
+    "inputs/image-manifest.json"
   ],
   "expectedOutputs": [
     "expected/workspace-outline.md",

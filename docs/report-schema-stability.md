@@ -17,6 +17,8 @@ readiness certifications.
 | `verityfoundry report example-inventory --format json` | Example manifest inventory |
 | `verityfoundry report fixture-inventory --format json` | Candidate workspace fixture inventory and kind mapping |
 | `verityfoundry report provenance-coverage --format json` | Provenance coverage across fixture records |
+| `verityfoundry report provenance-distribution --format json` | Decision-source and confidence distribution across provenance examples and fixture records |
+| `verityfoundry report portfolio-coverage --format json` | Portfolio fixture coverage by game concept and dependency assumption |
 
 ## v0.x Compatibility Policy
 

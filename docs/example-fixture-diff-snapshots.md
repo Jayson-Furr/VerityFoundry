@@ -10,6 +10,8 @@ dedicated command exists, reviewers should use:
 verityfoundry report example-inventory --format json
 verityfoundry report fixture-inventory --format json
 verityfoundry report provenance-coverage --format json
+verityfoundry report provenance-distribution --format json
+verityfoundry report portfolio-coverage --format json
 ```
 
 Recommended comparison points:
@@ -21,6 +23,9 @@ Recommended comparison points:
 - recommended VeritySpec pack mappings
 - provenance coverage
 - decision-example coverage
+- decision-source distribution
+- portfolio dependency assumption counts
+- cross-workspace reference counts
 
 Diff snapshots should preserve the VerityFoundry authority boundary. A fixture
 shape diff can show that candidate authoring output changed; it does not prove

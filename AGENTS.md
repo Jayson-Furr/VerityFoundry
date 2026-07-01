@@ -164,6 +164,8 @@ verityfoundry report golden-inventory
 verityfoundry report example-inventory
 verityfoundry report fixture-inventory
 verityfoundry report provenance-coverage
+verityfoundry report provenance-distribution
+verityfoundry report portfolio-coverage
 verityfoundry check verityspec
 verityfoundry check release-integrity
 verityfoundry check quality-thresholds
@@ -193,6 +195,8 @@ verityfoundry report golden-inventory
 verityfoundry report example-inventory
 verityfoundry report fixture-inventory
 verityfoundry report provenance-coverage
+verityfoundry report provenance-distribution
+verityfoundry report portfolio-coverage
 verityfoundry check verityspec
 verityfoundry check release-integrity
 verityfoundry check quality-thresholds

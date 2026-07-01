@@ -30,6 +30,8 @@ verityfoundry report golden-inventory
 verityfoundry report example-inventory
 verityfoundry report fixture-inventory
 verityfoundry report provenance-coverage
+verityfoundry report provenance-distribution
+verityfoundry report portfolio-coverage
 verityfoundry check quality-thresholds
 verityfoundry check workflow-hygiene
 verityfoundry check release-integrity
@@ -44,6 +46,8 @@ Review the report output for:
 - missing example fixtures
 - fixture kind mappings that need documentation
 - missing provenance
+- decision-source distribution drift
+- portfolio dependency assumptions and cross-workspace reference counts
 - stale workflow action versions
 - release version drift
 

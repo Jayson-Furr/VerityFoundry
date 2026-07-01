@@ -65,6 +65,12 @@ export visibility, transitive dependency policy, and compatibility reports
 remain future VeritySpec responsibilities unless the input proves they already
 exist.
 
+See
+[cross-workspace-reference-guidance.md](cross-workspace-reference-guidance.md)
+for candidate reference syntax guidance, and use
+`verityfoundry report portfolio-coverage` to inspect checked portfolio fixture
+coverage by game concept and dependency assumption.
+
 The checked example at
 `examples/portfolio/shared-unity-dependency-map/` demonstrates this workflow
 with game workspaces that may consume a shared Unity runtime workspace. It

@@ -647,6 +647,43 @@ Sprint 42 should release the completed `v0.18.0` scope:
 - Tag and publish the v0.18.0 GitHub release when checks pass.
 - Close the v0.18.0 milestone after release verification.
 
+## v0.19.0
+
+The `v0.19.0` milestone is in progress.
+
+| Sprint | Status | Focus |
+|---:|---|---|
+| 43 | In Review | Provenance distribution, fixture handoff, portfolio coverage, and cross-workspace reference guidance |
+| 44 | Planned | v0.19.0 release preparation |
+
+## Sprint 43 Priorities
+
+Sprint 43 should bundle about a week of related fixture handoff and reporting
+work:
+
+- Add provenance decision-source distribution reporting.
+- Add generated fixture-to-VeritySpec conversion checklist.
+- Add image-input manifest examples for product and software-library domains.
+- Add portfolio fixture coverage reporting grouped by game concept and
+  dependency assumption.
+- Add cross-workspace dependency reference syntax guidance for generated
+  VeritySpec workspace drafts.
+- Update README, changelog, roadmap, tests, CI, release workflow smoke checks,
+  release checklist, and release-review documentation together.
+- Keep the Next 20 roadmap points populated after converting completed items.
+
+## Sprint 44 Priorities
+
+Sprint 44 should release the completed `v0.19.0` scope:
+
+- Add v0.19.0 release notes.
+- Update package metadata, README release badge, latest-release text, install
+  guidance, changelog, roadmap, and release checklist to `v0.19.0`.
+- Run local release verification, package build checks, `twine check`,
+  installed-wheel smoke tests, and GitHub Actions.
+- Tag and publish the v0.19.0 GitHub release when checks pass.
+- Close the v0.19.0 milestone after release verification.
+
 ## Later Candidates
 
 These are intentionally not committed to a release until the initial scaffold
@@ -667,31 +704,32 @@ the active roadmap is caught up. The points should balance fixes,
 improvements, continuation work, and expansion. Convert related points into
 week-sized sprint bundles rather than one release per small point.
 
-1. Add provenance decision-source distribution reporting.
-2. Add generated fixture-to-VeritySpec conversion checklist.
-3. Add image-input manifest examples for product and software-library
-    domains.
-4. Add portfolio fixture coverage reporting grouped by game concept and
-    dependency assumption.
-5. Add cross-workspace dependency reference syntax guidance for generated
-    VeritySpec workspace drafts.
-6. Add lifecycle golden output drift snapshots for release reviewers.
-7. Add lifecycle prompt matrix examples for archival-ready outputs.
-8. Add release-review report examples in JSON form under checked fixtures.
-9. Add local documentation tests for every README documentation link.
-10. Add package-data coverage tests for prompt, matrix, golden, config, and
+1. Add lifecycle golden output drift snapshots for release reviewers.
+2. Add lifecycle prompt matrix examples for archival-ready outputs.
+3. Add release-review report examples in JSON form under checked fixtures.
+4. Add local documentation tests for every README documentation link.
+5. Add package-data coverage tests for prompt, matrix, golden, config, and
     snapshot artifacts.
-11. Add release-summary JSON schema documentation for downstream tooling.
-12. Add release-summary fixture snapshots for release reviewers.
-13. Add release-summary comparison notes for tracking release-to-release
+6. Add release-summary JSON schema documentation for downstream tooling.
+7. Add release-summary fixture snapshots for release reviewers.
+8. Add release-summary comparison notes for tracking release-to-release
     movement.
-14. Add docs for using release-summary output in PR descriptions.
-15. Add optional machine-readable release-review bundle export guidance.
-16. Add policy-lint trend JSON schema documentation for downstream tooling.
-17. Add policy-lint advisory remediation planning guidance.
-18. Add render-profile output fixture snapshots for release reviewers.
-19. Add quality-threshold warning trend notes for release reviewers.
-20. Add release-review bundle export CLI design notes.
+9. Add docs for using release-summary output in PR descriptions.
+10. Add optional machine-readable release-review bundle export guidance.
+11. Add policy-lint trend JSON schema documentation for downstream tooling.
+12. Add policy-lint advisory remediation planning guidance.
+13. Add render-profile output fixture snapshots for release reviewers.
+14. Add quality-threshold warning trend notes for release reviewers.
+15. Add release-review bundle export CLI design notes.
+16. Add provenance distribution JSON schema documentation for downstream
+    tooling.
+17. Add portfolio coverage fixture snapshots for release reviewers.
+18. Add cross-workspace reference output fixture snapshots for dependency-map
+    examples.
+19. Add fixture-to-VeritySpec checklist examples for one product and one Unity
+    workspace draft.
+20. Add optional local VeritySpec validation design notes for executable
+    workspace fixtures.
 
 ## Working Rule
 
