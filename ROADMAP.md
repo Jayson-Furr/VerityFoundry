@@ -686,12 +686,12 @@ Sprint 44 should release the completed `v0.19.0` scope:
 
 ## v0.20.0
 
-The `v0.20.0` milestone is in progress.
+The `v0.20.0` milestone is released.
 
 | Sprint | Status | Focus |
 |---:|---|---|
-| 45 | In Review | Release-review fixtures, lifecycle archival coverage, README link tests, and package-data hardening |
-| 46 | Planned | v0.20.0 release preparation |
+| 45 | Complete | Release-review fixtures, lifecycle archival coverage, README link tests, and package-data hardening |
+| 46 | Complete | v0.20.0 release preparation |
 
 ## Sprint 45 Priorities
 
