@@ -830,12 +830,12 @@ Sprint 52 should release the completed `v0.23.0` scope:
 
 ## v0.24.0
 
-The `v0.24.0` milestone is active.
+The `v0.24.0` milestone is released.
 
 | Sprint | Status | Focus |
 |---:|---|---|
-| 53 | In Progress | Release-review fixture schema docs, lifecycle archival drift notes, package-data audit docs, README link coverage, and fixture update instructions |
-| 54 | Planned | v0.24.0 release preparation |
+| 53 | Complete | Release-review fixture schema docs, lifecycle archival drift notes, package-data audit docs, README link coverage, and fixture update instructions |
+| 54 | Complete | v0.24.0 release preparation |
 
 ## Sprint 53 Priorities
 

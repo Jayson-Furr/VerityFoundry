@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## 0.24.0
+
 - Added release-review fixture JSON schema documentation and fixture update
   instructions.
 - Added lifecycle archival-readiness drift comparison guidance.
